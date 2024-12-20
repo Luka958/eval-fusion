@@ -1,4 +1,4 @@
 from . import models
 
 
-__all__ = list(models.__all__)
+__all__ = [models.__all__]
