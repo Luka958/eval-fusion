@@ -1,3 +1,4 @@
-from .main import test
+from . import models
 
-__all__ = ['test']
+
+__all__ = list(models.__all__)
