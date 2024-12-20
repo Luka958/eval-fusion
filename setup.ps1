@@ -1,7 +1,6 @@
 function Install-Dependencies {
     param (
-        [string]$dir,
-        [bool]$isRoot
+        [string]$dir
     )
     Set-Location -Path $dir
 
@@ -12,17 +11,22 @@ function Install-Dependencies {
 
     if ($isRoot) {
         Write-Host "Installing dependencies in root..."
-        poetry install
     }
     else {
         Write-Host "Installing dependencies in $dir..."
-        poetry install --no-root
     }
+    poetry install
 }
 
 $rootDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $subDirs = @(
-    "eval_fusion\core"
+    "libs\core",
+    "libs\community\bench",
+    "libs\community\deepeval",
+    "libs\community\mlflow",
+    "libs\community\phoenix",
+    "libs\community\ragas",
+    "libs\community\trulens",
 )
 
 Install-Dependencies -dir $rootDir -isRoot $true
