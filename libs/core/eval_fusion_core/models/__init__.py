@@ -1,3 +1,4 @@
-from .test_set import TestSet
+from .evaluation import EvaluationInput, EvaluationOutput
 
-__all__ = ['TestSet']
+
+__all__ = ['EvaluationInput', 'EvaluationOutput']

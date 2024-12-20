@@ -24,12 +24,13 @@ build-backend = "poetry.core.masonry.api"
 
 [tool.ruff]
 line-length = 88
-include = ["pyproject.toml", "eval_fusion/**/*.py"]
+include = ["**/pyproject.toml", "**.py"]
 exclude = [".git", ".vscode", ".idea", "build", "dist"]
 
 [tool.ruff.lint]
 fixable = ["ALL"]
 unfixable = []
+select = ["I"]
 
 [tool.ruff.lint.isort]
 lines-after-imports = 2
