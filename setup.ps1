@@ -1,6 +1,7 @@
 function Install-Dependencies {
     param (
-        [string]$dir
+        [string]$dir,
+        [bool]$isRoot
     )
     Set-Location -Path $dir
 
@@ -9,8 +10,14 @@ function Install-Dependencies {
         exit 1
     }
 
-    Write-Host "Installing dependencies in $dir..."
-    poetry install
+    if ($isRoot) {
+        Write-Host "Installing dependencies in root..."
+        poetry install
+    }
+    else {
+        Write-Host "Installing dependencies in $dir..."
+        poetry install --no-root
+    }
 }
 
 $rootDir = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -18,7 +25,7 @@ $subDirs = @(
     "eval_fusion\core"
 )
 
-Install-Dependencies -directory $rootDir
+Install-Dependencies -dir $rootDir -isRoot $true
 
 foreach ($subDir in $subDirs) {
     $dir = Join-Path -Path $rootDir -ChildPath $subDir
@@ -28,7 +35,7 @@ foreach ($subDir in $subDirs) {
         exit 1
     }
 
-    Install-Dependencies -directory $dir
+    Install-Dependencies -dir $dir -isRoot $false
 }
 
 Set-Location -Path $rootDir
