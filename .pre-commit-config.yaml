@@ -6,6 +6,16 @@ repos:
         args: ["--fix"]
       - id: ruff-format
 
+  - repo: local
+    hooks:
+      - id: auto-commit
+        name: Auto Commit After Formatting
+        entry: >-
+          cmd /c "git add . && git commit -m \"chore: Auto-formatting changes by pre-commit hooks\" || exit 0"
+        language: system
+        stages:
+          - post-commit
+
   - repo: https://github.com/commitizen-tools/commitizen
     rev: v4.1.0
     hooks:
