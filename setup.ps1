@@ -1,6 +1,7 @@
 function Install-Dependencies {
     param (
-        [string]$dir
+        [string]$dir,
+        [bool]$isRoot
     )
     Set-Location -Path $dir
 
@@ -26,7 +27,7 @@ $subDirs = @(
     "libs\community\mlflow",
     "libs\community\phoenix",
     "libs\community\ragas",
-    "libs\community\trulens",
+    "libs\community\trulens"
 )
 
 Install-Dependencies -dir $rootDir -isRoot $true
