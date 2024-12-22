@@ -6,7 +6,3 @@ class EvaluationInput(BaseModel):
     output: str
     ground_truth: str
     relevant_chunks: list[str]
-
-
-class EvaluationOutput(EvaluationInput):
-    pass
