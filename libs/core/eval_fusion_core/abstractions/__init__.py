@@ -1,5 +1,5 @@
-from .embedding import EmbeddingModel
-from .llm import LargeLanguageModel
+from .embedding_model import EmbeddingModel
+from .llm import LLM
 
 
-__all__ = ['EmbeddingModel', 'LargeLanguageModel']
+__all__ = ['EmbeddingModel', 'LLM']

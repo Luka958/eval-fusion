@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class LargeLanguageModel(ABC):
+class LLM(ABC):
     @abstractmethod
     def todo():
         pass
