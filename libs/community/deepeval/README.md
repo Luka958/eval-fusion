@@ -19,7 +19,7 @@ $$
 \text{Faithfulness} = \frac{\text{Number of Truthful Claims}}{\text{Total Number of Claims}}
 $$
 
-### Contextual Pprecision
+### Contextual Precision
 $$
 \text{Contextual Precision} = \frac{1}{\text{Number of Relevant Nodes}} \sum_{k=1}^{n} \left( \frac{\text{Number of Relevant Nodes Up to Position } k}{k} \times r_k \right)
 $$

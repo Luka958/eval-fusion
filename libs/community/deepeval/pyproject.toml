@@ -7,8 +7,9 @@ readme = "README.md"
 packages = [{ include = "eval_fusion_deepeval" }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.9,<3.13"
 eval-fusion-core = { path = "../../core", develop = true }
+deepeval = "^2.0.9"
 
 
 [build-system]

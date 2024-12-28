@@ -12,11 +12,12 @@ function Install-Dependencies {
 
     if ($isRoot) {
         Write-Host "Installing dependencies in root..."
+        poetry install --no-root
     }
     else {
         Write-Host "Installing dependencies in $dir..."
+        poetry install
     }
-    poetry install
 }
 
 $rootDir = Split-Path -Parent $MyInvocation.MyCommand.Path

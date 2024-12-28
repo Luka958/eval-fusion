@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{ include = "eval_fusion_core" }]
 
 [tool.poetry.dependencies]
-python = "^3.12"
+python = ">=3.9,<3.13"
 pydantic = "^2.10.4"
 
 
