@@ -1,5 +1,5 @@
-from .embedding_model import EmbeddingModel
-from .llm import LLM
+from .embedding_model import EvalFusionBaseEmbeddingModel
+from .llm import EvalFusionBaseLLM
 
 
-__all__ = ['EmbeddingModel', 'LLM']
+__all__ = ['EvalFusionBaseEmbeddingModel', 'EvalFusionBaseLLM']

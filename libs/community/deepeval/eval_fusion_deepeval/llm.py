@@ -1,18 +1,20 @@
 from deepeval.models import DeepEvalBaseLLM
+from eval_fusion_core.abstractions import EvalFusionBaseLLM
 
 
 class DeepEvalLLM(DeepEvalBaseLLM):
+    def __init__(self, llm_delegate: EvalFusionBaseLLM):
+        self.llm_delegate = llm_delegate
+        # super().__init__(model_name=llm_delegate.get_name())
+
     def load_model(self):
-        return ...  # TODO return model object
+        return self.llm_delegate
 
     def generate(self, prompt: str) -> str:
-        model = self.load_model()
-        result = model.call(prompt)
-
-        return ...
+        return self.llm_delegate.generate(prompt)
 
     async def a_generate(self, prompt: str) -> str:
-        return self.generate(prompt)
+        return await self.llm_delegate.a_generate(prompt)
 
-    def get_model_name(self):
-        return ...
+    def get_model_name(self) -> str:
+        return self.llm_delegate.get_name()

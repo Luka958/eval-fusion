@@ -1,31 +1,26 @@
 from deepeval.models import DeepEvalBaseEmbeddingModel
+from eval_fusion_core.abstractions import EvalFusionBaseEmbeddingModel
 
 
 class DeepEvalEmbeddingModel(DeepEvalBaseEmbeddingModel):
+    def __init__(self, embedding_model_delegate: EvalFusionBaseEmbeddingModel):
+        self.embedding_model_delegate = embedding_model_delegate
+        # super().__init__(model_name=embedding_model_delegate.get_name())
+
     def load_model(self):
-        return ...  # TODO return model object
+        return self.embedding_model_delegate
 
     def embed_text(self, text: str) -> list[float]:
-        embedding_model = self.load_model()
-        result = embedding_model.embed_query(text)
-
-        return ...
+        return self.embedding_model_delegate.embed_text(text)
 
     def embed_texts(self, texts: list[str]) -> list[list[float]]:
-        embedding_model = self.load_model()
-        results = embedding_model.embed_documents(texts)
-
-        return ...
+        return self.embedding_model_delegate.embed_texts(texts)
 
     async def a_embed_text(self, text: str) -> list[float]:
-        embedding_model = self.load_model()
-
-        return await ...
+        return await self.embedding_model_delegate.a_embed_text(text)
 
     async def a_embed_texts(self, texts: list[str]) -> list[list[float]]:
-        embedding_model = self.load_model()
+        return await self.embedding_model_delegate.a_embed_texts(texts)
 
-        return await ...
-
-    def get_model_name(self):
-        return ...
+    def get_model_name(self) -> str:
+        return self.embedding_model_delegate.get_name()

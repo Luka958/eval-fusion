@@ -1,7 +1,15 @@
 from abc import ABC, abstractmethod
 
 
-class LLM(ABC):
+class EvalFusionBaseLLM(ABC):
     @abstractmethod
-    def todo():
+    def get_name(self) -> str:
+        pass
+
+    @abstractmethod
+    def generate(self, prompt: str) -> str:
+        pass
+
+    @abstractmethod
+    async def a_generate(self, prompt: str) -> str:
         pass
