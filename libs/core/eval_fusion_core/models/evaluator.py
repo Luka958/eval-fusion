@@ -10,7 +10,9 @@ class Evaluator(BaseModel):
     # embedding_model: EmbeddingModel
     # large_language_model: LargeLanguageModel
 
-    def evaluate(self, inputs: list, metrics: list) -> list:
+    def evaluate(
+        self, inputs: list[EvaluationInput], metrics: list
+    ) -> list[EvaluationOutput]:
         # TODO how to accept metrics? add 'provider' attribute to Metric and group by provider
         # TODO how to provide framework, NOTE: core doesn't know about frameworks
         pass

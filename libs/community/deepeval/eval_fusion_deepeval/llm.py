@@ -1,7 +1,7 @@
 from deepeval.models import DeepEvalBaseLLM
 
 
-class LLMAdapter(DeepEvalBaseLLM):
+class DeepEvalLLM(DeepEvalBaseLLM):
     def load_model(self):
         return ...  # TODO return model object
 

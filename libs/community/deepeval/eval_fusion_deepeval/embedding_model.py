@@ -1,7 +1,7 @@
 from deepeval.models import DeepEvalBaseEmbeddingModel
 
 
-class EmbeddingModelAdapter(DeepEvalBaseEmbeddingModel):
+class DeepEvalEmbeddingModel(DeepEvalBaseEmbeddingModel):
     def load_model(self):
         return ...  # TODO return model object
 

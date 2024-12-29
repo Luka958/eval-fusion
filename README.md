@@ -1,19 +1,20 @@
 # eval-fusion
 
-## setup
+## Setup
 `.\setup.ps1`
 
-## pre-commit
+## Format manually
+`ruff check . --fix`
 
-### install
+### Install
 `poetry run pre-commit install`
 
 Run this after each change to `.pre-commit-config.yaml`.
 
-### verify
+### Verify
 `poetry run pre-commit run --all-files`
 
-## requirements
+## Requirements
 | Package         | Version   | Requirements                                          |
 |-----------------|-----------|-------------------------------------------------------|
 | deepeval        | 2.0.9     | <3.13, >=3.9                                          |
