@@ -16,20 +16,17 @@ from eval_fusion_core.models import EvaluationInput, EvaluationOutput
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
-    def __init__(
-        self, embedding_model: EvalFusionBaseEmbeddingModel, llm: EvalFusionBaseLLM
-    ):
-        self.embedding_model = embedding_model
+    def __init__(self, llm: EvalFusionBaseLLM):
         self.llm = llm
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
     ) -> list[EvaluationOutput]:
-        # TODO adapt models
+        # TODO organize metrics
 
         answer_relevancy = AnswerRelevancyMetric(
             threshold=0.5,
-            model=None,  # TODO
+            model=self.llm,
             include_reason=False,
             async_mode=False,
             strict_mode=False,
@@ -37,7 +34,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         )
         contextual_precision = ContextualPrecisionMetric(
             threshold=0.5,
-            model=None,  # TODO
+            model=self.llm,
             include_reason=False,
             async_mode=False,
             strict_mode=False,
@@ -45,7 +42,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         )
         contextual_recall = ContextualRecallMetric(
             threshold=0.5,
-            model=None,  # TODO
+            model=self.llm,
             include_reason=False,
             async_mode=False,
             strict_mode=False,
@@ -53,7 +50,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         )
         contextual_relevancy = ContextualRelevancyMetric(
             threshold=0.5,
-            model=None,  # TODO
+            model=self.llm,
             include_reason=False,
             async_mode=False,
             strict_mode=False,
@@ -61,7 +58,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         )
         faithfulness = FaithfulnessMetric(
             threshold=0.5,
-            model=None,  # TODO
+            model=self.llm,
             include_reason=False,
             async_mode=False,
             strict_mode=False,
