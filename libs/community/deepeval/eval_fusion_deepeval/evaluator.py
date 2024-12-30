@@ -8,7 +8,6 @@ from deepeval.metrics import (
 )
 from deepeval.test_case import LLMTestCase
 from eval_fusion_core.base import (
-    EvalFusionBaseEmbeddingModel,
     EvalFusionBaseEvaluator,
     EvalFusionBaseLLM,
 )

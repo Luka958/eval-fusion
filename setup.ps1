@@ -12,11 +12,11 @@ function Install-Dependencies {
 
     if ($isRoot) {
         Write-Host "Installing dependencies in root..."
-        poetry install --no-root
+        poetry install --no-root --no-update
     }
     else {
         Write-Host "Installing dependencies in $dir..."
-        poetry install
+        poetry install --no-update
     }
 }
 
