@@ -23,7 +23,6 @@ function Install-Dependencies {
 $rootDir = Split-Path -Parent $MyInvocation.MyCommand.Path
 $subDirs = @(
     "libs\core",
-    "libs\community\bench",
     "libs\community\deepeval",
     "libs\community\mlflow",
     "libs\community\phoenix",
