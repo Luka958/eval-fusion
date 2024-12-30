@@ -1,5 +1,5 @@
 from deepeval.models import DeepEvalBaseLLM
-from eval_fusion_core.abstractions import EvalFusionBaseLLM
+from eval_fusion_core.base import EvalFusionBaseLLM
 
 
 class DeepEvalLLM(DeepEvalBaseLLM):

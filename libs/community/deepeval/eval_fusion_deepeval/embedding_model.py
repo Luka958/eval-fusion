@@ -1,5 +1,5 @@
 from deepeval.models import DeepEvalBaseEmbeddingModel
-from eval_fusion_core.abstractions import EvalFusionBaseEmbeddingModel
+from eval_fusion_core.base import EvalFusionBaseEmbeddingModel
 
 
 class DeepEvalEmbeddingModel(DeepEvalBaseEmbeddingModel):

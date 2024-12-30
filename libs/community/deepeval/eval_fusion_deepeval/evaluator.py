@@ -7,10 +7,21 @@ from deepeval.metrics import (
     FaithfulnessMetric,
 )
 from deepeval.test_case import LLMTestCase
-from eval_fusion_core.models import EvaluationInput, EvaluationOutput, Evaluator
+from eval_fusion_core.base import (
+    EvalFusionBaseEmbeddingModel,
+    EvalFusionBaseEvaluator,
+    EvalFusionBaseLLM,
+)
+from eval_fusion_core.models import EvaluationInput, EvaluationOutput
 
 
-class DeepEvalEvaluator(Evaluator):
+class DeepEvalEvaluator(EvalFusionBaseEvaluator):
+    def __init__(
+        self, embedding_model: EvalFusionBaseEmbeddingModel, llm: EvalFusionBaseLLM
+    ):
+        self.embedding_model = embedding_model
+        self.llm = llm
+
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
     ) -> list[EvaluationOutput]:
