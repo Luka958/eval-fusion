@@ -15,11 +15,12 @@ VERTEX_AI_PROJECT_ID = config('VERTEX_AI_PROJECT_ID')
 VERTEX_AI_PROJECT_LOCATION = config('VERTEX_AI_PROJECT_LOCATION')
 VERTEX_AI_MODEL_LOCATION = config('VERTEX_AI_MODEL_LOCATION')
 
-MAAS_ENDPOINT = f'{VERTEX_AI_MODEL_LOCATION}-aiplatform.googleapis.com'
-PROJECT = f'projects/{VERTEX_AI_PROJECT_ID}'
-LOCATION = f'locations/{VERTEX_AI_PROJECT_LOCATION}'
-ENDPOINT = f'endpoints/openapi'
-BASE_URL = f'https://{MAAS_ENDPOINT}/v1beta1/{PROJECT}/{LOCATION}/{ENDPOINT}'
+BASE_URL = (
+    f'https://{VERTEX_AI_MODEL_LOCATION}-aiplatform.googleapis.com/v1beta1/'
+    f'projects/{VERTEX_AI_PROJECT_ID}/'
+    f'locations/{VERTEX_AI_PROJECT_LOCATION}/'
+    'endpoints/openapi'
+)
 
 
 class VertexAILLM(EvalFusionBaseLLM):
