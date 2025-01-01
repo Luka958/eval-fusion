@@ -27,7 +27,8 @@ $subDirs = @(
     "libs\community\mlflow",
     "libs\community\phoenix",
     "libs\community\ragas",
-    "libs\community\trulens"
+    "libs\community\trulens",
+    "libs\test"
 )
 
 Install-Dependencies -dir $rootDir -isRoot $true
