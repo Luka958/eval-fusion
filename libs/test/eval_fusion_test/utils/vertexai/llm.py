@@ -1,4 +1,5 @@
 import vertexai
+
 from decouple import config
 from eval_fusion_core.base import EvalFusionBaseLLM
 from google.auth import default
