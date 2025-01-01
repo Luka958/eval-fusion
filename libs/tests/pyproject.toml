@@ -1,0 +1,20 @@
+[tool.poetry]
+name = "eval-fusion-tests"
+version = "0.1.0"
+description = ""
+authors = ["Luka958 <lp53523@fer.hr>"]
+readme = "README.md"
+packages = [{ include = "eval_fusion_tests" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.13"
+eval-fusion-core = { path = "../core", develop = true }
+eval-fusion-deepeval = { path = "../community/deepeval", develop = true }
+vertexai = "^1.71.1"
+google-auth = "^2.37.0"
+python-decouple = "^3.8"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
