@@ -10,6 +10,7 @@ packages = [{ include = "eval_fusion_test" }]
 python = ">=3.9,<3.13"
 eval-fusion-core = { path = "../core", develop = true }
 eval-fusion-deepeval = { path = "../community/deepeval", develop = true }
+eval-fusion-ragas = { path = "../community/ragas", develop = true }
 vertexai = "^1.71.1"
 google-auth = "^2.37.0"
 python-decouple = "^3.8"
