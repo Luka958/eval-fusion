@@ -1,7 +1,10 @@
-from pydantic import BaseModel
+from uuid import UUID, uuid4
+
+from pydantic import BaseModel, Field
 
 
 class EvaluationInput(BaseModel):
+    id: UUID = Field(default_factory=uuid4)
     input: str
     output: str
     ground_truth: str

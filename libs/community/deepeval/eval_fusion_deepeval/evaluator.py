@@ -11,7 +11,11 @@ from eval_fusion_core.base import (
     EvalFusionBaseEvaluator,
     EvalFusionBaseLLM,
 )
-from eval_fusion_core.models import EvaluationInput, EvaluationOutput
+from eval_fusion_core.models import (
+    EvaluationInput,
+    EvaluationOutput,
+    EvaluationOutputEntry,
+)
 
 from .llm import DeepEvalLLM
 
@@ -88,12 +92,17 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        outputs: list[EvaluationOutput] = []
-
-        for test_case in test_cases:
-            for metric in metrics:
-                metric.measure(test_case)
-                output = EvaluationOutput(score=metric.score)
-                outputs.append(output)
-
-        return outputs
+        return [
+            EvaluationOutput(
+                input_id=inputs[i].id,
+                output_entries=[
+                    EvaluationOutputEntry(
+                        metric_name=metric.__name__,
+                        score=metric.measure(test_case),
+                        reason=metric.reason,
+                    )
+                    for metric in metrics
+                ],
+            )
+            for i, test_case in enumerate(test_cases)
+        ]

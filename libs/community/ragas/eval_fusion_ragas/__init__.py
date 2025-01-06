@@ -1,4 +1,5 @@
 from .embedding_model import RagasEmbeddings
+from .evaluator import RagasEvaluator
 from .llm import RagasLLM
 
 
