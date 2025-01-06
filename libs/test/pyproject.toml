@@ -13,8 +13,10 @@ eval-fusion-deepeval = { path = "../community/deepeval", develop = true }
 vertexai = "^1.71.1"
 google-auth = "^2.37.0"
 python-decouple = "^3.8"
-pytest = "^8.3.4"
 
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.3.4"
 
 [build-system]
 requires = ["poetry-core"]
