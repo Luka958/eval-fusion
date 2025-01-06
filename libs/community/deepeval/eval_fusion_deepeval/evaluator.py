@@ -73,6 +73,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             contextual_relevancy,
             faithfulness,
         ]
+        metrics = metrics[:1]  # TODO remove
 
         test_cases = [
             LLMTestCase(

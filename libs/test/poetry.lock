@@ -136,25 +136,24 @@ files = [
 
 [[package]]
 name = "anyio"
-version = "4.7.0"
+version = "3.7.1"
 description = "High level compatibility layer for multiple asynchronous event loop implementations"
 optional = false
-python-versions = ">=3.9"
+python-versions = ">=3.7"
 files = [
-    {file = "anyio-4.7.0-py3-none-any.whl", hash = "sha256:ea60c3723ab42ba6fff7e8ccb0488c898ec538ff4df1f1d5e642c3601d07e352"},
-    {file = "anyio-4.7.0.tar.gz", hash = "sha256:2f834749c602966b7d456a7567cafcb309f96482b5081d14ac93ccd457f9dd48"},
+    {file = "anyio-3.7.1-py3-none-any.whl", hash = "sha256:91dee416e570e92c64041bd18b900d1d6fa78dff7048769ce5ac5ddad004fbb5"},
+    {file = "anyio-3.7.1.tar.gz", hash = "sha256:44a3c9aba0f5defa43261a8b3efb97891f2bd7d804e0e1f56419befa1adfc780"},
 ]
 
 [package.dependencies]
-exceptiongroup = {version = ">=1.0.2", markers = "python_version < \"3.11\""}
+exceptiongroup = {version = "*", markers = "python_version < \"3.11\""}
 idna = ">=2.8"
 sniffio = ">=1.1"
-typing_extensions = {version = ">=4.5", markers = "python_version < \"3.13\""}
 
 [package.extras]
-doc = ["Sphinx (>=7.4,<8.0)", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx_rtd_theme"]
-test = ["anyio[trio]", "coverage[toml] (>=7)", "exceptiongroup (>=1.2.0)", "hypothesis (>=4.0)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "truststore (>=0.9.1)", "uvloop (>=0.21)"]
-trio = ["trio (>=0.26.1)"]
+doc = ["Sphinx", "packaging", "sphinx-autodoc-typehints (>=1.2.0)", "sphinx-rtd-theme (>=1.2.2)", "sphinxcontrib-jquery"]
+test = ["anyio[trio]", "coverage[toml] (>=4.5)", "hypothesis (>=4.0)", "mock (>=4)", "psutil (>=5.9)", "pytest (>=7.0)", "pytest-mock (>=3.6.1)", "trustme", "uvloop (>=0.17)"]
+trio = ["trio (<0.22)"]
 
 [[package]]
 name = "async-timeout"
@@ -351,13 +350,13 @@ typing-inspect = ">=0.4.0,<1"
 
 [[package]]
 name = "deepeval"
-version = "2.0.9"
+version = "2.1.1"
 description = "The Open-Source LLM Evaluation Framework."
 optional = false
 python-versions = "<3.13,>=3.9"
 files = [
-    {file = "deepeval-2.0.9-py3-none-any.whl", hash = "sha256:dbd6a4495b4c2c3f8f2c343d5793186a5ed929d30777aa208281686fc995d7f4"},
-    {file = "deepeval-2.0.9.tar.gz", hash = "sha256:15a630b56cd509caf7262c83c93b71d47fc1d9adf854c2cb49f17155718c1d7d"},
+    {file = "deepeval-2.1.1-py3-none-any.whl", hash = "sha256:6b3c48c184ed7d904bea379427f62aad8bbf50ddfa493957d8adb160520ab429"},
+    {file = "deepeval-2.1.1.tar.gz", hash = "sha256:8554b7abad140c4948d5ae33670beaabd7c3c969cd216ead4ef74268032d4f2d"},
 ]
 
 [package.dependencies]
@@ -464,8 +463,10 @@ files = []
 develop = true
 
 [package.dependencies]
-deepeval = "^2.0.9"
+deepeval = "2.1.1"
 eval-fusion-core = {path = "../../core", develop = true}
+httpcore = "1.0.7"
+httpx = "0.28.1"
 
 [package.source]
 type = "directory"
@@ -3284,4 +3285,4 @@ type = ["pytest-mypy"]
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "31642ac78a3e556f7cc65e3b8fa462d6a9386f19c3a4414cb7fa5f451964c52d"
+content-hash = "ec625cc46a9aa7dd3fc0f5c4a1c7690713fd082b2a126a686f82783aad652ebd"

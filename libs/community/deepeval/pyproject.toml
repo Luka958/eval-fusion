@@ -9,7 +9,9 @@ packages = [{ include = "eval_fusion_deepeval" }]
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13"
 eval-fusion-core = { path = "../../core", develop = true }
-deepeval = "^2.0.9"
+deepeval = "2.1.1"
+httpx = "0.28.1"
+httpcore = "1.0.7"
 
 
 [build-system]
