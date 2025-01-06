@@ -36,6 +36,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
+            _show_indicator=False,
         )
         contextual_precision = ContextualPrecisionMetric(
             threshold=0.5,
@@ -44,6 +45,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
+            _show_indicator=False,
         )
         contextual_recall = ContextualRecallMetric(
             threshold=0.5,
@@ -52,6 +54,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
+            _show_indicator=False,
         )
         contextual_relevancy = ContextualRelevancyMetric(
             threshold=0.5,
@@ -60,6 +63,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
+            _show_indicator=False,
         )
         faithfulness = FaithfulnessMetric(
             threshold=0.5,
@@ -68,6 +72,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
+            _show_indicator=False,
         )
 
         metrics: list[BaseMetric] = [
