@@ -415,6 +415,22 @@ files = [
 ]
 
 [[package]]
+name = "eval-fusion-core"
+version = "0.1.0"
+description = ""
+optional = false
+python-versions = ">=3.9,<3.13"
+files = []
+develop = true
+
+[package.dependencies]
+pydantic = "^2.10.4"
+
+[package.source]
+type = "directory"
+url = "../../core"
+
+[[package]]
 name = "exceptiongroup"
 version = "1.2.2"
 description = "Backport of PEP 654 (exception groups)"
@@ -2568,4 +2584,4 @@ propcache = ">=0.2.0"
 [metadata]
 lock-version = "2.0"
 python-versions = ">=3.9,<3.13"
-content-hash = "764757857326d3a3fd7208c8bf34872791248a22b09ef38df75b6b689bbd66ef"
+content-hash = "35cf55d1329a4f2a568f23c0761acf4d630f86e2c65a025c07483ae863ea4682"
