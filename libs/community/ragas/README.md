@@ -9,7 +9,7 @@
 - Input
     - `user_input`
     - `retrieved_contexts`
-    - `response`
+    - `reference`
 
 $$
 \text{Context Precision@K} = \frac{\sum_{k=1}^{K} \left( \text{Precision@}k \times v_k \right)}{\text{Total number of relevant items in the top K results}}
@@ -35,7 +35,7 @@ $$
 ### Context Entity Recall
 - Input
     - `retrieved_contexts`
-    - `response`
+    - `reference`
 
 $$
 \text{context entity recall} = \frac{|CE \cap GE|}{|GE|}
@@ -58,7 +58,6 @@ $$
 ### Response Relevancy
 - Input
     - `user_input`
-    - `retrieved_contexts`
     - `response`
 
 $$
@@ -71,7 +70,6 @@ $$
 
 ### Faithfulness
 - Input
-    - `user_input`
     - `retrieved_contexts`
     - `response`
 
