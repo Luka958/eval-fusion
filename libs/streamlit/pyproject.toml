@@ -1,0 +1,17 @@
+[tool.poetry]
+name = "eval-fusion-streamlit"
+version = "0.1.0"
+description = ""
+authors = ["Luka958 <lp53523@fer.hr> ivansetka <is53249@fer.hr>"]
+readme = "README.md"
+packages = [{ include = "eval_fusion_streamlit" }]
+
+[tool.poetry.dependencies]
+python = ">=3.9,<3.9.7 || >3.9.7,<3.13"
+eval-fusion-core = { path = "../core", develop = true }
+streamlit = "^1.41.0"
+pandas = "^2.2.3"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
