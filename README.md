@@ -21,4 +21,5 @@ Run this after each change to `.pre-commit-config.yaml`.
 | ragas           | 0.2.9     | >=3.9                                                 |
 | arize-phoenix   | 7.3.2     | <3.14, >=3.9                                          |
 | mlflow          | 2.19.0    | >=3.9                                                 |
-| trulens         | 1.2.11    | >=3.8 |
+| trulens         | 1.2.11    | >=3.8                                                 |
+| streamlit       | 1.41.1    | >=3.9, <3.9.7 \|\| >3.9.7, <3.13                      |

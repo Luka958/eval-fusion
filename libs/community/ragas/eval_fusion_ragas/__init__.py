@@ -1,6 +1,6 @@
-from .embedding_model import RagasEmbeddings
+from .embedding_model import RagasProxyEmbeddingModel
 from .evaluator import RagasEvaluator
-from .llm import RagasLLM
+from .llm import RagasProxyLLM
 
 
-__all__ = ['RagasLLM', 'RagasEmbeddings', 'RagasEvaluator']
+__all__ = ['RagasProxyLLM', 'RagasProxyEmbeddingModel', 'RagasEvaluator']

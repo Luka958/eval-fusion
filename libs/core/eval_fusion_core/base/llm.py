@@ -13,3 +13,7 @@ class EvalFusionBaseLLM(ABC):
     @abstractmethod
     async def a_generate(self, prompt: str) -> str:
         pass
+
+    @abstractmethod
+    def generate_from_messages(self, messages: list[dict]) -> str:
+        pass

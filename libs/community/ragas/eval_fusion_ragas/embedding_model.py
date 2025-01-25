@@ -3,7 +3,7 @@ from langchain_core.callbacks import Callbacks
 from ragas.embeddings.base import BaseRagasEmbeddings
 
 
-class RagasEmbeddings(BaseRagasEmbeddings):
+class RagasProxyEmbeddingModel(BaseRagasEmbeddings):
     def __init__(self, embedding_model_delegate: EvalFusionBaseEmbeddingModel):
         self.embedding_model_delegate = embedding_model_delegate
 

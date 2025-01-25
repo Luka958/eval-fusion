@@ -2,7 +2,7 @@ from deepeval.models import DeepEvalBaseEmbeddingModel
 from eval_fusion_core.base import EvalFusionBaseEmbeddingModel
 
 
-class DeepEvalEmbeddingModel(DeepEvalBaseEmbeddingModel):
+class DeepEvalProxyEmbeddingModel(DeepEvalBaseEmbeddingModel):
     def __init__(self, embedding_model_delegate: EvalFusionBaseEmbeddingModel):
         self.embedding_model_delegate = embedding_model_delegate
         # super().__init__(model_name=embedding_model_delegate.get_name())

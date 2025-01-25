@@ -39,3 +39,12 @@ class OpenAILLM(EvalFusionBaseLLM):
         )
 
         return completion.choices[0].message.content
+
+    def generate_from_messages(self, messages: list[dict]) -> str:
+        completion = self.client.chat.completions.create(
+            model=self.model_name,
+            messages=messages,
+            response_format={'type': 'json_object'},
+        )
+
+        return completion.choices[0].message.content

@@ -8,7 +8,7 @@ from langchain_core.prompt_values import PromptValue
 from ragas.llms.base import BaseRagasLLM
 
 
-class RagasLLM(BaseRagasLLM):
+class RagasProxyLLM(BaseRagasLLM):
     def __init__(self, llm_delegate: EvalFusionBaseLLM):
         self.llm_delegate = llm_delegate
 
