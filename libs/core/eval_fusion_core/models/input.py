@@ -9,3 +9,10 @@ class EvaluationInput(BaseModel):
     output: str
     ground_truth: str
     relevant_chunks: list[str]
+
+
+class EvaluationInputAlias(BaseModel):
+    input: str
+    output: str
+    ground_truth: str
+    relevant_chunks: str
