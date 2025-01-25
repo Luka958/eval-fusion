@@ -10,12 +10,12 @@ from eval_fusion_core.models import (
 from trulens.apps.virtual import TruVirtual, VirtualApp
 from trulens.core import Feedback
 
-from .llm import TrulensLLM
+from .llm import TruLensProxyLLM
 
 
-class TrulensEvaluator(EvalFusionBaseEvaluator):
+class TruLensEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: TrulensLLM = TrulensLLM(llm_delegate=llm)
+        self.llm: TruLensProxyLLM = TruLensProxyLLM(llm_delegate=llm)
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list

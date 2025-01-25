@@ -4,7 +4,7 @@ from eval_fusion_core.base import EvalFusionBaseLLM
 from trulens.feedback import LLMProvider
 
 
-class TrulensLLM(LLMProvider):
+class TruLensProxyLLM(LLMProvider):
     def __init__(self, llm_delegate: EvalFusionBaseLLM):
         self.llm_delegate = llm_delegate
 

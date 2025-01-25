@@ -19,16 +19,18 @@ from ragas.metrics import (
     SingleTurnMetric,
 )
 
-from .embedding_model import RagasEmbeddings
-from .llm import RagasLLM
+from .embedding_model import RagasProxyEmbeddingModel
+from .llm import RagasProxyLLM
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
     def __init__(
         self, llm: EvalFusionBaseLLM, embedding_model: EvalFusionBaseEmbeddingModel
     ):
-        self.llm: RagasLLM = RagasLLM(llm_delegate=llm)
-        self.embedding_model = RagasEmbeddings(embedding_model_delegate=embedding_model)
+        self.llm: RagasProxyLLM = RagasProxyLLM(llm_delegate=llm)
+        self.embedding_model = RagasProxyEmbeddingModel(
+            embedding_model_delegate=embedding_model
+        )
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list

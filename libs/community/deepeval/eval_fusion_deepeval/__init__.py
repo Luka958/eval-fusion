@@ -1,6 +1,6 @@
-from .embedding_model import DeepEvalEmbeddingModel
+from .embedding_model import DeepEvalProxyEmbeddingModel
 from .evaluator import DeepEvalEvaluator
-from .llm import DeepEvalLLM
+from .llm import DeepEvalProxyLLM
 
 
-__all__ = ['DeepEvalEmbeddingModel', 'DeepEvalEvaluator', 'DeepEvalLLM']
+__all__ = ['DeepEvalProxyEmbeddingModel', 'DeepEvalEvaluator', 'DeepEvalProxyLLM']

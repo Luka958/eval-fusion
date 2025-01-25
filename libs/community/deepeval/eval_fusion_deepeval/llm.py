@@ -2,7 +2,7 @@ from deepeval.models import DeepEvalBaseLLM
 from eval_fusion_core.base import EvalFusionBaseLLM
 
 
-class DeepEvalLLM(DeepEvalBaseLLM):
+class DeepEvalProxyLLM(DeepEvalBaseLLM):
     def __init__(self, llm_delegate: EvalFusionBaseLLM):
         self.llm_delegate = llm_delegate
         # super().__init__(model_name=llm_delegate.get_name())

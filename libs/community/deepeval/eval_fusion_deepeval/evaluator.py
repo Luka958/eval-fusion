@@ -17,12 +17,12 @@ from eval_fusion_core.models import (
     EvaluationOutputEntry,
 )
 
-from .llm import DeepEvalLLM
+from .llm import DeepEvalProxyLLM
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: DeepEvalLLM = DeepEvalLLM(llm_delegate=llm)
+        self.llm: DeepEvalProxyLLM = DeepEvalProxyLLM(llm_delegate=llm)
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
