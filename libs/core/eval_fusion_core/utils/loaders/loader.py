@@ -12,7 +12,7 @@ def load_evaluation_inputs(
         raw_inputs: list[dict] = json.load(file)
 
     if alias:
-        alias_dict = dict((v, k) for k, v in alias.model_dump().items())
+        alias_dict = {v: k for k, v in alias.model_dump().items()}
         raw_inputs = [
             {alias_dict.get(k, k): v for k, v in x.items()} for x in raw_inputs
         ]
