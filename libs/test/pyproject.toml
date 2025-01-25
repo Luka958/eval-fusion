@@ -12,8 +12,8 @@ eval-fusion-core = { path = "../core", develop = true }
 eval-fusion-deepeval = { path = "../community/deepeval", develop = true }
 eval-fusion-ragas = { path = "../community/ragas", develop = true }
 eval-fusion-trulens = { path = "../community/trulens", develop = true }
-vertexai = "^1.71.1"
-google-auth = "^2.37.0"
+eval-fusion-openai = { path = "../vendor/openai", develop = true }
+eval-fusion-vertexai = { path = "../vendor/vertexai", develop = true }
 python-decouple = "^3.8"
 
 

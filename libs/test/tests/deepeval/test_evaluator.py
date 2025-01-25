@@ -1,11 +1,16 @@
+from decouple import config
 from eval_fusion_core.utils.loaders import load_evaluation_inputs
 from eval_fusion_deepeval.evaluator import DeepEvalEvaluator
 from eval_fusion_deepeval.llm import DeepEvalProxyLLM
-from eval_fusion_test.utils.nvidia import NvidiaLLM
+from eval_fusion_openai import OpenAILLM
+
+
+NVIDIA_BASE_URL = config('NVIDIA_BASE_URL')
+NVIDIA_API_KEY = config('NVIDIA_API_KEY')
 
 
 def test_evaluator():
-    llm = NvidiaLLM('meta/llama-3.1-405b-instruct')
+    llm = OpenAILLM('meta/llama-3.1-405b-instruct', NVIDIA_BASE_URL, NVIDIA_API_KEY)
     proxy_llm = DeepEvalProxyLLM(llm)
     evaluator = DeepEvalEvaluator(proxy_llm)
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')

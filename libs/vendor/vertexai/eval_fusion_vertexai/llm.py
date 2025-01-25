@@ -1,11 +1,10 @@
 import vertexai
 
 from decouple import config
+from eval_fusion_openai import OpenAILLM
 from google.auth import default
 from google.auth.transport.requests import Request
 from google.oauth2.service_account import Credentials
-
-from eval_fusion_test.utils.openai import OpenAILLM
 
 
 GOOGLE_APPLICATION_CREDENTIALS = config('GOOGLE_APPLICATION_CREDENTIALS')
