@@ -9,7 +9,7 @@ from eval_fusion_core.models import (
 )
 from trulens.apps.virtual import TruVirtual, VirtualApp, VirtualRecord
 from trulens.core import Feedback, FeedbackMode, Select, TruSession
-from trulens.core.schema.feedback import FeedbackResult, FeedbackResultStatus
+from trulens.core.schema.feedback import FeedbackResultStatus
 
 from .llm import TruLensProxyLLM
 
@@ -82,14 +82,14 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                 input_id=inputs[i].id,
                 output_entries=[
                     EvaluationOutputEntry(
-                        metric_name=future_result.name,
-                        score=future_result.result,
+                        metric_name=feedback_result.name,
+                        score=feedback_result.result,
                         reason=None,  # [call.meta['reason'] for call in feedback_result.calls]
                     )
-                    for future_result in [
+                    for feedback_result in [
                         future.result() for future in record.feedback_results
                     ]
-                    if future_result.status == FeedbackResultStatus.DONE
+                    if feedback_result.status == FeedbackResultStatus.DONE
                 ],
             )
             outputs.append(output)
