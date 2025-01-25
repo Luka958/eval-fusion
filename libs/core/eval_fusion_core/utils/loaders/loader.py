@@ -8,8 +8,6 @@ from eval_fusion_core.models import EvaluationInput
 def load_evaluation_inputs(
     path: str, aliases: dict[str, str] | None = None
 ) -> list[EvaluationInput]:
-    path = 'assets/amnesty_qa.json'
-
     with open(path, 'r') as file:
         raw_inputs: list[dict] = json.load(file)
 
