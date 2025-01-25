@@ -20,4 +20,4 @@ def validate_dataset_format(data: list) -> bool:
     except ValidationError:
         return False
 
-    return True
+    return len(data) >= 5
