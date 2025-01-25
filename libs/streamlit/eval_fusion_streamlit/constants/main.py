@@ -9,23 +9,23 @@ intro_text = """
     #### Input Dataset Format:
     - The file should be a `.json` containing a list of records.
     - Each record should include the following fields:
-        - `user_input`: The query or input from the user.
-        - `retrieved_contexts`: A list of retrieved contexts.
-        - `response`: The system's generated response.
-        - `reference`: The ground truth or reference answer.
+        - `input`: The query or input from the user.
+        - `relevant_chunks`: A list of retrieved contexts.
+        - `output`: The system's generated response.
+        - `ground_truth`: The ground truth or reference answer.
 
     Example:
     ```json
     [
         {
-            "user_input": "What is the best library for evaluating RAG applications?",
-            "retrieved_contexts": [
+            "input": "What is the best library for evaluating RAG applications?",
+            "relevant_chunks": [
                 "Context 1...",
                 "Context 2...",
                 "Context 3..."
             ],
-            "response": "EvalFusion, simply the best!",
-            "reference": "The best evaluation library is EvalFusion."
+            "output": "EvalFusion, simply the best!",
+            "ground_truth": "The best evaluation library is EvalFusion."
         }
     ]
     ```

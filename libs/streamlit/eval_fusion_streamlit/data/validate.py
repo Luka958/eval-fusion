@@ -4,10 +4,10 @@ from pydantic import BaseModel, ValidationError
 
 
 class Record(BaseModel):
-    user_input: str
-    retrieved_contexts: List[str]
-    response: str
-    reference: str
+    input: str
+    relevant_chunks: List[str]
+    output: str
+    ground_truth: str
 
 
 class DatasetSchema(BaseModel):

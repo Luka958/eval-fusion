@@ -4,17 +4,17 @@ import streamlit as st
 
 def display_record_container(record: dict):
     record_text = f"""
-        ### User input
-        {repr(record["user_input"])}
+        ### Input
+        {repr(record["input"])}
 
-        ### Retrieved contexts
-        {repr(record["retrieved_contexts"])}
+        ### Relevant chunks
+        {repr(record["relevant_chunks"])}
 
-        ### Response
-        {repr(record["response"])}
+        ### Output
+        {repr(record["output"])}
 
-        ### Reference
-        {repr(record["reference"])}
+        ### Ground truth
+        {repr(record["ground_truth"])}
     """
 
     st.markdown(record_text)
