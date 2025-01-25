@@ -37,3 +37,8 @@ class RagasLLM(BaseRagasLLM):
         result = await self.llm_delegate.a_generate(prompt)
 
         return LLMResult(generations=[[Generation(text=result)]])
+
+    def generate_from_messages(self, messages: list[dict]) -> str:
+        raise NotImplementedError(
+            f'{self.__class__.__name__} does not use {self.generate_from_messages.__name__}'
+        )
