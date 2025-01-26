@@ -30,7 +30,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
     ) -> list[EvaluationOutput]:
         # TODO organize metrics
 
-        model = 'openai:/gpt-4o-mini'  # TODO
+        model = self.llm.get_model()
 
         metrics: list[EvaluationMetric] = [
             faithfulness(model=model),
@@ -67,14 +67,12 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                     extra_metrics=[metric],
                 )
                 table = evaluation_result.tables['eval_results_table']
-                score = table[f'{metric.__name__}/v1/score']
-                reason = table[f'{metric.__name__}/v1/justification']
 
                 evaluation_output_entires.append(
                     EvaluationOutputEntry(
                         metric_name=metric.__name__,
-                        score=score,
-                        reason=reason,
+                        score=table[f'{metric.__name__}/v1/score'],
+                        reason=table[f'{metric.__name__}/v1/justification'],
                     )
                 )
 
