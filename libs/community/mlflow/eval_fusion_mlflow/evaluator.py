@@ -10,7 +10,13 @@ from eval_fusion_core.models import (
     EvaluationOutputEntry,
 )
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
-from mlflow import evaluate
+from mlflow import (
+    create_experiment,
+    evaluate,
+    register_model,
+    set_experiment,
+    start_run,
+)
 from mlflow.metrics.genai import (
     answer_correctness,
     answer_relevance,
@@ -19,9 +25,13 @@ from mlflow.metrics.genai import (
     relevance,
 )
 from mlflow.models.evaluation import EvaluationMetric, EvaluationResult
+from mlflow.models.signature import infer_signature
+from mlflow.pyfunc import log_model
 from pandas import DataFrame
+from requests.exceptions import ConnectionError
 
 from .llm import MlFlowProxyLLM
+from .utils.processes import close_process, open_process
 
 
 class MlFlowEvaluator(EvalFusionBaseEvaluator):
@@ -29,7 +39,57 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         self.llm: MlFlowProxyLLM = MlFlowProxyLLM(settings)
 
     def __enter__(self) -> 'MlFlowEvaluator':
-        pass
+        EXPERIMENT_NAME = 'eval_fusion_experiment'
+        self.experiment_id = create_experiment(EXPERIMENT_NAME)
+        set_experiment(EXPERIMENT_NAME)
+
+        signature = infer_signature(
+            model_input=['What is MLflow?'],
+            model_output=[
+                'MLflow is a platform for managing machine learning workflows.'
+            ],
+        )
+
+        ARTIFACT_PATH = 'eval_fusion_llm'
+
+        with start_run():
+            model_info = log_model(
+                artifact_path=ARTIFACT_PATH, python_model=self.llm, signature=signature
+            )
+
+        MODEL_NAME = 'custom_llm'
+
+        model_version = register_model(model_uri=model_info.model_uri, name=MODEL_NAME)
+
+        self.models_process = open_process(
+            [
+                'mlflow',
+                'models',
+                'serve',
+                '--model-uri',
+                f'models:/custom_llm/{model_version.version}',
+                '--host',
+                '127.0.0.1',
+                '--port',
+                '5000',
+                '--env-manager',
+                'local',
+            ]
+        )
+
+        self.deployments_process = open_process(
+            [
+                'mlflow',
+                'deployments',
+                'start-server',
+                '--config-path',
+                'config.yaml',
+                '--host',
+                '127.0.0.1',
+                '--port',
+                '5001',
+            ]
+        )
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
@@ -97,4 +157,5 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
-        pass
+        close_process(self.models_process.pid)
+        close_process(self.deployments_process.pid)
