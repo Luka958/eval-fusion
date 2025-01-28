@@ -1,12 +1,12 @@
 from typing import Optional, Sequence
 
-from eval_fusion_core.base import EvalFusionBaseLLM
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from trulens.feedback import LLMProvider
 
 
 class TruLensProxyLLM(LLMProvider):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.__llm = llm
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.__llm = settings.base_type(*settings.args, **settings.kwargs)
 
     def _create_chat_completion(
         self,

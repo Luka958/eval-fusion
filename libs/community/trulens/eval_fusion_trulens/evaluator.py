@@ -9,6 +9,7 @@ from eval_fusion_core.models import (
     EvaluationOutput,
     EvaluationOutputEntry,
 )
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from trulens.apps.virtual import TruVirtual, VirtualApp, VirtualRecord
 from trulens.core import Feedback, FeedbackMode, Select, TruSession
 from trulens.core.schema.feedback import FeedbackResultStatus
@@ -18,8 +19,8 @@ from .llm import TruLensProxyLLM
 
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: TruLensProxyLLM = TruLensProxyLLM(llm=llm)
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.llm: TruLensProxyLLM = TruLensProxyLLM(settings)
 
     def __enter__(self) -> 'TruLensEvaluator':
         self.session = TruSession()
