@@ -7,22 +7,20 @@ from deepeval.metrics import (
     FaithfulnessMetric,
 )
 from deepeval.test_case import LLMTestCase
-from eval_fusion_core.base import (
-    EvalFusionBaseEvaluator,
-    EvalFusionBaseLLM,
-)
+from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
     EvaluationOutputEntry,
 )
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 from .llm import DeepEvalProxyLLM
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: DeepEvalProxyLLM = DeepEvalProxyLLM(llm=llm)
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.llm: DeepEvalProxyLLM = DeepEvalProxyLLM(settings)
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
@@ -32,7 +30,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         answer_relevancy = AnswerRelevancyMetric(
             threshold=0.5,
             model=self.llm,
-            include_reason=False,
+            include_reason=True,
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
@@ -41,7 +39,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         contextual_precision = ContextualPrecisionMetric(
             threshold=0.5,
             model=self.llm,
-            include_reason=False,
+            include_reason=True,
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
@@ -50,7 +48,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         contextual_recall = ContextualRecallMetric(
             threshold=0.5,
             model=self.llm,
-            include_reason=False,
+            include_reason=True,
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
@@ -59,7 +57,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         contextual_relevancy = ContextualRelevancyMetric(
             threshold=0.5,
             model=self.llm,
-            include_reason=False,
+            include_reason=True,
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,
@@ -68,7 +66,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         faithfulness = FaithfulnessMetric(
             threshold=0.5,
             model=self.llm,
-            include_reason=False,
+            include_reason=True,
             async_mode=False,
             strict_mode=False,
             verbose_mode=False,

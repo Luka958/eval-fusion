@@ -1,10 +1,10 @@
 from deepeval.models import DeepEvalBaseLLM
-from eval_fusion_core.base import EvalFusionBaseLLM
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 
 class DeepEvalProxyLLM(DeepEvalBaseLLM):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.__llm = llm
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.__llm = settings.base_type(*settings.args, **settings.kwargs)
         # super().__init__(model_name=llm_delegate.get_name())
 
     def load_model(self):
