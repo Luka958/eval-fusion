@@ -9,6 +9,7 @@ from eval_fusion_core.models import (
     EvaluationOutput,
     EvaluationOutputEntry,
 )
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from mlflow import evaluate
 from mlflow.metrics.genai import (
     answer_correctness,
@@ -24,8 +25,8 @@ from .llm import MlFlowProxyLLM
 
 
 class MlFlowEvaluator(EvalFusionBaseEvaluator):
-    def __init__(self, llm: MlFlowProxyLLM):
-        self.llm = llm
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.llm: MlFlowProxyLLM = MlFlowProxyLLM(settings)
 
     def __enter__(self) -> 'MlFlowEvaluator':
         pass
