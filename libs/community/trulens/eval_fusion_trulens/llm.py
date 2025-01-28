@@ -5,8 +5,8 @@ from trulens.feedback import LLMProvider
 
 
 class TruLensProxyLLM(LLMProvider):
-    def __init__(self, llm_delegate: EvalFusionBaseLLM):
-        self.llm_delegate = llm_delegate
+    def __init__(self, llm: EvalFusionBaseLLM):
+        self.__llm = llm
 
     def _create_chat_completion(
         self,
@@ -15,6 +15,6 @@ class TruLensProxyLLM(LLMProvider):
         **kwargs,
     ) -> str:
         if prompt:
-            return self.llm_delegate.generate(prompt)
+            return self.__llm.generate(prompt)
 
-        return self.llm_delegate.generate_from_messages(messages)
+        return self.__llm.generate_from_messages(messages)

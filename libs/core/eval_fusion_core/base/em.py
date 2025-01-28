@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 
 
-class EvalFusionBaseEmbeddingModel(ABC):
+class EvalFusionBaseEM(ABC):
     @abstractmethod
     def get_name(self) -> str:
         pass

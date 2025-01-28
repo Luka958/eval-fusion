@@ -20,7 +20,7 @@ from .llm import PhoenixProxyLLM
 
 class PhoenixEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: PhoenixProxyLLM = PhoenixProxyLLM(llm_delegate=llm)
+        self.llm: PhoenixProxyLLM = PhoenixProxyLLM(llm=llm)
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list

@@ -16,7 +16,7 @@ from .llm import TruLensProxyLLM
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: TruLensProxyLLM = TruLensProxyLLM(llm_delegate=llm)
+        self.llm: TruLensProxyLLM = TruLensProxyLLM(llm=llm)
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list

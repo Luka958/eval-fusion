@@ -22,7 +22,7 @@ from .llm import DeepEvalProxyLLM
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: DeepEvalProxyLLM = DeepEvalProxyLLM(llm_delegate=llm)
+        self.llm: DeepEvalProxyLLM = DeepEvalProxyLLM(llm=llm)
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list

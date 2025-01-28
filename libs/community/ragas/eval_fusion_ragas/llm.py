@@ -9,8 +9,8 @@ from ragas.llms.base import BaseRagasLLM
 
 
 class RagasProxyLLM(BaseRagasLLM):
-    def __init__(self, llm_delegate: EvalFusionBaseLLM):
-        self.llm_delegate = llm_delegate
+    def __init__(self, llm: EvalFusionBaseLLM):
+        self.__llm = llm
 
     def generate_text(
         self,
@@ -21,7 +21,7 @@ class RagasProxyLLM(BaseRagasLLM):
         callbacks: Callbacks = None,
     ) -> LLMResult:
         prompt = prompt.to_string()
-        result = self.llm_delegate.generate(prompt)
+        result = self.__llm.generate(prompt)
 
         return LLMResult(generations=[[Generation(text=result)]])
 
@@ -34,6 +34,6 @@ class RagasProxyLLM(BaseRagasLLM):
         callbacks: Callbacks = None,
     ) -> LLMResult:
         prompt = prompt.to_string()
-        result = await self.llm_delegate.a_generate(prompt)
+        result = await self.__llm.a_generate(prompt)
 
         return LLMResult(generations=[[Generation(text=result)]])

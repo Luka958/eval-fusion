@@ -1,5 +1,5 @@
 from eval_fusion_core.base import (
-    EvalFusionBaseEmbeddingModel,
+    EvalFusionBaseEM,
     EvalFusionBaseEvaluator,
     EvalFusionBaseLLM,
 )
@@ -19,18 +19,14 @@ from ragas.metrics import (
     SingleTurnMetric,
 )
 
-from .embedding_model import RagasProxyEmbeddingModel
+from .em import RagasProxyEM
 from .llm import RagasProxyLLM
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
-    def __init__(
-        self, llm: EvalFusionBaseLLM, embedding_model: EvalFusionBaseEmbeddingModel
-    ):
-        self.llm: RagasProxyLLM = RagasProxyLLM(llm_delegate=llm)
-        self.embedding_model = RagasProxyEmbeddingModel(
-            embedding_model_delegate=embedding_model
-        )
+    def __init__(self, llm: EvalFusionBaseLLM, em: EvalFusionBaseEM):
+        self.llm: RagasProxyLLM = RagasProxyLLM(llm=llm)
+        self.em = RagasProxyEM(em=em)
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
@@ -41,9 +37,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         context_recall = ContextRecall(llm=self.llm)
         context_entity_recall = ContextEntityRecall(llm=self.llm)
         noise_sensitivity = NoiseSensitivity(llm=self.llm)
-        response_relevancy = ResponseRelevancy(
-            llm=self.llm, embeddings=self.embedding_model
-        )
+        response_relevancy = ResponseRelevancy(llm=self.llm, embeddings=self.em)
         faithfulness = Faithfulness(llm=self.llm)
 
         metrics: list[SingleTurnMetric] = [

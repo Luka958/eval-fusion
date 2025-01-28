@@ -1,4 +1,4 @@
-from .settings import EvalFusionEmbeddingModelSettings, EvalFusionLLMSettings
+from .settings import EvalFusionEMSettings, EvalFusionLLMSettings
 
 
-__all__ = ['EvalFusionLLMSettings', 'EvalFusionEmbeddingModelSettings']
+__all__ = ['EvalFusionLLMSettings', 'EvalFusionEMSettings']

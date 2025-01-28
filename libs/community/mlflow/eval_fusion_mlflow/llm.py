@@ -7,13 +7,13 @@ class MlFlowProxyLLM(PythonModel):
         self.settings = settings
 
     def load_context(self, context: PythonModelContext):
-        self.llm_delegate = self.settings.base_type(
+        self.__llm = self.settings.base_type(
             *self.settings.args, **self.settings.kwargs
         )
 
     def predict(self, context: PythonModelContext, model_input: list[str]) -> list[str]:
         assert len(model_input) == 0
 
-        result = self.llm_delegate.generate(model_input[0])
+        result = self.__llm.generate(model_input[0])
 
         return [result]

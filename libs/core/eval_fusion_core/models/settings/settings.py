@@ -1,6 +1,6 @@
 from pydantic import BaseModel
 
-from eval_fusion_core.base import EvalFusionBaseEmbeddingModel, EvalFusionBaseLLM
+from eval_fusion_core.base import EvalFusionBaseEM, EvalFusionBaseLLM
 
 
 class EvalFusionLLMSettings(BaseModel):
@@ -9,7 +9,7 @@ class EvalFusionLLMSettings(BaseModel):
     kwargs: dict
 
 
-class EvalFusionEmbeddingModelSettings(BaseModel):
-    base_type: type[EvalFusionBaseEmbeddingModel]
+class EvalFusionEMSettings(BaseModel):
+    base_type: type[EvalFusionBaseEM]
     args: tuple
     kwargs: dict
