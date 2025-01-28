@@ -94,6 +94,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
         set_deployments_target(f'http://{DEPLOYMENTS_HOST}:{DEPLOYMENTS_PORT}')
 
+        return self
+
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
     ) -> list[EvaluationOutput]:

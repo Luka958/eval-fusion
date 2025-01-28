@@ -1,3 +1,5 @@
+from types import TracebackType
+
 from eval_fusion_core.base import (
     EvalFusionBaseEvaluator,
     EvalFusionBaseLLM,
@@ -11,12 +13,18 @@ from trulens.apps.virtual import TruVirtual, VirtualApp, VirtualRecord
 from trulens.core import Feedback, FeedbackMode, Select, TruSession
 from trulens.core.schema.feedback import FeedbackResultStatus
 
+from .constants import APP_ID
 from .llm import TruLensProxyLLM
 
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, llm: EvalFusionBaseLLM):
         self.llm: TruLensProxyLLM = TruLensProxyLLM(llm=llm)
+
+    def __enter__(self) -> 'TruLensEvaluator':
+        self.session = TruSession()
+
+        return self
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
@@ -64,11 +72,9 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             answer_relevance_feedback,
         ]
 
-        session = TruSession()
-        app_id = 'my_app_id'
         tru = TruVirtual(
             app=VirtualApp(),
-            app_id=app_id,
+            app_id=APP_ID,
             feedbacks=feedbacks,
         )
 
@@ -94,6 +100,12 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             )
             outputs.append(output)
 
-        session.delete_app(app_id)
-
         return outputs
+
+    def __exit__(
+        self,
+        type_: type[BaseException] | None,
+        value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> bool | None:
+        self.session.delete_app(APP_ID)
