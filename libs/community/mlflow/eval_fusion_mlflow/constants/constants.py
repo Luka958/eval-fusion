@@ -1,0 +1,12 @@
+EXPERIMENT_NAME = 'eval_fusion_experiment'
+MODEL_NAME = 'custom_llm'
+ENDPOINT_NAME = 'chat'
+ARTIFACT_PATH = 'eval_fusion_llm'
+
+MODELS_HOST = '127.0.0.1'
+MODELS_PORT = 5000
+MODELS_ENV_MANAGER = 'local'
+
+DEPLOYMENTS_HOST = '127.0.0.1'
+DEPLOYMENTS_PORT = 5001
+DEPLOYMENTS_CONFIG_PATH = 'config.yaml'
