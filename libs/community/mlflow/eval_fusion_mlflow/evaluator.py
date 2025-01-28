@@ -1,3 +1,5 @@
+from types import TracebackType
+
 from eval_fusion_core.base import (
     EvalFusionBaseEvaluator,
     EvalFusionBaseLLM,
@@ -22,8 +24,11 @@ from .llm import MlFlowProxyLLM
 
 
 class MlFlowEvaluator(EvalFusionBaseEvaluator):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: MlFlowProxyLLM = MlFlowProxyLLM(llm_delegate=llm)
+    def __init__(self, llm: MlFlowProxyLLM):
+        self.llm = llm
+
+    def __enter__(self) -> 'MlFlowEvaluator':
+        pass
 
     def evaluate(
         self, inputs: list[EvaluationInput], metrics: list
@@ -33,11 +38,11 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         model = self.llm.get_model()
 
         metrics: list[EvaluationMetric] = [
-            faithfulness(model=model),
-            answer_correctness(model=model),
-            answer_relevance(model=model),
-            answer_similarity(model=model),
-            relevance(model=model),
+            faithfulness(model),
+            answer_correctness(model),
+            answer_relevance(model),
+            answer_similarity(model),
+            relevance(model),
         ]
 
         data_frame = DataFrame(
@@ -84,3 +89,11 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
             )
 
         return evaluation_outputs
+
+    def __exit__(
+        self,
+        type_: type[BaseException] | None,
+        value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> bool | None:
+        pass
