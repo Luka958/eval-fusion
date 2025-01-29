@@ -8,8 +8,7 @@ from phoenix.evals.templates import MultimodalPrompt
 class PhoenixProxyLLM(BaseModel):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.__llm = settings.base_type(*settings.args, **settings.kwargs)
-
-        super().__init__()  # TODO can base concurrency and rate limiter
+        super().__init__(default_concurrency=1)
 
     def _model_name(self) -> str:
         return self.__llm.get_name()

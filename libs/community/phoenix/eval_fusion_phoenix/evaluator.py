@@ -16,7 +16,7 @@ from .metrics import TAG_TO_METRIC_TYPES, PhoenixMetric
 
 class PhoenixEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self._llm = PhoenixProxyLLM(settings)
+        self._llm = PhoenixProxyLLM(settings=settings)
 
     def __enter__(self) -> 'PhoenixEvaluator':
         return self

@@ -1,22 +1,20 @@
-from decouple import config
+import pytest
+
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.utils.loaders import load_evaluation_inputs
-from eval_fusion_openai import OpenAILLM
 from eval_fusion_phoenix.evaluator import PhoenixEvaluator
-from eval_fusion_phoenix.llm import PhoenixProxyLLM
+from eval_fusion_test.settings import get_openai_settings
 
 
-NVIDIA_BASE_URL = config('NVIDIA_BASE_URL')
-NVIDIA_API_KEY = config('NVIDIA_API_KEY')
-
-
-def test_evaluator():
-    llm = OpenAILLM('meta/llama-3.1-405b-instruct', NVIDIA_BASE_URL, NVIDIA_API_KEY)
-    proxy_llm = PhoenixProxyLLM(llm)
-    evaluator = PhoenixEvaluator(proxy_llm)
+@pytest.mark.parametrize('input_count', [1])
+def test_evaluator(input_count: int):
+    llm_settings, _ = get_openai_settings()
+    evaluator = PhoenixEvaluator(llm_settings)
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
 
-    inputs = inputs[:1]
-    outputs = evaluator.evaluate(inputs, ...)
+    inputs = inputs[:input_count]
+    outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
 
     for output in outputs:
-        print(output)
+        for output_entry in output.output_entries:
+            print(output_entry, end='\n\n')
