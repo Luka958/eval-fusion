@@ -34,7 +34,6 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
                 async_mode=False,
                 strict_mode=False,
                 verbose_mode=False,
-                _show_indicator=False,
             )
             for metric_type in metric_types
         ]
@@ -58,10 +57,10 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             output_entries: list[EvaluationOutputEntry] = []
 
             for metric in metrics:
-                metric_name = metric.__name__
+                metric_name = str(metric.__name__)
 
                 try:
-                    score = metric.measure(test_case)
+                    score = metric.measure(test_case, _show_indicator=False)
                     reason = metric.reason
 
                     output_entries.append(
@@ -69,12 +68,18 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
                             metric_name=metric_name,
                             score=score,
                             reason=reason,
+                            error=None,
                         )
                     )
 
                 except Exception as e:
                     output_entries.append(
-                        EvaluationOutputEntry(metric_name=metric_name, error=e)
+                        EvaluationOutputEntry(
+                            metric_name=metric_name,
+                            score=None,
+                            reason=None,
+                            error=str(e),
+                        )
                     )
 
             outputs.append(

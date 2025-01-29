@@ -1,5 +1,4 @@
 from eval_fusion_core.base import EvalFusionBaseEM
-from langchain_core.callbacks import Callbacks
 from ragas.embeddings.base import BaseRagasEmbeddings
 
 

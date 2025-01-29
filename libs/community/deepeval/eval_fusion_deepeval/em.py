@@ -1,8 +1,8 @@
-from deepeval.models import DeepEvalBaseEM
+from deepeval.models import DeepEvalBaseEmbeddingModel
 from eval_fusion_core.base import EvalFusionBaseEM
 
 
-class DeepEvalProxyEM(DeepEvalBaseEM):
+class DeepEvalProxyEM(DeepEvalBaseEmbeddingModel):
     def __init__(self, em: EvalFusionBaseEM):
         self.__em = em
         # super().__init__(model_name=embedding_model_delegate.get_name())
