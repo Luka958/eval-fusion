@@ -1,29 +1,20 @@
-from decouple import config
+import pytest
+
 from eval_fusion_core.enums import MetricTag
-from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from eval_fusion_core.utils.loaders import load_evaluation_inputs
 from eval_fusion_deepeval.evaluator import DeepEvalEvaluator
-from eval_fusion_openai import OpenAILLM
+from eval_fusion_test.settings import get_openai_settings
 
 
-NVIDIA_BASE_URL = config('NVIDIA_BASE_URL')
-NVIDIA_API_KEY = config('NVIDIA_API_KEY')
-
-
-def test_evaluator():
-    settings = EvalFusionLLMSettings(
-        base_type=OpenAILLM,
-        kwargs={
-            'model_name': 'meta/llama-3.1-405b-instruct',
-            'base_url': NVIDIA_BASE_URL,
-            'api_key': NVIDIA_API_KEY,
-        },
-    )
+@pytest.mark.parametrize('input_count', [1])
+def test_evaluator(input_count: int):
+    settings = get_openai_settings()
     evaluator = DeepEvalEvaluator(settings)
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
 
-    inputs = inputs[:1]
+    inputs = inputs[:input_count]
     outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
 
     for output in outputs:
-        print(output)
+        for output_entry in output.output_entries:
+            print(output_entry, end='\n\n')

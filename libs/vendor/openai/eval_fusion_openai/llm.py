@@ -11,12 +11,12 @@ class OpenAILLM(EvalFusionBaseLLM):
     def __init__(self, model_name: str, base_url: str = None, api_key: str = None):
         self.model_name = model_name
         self.client = OpenAI(
-            base_url=base_url if base_url else OPENAI_BASE_URL,
-            api_key=api_key if api_key else OPENAI_API_KEY,
+            base_url=base_url,
+            api_key=api_key,
         )
         self.async_client = AsyncOpenAI(
-            base_url=base_url if base_url else OPENAI_BASE_URL,
-            api_key=api_key if api_key else OPENAI_API_KEY,
+            base_url=base_url,
+            api_key=api_key,
         )
 
     def get_name(self) -> str:
