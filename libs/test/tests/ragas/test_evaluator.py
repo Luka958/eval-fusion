@@ -13,10 +13,7 @@ def test_evaluator(input_count: int):
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
 
     inputs = inputs[:input_count]
-    # outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
-    from eval_fusion_ragas.metrics import ResponseRelevancy
-
-    outputs = evaluator.evaluate(inputs, [ResponseRelevancy])
+    outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
 
     for output in outputs:
         for output_entry in output.output_entries:
