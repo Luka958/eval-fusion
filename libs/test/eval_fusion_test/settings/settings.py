@@ -15,7 +15,7 @@ def get_openai_settings():
     em_settings = EvalFusionEMSettings(
         base_type=OpenAIEM,
         kwargs={
-            'model_name': 'text-embedding-3-small',
+            'model_name': 'text-embedding-ada-002',
             'base_url': config('OPENAI_BASE_URL'),
             'api_key': config('OPENAI_API_KEY'),
         },

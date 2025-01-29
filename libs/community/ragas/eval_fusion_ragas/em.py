@@ -1,10 +1,10 @@
-from eval_fusion_core.base import EvalFusionBaseEM
+from eval_fusion_core.models.settings import EvalFusionEMSettings
 from ragas.embeddings.base import BaseRagasEmbeddings
 
 
 class RagasProxyEM(BaseRagasEmbeddings):
-    def __init__(self, em: EvalFusionBaseEM):
-        self.__em = em
+    def __init__(self, settings: EvalFusionEMSettings):
+        self.__em = settings.base_type(*settings.args, **settings.kwargs)
 
     def embed_query(self, text: str) -> list[float]:
         return self.__em.embed_text(text)

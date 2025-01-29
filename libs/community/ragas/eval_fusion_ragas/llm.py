@@ -6,11 +6,21 @@ from langchain_core.outputs import Generation
 from langchain_core.outputs.llm_result import LLMResult
 from langchain_core.prompt_values import PromptValue
 from ragas.llms.base import BaseRagasLLM
+from ragas.run_config import RunConfig
 
 
 class RagasProxyLLM(BaseRagasLLM):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.__llm = settings.base_type(*settings.args, **settings.kwargs)
+        self.run_config = RunConfig(
+            timeout=60,
+            max_retries=0,
+            max_wait=0,
+            max_workers=1,
+            exception_types=(),
+            log_tenacity=False,
+            seed=42,
+        )
 
     def generate_text(
         self,
