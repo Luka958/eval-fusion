@@ -1,16 +1,15 @@
-from eval_fusion_core.base import EvalFusionBaseEmbeddingModel
+from eval_fusion_core.base import EvalFusionBaseEM
 from vertexai.language_models import TextEmbeddingInput, TextEmbeddingModel
 
 
-class VertexAIEmbeddingModel(EvalFusionBaseEmbeddingModel):
-    def __init__(self, model_name: str, output_dimensionality: int):
-        self.model_name = model_name
-        self.output_dimensionality = output_dimensionality
-
-        self.model = TextEmbeddingModel.from_pretrained(self.model_name)
+class VertexAIEM(EvalFusionBaseEM):
+    def __init__(self, model_name: str, output_dim: int):
+        self._model_name = model_name
+        self._output_dim = output_dim
+        self._model = TextEmbeddingModel.from_pretrained(self._model_name)
 
     def get_name(self) -> str:
-        self.model_name
+        self._model_name
 
     def embed_text(self, text: str) -> list[float]:
         return self.embed_texts([text])
@@ -19,7 +18,7 @@ class VertexAIEmbeddingModel(EvalFusionBaseEmbeddingModel):
         task = 'RETRIEVAL_DOCUMENT'
         inputs = [TextEmbeddingInput(text, task) for text in texts]
         kwargs = dict(output_dimensionality=768)
-        embeddings = self.model.get_embeddings(inputs, **kwargs)
+        embeddings = self._model.get_embeddings(inputs, **kwargs)
 
         return [embedding.values for embedding in embeddings]
 
@@ -30,6 +29,6 @@ class VertexAIEmbeddingModel(EvalFusionBaseEmbeddingModel):
         task = 'RETRIEVAL_DOCUMENT'
         inputs = [TextEmbeddingInput(text, task) for text in texts]
         kwargs = dict(output_dimensionality=768)
-        embeddings = await self.model.get_embeddings_async(inputs, **kwargs)
+        embeddings = await self._model.get_embeddings_async(inputs, **kwargs)
 
         return [embedding.values for embedding in embeddings]

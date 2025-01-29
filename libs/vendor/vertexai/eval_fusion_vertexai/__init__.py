@@ -1,5 +1,5 @@
-from .embedding_model import VertexAIEmbeddingModel
+from .em import VertexAIEM
 from .llm import VertexAILLM
 
 
-__all__ = ['VertexAIEmbeddingModel', 'VertexAILLM']
+__all__ = ['VertexAIEM', 'VertexAILLM']
