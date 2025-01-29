@@ -5,7 +5,7 @@ from pydantic import BaseModel, Field
 
 class EvaluationOutputEntry(BaseModel):
     metric_name: str
-    score: str
+    score: float
     reason: str | None
 
 

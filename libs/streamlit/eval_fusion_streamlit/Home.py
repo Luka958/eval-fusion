@@ -2,7 +2,7 @@ import streamlit as st
 
 from src.components import sidebar
 
-from eval_fusion_streamlit.constants.main import *
+from eval_fusion_streamlit.constants.texts_main import *
 
 
 st.set_page_config(

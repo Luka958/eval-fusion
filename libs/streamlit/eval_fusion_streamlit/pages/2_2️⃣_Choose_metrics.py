@@ -1,6 +1,11 @@
 import streamlit as st
 
-from eval_fusion_streamlit.constants.page2 import *
+from eval_fusion_streamlit.constants.const import (
+    framework_metrics,
+    options,
+    semantic_groups,
+)
+from eval_fusion_streamlit.constants.texts_page2 import *
 from src.components import sidebar
 
 
@@ -12,6 +17,7 @@ st.set_page_config(
 )
 
 sidebar.display_sidebar()
+st.session_state.has_results = False
 
 
 def handle_selected_groups(selected_groups: list[str]) -> dict:
@@ -35,7 +41,9 @@ if 'metrics_option' not in st.session_state:
     st.session_state.metrics_option = list(options.keys())[0]
 
 metrics_option = col1.radio(
-    label='How would you like to select metrics?', options=options.keys()
+    label='How would you like to select metrics?',
+    options=options.keys(),
+    index=options[st.session_state.metrics_option],
 )
 
 if metrics_option != st.session_state.metrics_option:
@@ -50,6 +58,7 @@ elif options[st.session_state.metrics_option] == 1:
     selected_groups = col1.multiselect(
         label='Choose one or more semantic groups:', options=semantic_groups.keys()
     )
+    st.session_state.selected_groups = selected_groups
     st.session_state.selected_metrics = handle_selected_groups(selected_groups)
 
 elif options[st.session_state.metrics_option] == 2:

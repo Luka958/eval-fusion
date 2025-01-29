@@ -2,9 +2,13 @@ import json
 
 import streamlit as st
 
-from data.validate import validate_dataset_format
-from eval_fusion_streamlit.constants.page1 import *
+from eval_fusion_streamlit.constants.const import (
+    openai_embedding_models,
+    openai_llm_models,
+)
+from eval_fusion_streamlit.constants.texts_page1 import *
 from src.components import record_container, sidebar
+from src.validation import validate_dataset_format
 
 
 st.set_page_config(

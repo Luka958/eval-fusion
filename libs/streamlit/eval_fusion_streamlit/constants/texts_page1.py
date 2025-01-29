@@ -1,6 +1,3 @@
-openai_llm_models = ['gpt-4o', 'gpt-4o-mini', 'o1', 'o1-mini']
-openai_embedding_models = ['text-embedding-3-small', 'text-embedding-3-large']
-
 prerequisites_text = """
    ## ⚙️ &nbsp;**Prerequisites** 
    - Before we begin, you’ll need to provide your OpenAI API key and select models to proceed with the evaluation.
