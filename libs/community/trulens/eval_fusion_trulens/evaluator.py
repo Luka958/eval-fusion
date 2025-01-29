@@ -87,7 +87,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             feedbacks=feedbacks,
         )
 
-        outputs: list[EvaluationOutput] = []
+        evaluation_outputs: list[EvaluationOutput] = []
 
         for i, record in enumerate(virtual_records):
             tru.add_record(record, FeedbackMode.WITH_APP_THREAD)
@@ -123,14 +123,14 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                         )
                     )
 
-            outputs.append(
+            evaluation_outputs.append(
                 EvaluationOutput(
                     input_id=inputs[i].id,
                     output_entries=evaluation_output_entires,
                 )
             )
 
-        return outputs
+        return evaluation_outputs
 
     def evaluate_by_tag(
         self,

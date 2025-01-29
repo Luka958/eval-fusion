@@ -84,6 +84,8 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
                 )
             )
 
+        return evaluation_outputs
+
     def evaluate_by_tag(
         self,
         inputs: list[EvaluationInput],
