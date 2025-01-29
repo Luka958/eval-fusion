@@ -3,12 +3,12 @@ import pytest
 from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.utils.loaders import load_evaluation_inputs
 from eval_fusion_deepeval.evaluator import DeepEvalEvaluator
-from eval_fusion_test.settings import get_openai_settings
+from eval_fusion_test.settings import get_openai_llm_settings
 
 
 @pytest.mark.parametrize('input_count', [1])
 def test_evaluator(input_count: int):
-    settings = get_openai_settings()
+    settings = get_openai_llm_settings()
     evaluator = DeepEvalEvaluator(settings)
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
 
