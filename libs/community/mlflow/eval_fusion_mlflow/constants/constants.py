@@ -1,6 +1,7 @@
 EXPERIMENT_NAME = 'eval_fusion_experiment'
 MODEL_NAME = 'custom_llm'
 ENDPOINT_NAME = 'chat'
+MODEL = f'endpoints:/{ENDPOINT_NAME}'
 ARTIFACT_PATH = 'eval_fusion_llm'
 
 MODELS_HOST = '127.0.0.1'

@@ -1,5 +1,5 @@
 from types import MappingProxyType
-from typing import Any, Optional
+from typing import Any, Callable, Optional
 
 from eval_fusion_core.enums import MetricTag
 from mlflow.metrics.genai import (
@@ -13,7 +13,22 @@ from mlflow.metrics.genai import (
 from mlflow.models.evaluation import EvaluationMetric
 
 
-class EvaluationMetricCallback:
+_MlFlowCallableMetric = Callable[
+    [
+        Optional[str],
+        Optional[str],
+        Optional[list[EvaluationExample]],
+        Optional[dict[str, Any]],
+        Optional[dict[str, Any]],
+        Optional[dict[str, str]],
+        Optional[str],
+        int,
+    ],
+    EvaluationMetric,
+]
+
+
+class _MlFlowMetric(_MlFlowCallableMetric):
     def __call__(
         self,
         model: Optional[str] = None,
@@ -28,38 +43,39 @@ class EvaluationMetricCallback:
         pass
 
 
-TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[EvaluationMetricCallback]]] = (
-    MappingProxyType(
-        {
-            MetricTag.INPUT: [
-                answer_correctness,
-                answer_relevance,
-                answer_similarity,
-                faithfulness,
-                relevance,
-            ],
-            MetricTag.OUTPUT: [
-                answer_correctness,
-                answer_relevance,
-                answer_similarity,
-                faithfulness,
-                relevance,
-            ],
-            MetricTag.GROUND_TRUTH: [
-                answer_correctness,
-                answer_similarity,
-            ],
-            MetricTag.RELEVANT_CHUNKS: [
-                faithfulness,
-                relevance,
-            ],
-            MetricTag.ALL: [
-                answer_correctness,
-                answer_relevance,
-                answer_similarity,
-                faithfulness,
-                relevance,
-            ],
-        }
-    )
+MlFlowMetric = _MlFlowMetric
+
+
+TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[MlFlowMetric]]] = MappingProxyType(
+    {
+        MetricTag.INPUT: [
+            answer_correctness,
+            answer_relevance,
+            answer_similarity,
+            faithfulness,
+            relevance,
+        ],
+        MetricTag.OUTPUT: [
+            answer_correctness,
+            answer_relevance,
+            answer_similarity,
+            faithfulness,
+            relevance,
+        ],
+        MetricTag.GROUND_TRUTH: [
+            answer_correctness,
+            answer_similarity,
+        ],
+        MetricTag.RELEVANT_CHUNKS: [
+            faithfulness,
+            relevance,
+        ],
+        MetricTag.ALL: [
+            answer_correctness,
+            answer_relevance,
+            answer_similarity,
+            faithfulness,
+            relevance,
+        ],
+    }
 )

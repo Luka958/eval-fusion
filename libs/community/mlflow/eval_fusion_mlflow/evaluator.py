@@ -18,14 +18,6 @@ from mlflow import (
 from mlflow.data.evaluation_dataset import convert_data_to_mlflow_dataset
 from mlflow.data.pandas_dataset import PandasDataset
 from mlflow.deployments import set_deployments_target
-from mlflow.metrics.genai import (
-    answer_correctness,
-    answer_relevance,
-    answer_similarity,
-    faithfulness,
-    relevance,
-)
-from mlflow.models.evaluation import EvaluationMetric
 from mlflow.models.evaluation.evaluators.default import DefaultEvaluator
 from mlflow.models.signature import infer_signature
 from mlflow.pyfunc import log_model
@@ -34,7 +26,7 @@ from pandas import DataFrame
 
 from .constants import *
 from .llm import MlFlowProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES
+from .metrics import TAG_TO_METRIC_TYPES, MlFlowMetric
 from .utils.connections import check_health
 from .utils.processes import close_process, open_process
 
@@ -99,21 +91,11 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         return self
 
     def evaluate(
-        self, inputs: list[EvaluationInput], metrics: list
+        self,
+        inputs: list[EvaluationInput],
+        metric_types: list[type[MlFlowMetric]],
     ) -> list[EvaluationOutput]:
-        # TODO organize metrics
-
-        ENDPOINT_NAME = 'chat'
-
-        model = f'endpoints:/{ENDPOINT_NAME}'
-
-        metrics: list[EvaluationMetric] = [
-            faithfulness(model),
-            answer_correctness(model),
-            answer_relevance(model),
-            answer_similarity(model),
-            relevance(model),
-        ]
+        metrics = [metric_type().__call__(MODEL) for metric_type in metric_types]
 
         data_frame = DataFrame(
             [

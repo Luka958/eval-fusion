@@ -5,6 +5,7 @@ from .constants import (
     DEPLOYMENTS_PORT,
     ENDPOINT_NAME,
     EXPERIMENT_NAME,
+    MODEL,
     MODEL_NAME,
     MODELS_ENV_MANAGER,
     MODELS_HOST,
@@ -23,4 +24,5 @@ __all__ = [
     'DEPLOYMENTS_HOST',
     'DEPLOYMENTS_PORT',
     'DEPLOYMENTS_CONFIG_PATH',
+    'MODEL',
 ]
