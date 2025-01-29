@@ -1,5 +1,5 @@
 from types import MappingProxyType
-from typing import Type, Union
+from typing import Union
 
 from deepeval.metrics import (
     AnswerRelevancyMetric,

@@ -5,8 +5,8 @@ from .metrics import (
     ContextRecall,
     Faithfulness,
     NoiseSensitivity,
+    RagasMetric,
     ResponseRelevancy,
-    SingleTurnMetric,
 )
 
 
@@ -17,6 +17,6 @@ __all__ = [
     'Faithfulness',
     'NoiseSensitivity',
     'ResponseRelevancy',
-    'SingleTurnMetric',
+    'RagasMetric',
     'TAG_TO_METRICS',
 ]

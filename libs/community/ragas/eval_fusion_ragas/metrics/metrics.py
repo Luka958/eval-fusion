@@ -1,4 +1,5 @@
 from types import MappingProxyType
+from typing import Union
 
 from eval_fusion_core.enums import MetricTag
 from ragas.metrics import (
@@ -8,11 +9,20 @@ from ragas.metrics import (
     Faithfulness,
     NoiseSensitivity,
     ResponseRelevancy,
-    SingleTurnMetric,
 )
 
 
-TAG_TO_METRICS: dict[MetricTag, list[type[SingleTurnMetric]]] = MappingProxyType(
+RagasMetric = Union[
+    ContextEntityRecall,
+    ContextPrecision,
+    ContextRecall,
+    Faithfulness,
+    NoiseSensitivity,
+    ResponseRelevancy,
+]
+
+
+TAG_TO_METRICS: dict[MetricTag, list[type[RagasMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             ContextPrecision,

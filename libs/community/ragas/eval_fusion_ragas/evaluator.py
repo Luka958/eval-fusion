@@ -11,19 +11,11 @@ from eval_fusion_core.models import (
 )
 from eval_fusion_core.models.settings import EvalFusionEMSettings, EvalFusionLLMSettings
 from ragas import SingleTurnSample
-from ragas.metrics import (
-    ContextEntityRecall,
-    ContextPrecision,
-    ContextRecall,
-    Faithfulness,
-    NoiseSensitivity,
-    ResponseRelevancy,
-    SingleTurnMetric,
-)
+from ragas.metrics import ResponseRelevancy
 
 from .em import RagasProxyEM
 from .llm import RagasProxyLLM
-from .metrics import TAG_TO_METRICS
+from .metrics import TAG_TO_METRICS, RagasMetric
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
@@ -36,21 +28,17 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[type[SingleTurnMetric]],
+        metric_types: list[type[RagasMetric]],
         tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
         if tag is not None:
             metric_types = TAG_TO_METRICS[tag]
 
-        context_precision = ContextPrecision(llm=self.llm)
-        context_recall = ContextRecall(llm=self.llm)
-        context_entity_recall = ContextEntityRecall(llm=self.llm)
-        noise_sensitivity = NoiseSensitivity(llm=self.llm)
-        response_relevancy = ResponseRelevancy(llm=self.llm, embeddings=self.em)
-        faithfulness = Faithfulness(llm=self.llm)
-
-        metrics: list[SingleTurnMetric] = [
-            metric_type() for metric_type in metric_types
+        metrics = [
+            metric_type(llm=self.llm, embeddings=self.em)
+            if metric_type == ResponseRelevancy
+            else metric_type(llm=self.llm)
+            for metric_type in metric_types
         ]
 
         single_turn_samples = [
