@@ -1,12 +1,4 @@
-from .metrics import (
-    TAG_TO_METRIC_TYPES,
-    AnswerRelevancyMetric,
-    BaseMetric,
-    ContextualPrecisionMetric,
-    ContextualRecallMetric,
-    ContextualRelevancyMetric,
-    FaithfulnessMetric,
-)
+from .metrics import TAG_TO_METRIC_TYPES, TruLensMetric
 
 
-__all__ = ['TAG_TO_METRIC_TYPES']
+__all__ = ['TAG_TO_METRIC_TYPES', 'TruLensMetric']

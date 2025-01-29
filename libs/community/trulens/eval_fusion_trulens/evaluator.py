@@ -14,7 +14,7 @@ from trulens.core.schema.feedback import FeedbackResultStatus
 
 from .constants import APP_ID
 from .llm import TruLensProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES
+from .metrics import TAG_TO_METRIC_TYPES, TruLensMetric
 
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
@@ -27,9 +27,10 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         return self
 
     def evaluate(
-        self, inputs: list[EvaluationInput], metrics: list
+        self,
+        inputs: list[EvaluationInput],
+        metric_types: list[type[TruLensMetric]],
     ) -> list[EvaluationOutput]:
-        # TODO organize metrics
         retriever = Select.RecordCalls.retriever
         synthesizer = Select.RecordCalls.synthesizer
 
@@ -48,29 +49,35 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         context_selector = retriever.get_context.rets[:]
         output_selector = synthesizer.generate.rets[:]
 
-        context_relevance_feedback = (
-            Feedback(
-                self.llm.context_relevance_with_cot_reasons, name='context_relevance'
-            )
-            .on(Select.RecordInput)
-            .on(context_selector)
-        )
-        groundedness_feedback = (
-            Feedback(
-                self.llm.groundedness_measure_with_cot_reasons, name='groundedness'
-            )
-            .on(context_selector.collect())
-            .on(output_selector)
-        )
-        answer_relevance_feedback = Feedback(
-            self.llm.relevance_with_cot_reasons, name='answer_relevance'
-        ).on_input_output()
+        feedbacks: list[Feedback] = []
 
-        feedbacks: list[Feedback] = [
-            context_relevance_feedback,
-            groundedness_feedback,
-            answer_relevance_feedback,
-        ]
+        if type(TruLensMetric.CONTEXT_RELEVANCE) in metric_types:
+            feedbacks.append(
+                Feedback(
+                    self.llm.context_relevance_with_cot_reasons,
+                    name=TruLensMetric.CONTEXT_RELEVANCE.value,
+                )
+                .on(Select.RecordInput)
+                .on(context_selector)
+            )
+
+        if type(TruLensMetric.GROUNDEDNESS) in metric_types:
+            feedbacks.append(
+                Feedback(
+                    self.llm.groundedness_measure_with_cot_reasons,
+                    name=TruLensMetric.GROUNDEDNESS.value,
+                )
+                .on(context_selector.collect())
+                .on(output_selector)
+            )
+
+        if type(TruLensMetric.ANSWER_RELEVANCE) in metric_types:
+            feedbacks.append(
+                Feedback(
+                    self.llm.relevance_with_cot_reasons,
+                    name=TruLensMetric.ANSWER_RELEVANCE.value,
+                ).on_input_output()
+            )
 
         tru = TruVirtual(
             app=VirtualApp(),
