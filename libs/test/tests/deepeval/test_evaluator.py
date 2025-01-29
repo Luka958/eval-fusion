@@ -1,3 +1,5 @@
+import os
+
 import pytest
 
 from eval_fusion_core.enums import MetricTag
@@ -8,6 +10,8 @@ from eval_fusion_test.settings import get_openai_settings
 
 @pytest.mark.parametrize('input_count', [1])
 def test_evaluator(input_count: int):
+    os.environ['DEEPEVAL_TELEMETRY_OPT_OUT'] = 'YES'
+
     llm_settings, _ = get_openai_settings()
     evaluator = DeepEvalEvaluator(llm_settings)
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
