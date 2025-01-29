@@ -7,6 +7,7 @@ from trulens.feedback import LLMProvider
 class TruLensProxyLLM(LLMProvider):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.__llm = settings.base_type(*settings.args, **settings.kwargs)
+        super().__init__()
 
     def _create_chat_completion(
         self,

@@ -17,10 +17,10 @@ class PhoenixProxyLLM(BaseModel):
         if isinstance(prompt, MultimodalPrompt):
             prompt = prompt.to_text_only_prompt()
 
-        return self.__llm.generate(prompt)
+        return self.__llm.generate(prompt, use_json=False)
 
     async def _async_generate(self, prompt: str, **kwargs: Any) -> str:
         if isinstance(prompt, MultimodalPrompt):
             prompt = prompt.to_text_only_prompt()
 
-        return await self.__llm.a_generate(prompt)
+        return await self.__llm.a_generate(prompt, use_json=False)
