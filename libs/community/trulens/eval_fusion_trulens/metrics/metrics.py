@@ -10,7 +10,7 @@ class LLMProviderType(str, Enum):
     ANSWER_RELEVANCE = 'answer_relevance'
 
 
-TAGS_TO_METRICS: dict[MetricTag, list[type[LLMProviderType]]] = MappingProxyType(
+TAG_TO_METRICS: dict[MetricTag, list[type[LLMProviderType]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             LLMProviderType.CONTEXT_RELEVANCE,

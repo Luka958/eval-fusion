@@ -20,11 +20,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
         self,
         inputs: list[EvaluationInput],
         metric_types: list[type[PhoenixMetric]],
-        tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
-        if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
-
         evaluators = [metric_type(self.llm) for metric_type in metric_types]
 
         records: list[Record] = [
@@ -55,3 +51,13 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
             )
             for i, record in enumerate(records)
         ]
+
+    def evaluate_by_tag(
+        self,
+        inputs: list[EvaluationInput],
+        tag: MetricTag,
+    ) -> list[EvaluationOutput]:
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
+
+        return self.evaluate(inputs, metric_types)

@@ -1,6 +1,7 @@
 from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -13,6 +14,7 @@ from trulens.core.schema.feedback import FeedbackResultStatus
 
 from .constants import APP_ID
 from .llm import TruLensProxyLLM
+from .metrics import TAG_TO_METRICS
 
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
@@ -99,6 +101,16 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             outputs.append(output)
 
         return outputs
+
+    def evaluate_by_tag(
+        self,
+        inputs: list[EvaluationInput],
+        tag: MetricTag,
+    ) -> list[EvaluationOutput]:
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
+
+        return self.evaluate(inputs, metric_types)
 
     def __exit__(
         self,

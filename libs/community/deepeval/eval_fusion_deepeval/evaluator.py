@@ -1,4 +1,3 @@
-from deepeval.metrics import BaseMetric
 from deepeval.test_case import LLMTestCase
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import MetricTag
@@ -21,11 +20,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         self,
         inputs: list[EvaluationInput],
         metric_types: list[type[DeepEvalMetric]],
-        tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
-        if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
-
         metrics = [
             metric_type(
                 threshold=0.5,
@@ -67,3 +62,13 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             )
             for i, test_case in enumerate(test_cases)
         ]
+
+    def evaluate_by_tag(
+        self,
+        inputs: list[EvaluationInput],
+        tag: MetricTag,
+    ) -> list[EvaluationOutput]:
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
+
+        return self.evaluate(inputs, metric_types)

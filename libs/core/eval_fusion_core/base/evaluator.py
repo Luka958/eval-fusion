@@ -15,7 +15,13 @@ class EvalFusionBaseEvaluator(ABC):
         self,
         inputs: list[EvaluationInput],
         metric_types: list[type],
-        tag: MetricTag | None,
+    ) -> list[EvaluationOutput]:
+        pass
+
+    def evaluate_by_tag(
+        self,
+        inputs: list[EvaluationInput],
+        tag: MetricTag,
     ) -> list[EvaluationOutput]:
         pass
 

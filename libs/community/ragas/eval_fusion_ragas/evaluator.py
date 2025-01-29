@@ -29,11 +29,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         self,
         inputs: list[EvaluationInput],
         metric_types: list[type[RagasMetric]],
-        tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
-        if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
-
         metrics = [
             metric_type(llm=self.llm, embeddings=self.em)
             if metric_type == ResponseRelevancy
@@ -68,3 +64,13 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
             )
             for i, single_turn_sample in enumerate(single_turn_samples)
         ]
+
+    def evaluate_by_tag(
+        self,
+        inputs: list[EvaluationInput],
+        tag: MetricTag,
+    ) -> list[EvaluationOutput]:
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
+
+        return self.evaluate(inputs, metric_types)

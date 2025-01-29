@@ -1,6 +1,7 @@
 from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -33,6 +34,7 @@ from pandas import DataFrame
 
 from .constants import *
 from .llm import MlFlowProxyLLM
+from .metrics import TAG_TO_METRICS
 from .utils.connections import check_health
 from .utils.processes import close_process, open_process
 
@@ -164,6 +166,16 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                 )
 
         return evaluation_outputs
+
+    def evaluate_by_tag(
+        self,
+        inputs: list[EvaluationInput],
+        tag: MetricTag,
+    ) -> list[EvaluationOutput]:
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
+
+        return self.evaluate(inputs, metric_types)
 
     def __exit__(
         self,

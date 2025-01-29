@@ -28,7 +28,7 @@ class EvaluationMetricCallbackType:
         pass
 
 
-TAGS_TO_METRICS: dict[MetricTag, list[type[EvaluationMetricCallbackType]]] = (
+TAG_TO_METRICS: dict[MetricTag, list[type[EvaluationMetricCallbackType]]] = (
     MappingProxyType(
         {
             MetricTag.INPUT: [
