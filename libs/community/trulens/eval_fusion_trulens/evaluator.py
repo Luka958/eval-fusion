@@ -92,20 +92,41 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         for i, record in enumerate(virtual_records):
             tru.add_record(record, FeedbackMode.WITH_APP_THREAD)
 
+            evaluation_output_entires: list[EvaluationOutputEntry] = []
+
+            for future in record.feedback_results:
+                try:
+                    feedback_result = future.result()
+
+                    if feedback_result.status == FeedbackResultStatus.DONE:
+                        evaluation_output_entires.append(
+                            EvaluationOutputEntry(
+                                metric_name=feedback_result.name,
+                                score=feedback_result.result,
+                                reason=str(feedback_result.calls[0].meta['reason']),
+                            )
+                        )
+
+                    else:
+                        evaluation_output_entires.append(
+                            EvaluationOutputEntry(
+                                metric_name=feedback_result.name,
+                                error=e,
+                            )
+                        )
+
+                except Exception as e:
+                    evaluation_output_entires.append(
+                        EvaluationOutputEntry(
+                            metric_name=feedback_result.name,  # TODO not available yet
+                            error=e,
+                        )
+                    )
+
             outputs.append(
                 EvaluationOutput(
                     input_id=inputs[i].id,
-                    output_entries=[
-                        EvaluationOutputEntry(
-                            metric_name=feedback_result.name,
-                            score=feedback_result.result,
-                            reason=feedback_result.calls[0].meta['reason'],
-                        )
-                        for feedback_result in [
-                            future.result() for future in record.feedback_results
-                        ]
-                        if feedback_result.status == FeedbackResultStatus.DONE
-                    ],
+                    output_entries=evaluation_output_entires,
                 )
             )
 
