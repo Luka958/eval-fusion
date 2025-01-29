@@ -10,7 +10,7 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 from .llm import DeepEvalProxyLLM
-from .metrics import TAG_TO_METRICS
+from .metrics import TAG_TO_METRICS, DeepEvalMetric
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
@@ -20,13 +20,13 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[type[BaseMetric]],
+        metric_types: list[type[DeepEvalMetric]],
         tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
         if tag is not None:
             metric_types = TAG_TO_METRICS[tag]
 
-        metrics: list[BaseMetric] = [
+        metrics = [
             metric_type(
                 threshold=0.5,
                 model=self.llm,

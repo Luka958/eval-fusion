@@ -11,15 +11,15 @@ from deepeval.metrics import (
 from eval_fusion_core.enums import MetricTag
 
 
-DeepEvalMetricType = Union[
-    type[AnswerRelevancyMetric],
-    type[ContextualPrecisionMetric],
-    type[ContextualRecallMetric],
-    type[ContextualRelevancyMetric],
-    type[FaithfulnessMetric],
+DeepEvalMetric = Union[
+    AnswerRelevancyMetric,
+    ContextualPrecisionMetric,
+    ContextualRecallMetric,
+    ContextualRelevancyMetric,
+    FaithfulnessMetric,
 ]
 
-TAG_TO_METRICS: dict[MetricTag, list[DeepEvalMetricType]] = MappingProxyType(
+TAG_TO_METRICS: dict[MetricTag, list[type[DeepEvalMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             AnswerRelevancyMetric,
