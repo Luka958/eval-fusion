@@ -37,25 +37,42 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        return [
-            EvaluationOutput(
-                input_id=inputs[i].id,
-                output_entries=[
-                    EvaluationOutputEntry(
-                        metric_name=evaluator.__class__.__name__.lower().removesuffix(
-                            'evaluator'
-                        ),
-                        score=score,
-                        reason=reason,
+        evaluation_outputs: list[EvaluationOutput] = []
+
+        for i, record in enumerate(records):
+            evaluation_output_entires: list[EvaluationOutputEntry] = []
+
+            for evaluator in evaluators:
+                metric_name = evaluator.__class__.__name__.lower().removesuffix(
+                    'evaluator'
+                )
+
+                try:
+                    _, score, reason = evaluator.evaluate(
+                        record, provide_explanation=True
                     )
-                    for evaluator in evaluators
-                    for _, score, reason in [
-                        evaluator.evaluate(record, provide_explanation=True)
-                    ]
-                ],
+
+                    evaluation_output_entires.append(
+                        EvaluationOutputEntry(
+                            metric_name=metric_name,
+                            score=score,
+                            reason=reason,
+                        )
+                    )
+
+                except Exception as e:
+                    evaluation_output_entires.append(
+                        EvaluationOutputEntry(metric_name=metric_name, error=e)
+                    )
+
+            evaluation_outputs.append(
+                EvaluationOutput(
+                    input_id=inputs[i].id,
+                    output_entries=evaluation_output_entires,
+                )
             )
-            for i, record in enumerate(records)
-        ]
+
+        return evaluation_outputs
 
     def evaluate_by_tag(
         self,
