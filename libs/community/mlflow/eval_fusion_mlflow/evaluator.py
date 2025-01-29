@@ -131,12 +131,20 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                         evaluator_config={},
                     )
                     table = evaluation_result.tables['eval_results_table']
+                    version = str(
+                        evaluation_result.tables['genai_custom_metrics']['version'][0]
+                    )
+                    score = float(table[f'{metric.__name__}/{version}/score'].iloc[0])
+                    normalized_score = (score - 1) / 4
+                    reason = str(
+                        table[f'{metric.__name__}/{version}/justification'].iloc[0]
+                    )
 
                     evaluation_output_entires.append(
                         EvaluationOutputEntry(
                             metric_name=metric.__name__,
-                            score=table[f'{metric.__name__}/v1/score'],
-                            reason=table[f'{metric.__name__}/v1/justification'],
+                            score=normalized_score,
+                            reason=reason,
                         )
                     )
 
