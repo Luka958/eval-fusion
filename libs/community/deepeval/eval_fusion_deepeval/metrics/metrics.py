@@ -11,7 +11,7 @@ from deepeval.metrics import (
 from eval_fusion_core.enums import MetricTag
 
 
-TAGS_TO_METRICS: dict[MetricTag, list[type[BaseMetric]]] = MappingProxyType(
+TAG_TO_METRICS: dict[MetricTag, list[type[BaseMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             AnswerRelevancyMetric,

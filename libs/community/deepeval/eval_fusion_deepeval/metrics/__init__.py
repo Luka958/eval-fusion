@@ -1,5 +1,5 @@
 from .metrics import (
-    TAGS_TO_METRICS,
+    TAG_TO_METRICS,
     AnswerRelevancyMetric,
     BaseMetric,
     ContextualPrecisionMetric,
@@ -16,5 +16,5 @@ __all__ = [
     'ContextualRecallMetric',
     'ContextualRelevancyMetric',
     'FaithfulnessMetric',
-    'TAGS_TO_METRICS',
+    'TAG_TO_METRICS',
 ]

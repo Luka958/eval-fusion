@@ -1,3 +1,5 @@
+from typing import overload
+
 from deepeval.metrics import (
     AnswerRelevancyMetric,
     BaseMetric,
@@ -8,6 +10,7 @@ from deepeval.metrics import (
 )
 from deepeval.test_case import LLMTestCase
 from eval_fusion_core.base import EvalFusionBaseEvaluator
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -16,69 +19,48 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 from .llm import DeepEvalProxyLLM
+from .metrics import TAG_TO_METRICS
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.llm: DeepEvalProxyLLM = DeepEvalProxyLLM(settings)
 
+    @overload
     def evaluate(
-        self, inputs: list[EvaluationInput], metrics: list
+        self, inputs: list[EvaluationInput], metric_types: list[type[BaseMetric]]
     ) -> list[EvaluationOutput]:
-        # TODO organize metrics
+        pass
 
-        answer_relevancy = AnswerRelevancyMetric(
-            threshold=0.5,
-            model=self.llm,
-            include_reason=True,
-            async_mode=False,
-            strict_mode=False,
-            verbose_mode=False,
-            _show_indicator=False,
-        )
-        contextual_precision = ContextualPrecisionMetric(
-            threshold=0.5,
-            model=self.llm,
-            include_reason=True,
-            async_mode=False,
-            strict_mode=False,
-            verbose_mode=False,
-            _show_indicator=False,
-        )
-        contextual_recall = ContextualRecallMetric(
-            threshold=0.5,
-            model=self.llm,
-            include_reason=True,
-            async_mode=False,
-            strict_mode=False,
-            verbose_mode=False,
-            _show_indicator=False,
-        )
-        contextual_relevancy = ContextualRelevancyMetric(
-            threshold=0.5,
-            model=self.llm,
-            include_reason=True,
-            async_mode=False,
-            strict_mode=False,
-            verbose_mode=False,
-            _show_indicator=False,
-        )
-        faithfulness = FaithfulnessMetric(
-            threshold=0.5,
-            model=self.llm,
-            include_reason=True,
-            async_mode=False,
-            strict_mode=False,
-            verbose_mode=False,
-            _show_indicator=False,
-        )
+    @overload
+    def evaluate(
+        self,
+        inputs: list[EvaluationInput],
+        metric_types: list[type[BaseMetric]],
+        tag: MetricTag,
+    ) -> list[EvaluationOutput]:
+        pass
+
+    def evaluate(
+        self,
+        inputs: list[EvaluationInput],
+        metric_types: list[type[BaseMetric]],
+        tag: MetricTag | None,
+    ) -> list[EvaluationOutput]:
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
 
         metrics: list[BaseMetric] = [
-            answer_relevancy,
-            contextual_precision,
-            contextual_recall,
-            contextual_relevancy,
-            faithfulness,
+            metric_type(
+                threshold=0.5,
+                model=self.llm,
+                include_reason=True,
+                async_mode=False,
+                strict_mode=False,
+                verbose_mode=False,
+                _show_indicator=False,
+            )
+            for metric_type in metric_types
         ]
         metrics = metrics[:1]  # TODO remove
 
