@@ -1,9 +1,6 @@
 from types import TracebackType
 
-from eval_fusion_core.base import (
-    EvalFusionBaseEvaluator,
-    EvalFusionBaseLLM,
-)
+from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
