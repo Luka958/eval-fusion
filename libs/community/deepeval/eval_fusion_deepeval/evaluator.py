@@ -16,7 +16,7 @@ from .metrics import TAG_TO_METRIC_TYPES, DeepEvalMetric
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self.llm = DeepEvalProxyLLM(settings)
+        self._llm = DeepEvalProxyLLM(settings)
 
     def __enter__(self) -> 'DeepEvalEvaluator':
         return self
@@ -29,7 +29,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         metrics = [
             metric_type(
                 threshold=0.5,
-                model=self.llm,
+                model=self._llm,
                 include_reason=True,
                 async_mode=False,
                 strict_mode=False,

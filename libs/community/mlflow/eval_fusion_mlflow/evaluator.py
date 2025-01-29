@@ -33,10 +33,10 @@ from .utils.processes import close_process, open_process
 
 class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self.llm = MlFlowProxyLLM(settings)
+        self._llm = MlFlowProxyLLM(settings)
 
     def __enter__(self) -> 'MlFlowEvaluator':
-        self.experiment_id = create_experiment(EXPERIMENT_NAME)
+        self._experiment_id = create_experiment(EXPERIMENT_NAME)
         set_experiment(EXPERIMENT_NAME)
 
         signature = infer_signature(
@@ -48,12 +48,12 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
         with start_run():
             model_info = log_model(
-                artifact_path=ARTIFACT_PATH, python_model=self.llm, signature=signature
+                artifact_path=ARTIFACT_PATH, python_model=self._llm, signature=signature
             )
 
         model_version = register_model(model_uri=model_info.model_uri, name=MODEL_NAME)
 
-        self.models_process = open_process(
+        self._models_process = open_process(
             [
                 'mlflow',
                 'models',
@@ -69,7 +69,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
             ]
         )
 
-        self.deployments_process = open_process(
+        self._deployments_process = open_process(
             [
                 'mlflow',
                 'deployments',
@@ -189,10 +189,10 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
-        close_process(self.models_process.pid)
-        close_process(self.deployments_process.pid)
+        close_process(self._models_process.pid)
+        close_process(self._deployments_process.pid)
 
-        delete_experiment(self.experiment_id)
+        delete_experiment(self._experiment_id)
 
         client = MlflowClient()
         client.delete_registered_model(MODEL_NAME)

@@ -19,10 +19,10 @@ from .metrics import TAG_TO_METRIC_TYPES, TruLensMetric
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self.llm = TruLensProxyLLM(settings)
+        self._llm = TruLensProxyLLM(settings)
 
     def __enter__(self) -> 'TruLensEvaluator':
-        self.session = TruSession()
+        self._session = TruSession()
 
         return self
 
@@ -56,7 +56,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if type(TruLensMetric.CONTEXT_RELEVANCE) in metric_types:
             feedbacks.append(
                 Feedback(
-                    self.llm.context_relevance_with_cot_reasons,
+                    self._llm.context_relevance_with_cot_reasons,
                     name=TruLensMetric.CONTEXT_RELEVANCE.value,
                 )
                 .on(Select.RecordInput)
@@ -66,7 +66,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if type(TruLensMetric.GROUNDEDNESS) in metric_types:
             feedbacks.append(
                 Feedback(
-                    self.llm.groundedness_measure_with_cot_reasons,
+                    self._llm.groundedness_measure_with_cot_reasons,
                     name=TruLensMetric.GROUNDEDNESS.value,
                 )
                 .on(context_selector.collect())
@@ -76,7 +76,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if type(TruLensMetric.ANSWER_RELEVANCE) in metric_types:
             feedbacks.append(
                 Feedback(
-                    self.llm.relevance_with_cot_reasons,
+                    self._llm.relevance_with_cot_reasons,
                     name=TruLensMetric.ANSWER_RELEVANCE.value,
                 ).on_input_output()
             )
@@ -151,4 +151,4 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
-        self.session.delete_app(APP_ID)
+        self._session.delete_app(APP_ID)

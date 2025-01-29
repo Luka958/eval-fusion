@@ -20,8 +20,8 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
     def __init__(
         self, llm_settings: EvalFusionLLMSettings, em_settings: EvalFusionEMSettings
     ):
-        self.llm = RagasProxyLLM(llm_settings)
-        self.em = RagasProxyEM(em_settings)
+        self._llm = RagasProxyLLM(llm_settings)
+        self._em = RagasProxyEM(em_settings)
 
     def __enter__(self) -> 'RagasEvaluator':
         return self
@@ -32,9 +32,9 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         metric_types: list[type[RagasMetric]],
     ) -> list[EvaluationOutput]:
         metrics = [
-            metric_type(llm=self.llm, embeddings=self.em)
+            metric_type(llm=self._llm, embeddings=self._em)
             if metric_type == ResponseRelevancy
-            else metric_type(llm=self.llm)
+            else metric_type(llm=self._llm)
             for metric_type in metric_types
         ]
 
