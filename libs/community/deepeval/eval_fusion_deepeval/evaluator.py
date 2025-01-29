@@ -38,7 +38,6 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             )
             for metric_type in metric_types
         ]
-        metrics = metrics[:1]  # TODO remove
 
         test_cases = [
             LLMTestCase(
@@ -53,20 +52,37 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        return [
-            EvaluationOutput(
-                input_id=inputs[i].id,
-                output_entries=[
-                    EvaluationOutputEntry(
-                        metric_name=metric.__name__,
-                        score=metric.measure(test_case),
-                        reason=metric.reason,
+        evaluation_outputs: list[EvaluationOutput] = []
+
+        for i, test_case in enumerate(test_cases):
+            evaluation_output_entires: list[EvaluationOutputEntry] = []
+
+            for metric in metrics:
+                metric_name = metric.__name__
+
+                try:
+                    score = metric.measure(test_case)
+                    reason = metric.reason
+
+                    evaluation_output_entires.append(
+                        EvaluationOutputEntry(
+                            metric_name=metric_name,
+                            score=score,
+                            reason=reason,
+                        )
                     )
-                    for metric in metrics
-                ],
+
+                except Exception as e:
+                    evaluation_output_entires.append(
+                        EvaluationOutputEntry(metric_name=metric_name, error=e)
+                    )
+
+            evaluation_outputs.append(
+                EvaluationOutput(
+                    input_id=inputs[i].id,
+                    output_entries=evaluation_output_entires,
+                )
             )
-            for i, test_case in enumerate(test_cases)
-        ]
 
     def evaluate_by_tag(
         self,
