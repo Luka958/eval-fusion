@@ -29,7 +29,7 @@ class OpenAIEM(EvalFusionBaseEM):
             input=texts, model=self._model_name, encoding_format='float'
         )
 
-        return response.data[0].embedding
+        return [x.embedding for x in response.data]
 
     async def a_embed_text(self, text: str) -> list[float]:
         response = await self._async_client.embeddings.create(
@@ -43,4 +43,4 @@ class OpenAIEM(EvalFusionBaseEM):
             input=texts, model=self._model_name, encoding_format='float'
         )
 
-        return response.data[0].embedding
+        return [x.embedding for x in response.data]
