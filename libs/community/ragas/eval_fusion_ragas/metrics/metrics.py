@@ -22,7 +22,7 @@ RagasMetric = Union[
 ]
 
 
-TAG_TO_METRICS: dict[MetricTag, list[type[RagasMetric]]] = MappingProxyType(
+TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[RagasMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             ContextPrecision,

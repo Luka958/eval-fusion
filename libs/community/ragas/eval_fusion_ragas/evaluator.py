@@ -13,7 +13,7 @@ from ragas.metrics import ResponseRelevancy
 
 from .em import RagasProxyEM
 from .llm import RagasProxyLLM
-from .metrics import TAG_TO_METRICS, RagasMetric
+from .metrics import TAG_TO_METRIC_TYPES, RagasMetric
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
@@ -72,7 +72,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         tag: MetricTag,
     ) -> list[EvaluationOutput]:
         if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
+            metric_types = TAG_TO_METRIC_TYPES[tag]
 
         return self.evaluate(inputs, metric_types)
 

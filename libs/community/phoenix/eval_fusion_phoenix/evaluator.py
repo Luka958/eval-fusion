@@ -11,7 +11,7 @@ from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from phoenix.evals.evaluators import Record
 
 from .llm import PhoenixProxyLLM
-from .metrics import TAG_TO_METRICS, PhoenixMetric
+from .metrics import TAG_TO_METRIC_TYPES, PhoenixMetric
 
 
 class PhoenixEvaluator(EvalFusionBaseEvaluator):
@@ -63,7 +63,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
         tag: MetricTag,
     ) -> list[EvaluationOutput]:
         if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
+            metric_types = TAG_TO_METRIC_TYPES[tag]
 
         return self.evaluate(inputs, metric_types)
 

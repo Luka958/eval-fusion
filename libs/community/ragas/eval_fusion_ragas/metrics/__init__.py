@@ -1,5 +1,5 @@
 from .metrics import (
-    TAG_TO_METRICS,
+    TAG_TO_METRIC_TYPES,
     ContextEntityRecall,
     ContextPrecision,
     ContextRecall,
@@ -18,5 +18,5 @@ __all__ = [
     'NoiseSensitivity',
     'ResponseRelevancy',
     'RagasMetric',
-    'TAG_TO_METRICS',
+    'TAG_TO_METRIC_TYPES',
 ]

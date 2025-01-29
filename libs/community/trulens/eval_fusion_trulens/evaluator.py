@@ -14,7 +14,7 @@ from trulens.core.schema.feedback import FeedbackResultStatus
 
 from .constants import APP_ID
 from .llm import TruLensProxyLLM
-from .metrics import TAG_TO_METRICS
+from .metrics import TAG_TO_METRIC_TYPES
 
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
@@ -108,7 +108,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         tag: MetricTag,
     ) -> list[EvaluationOutput]:
         if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
+            metric_types = TAG_TO_METRIC_TYPES[tag]
 
         return self.evaluate(inputs, metric_types)
 

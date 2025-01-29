@@ -11,7 +11,7 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 from .llm import DeepEvalProxyLLM
-from .metrics import TAG_TO_METRICS, DeepEvalMetric
+from .metrics import TAG_TO_METRIC_TYPES, DeepEvalMetric
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
@@ -74,7 +74,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         tag: MetricTag,
     ) -> list[EvaluationOutput]:
         if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
+            metric_types = TAG_TO_METRIC_TYPES[tag]
 
         return self.evaluate(inputs, metric_types)
 

@@ -34,7 +34,7 @@ from pandas import DataFrame
 
 from .constants import *
 from .llm import MlFlowProxyLLM
-from .metrics import TAG_TO_METRICS
+from .metrics import TAG_TO_METRIC_TYPES
 from .utils.connections import check_health
 from .utils.processes import close_process, open_process
 
@@ -173,7 +173,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         tag: MetricTag,
     ) -> list[EvaluationOutput]:
         if tag is not None:
-            metric_types = TAG_TO_METRICS[tag]
+            metric_types = TAG_TO_METRIC_TYPES[tag]
 
         return self.evaluate(inputs, metric_types)
 

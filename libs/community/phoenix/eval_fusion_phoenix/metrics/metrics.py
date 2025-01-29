@@ -16,7 +16,7 @@ PhoenixMetric = Union[
 ]
 
 
-TAG_TO_METRICS: dict[MetricTag, list[type[PhoenixMetric]]] = MappingProxyType(
+TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[PhoenixMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             HallucinationEvaluator,

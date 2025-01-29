@@ -1,6 +1,6 @@
 from .metrics import (
-    TAG_TO_METRICS,
-    EvaluationMetricCallbackType,
+    TAG_TO_METRIC_TYPES,
+    EvaluationMetricCallback,
     answer_correctness,
     answer_relevance,
     answer_similarity,
@@ -15,6 +15,6 @@ __all__ = [
     'answer_similarity',
     'faithfulness',
     'relevance',
-    'EvaluationMetricCallbackType',
-    'TAG_TO_METRICS',
+    'EvaluationMetricCallback',
+    'TAG_TO_METRIC_TYPES',
 ]

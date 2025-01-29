@@ -13,7 +13,7 @@ from mlflow.metrics.genai import (
 from mlflow.models.evaluation import EvaluationMetric
 
 
-class EvaluationMetricCallbackType:
+class EvaluationMetricCallback:
     def __call__(
         self,
         model: Optional[str] = None,
@@ -28,7 +28,7 @@ class EvaluationMetricCallbackType:
         pass
 
 
-TAG_TO_METRICS: dict[MetricTag, list[type[EvaluationMetricCallbackType]]] = (
+TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[EvaluationMetricCallback]]] = (
     MappingProxyType(
         {
             MetricTag.INPUT: [

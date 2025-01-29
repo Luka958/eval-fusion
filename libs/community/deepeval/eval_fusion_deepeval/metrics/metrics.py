@@ -19,7 +19,7 @@ DeepEvalMetric = Union[
     FaithfulnessMetric,
 ]
 
-TAG_TO_METRICS: dict[MetricTag, list[type[DeepEvalMetric]]] = MappingProxyType(
+TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[DeepEvalMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             AnswerRelevancyMetric,
