@@ -39,7 +39,9 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                 main_input=x.input,
                 main_output=x.output,
                 calls={
-                    retriever.get_context: dict(args=[x.input], rets=x.relevant_chunks),
+                    retriever.get_context: dict(
+                        args=[x.input], rets=['\n\n'.join(x.relevant_chunks)]
+                    ),
                     synthesizer.generate: dict(args=[x.input], rets=[x.output]),
                 },
             )
@@ -90,22 +92,22 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         for i, record in enumerate(virtual_records):
             tru.add_record(record, FeedbackMode.WITH_APP_THREAD)
 
-            # TODO multiple reasons
-            output = EvaluationOutput(
-                input_id=inputs[i].id,
-                output_entries=[
-                    EvaluationOutputEntry(
-                        metric_name=feedback_result.name,
-                        score=feedback_result.result,
-                        reason=None,  # [call.meta['reason'] for call in feedback_result.calls]
-                    )
-                    for feedback_result in [
-                        future.result() for future in record.feedback_results
-                    ]
-                    if feedback_result.status == FeedbackResultStatus.DONE
-                ],
+            outputs.append(
+                EvaluationOutput(
+                    input_id=inputs[i].id,
+                    output_entries=[
+                        EvaluationOutputEntry(
+                            metric_name=feedback_result.name,
+                            score=feedback_result.result,
+                            reason=feedback_result.calls[0].meta['reason'],
+                        )
+                        for feedback_result in [
+                            future.result() for future in record.feedback_results
+                        ]
+                        if feedback_result.status == FeedbackResultStatus.DONE
+                    ],
+                )
             )
-            outputs.append(output)
 
         return outputs
 
