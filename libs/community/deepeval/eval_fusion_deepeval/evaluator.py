@@ -1,13 +1,4 @@
-from typing import overload
-
-from deepeval.metrics import (
-    AnswerRelevancyMetric,
-    BaseMetric,
-    ContextualPrecisionMetric,
-    ContextualRecallMetric,
-    ContextualRelevancyMetric,
-    FaithfulnessMetric,
-)
+from deepeval.metrics import BaseMetric
 from deepeval.test_case import LLMTestCase
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import MetricTag
@@ -26,26 +17,11 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.llm: DeepEvalProxyLLM = DeepEvalProxyLLM(settings)
 
-    @overload
-    def evaluate(
-        self, inputs: list[EvaluationInput], metric_types: list[type[BaseMetric]]
-    ) -> list[EvaluationOutput]:
-        pass
-
-    @overload
     def evaluate(
         self,
         inputs: list[EvaluationInput],
         metric_types: list[type[BaseMetric]],
-        tag: MetricTag,
-    ) -> list[EvaluationOutput]:
-        pass
-
-    def evaluate(
-        self,
-        inputs: list[EvaluationInput],
-        metric_types: list[type[BaseMetric]],
-        tag: MetricTag | None,
+        tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
         if tag is not None:
             metric_types = TAG_TO_METRICS[tag]
