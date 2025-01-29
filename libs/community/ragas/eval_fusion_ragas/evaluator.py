@@ -51,10 +51,10 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        evaluation_outputs: list[EvaluationOutput] = []
+        outputs: list[EvaluationOutput] = []
 
         for i, single_turn_sample in enumerate(single_turn_samples):
-            evaluation_output_entires: list[EvaluationOutputEntry] = []
+            output_entries: list[EvaluationOutputEntry] = []
 
             for metric in metrics:
                 metric_name = metric.name
@@ -62,7 +62,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
                 try:
                     score = metric.single_turn_score(single_turn_sample)
 
-                    evaluation_output_entires.append(
+                    output_entries.append(
                         EvaluationOutputEntry(
                             metric_name=metric_name,
                             score=score,
@@ -71,18 +71,18 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
                     )
 
                 except Exception as e:
-                    evaluation_output_entires.append(
+                    output_entries.append(
                         EvaluationOutputEntry(metric_name=metric_name, error=e)
                     )
 
-            evaluation_outputs.append(
+            outputs.append(
                 EvaluationOutput(
                     input_id=inputs[i].id,
-                    output_entries=evaluation_output_entires,
+                    output_entries=output_entries,
                 )
             )
 
-        return evaluation_outputs
+        return outputs
 
     def evaluate_by_tag(
         self,

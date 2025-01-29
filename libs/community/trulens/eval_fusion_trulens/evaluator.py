@@ -87,50 +87,53 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             feedbacks=feedbacks,
         )
 
-        evaluation_outputs: list[EvaluationOutput] = []
+        outputs: list[EvaluationOutput] = []
 
         for i, record in enumerate(virtual_records):
-            tru.add_record(record, FeedbackMode.WITH_APP_THREAD)
+            output_entries: list[EvaluationOutputEntry] = []
 
-            evaluation_output_entires: list[EvaluationOutputEntry] = []
+            tru.add_record(record, FeedbackMode.WITH_APP_THREAD)
 
             for future in record.feedback_results:
                 try:
                     feedback_result = future.result()
+                    metric_name = feedback_result.name
+                    score = feedback_result.result
+                    reason = str(feedback_result.calls[0].meta['reason'])
 
                     if feedback_result.status == FeedbackResultStatus.DONE:
-                        evaluation_output_entires.append(
+                        output_entries.append(
                             EvaluationOutputEntry(
-                                metric_name=feedback_result.name,
-                                score=feedback_result.result,
-                                reason=str(feedback_result.calls[0].meta['reason']),
+                                metric_name=metric_name,
+                                score=score,
+                                reason=reason,
                             )
                         )
 
                     else:
-                        evaluation_output_entires.append(
+                        output_entries.append(
                             EvaluationOutputEntry(
-                                metric_name=feedback_result.name,
+                                metric_name=metric_name,
                                 error=e,
                             )
                         )
 
                 except Exception as e:
-                    evaluation_output_entires.append(
+                    output_entries.append(
                         EvaluationOutputEntry(
-                            metric_name=feedback_result.name,  # TODO not available yet
+                            metric_name=metric_name,  # TODO not available yet
                             error=e,
                         )
                     )
 
-            evaluation_outputs.append(
+            outputs.append(
                 EvaluationOutput(
                     input_id=inputs[i].id,
-                    output_entries=evaluation_output_entires,
+                    output_entries=output_entries,
                 )
             )
 
-        return evaluation_outputs
+        return outputs
 
     def evaluate_by_tag(
         self,

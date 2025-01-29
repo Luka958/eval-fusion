@@ -120,14 +120,14 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
         default_evaluator = DefaultEvaluator()
 
-        evaluation_outputs: list[EvaluationOutput] = []
+        outputs: list[EvaluationOutput] = []
 
         with start_run() as run:
             for i, evaluation_dataset in enumerate(evaluation_datasets):
-                evaluation_output_entires: list[EvaluationOutputEntry] = []
+                output_entries: list[EvaluationOutputEntry] = []
 
                 for metric in metrics:
-                    name = metric.__name__
+                    metric_name = metric.__name__
 
                     try:
                         result = default_evaluator.evaluate(
@@ -142,34 +142,36 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                         version = str(
                             result.tables['genai_custom_metrics']['version'][0]
                         )
-                        score = float(table[f'{name}/{version}/score'].iloc[0])
+                        score = float(table[f'{metric_name}/{version}/score'].iloc[0])
                         normalized_score = (score - 1) / 4
-                        reason = str(table[f'{name}/{version}/justification'].iloc[0])
+                        reason = str(
+                            table[f'{metric_name}/{version}/justification'].iloc[0]
+                        )
 
-                        evaluation_output_entires.append(
+                        output_entries.append(
                             EvaluationOutputEntry(
-                                metric_name=name,
+                                metric_name=metric_name,
                                 score=normalized_score,
                                 reason=reason,
                             )
                         )
 
                     except Exception as e:
-                        evaluation_output_entires.append(
+                        output_entries.append(
                             EvaluationOutputEntry(
-                                metric_name=name,
+                                metric_name=metric_name,
                                 error=str(e),
                             )
                         )
 
-                evaluation_outputs.append(
+                outputs.append(
                     EvaluationOutput(
                         input_id=inputs[i].id,
-                        output_entries=evaluation_output_entires,
+                        output_entries=output_entries,
                     )
                 )
 
-        return evaluation_outputs
+        return outputs
 
     def evaluate_by_tag(
         self,
