@@ -153,6 +153,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                                 metric_name=metric_name,
                                 score=normalized_score,
                                 reason=reason,
+                                error=None,
                             )
                         )
 
@@ -160,6 +161,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                         output_entries.append(
                             EvaluationOutputEntry(
                                 metric_name=metric_name,
+                                score=None,
+                                reason=None,
                                 error=str(e),
                             )
                         )

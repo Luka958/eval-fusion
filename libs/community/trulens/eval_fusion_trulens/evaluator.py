@@ -107,6 +107,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                                 metric_name=metric_name,
                                 score=score,
                                 reason=reason,
+                                error=None,
                             )
                         )
 
@@ -114,7 +115,9 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                         output_entries.append(
                             EvaluationOutputEntry(
                                 metric_name=metric_name,
-                                error=e,
+                                score=None,
+                                reason=None,
+                                error=str(e),
                             )
                         )
 
@@ -122,7 +125,9 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                     output_entries.append(
                         EvaluationOutputEntry(
                             metric_name=metric_name,  # TODO not available yet
-                            error=e,
+                            score=None,
+                            reason=None,
+                            error=str(e),
                         )
                     )
 

@@ -57,12 +57,18 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
                             metric_name=metric_name,
                             score=score,
                             reason=reason,
+                            error=None,
                         )
                     )
 
                 except Exception as e:
                     output_entries.append(
-                        EvaluationOutputEntry(metric_name=metric_name, error=e)
+                        EvaluationOutputEntry(
+                            metric_name=metric_name,
+                            score=None,
+                            reason=None,
+                            error=str(e),
+                        )
                     )
 
             outputs.append(
