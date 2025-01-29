@@ -97,28 +97,33 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
     ) -> list[EvaluationOutput]:
         metrics = [metric_type().__call__(MODEL) for metric_type in metric_types]
 
-        data_frame = DataFrame(
-            [
-                {
-                    'inputs': x.input,
-                    'context': x.relevant_chunks,
-                    'answers': x.output,
-                    'predictions': x.ground_truth,
-                }
-                for x in inputs
-            ]
+        data_frames = [
+            DataFrame(
+                [
+                    {
+                        'inputs': [x.input],
+                        'context': ['\n\n'.join(x.relevant_chunks)],
+                        'answers': [x.output],
+                        'predictions': [x.ground_truth],
+                    }
+                ]
+            )
+            for x in inputs
+        ]
+        pandas_datasets: list[PandasDataset] = list(
+            map(
+                lambda x: convert_data_to_mlflow_dataset(x, predictions='predictions'),
+                data_frames,
+            )
         )
+        evaluation_datasets = [x.to_evaluation_dataset() for x in pandas_datasets]
 
-        pandas_dataset: PandasDataset = convert_data_to_mlflow_dataset(
-            data_frame, predictions='predictions'
-        )
-        evaluation_dataset = pandas_dataset.to_evaluation_dataset()
         default_evaluator = DefaultEvaluator()
 
         evaluation_outputs: list[EvaluationOutput] = []
 
         with start_run() as run:
-            for i, (_, series) in enumerate(data_frame.iterrows()):
+            for i, evaluation_dataset in enumerate(evaluation_datasets):
                 evaluation_output_entires: list[EvaluationOutputEntry] = []
 
                 for metric in metrics:
@@ -131,18 +136,17 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                         evaluator_config={},
                     )
                     table = evaluation_result.tables['eval_results_table']
+                    name = metric.__name__
                     version = str(
                         evaluation_result.tables['genai_custom_metrics']['version'][0]
                     )
-                    score = float(table[f'{metric.__name__}/{version}/score'].iloc[0])
+                    score = float(table[f'{name}/{version}/score'].iloc[0])
                     normalized_score = (score - 1) / 4
-                    reason = str(
-                        table[f'{metric.__name__}/{version}/justification'].iloc[0]
-                    )
+                    reason = str(table[f'{name}/{version}/justification'].iloc[0])
 
                     evaluation_output_entires.append(
                         EvaluationOutputEntry(
-                            metric_name=metric.__name__,
+                            metric_name=name,
                             score=normalized_score,
                             reason=reason,
                         )
