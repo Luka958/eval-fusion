@@ -1,5 +1,5 @@
 from eval_fusion_core.base import EvalFusionBaseLLM
-from openai import AsyncOpenAI, OpenAI
+from openai import NOT_GIVEN, AsyncOpenAI, OpenAI
 
 
 class OpenAILLM(EvalFusionBaseLLM):
@@ -17,29 +17,31 @@ class OpenAILLM(EvalFusionBaseLLM):
     def get_name(self) -> str:
         return self._model_name
 
-    def generate(self, prompt: str) -> str:
+    def generate(self, prompt: str, use_json: bool = True) -> str:
         completion = self._client.chat.completions.create(
             model=self._model_name,
             messages=[{'role': 'user', 'content': prompt}],
-            response_format={'type': 'json_object'},
+            response_format={'type': 'json_object'} if use_json else NOT_GIVEN,
         )
 
         return completion.choices[0].message.content
 
-    async def a_generate(self, prompt: str) -> str:
+    async def a_generate(self, prompt: str, use_json: bool = True) -> str:
         completion = await self._async_client.chat.completions.create(
             model=self._model_name,
             messages=[{'role': 'user', 'content': prompt}],
-            response_format={'type': 'json_object'},
+            response_format={'type': 'json_object'} if use_json else NOT_GIVEN,
         )
 
         return completion.choices[0].message.content
 
-    def generate_from_messages(self, messages: list[dict]) -> str:
+    def generate_from_messages(
+        self, messages: list[dict], use_json: bool = True
+    ) -> str:
         completion = self._client.chat.completions.create(
             model=self._model_name,
             messages=messages,
-            response_format={'type': 'json_object'},
+            response_format={'type': 'json_object'} if use_json else NOT_GIVEN,
         )
 
         return completion.choices[0].message.content
