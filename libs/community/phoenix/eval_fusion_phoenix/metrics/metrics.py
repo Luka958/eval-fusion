@@ -1,15 +1,22 @@
 from types import MappingProxyType
+from typing import Union
 
 from eval_fusion_core.enums import MetricTag
 from phoenix.evals import (
     HallucinationEvaluator,
-    LLMEvaluator,
     QAEvaluator,
     RelevanceEvaluator,
 )
 
 
-TAGS_TO_METRICS: dict[MetricTag, list[type[LLMEvaluator]]] = MappingProxyType(
+PhoenixMetric = Union[
+    HallucinationEvaluator,
+    QAEvaluator,
+    RelevanceEvaluator,
+]
+
+
+TAG_TO_METRICS: dict[MetricTag, list[type[PhoenixMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             HallucinationEvaluator,

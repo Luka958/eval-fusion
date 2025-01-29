@@ -1,37 +1,31 @@
-from eval_fusion_core.base import (
-    EvalFusionBaseEvaluator,
-    EvalFusionBaseLLM,
-)
+from eval_fusion_core.base import EvalFusionBaseEvaluator
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
     EvaluationOutputEntry,
 )
-from phoenix.evals import (
-    HallucinationEvaluator,
-    LLMEvaluator,
-    QAEvaluator,
-    RelevanceEvaluator,
-)
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from phoenix.evals.evaluators import Record
 
 from .llm import PhoenixProxyLLM
+from .metrics import TAG_TO_METRICS, PhoenixMetric
 
 
 class PhoenixEvaluator(EvalFusionBaseEvaluator):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.llm: PhoenixProxyLLM = PhoenixProxyLLM(llm=llm)
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.llm = PhoenixProxyLLM(settings)
 
     def evaluate(
-        self, inputs: list[EvaluationInput], metrics: list
+        self,
+        inputs: list[EvaluationInput],
+        metric_types: list[type[PhoenixMetric]],
+        tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
-        # TODO organize metrics
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
 
-        evaluators: list[LLMEvaluator] = [
-            HallucinationEvaluator(self.llm),
-            QAEvaluator(self.llm),
-            RelevanceEvaluator(self.llm),
-        ]
+        evaluators = [metric_type(self.llm) for metric_type in metric_types]
 
         records: list[Record] = [
             {

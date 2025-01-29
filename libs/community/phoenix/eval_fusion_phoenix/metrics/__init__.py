@@ -1,7 +1,7 @@
 from .metrics import (
-    TAGS_TO_METRICS,
+    TAG_TO_METRICS,
     HallucinationEvaluator,
-    LLMEvaluator,
+    PhoenixMetric,
     QAEvaluator,
     RelevanceEvaluator,
 )
@@ -9,8 +9,8 @@ from .metrics import (
 
 __all__ = [
     'HallucinationEvaluator',
-    'LLMEvaluator',
+    'PhoenixMetric',
     'QAEvaluator',
     'RelevanceEvaluator',
-    'TAGS_TO_METRICS',
+    'TAG_TO_METRICS',
 ]

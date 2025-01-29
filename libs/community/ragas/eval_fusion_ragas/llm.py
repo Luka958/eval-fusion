@@ -1,6 +1,6 @@
 from typing import Optional
 
-from eval_fusion_core.base import EvalFusionBaseLLM
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from langchain_core.callbacks import Callbacks
 from langchain_core.outputs import Generation
 from langchain_core.outputs.llm_result import LLMResult
@@ -9,8 +9,8 @@ from ragas.llms.base import BaseRagasLLM
 
 
 class RagasProxyLLM(BaseRagasLLM):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.__llm = llm
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.__llm = settings.base_type(*settings.args, **settings.kwargs)
 
     def generate_text(
         self,

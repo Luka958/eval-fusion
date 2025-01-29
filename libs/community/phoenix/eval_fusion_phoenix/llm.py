@@ -1,13 +1,13 @@
 from typing import Any, Union
 
-from eval_fusion_core.base import EvalFusionBaseLLM
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from phoenix.evals.models import BaseModel
 from phoenix.evals.templates import MultimodalPrompt
 
 
 class PhoenixProxyLLM(BaseModel):
-    def __init__(self, llm: EvalFusionBaseLLM):
-        self.__llm = llm
+    def __init__(self, settings: EvalFusionLLMSettings):
+        self.__llm = settings.base_type(*settings.args, **settings.kwargs)
 
         super().__init__()  # TODO can base concurrency and rate limiter
 
