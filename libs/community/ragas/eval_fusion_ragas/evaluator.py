@@ -3,11 +3,13 @@ from eval_fusion_core.base import (
     EvalFusionBaseEvaluator,
     EvalFusionBaseLLM,
 )
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
     EvaluationOutputEntry,
 )
+from eval_fusion_core.models.settings import EvalFusionEMSettings, EvalFusionLLMSettings
 from ragas import SingleTurnSample
 from ragas.metrics import (
     ContextEntityRecall,
@@ -21,17 +23,24 @@ from ragas.metrics import (
 
 from .em import RagasProxyEM
 from .llm import RagasProxyLLM
+from .metrics import TAG_TO_METRICS
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
-    def __init__(self, llm: EvalFusionBaseLLM, em: EvalFusionBaseEM):
-        self.llm: RagasProxyLLM = RagasProxyLLM(llm=llm)
-        self.em = RagasProxyEM(em=em)
+    def __init__(
+        self, llm_settings: EvalFusionLLMSettings, em_settings: EvalFusionEMSettings
+    ):
+        self.llm = RagasProxyLLM(llm_settings)
+        self.em = RagasProxyEM(em_settings)
 
     def evaluate(
-        self, inputs: list[EvaluationInput], metrics: list
+        self,
+        inputs: list[EvaluationInput],
+        metric_types: list[type[SingleTurnMetric]],
+        tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
-        # TODO organize metrics
+        if tag is not None:
+            metric_types = TAG_TO_METRICS[tag]
 
         context_precision = ContextPrecision(llm=self.llm)
         context_recall = ContextRecall(llm=self.llm)
@@ -41,12 +50,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         faithfulness = Faithfulness(llm=self.llm)
 
         metrics: list[SingleTurnMetric] = [
-            context_precision,
-            context_recall,
-            context_entity_recall,
-            noise_sensitivity,
-            response_relevancy,
-            faithfulness,
+            metric_type() for metric_type in metric_types
         ]
 
         single_turn_samples = [

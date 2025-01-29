@@ -12,7 +12,7 @@ from ragas.metrics import (
 )
 
 
-TAGS_TO_METRICS: dict[MetricTag, list[type[SingleTurnMetric]]] = MappingProxyType(
+TAG_TO_METRICS: dict[MetricTag, list[type[SingleTurnMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             ContextPrecision,

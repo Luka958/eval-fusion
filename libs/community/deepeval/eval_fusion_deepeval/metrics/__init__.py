@@ -1,20 +1,19 @@
 from .metrics import (
     TAG_TO_METRICS,
     AnswerRelevancyMetric,
-    BaseMetric,
     ContextualPrecisionMetric,
     ContextualRecallMetric,
     ContextualRelevancyMetric,
+    DeepEvalMetricType,
     FaithfulnessMetric,
 )
 
 
 __all__ = [
     'AnswerRelevancyMetric',
-    'BaseMetric',
     'ContextualPrecisionMetric',
     'ContextualRecallMetric',
     'ContextualRelevancyMetric',
     'FaithfulnessMetric',
-    'TAG_TO_METRICS',
+    'DeepEvalMetricType' 'TAG_TO_METRICS',
 ]

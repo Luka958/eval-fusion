@@ -1,8 +1,8 @@
 from types import MappingProxyType
+from typing import Type, Union
 
 from deepeval.metrics import (
     AnswerRelevancyMetric,
-    BaseMetric,
     ContextualPrecisionMetric,
     ContextualRecallMetric,
     ContextualRelevancyMetric,
@@ -11,7 +11,15 @@ from deepeval.metrics import (
 from eval_fusion_core.enums import MetricTag
 
 
-TAG_TO_METRICS: dict[MetricTag, list[type[BaseMetric]]] = MappingProxyType(
+DeepEvalMetricType = Union[
+    type[AnswerRelevancyMetric],
+    type[ContextualPrecisionMetric],
+    type[ContextualRecallMetric],
+    type[ContextualRelevancyMetric],
+    type[FaithfulnessMetric],
+]
+
+TAG_TO_METRICS: dict[MetricTag, list[DeepEvalMetricType]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             AnswerRelevancyMetric,
