@@ -1,8 +1,6 @@
-from eval_fusion_core.base import (
-    EvalFusionBaseEM,
-    EvalFusionBaseEvaluator,
-    EvalFusionBaseLLM,
-)
+from types import TracebackType
+
+from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
     EvaluationInput,
@@ -24,6 +22,9 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
     ):
         self.llm = RagasProxyLLM(llm_settings)
         self.em = RagasProxyEM(em_settings)
+
+    def __enter__(self) -> 'RagasEvaluator':
+        return self
 
     def evaluate(
         self,
@@ -74,3 +75,11 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
             metric_types = TAG_TO_METRICS[tag]
 
         return self.evaluate(inputs, metric_types)
+
+    def __exit__(
+        self,
+        type_: type[BaseException] | None,
+        value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> bool | None:
+        pass

@@ -1,3 +1,5 @@
+from types import TracebackType
+
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
@@ -15,6 +17,9 @@ from .metrics import TAG_TO_METRICS, PhoenixMetric
 class PhoenixEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.llm = PhoenixProxyLLM(settings)
+
+    def __enter__(self) -> 'PhoenixEvaluator':
+        return self
 
     def evaluate(
         self,
@@ -61,3 +66,11 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
             metric_types = TAG_TO_METRICS[tag]
 
         return self.evaluate(inputs, metric_types)
+
+    def __exit__(
+        self,
+        type_: type[BaseException] | None,
+        value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> bool | None:
+        pass

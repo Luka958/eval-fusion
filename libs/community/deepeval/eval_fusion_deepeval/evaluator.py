@@ -1,3 +1,5 @@
+from types import TracebackType
+
 from deepeval.test_case import LLMTestCase
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import MetricTag
@@ -15,6 +17,9 @@ from .metrics import TAG_TO_METRICS, DeepEvalMetric
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.llm = DeepEvalProxyLLM(settings)
+
+    def __enter__(self) -> 'DeepEvalEvaluator':
+        return self
 
     def evaluate(
         self,
@@ -72,3 +77,11 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             metric_types = TAG_TO_METRICS[tag]
 
         return self.evaluate(inputs, metric_types)
+
+    def __exit__(
+        self,
+        type_: type[BaseException] | None,
+        value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> bool | None:
+        pass
