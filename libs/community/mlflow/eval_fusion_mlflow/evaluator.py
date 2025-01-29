@@ -33,7 +33,7 @@ from .utils.processes import close_process, open_process
 
 class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self.llm: MlFlowProxyLLM = MlFlowProxyLLM(settings)
+        self.llm = MlFlowProxyLLM(settings)
 
     def __enter__(self) -> 'MlFlowEvaluator':
         self.experiment_id = create_experiment(EXPERIMENT_NAME)
@@ -127,30 +127,42 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                 evaluation_output_entires: list[EvaluationOutputEntry] = []
 
                 for metric in metrics:
-                    evaluation_result = default_evaluator.evaluate(
-                        run_id=run.info.run_id,
-                        dataset=evaluation_dataset,
-                        model=None,
-                        model_type=None,
-                        extra_metrics=[metric],
-                        evaluator_config={},
-                    )
-                    table = evaluation_result.tables['eval_results_table']
                     name = metric.__name__
-                    version = str(
-                        evaluation_result.tables['genai_custom_metrics']['version'][0]
-                    )
-                    score = float(table[f'{name}/{version}/score'].iloc[0])
-                    normalized_score = (score - 1) / 4
-                    reason = str(table[f'{name}/{version}/justification'].iloc[0])
 
-                    evaluation_output_entires.append(
-                        EvaluationOutputEntry(
-                            metric_name=name,
-                            score=normalized_score,
-                            reason=reason,
+                    try:
+                        evaluation_result = default_evaluator.evaluate(
+                            run_id=run.info.run_id,
+                            dataset=evaluation_dataset,
+                            model=None,
+                            model_type=None,
+                            extra_metrics=[metric],
+                            evaluator_config={},
                         )
-                    )
+                        table = evaluation_result.tables['eval_results_table']
+                        version = str(
+                            evaluation_result.tables['genai_custom_metrics']['version'][
+                                0
+                            ]
+                        )
+                        score = float(table[f'{name}/{version}/score'].iloc[0])
+                        normalized_score = (score - 1) / 4
+                        reason = str(table[f'{name}/{version}/justification'].iloc[0])
+
+                        evaluation_output_entires.append(
+                            EvaluationOutputEntry(
+                                metric_name=name,
+                                score=normalized_score,
+                                reason=reason,
+                            )
+                        )
+
+                    except Exception as e:
+                        evaluation_output_entires.append(
+                            EvaluationOutputEntry(
+                                metric_name=name,
+                                error=str(e),
+                            )
+                        )
 
                 evaluation_outputs.append(
                     EvaluationOutput(

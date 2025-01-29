@@ -19,7 +19,7 @@ from .metrics import TAG_TO_METRIC_TYPES, TruLensMetric
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self.llm: TruLensProxyLLM = TruLensProxyLLM(settings)
+        self.llm = TruLensProxyLLM(settings)
 
     def __enter__(self) -> 'TruLensEvaluator':
         self.session = TruSession()
