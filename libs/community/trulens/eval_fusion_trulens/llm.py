@@ -15,9 +15,6 @@ class TruLensProxyLLM(LLMProvider):
             *self.settings.args, **self.settings.kwargs
         )
 
-    """ def __init__(self, settings: EvalFusionLLMSettings):
-        self.__llm = settings.base_type(*settings.args, **settings.kwargs)"""
-
     def _create_chat_completion(
         self,
         prompt: Optional[str] = None,
@@ -27,4 +24,4 @@ class TruLensProxyLLM(LLMProvider):
         if prompt:
             return self.__llm.generate(prompt)
 
-        return self.__llm.generate_from_messages(messages)
+        return self.__llm.generate_from_messages(messages, use_json=False)

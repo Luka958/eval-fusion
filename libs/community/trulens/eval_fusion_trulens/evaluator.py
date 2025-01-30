@@ -10,6 +10,8 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from trulens.apps.virtual import TruVirtual, VirtualApp, VirtualRecord
 from trulens.core import Feedback, FeedbackMode, Select, TruSession
+from trulens.core.experimental import Feature
+from trulens.core.feedback import Endpoint
 from trulens.core.schema.feedback import FeedbackResultStatus
 
 from .constants import APP_ID
@@ -27,13 +29,14 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self._llm = TruLensProxyLLM(
             tru_class_info=TruLensProxyLLM,
-            endpoint=None,
+            endpoint=Endpoint(name='eval_fusion_endpoint'),
             model_engine='',
-            settings=settings,  # TODO everything to llm
+            settings=settings,
         )
 
     def __enter__(self) -> 'TruLensEvaluator':
         self._session = TruSession()
+        self._session.experimental_disable_feature(Feature.OTEL_TRACING)
 
         return self
 
@@ -105,43 +108,45 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
 
             tru.add_record(record, FeedbackMode.WITH_APP_THREAD)
 
-            for future in record.feedback_results:
+            for j, future in enumerate(record.feedback_results):
+                metric_name = feedbacks[j].name
+
                 try:
                     feedback_result = future.result()
-                    metric_name = feedback_result.name
                     score = feedback_result.result
-                    reason = str(feedback_result.calls[0].meta['reason'])
+                    feedback_call = feedback_result.calls[0]
+                    reason = feedback_call.meta.get(
+                        'reason', feedback_call.meta.get('reasons')
+                    )
 
-                    if feedback_result.status == FeedbackResultStatus.DONE:
-                        output_entries.append(
-                            EvaluationOutputEntry(
-                                metric_name=metric_name,
-                                score=score,
-                                reason=reason,
-                                error=None,
-                            )
-                        )
-
-                    else:
+                    if feedback_result.status == FeedbackResultStatus.FAILED:
                         output_entries.append(
                             EvaluationOutputEntry(
                                 metric_name=metric_name,
                                 score=None,
                                 reason=None,
-                                error=str(e),
+                                error=feedback_result.error,
                             )
                         )
+
+                    output_entries.append(
+                        EvaluationOutputEntry(
+                            metric_name=metric_name,
+                            score=score,
+                            reason=reason,
+                            error=None,
+                        )
+                    )
 
                 except Exception as e:
                     output_entries.append(
                         EvaluationOutputEntry(
-                            metric_name=metric_name,  # TODO not available yet
+                            metric_name=metric_name,
                             score=None,
                             reason=None,
                             error=str(e),
                         )
                     )
-                    raise e  # TODO
 
             outputs.append(
                 EvaluationOutput(
