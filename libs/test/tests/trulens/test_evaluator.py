@@ -9,11 +9,12 @@ from eval_fusion_trulens.evaluator import TruLensEvaluator
 @pytest.mark.parametrize('input_count', [1])
 def test_evaluator(input_count: int):
     llm_settings, _ = get_openai_settings()
-    evaluator = TruLensEvaluator(llm_settings)
+    # evaluator = TruLensEvaluator(llm_settings)
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
 
     inputs = inputs[:input_count]
-    outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
+    with TruLensEvaluator(llm_settings) as evaluator:
+        outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
 
     for output in outputs:
         for output_entry in output.output_entries:
