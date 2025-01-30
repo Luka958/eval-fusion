@@ -68,7 +68,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             feedbacks.append(
                 Feedback(
                     self._llm.context_relevance_with_cot_reasons,
-                    name=ContextRelevance.value,
+                    name='context_relevance',
                 )
                 .on(Select.RecordInput)
                 .on(context_selector)
@@ -78,7 +78,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             feedbacks.append(
                 Feedback(
                     self._llm.groundedness_measure_with_cot_reasons,
-                    name=Groundedness.value,
+                    name='groundedness',
                 )
                 .on(context_selector.collect())
                 .on(output_selector)
@@ -88,7 +88,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             feedbacks.append(
                 Feedback(
                     self._llm.relevance_with_cot_reasons,
-                    name=Relevance.value,
+                    name='relevance',
                 ).on_input_output()
             )
 

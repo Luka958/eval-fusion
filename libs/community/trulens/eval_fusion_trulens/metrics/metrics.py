@@ -5,15 +5,15 @@ from eval_fusion_core.enums import MetricTag
 
 
 class ContextRelevance:
-    value = 'context_relevance'
+    pass
 
 
 class Groundedness:
-    value = 'groundedness'
+    pass
 
 
 class Relevance:
-    value = 'relevance'
+    pass
 
 
 TruLensMetric = Union[
