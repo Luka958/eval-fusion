@@ -15,10 +15,10 @@ install_dependencies() {
 
     if [ "$is_root" = true ]; then
         echo "Installing dependencies in root..."
-        poetry install --no-root --no-update
+        poetry install --no-root
     else
         echo "Installing dependencies in $dir..."
-        poetry install --no-update
+        poetry install
     fi
 }
 
