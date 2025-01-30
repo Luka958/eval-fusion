@@ -9,6 +9,7 @@ readme = "README.md"
 python = ">=3.9,<3.13"
 eval-fusion-core = { path = "../../core", develop = true }
 mlflow = "2.20.0"
+watchfiles = "^1.0.4"
 
 
 [build-system]

@@ -63,12 +63,11 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                 '--host',
                 MODELS_HOST,
                 '--port',
-                MODELS_PORT,
+                str(MODELS_PORT),
                 '--env-manager',
                 MODELS_ENV_MANAGER,
             ]
         )
-
         self._deployments_process = open_process(
             [
                 'mlflow',
@@ -79,7 +78,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                 '--host',
                 DEPLOYMENTS_HOST,
                 '--port',
-                DEPLOYMENTS_PORT,
+                str(DEPLOYMENTS_PORT),
             ]
         )
 
@@ -95,7 +94,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metric_types: list[type[MlFlowMetric]],
     ) -> list[EvaluationOutput]:
-        metrics = [metric_type().__call__(MODEL) for metric_type in metric_types]
+        metrics = [metric_type(model=MODEL) for metric_type in metric_types]
 
         data_frames = [
             DataFrame(
@@ -104,7 +103,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                         'inputs': [x.input],
                         'context': ['\n\n'.join(x.relevant_chunks)],
                         'answers': [x.output],
-                        'predictions': [x.ground_truth],
+                        'targets': [x.ground_truth],
                     }
                 ]
             )
@@ -112,7 +111,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         ]
         pandas_datasets: list[PandasDataset] = list(
             map(
-                lambda x: convert_data_to_mlflow_dataset(x, predictions='predictions'),
+                lambda x: convert_data_to_mlflow_dataset(x, predictions='targets'),
                 data_frames,
             )
         )
@@ -126,8 +125,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
             for i, evaluation_dataset in enumerate(evaluation_datasets):
                 output_entries: list[EvaluationOutputEntry] = []
 
-                for metric in metrics:
-                    metric_name = metric.__name__
+                for metric, metric_type in zip(metrics, metric_types):
+                    metric_name = metric_type.__name__
 
                     try:
                         result = default_evaluator.evaluate(
