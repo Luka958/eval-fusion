@@ -1,7 +1,8 @@
+from time import sleep
+
 from eval_fusion_core.exceptions import EvalFusionException
 from requests import get
 from requests.exceptions import ConnectionError
-from time import sleep
 
 
 def check_health(host: str, port: int):
@@ -13,7 +14,7 @@ def check_health(host: str, port: int):
                     models_serve_response.status_code == 200,
                     f'Health check failed with status code {str(models_serve_response.status_code)}!',
                 )
-            
+
             except ConnectionError:
                 sleep(2)
 
