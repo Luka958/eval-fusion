@@ -1,38 +1,48 @@
-from enum import Enum
 from types import MappingProxyType
+from typing import Union
 
 from eval_fusion_core.enums import MetricTag
 
 
-class _TruLensEnumMetric(str, Enum):
-    CONTEXT_RELEVANCE = 'context_relevance'
-    GROUNDEDNESS = 'groundedness'
-    ANSWER_RELEVANCE = 'answer_relevance'
+class ContextRelevance:
+    value = 'context_relevance'
 
 
-TruLensMetric = _TruLensEnumMetric
+class Groundedness:
+    value = 'groundedness'
+
+
+class Relevance:
+    value = 'relevance'
+
+
+TruLensMetric = Union[
+    ContextRelevance,
+    Groundedness,
+    Relevance,
+]
 
 
 TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[TruLensMetric]]] = MappingProxyType(
     {
         MetricTag.INPUT: [
-            TruLensMetric.CONTEXT_RELEVANCE,
-            TruLensMetric.ANSWER_RELEVANCE,
+            ContextRelevance,
+            Relevance,
         ],
         MetricTag.OUTPUT: [
-            TruLensMetric.CONTEXT_RELEVANCE,
-            TruLensMetric.GROUNDEDNESS,
-            TruLensMetric.ANSWER_RELEVANCE,
+            ContextRelevance,
+            Groundedness,
+            Relevance,
         ],
         MetricTag.GROUND_TRUTH: [],
         MetricTag.RELEVANT_CHUNKS: [
-            TruLensMetric.CONTEXT_RELEVANCE,
-            TruLensMetric.GROUNDEDNESS,
+            ContextRelevance,
+            Groundedness,
         ],
         MetricTag.ALL: [
-            TruLensMetric.CONTEXT_RELEVANCE,
-            TruLensMetric.GROUNDEDNESS,
-            TruLensMetric.ANSWER_RELEVANCE,
+            ContextRelevance,
+            Groundedness,
+            Relevance,
         ],
     }
 )

@@ -14,12 +14,23 @@ from trulens.core.schema.feedback import FeedbackResultStatus
 
 from .constants import APP_ID
 from .llm import TruLensProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES, TruLensMetric
+from .metrics import (
+    TAG_TO_METRIC_TYPES,
+    ContextRelevance,
+    Groundedness,
+    Relevance,
+    TruLensMetric,
+)
 
 
 class TruLensEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self._llm = TruLensProxyLLM(settings)
+        self._llm = TruLensProxyLLM(
+            tru_class_info=TruLensProxyLLM,
+            endpoint=None,
+            model_engine='',
+            settings=settings,  # TODO everything to llm
+        )
 
     def __enter__(self) -> 'TruLensEvaluator':
         self._session = TruSession()
@@ -53,31 +64,31 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
 
         feedbacks: list[Feedback] = []
 
-        if type(TruLensMetric.CONTEXT_RELEVANCE) in metric_types:
+        if ContextRelevance in metric_types:
             feedbacks.append(
                 Feedback(
                     self._llm.context_relevance_with_cot_reasons,
-                    name=TruLensMetric.CONTEXT_RELEVANCE.value,
+                    name=ContextRelevance.value,
                 )
                 .on(Select.RecordInput)
                 .on(context_selector)
             )
 
-        if type(TruLensMetric.GROUNDEDNESS) in metric_types:
+        if Groundedness in metric_types:
             feedbacks.append(
                 Feedback(
                     self._llm.groundedness_measure_with_cot_reasons,
-                    name=TruLensMetric.GROUNDEDNESS.value,
+                    name=Groundedness.value,
                 )
                 .on(context_selector.collect())
                 .on(output_selector)
             )
 
-        if type(TruLensMetric.ANSWER_RELEVANCE) in metric_types:
+        if Relevance in metric_types:
             feedbacks.append(
                 Feedback(
                     self._llm.relevance_with_cot_reasons,
-                    name=TruLensMetric.ANSWER_RELEVANCE.value,
+                    name=Relevance.value,
                 ).on_input_output()
             )
 
@@ -130,6 +141,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                             error=str(e),
                         )
                     )
+                    raise e  # TODO
 
             outputs.append(
                 EvaluationOutput(

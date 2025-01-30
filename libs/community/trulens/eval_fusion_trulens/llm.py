@@ -1,13 +1,22 @@
 from typing import Optional, Sequence
 
+from eval_fusion_core.base import EvalFusionBaseLLM
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
+from pydantic import PrivateAttr
 from trulens.feedback import LLMProvider
 
 
 class TruLensProxyLLM(LLMProvider):
-    def __init__(self, settings: EvalFusionLLMSettings):
-        self.__llm = settings.base_type(*settings.args, **settings.kwargs)
-        super().__init__()
+    settings: EvalFusionLLMSettings
+    __llm: EvalFusionBaseLLM = PrivateAttr()
+
+    def model_post_init(self, __context: dict[str, object] | None = None) -> None:
+        self.__llm = self.settings.base_type(
+            *self.settings.args, **self.settings.kwargs
+        )
+
+    """ def __init__(self, settings: EvalFusionLLMSettings):
+        self.__llm = settings.base_type(*settings.args, **settings.kwargs)"""
 
     def _create_chat_completion(
         self,
