@@ -10,6 +10,7 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from trulens.apps.virtual import TruVirtual, VirtualApp, VirtualRecord
 from trulens.core import Feedback, FeedbackMode, Select, TruSession
+from trulens.core.database.connector.default import DefaultDBConnector
 from trulens.core.experimental import Feature
 from trulens.core.feedback import Endpoint
 from trulens.core.schema.feedback import FeedbackResultStatus
@@ -35,7 +36,9 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         )
 
     def __enter__(self) -> 'TruLensEvaluator':
-        self._session = TruSession()
+        self._session = TruSession(
+            connector=DefaultDBConnector(database_url='sqlite:///:memory:')
+        )
         self._session.experimental_disable_feature(Feature.OTEL_TRACING)
 
         return self
