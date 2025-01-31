@@ -15,8 +15,7 @@ from mlflow import (
     set_experiment,
     start_run,
 )
-from mlflow.data.evaluation_dataset import convert_data_to_mlflow_dataset
-from mlflow.data.pandas_dataset import PandasDataset
+from mlflow.data.pandas_dataset import from_pandas
 from mlflow.deployments import set_deployments_target
 from mlflow.models.evaluation.evaluators.default import DefaultEvaluator
 from mlflow.models.signature import infer_signature
@@ -28,7 +27,7 @@ from .constants import *
 from .llm import MlFlowProxyLLM
 from .metrics import TAG_TO_METRIC_TYPES, MlFlowMetric
 from .utils.connections import check_health
-from .utils.processes import close_process, open_process
+from .utils.processes import close_process, open_process, run_process
 
 
 class MlFlowEvaluator(EvalFusionBaseEvaluator):
@@ -37,7 +36,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
     def __enter__(self) -> 'MlFlowEvaluator':
         self._experiment_id = create_experiment(EXPERIMENT_NAME)
-        set_experiment(EXPERIMENT_NAME)
+        set_experiment(self._experiment_id)
 
         signature = infer_signature(
             model_input=['What is MLflow?'],
@@ -102,16 +101,16 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                     {
                         'inputs': [x.input],
                         'context': ['\n\n'.join(x.relevant_chunks)],
-                        'answers': [x.output],
+                        'predictions': [x.output],
                         'targets': [x.ground_truth],
                     }
                 ]
             )
             for x in inputs
         ]
-        pandas_datasets: list[PandasDataset] = list(
+        pandas_datasets = list(
             map(
-                lambda x: convert_data_to_mlflow_dataset(x, predictions='targets'),
+                lambda x: from_pandas(x, predictions='predictions', targets='targets'),
                 data_frames,
             )
         )
@@ -198,3 +197,5 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
         client = MlflowClient()
         client.delete_registered_model(MODEL_NAME)
+
+        run_process(['mlflow', 'gc', '--experiment-ids', self._experiment_id])

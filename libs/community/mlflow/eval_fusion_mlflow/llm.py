@@ -19,9 +19,6 @@ class MlFlowProxyLLM(PythonModel):
 
     def predict(self, context: PythonModelContext, model_input: list[str]) -> list[str]:
         assert len(model_input) == 0
-
         result = self.__llm.generate(model_input[0], use_json=False)
-        print(model_input)
-        print(result)
 
         return [result]
