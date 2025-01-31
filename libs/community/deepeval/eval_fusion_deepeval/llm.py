@@ -1,4 +1,5 @@
 from deepeval.models import DeepEvalBaseLLM
+from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 
@@ -18,3 +19,6 @@ class DeepEvalProxyLLM(DeepEvalBaseLLM):
 
     def get_model_name(self) -> str:
         return self.__llm.get_name()
+
+    def get_token_usage(self) -> TokenUsage:
+        return self.__llm.get_token_usage()

@@ -1,3 +1,4 @@
+from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionEMSettings
 from ragas.embeddings.base import BaseRagasEmbeddings
 
@@ -17,3 +18,6 @@ class RagasProxyEM(BaseRagasEmbeddings):
 
     async def aembed_documents(self, texts: list[str]) -> list[list[float]]:
         return await self.__em.a_embed_texts(texts)
+
+    def get_token_usage(self) -> TokenUsage:
+        return self.__llm.get_token_usage()

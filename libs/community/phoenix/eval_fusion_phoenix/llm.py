@@ -1,5 +1,6 @@
 from typing import Any, Union
 
+from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from phoenix.evals.models import BaseModel
 from phoenix.evals.templates import MultimodalPrompt
@@ -24,3 +25,6 @@ class PhoenixProxyLLM(BaseModel):
             prompt = prompt.to_text_only_prompt()
 
         return await self.__llm.a_generate(prompt, use_json=False)
+
+    def get_token_usage(self) -> TokenUsage:
+        return self.__llm.get_token_usage()

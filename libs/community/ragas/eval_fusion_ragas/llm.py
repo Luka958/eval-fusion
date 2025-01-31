@@ -1,5 +1,6 @@
 from typing import Optional
 
+from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from langchain_core.callbacks import Callbacks
 from langchain_core.outputs import Generation
@@ -47,3 +48,6 @@ class RagasProxyLLM(BaseRagasLLM):
         result = await self.__llm.a_generate(prompt)
 
         return LLMResult(generations=[[Generation(text=result)]])
+
+    def get_token_usage(self) -> TokenUsage:
+        return self.__llm.get_token_usage()

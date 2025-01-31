@@ -1,6 +1,7 @@
 import os
 
 from eval_fusion_core.exceptions import EvalFusionException
+from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from mlflow.pyfunc.model import PythonModel, PythonModelContext
 from pandas import DataFrame
@@ -34,3 +35,6 @@ class MlFlowProxyLLM(PythonModel):
         result = self.__llm.generate(prompt, use_json=False)
 
         return [result]
+
+    def get_token_usage(self) -> TokenUsage:
+        return self.__llm.get_token_usage()

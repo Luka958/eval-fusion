@@ -204,6 +204,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
+        self.llm_token_usage = self._llm.get_token_usage()
+
         close_process(self._models_process.pid)
         close_process(self._deployments_process.pid)
 

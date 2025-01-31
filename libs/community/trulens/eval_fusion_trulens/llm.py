@@ -1,6 +1,7 @@
 from typing import Optional, Sequence
 
 from eval_fusion_core.base import EvalFusionBaseLLM
+from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from pydantic import PrivateAttr
 from trulens.feedback import LLMProvider
@@ -25,3 +26,6 @@ class TruLensProxyLLM(LLMProvider):
             return self.__llm.generate(prompt)
 
         return self.__llm.generate_from_messages(messages, use_json=False)
+
+    def get_token_usage(self) -> TokenUsage:
+        return self.__llm.get_token_usage()
