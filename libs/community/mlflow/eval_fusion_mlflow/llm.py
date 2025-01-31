@@ -3,6 +3,7 @@ import os
 from eval_fusion_core.exceptions import EvalFusionException
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from mlflow.pyfunc.model import PythonModel, PythonModelContext
+from pandas import DataFrame
 
 
 class MlFlowProxyLLM(PythonModel):
@@ -17,8 +18,19 @@ class MlFlowProxyLLM(PythonModel):
             *self.settings.args, **self.settings.kwargs
         )
 
-    def predict(self, context: PythonModelContext, model_input: list[str]) -> list[str]:
-        assert len(model_input) == 0
-        result = self.__llm.generate(model_input[0], use_json=False)
+    def predict(self, context, model_input, params=None):
+        # NOTE: type hints are not allowed here!
+        if params:
+            temperature: float = params['temperature']
+            n: int = params['n']
+            max_tokens: int = params['max_tokens']
+            top_p: float = params['top_p']
+
+        prompt: str = (
+            model_input.iloc[0, 0]
+            if isinstance(model_input, DataFrame)
+            else model_input
+        )
+        result = self.__llm.generate(prompt, use_json=False)
 
         return [result]

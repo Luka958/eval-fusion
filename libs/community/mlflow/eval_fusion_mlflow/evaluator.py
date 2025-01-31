@@ -18,9 +18,10 @@ from mlflow import (
 from mlflow.data.pandas_dataset import from_pandas
 from mlflow.deployments import set_deployments_target
 from mlflow.models.evaluation.evaluators.default import DefaultEvaluator
-from mlflow.models.signature import infer_signature
+from mlflow.models.signature import ModelSignature
 from mlflow.pyfunc import log_model
 from mlflow.tracking import MlflowClient
+from mlflow.types import ColSpec, DataType, ParamSchema, ParamSpec, Schema
 from pandas import DataFrame
 
 from .constants import *
@@ -38,11 +39,17 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         self._experiment_id = create_experiment(EXPERIMENT_NAME)
         set_experiment(self._experiment_id)
 
-        signature = infer_signature(
-            model_input=['What is MLflow?'],
-            model_output=[
-                'MLflow is a platform for managing machine learning workflows.'
-            ],
+        signature = ModelSignature(
+            inputs=Schema([ColSpec(type=DataType.string, required=True)]),
+            outputs=Schema([ColSpec(type=DataType.string, required=True)]),
+            params=ParamSchema(
+                [
+                    ParamSpec(name='temperature', dtype=DataType.float, default=0.0),
+                    ParamSpec(name='n', dtype=DataType.integer, default=1),
+                    ParamSpec(name='max_tokens', dtype=DataType.integer, default=1024),
+                    ParamSpec(name='top_p', dtype=DataType.float, default=1.0),
+                ]
+            ),
         )
 
         with start_run():
@@ -124,8 +131,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
             for i, evaluation_dataset in enumerate(evaluation_datasets):
                 output_entries: list[EvaluationOutputEntry] = []
 
-                for metric, metric_type in zip(metrics, metric_types):
-                    metric_name = metric_type.__name__
+                for j, metric in enumerate(metrics):
+                    metric_name = metric_types[j].__name__
 
                     try:
                         result = default_evaluator.evaluate(
@@ -137,13 +144,14 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                             evaluator_config={},
                         )
                         table = result.tables['eval_results_table']
+                        row = i * len(metrics) + j
                         version = str(
-                            result.tables['genai_custom_metrics']['version'][0]
+                            result.tables['genai_custom_metrics']['version'][row]
                         )
-                        score = float(table[f'{metric_name}/{version}/score'].iloc[0])
+                        score = float(table[f'{metric_name}/{version}/score'].iloc[row])
                         normalized_score = (score - 1) / 4
                         reason = str(
-                            table[f'{metric_name}/{version}/justification'].iloc[0]
+                            table[f'{metric_name}/{version}/justification'].iloc[row]
                         )
 
                         output_entries.append(
