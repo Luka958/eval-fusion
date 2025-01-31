@@ -111,5 +111,4 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
-        self.llm_token_usage = self._llm.get_token_usage()
-        self.em_token_usage = self._em.get_token_usage()
+        self.token_usage = (self._llm.get_token_usage(), self._em.get_token_usage())
