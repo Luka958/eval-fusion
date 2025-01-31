@@ -8,6 +8,7 @@ class EvaluationOutputEntry(BaseModel):
     score: float | None
     reason: str | None
     error: str | None
+    time: float | None
 
     @model_validator(mode='after')
     def check(cls, model: 'EvaluationOutputEntry') -> 'EvaluationOutputEntry':

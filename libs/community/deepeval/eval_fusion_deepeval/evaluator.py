@@ -1,3 +1,4 @@
+from time import perf_counter
 from types import TracebackType
 
 from deepeval.test_case import LLMTestCase
@@ -60,7 +61,10 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
                 metric_name = str(metric.__name__)
 
                 try:
+                    start = perf_counter()
                     score = metric.measure(test_case, _show_indicator=False)
+                    time = perf_counter() - start
+
                     reason = metric.reason
 
                     output_entries.append(
@@ -69,6 +73,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
                             score=score,
                             reason=reason,
                             error=None,
+                            time=time,
                         )
                     )
 
@@ -79,6 +84,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
                             score=None,
                             reason=None,
                             error=str(e),
+                            time=None,
                         )
                     )
 

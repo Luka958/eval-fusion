@@ -1,3 +1,4 @@
+from time import perf_counter
 from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
@@ -115,7 +116,10 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                 metric_name = feedbacks[j].name
 
                 try:
+                    start = perf_counter()
                     feedback_result = future.result()
+                    time = perf_counter() - start
+
                     score = feedback_result.result
                     feedback_call = feedback_result.calls[0]
                     reason = feedback_call.meta.get(
@@ -129,6 +133,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                                 score=None,
                                 reason=None,
                                 error=feedback_result.error,
+                                time=None,
                             )
                         )
 
@@ -138,6 +143,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                             score=score,
                             reason=reason,
                             error=None,
+                            time=time,
                         )
                     )
 
@@ -148,6 +154,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                             score=None,
                             reason=None,
                             error=str(e),
+                            time=None,
                         )
                     )
 

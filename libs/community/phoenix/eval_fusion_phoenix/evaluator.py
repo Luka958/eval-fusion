@@ -1,3 +1,4 @@
+from time import perf_counter
 from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
@@ -48,9 +49,11 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
                 )
 
                 try:
+                    start = perf_counter()
                     _, score, reason = evaluator.evaluate(
                         record, provide_explanation=True
                     )
+                    time = perf_counter() - start
 
                     output_entries.append(
                         EvaluationOutputEntry(
@@ -58,6 +61,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
                             score=score,
                             reason=reason,
                             error=None,
+                            time=time,
                         )
                     )
 
@@ -68,6 +72,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
                             score=None,
                             reason=None,
                             error=str(e),
+                            time=None,
                         )
                     )
 

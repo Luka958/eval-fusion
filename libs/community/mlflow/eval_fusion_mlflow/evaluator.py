@@ -1,3 +1,4 @@
+from time import perf_counter
 from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
@@ -135,6 +136,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                     metric_name = metric_types[j].__name__
 
                     try:
+                        start = perf_counter()
                         result = default_evaluator.evaluate(
                             run_id=run.info.run_id,
                             dataset=evaluation_dataset,
@@ -143,6 +145,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                             extra_metrics=[metric],
                             evaluator_config={},
                         )
+                        time = perf_counter() - start
+
                         table = result.tables['eval_results_table']
                         row = i * len(metrics) + j
                         version = str(
@@ -160,6 +164,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                                 score=normalized_score,
                                 reason=reason,
                                 error=None,
+                                time=time,
                             )
                         )
 
@@ -170,6 +175,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                                 score=None,
                                 reason=None,
                                 error=str(e),
+                                time=None,
                             )
                         )
 

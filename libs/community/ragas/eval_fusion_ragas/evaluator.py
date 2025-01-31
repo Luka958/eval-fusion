@@ -1,3 +1,4 @@
+from time import perf_counter
 from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
@@ -60,7 +61,9 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
                 metric_name = metric.name
 
                 try:
+                    start = perf_counter()
                     score = metric.single_turn_score(single_turn_sample)
+                    time = perf_counter() - start
 
                     output_entries.append(
                         EvaluationOutputEntry(
@@ -68,6 +71,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
                             score=score,
                             reason=None,
                             error=None,
+                            time=time,
                         )
                     )
 
@@ -78,6 +82,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
                             score=None,
                             reason=None,
                             error=str(e),
+                            time=None,
                         )
                     )
 
