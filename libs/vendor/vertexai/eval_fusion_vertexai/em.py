@@ -8,7 +8,7 @@ class VertexAIEM(EvalFusionBaseEM):
         self._model_name = model_name
         self._output_dim = output_dim
         self._model = TextEmbeddingModel.from_pretrained(self._model_name)
-        self.token_usage = TokenUsage(input=0, output=0)
+        self.token_usage = TokenUsage()
 
     def get_name(self) -> str:
         self._model_name

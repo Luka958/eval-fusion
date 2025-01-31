@@ -14,7 +14,7 @@ class OpenAILLM(EvalFusionBaseLLM):
             base_url=base_url,
             api_key=api_key,
         )
-        self.token_usage = TokenUsage(input=0, output=0)
+        self.token_usage = TokenUsage()
 
     def get_name(self) -> str:
         return self._model_name
