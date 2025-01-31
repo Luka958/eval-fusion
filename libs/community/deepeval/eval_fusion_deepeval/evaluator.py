@@ -1,3 +1,5 @@
+import os
+
 from time import perf_counter
 from types import TracebackType
 
@@ -20,6 +22,8 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         self._llm = DeepEvalProxyLLM(settings)
 
     def __enter__(self) -> 'DeepEvalEvaluator':
+        os.environ['DEEPEVAL_TELEMETRY_OPT_OUT'] = 'YES'
+
         return self
 
     def evaluate(
