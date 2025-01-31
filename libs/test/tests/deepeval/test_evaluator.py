@@ -13,11 +13,11 @@ def test_evaluator(input_count: int):
     os.environ['DEEPEVAL_TELEMETRY_OPT_OUT'] = 'YES'
 
     llm_settings, _ = get_openai_settings()
-    evaluator = DeepEvalEvaluator(llm_settings)
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
 
     inputs = inputs[:input_count]
-    outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
+    with DeepEvalEvaluator(llm_settings) as evaluator:
+        outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
 
     for output in outputs:
         for output_entry in output.output_entries:
