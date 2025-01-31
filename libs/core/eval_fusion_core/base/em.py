@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from eval_fusion_core.models import TokenUsage
+
 
 class EvalFusionBaseEM(ABC):
     @abstractmethod
@@ -20,4 +22,8 @@ class EvalFusionBaseEM(ABC):
 
     @abstractmethod
     async def a_embed_texts(self, texts: list[str]) -> list[list[float]]:
+        pass
+
+    @abstractmethod
+    def get_token_usage(self) -> TokenUsage:
         pass

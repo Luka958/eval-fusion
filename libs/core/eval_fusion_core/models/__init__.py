@@ -1,5 +1,6 @@
 from .input import EvaluationInput, EvaluationInputAlias
 from .output import EvaluationOutput, EvaluationOutputEntry
+from .usage import TokenUsage
 
 
 __all__ = [
@@ -7,4 +8,5 @@ __all__ = [
     'EvaluationInputAlias',
     'EvaluationOutput',
     'EvaluationOutputEntry',
+    'TokenUsage',
 ]
