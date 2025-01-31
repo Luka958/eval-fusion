@@ -99,7 +99,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[type[MlFlowMetric]],
+        metric_types: list[MlFlowMetric],
     ) -> list[EvaluationOutput]:
         metrics = [metric_type(model=MODEL) for metric_type in metric_types]
 

@@ -1,5 +1,5 @@
 from types import MappingProxyType
-from typing import Any, Callable, Optional
+from typing import Any, Optional, Protocol
 
 from eval_fusion_core.enums import MetricTag
 from mlflow.metrics.genai import (
@@ -13,22 +13,7 @@ from mlflow.metrics.genai import (
 from mlflow.models.evaluation import EvaluationMetric
 
 
-_MlFlowCallableMetric = Callable[
-    [
-        Optional[str],
-        Optional[str],
-        Optional[list[EvaluationExample]],
-        Optional[dict[str, Any]],
-        Optional[dict[str, Any]],
-        Optional[dict[str, str]],
-        Optional[str],
-        int,
-    ],
-    EvaluationMetric,
-]
-
-
-class _MlFlowMetric(_MlFlowCallableMetric):
+class _MlFlowMetric(Protocol):
     def __call__(
         self,
         model: Optional[str] = None,
@@ -46,7 +31,7 @@ class _MlFlowMetric(_MlFlowCallableMetric):
 MlFlowMetric = _MlFlowMetric
 
 
-TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[MlFlowMetric]]] = MappingProxyType(
+TAG_TO_METRIC_TYPES: dict[MetricTag, list[MlFlowMetric]] = MappingProxyType(
     {
         MetricTag.INPUT: [
             answer_correctness,
