@@ -1,6 +1,7 @@
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
 from types import TracebackType
-from typing import Self
 
 from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import EvaluationInput, EvaluationOutput
@@ -8,7 +9,7 @@ from eval_fusion_core.models import EvaluationInput, EvaluationOutput
 
 class EvalFusionBaseEvaluator(ABC):
     @abstractmethod
-    def __enter__(self) -> Self:
+    def __enter__(self) -> EvalFusionBaseEvaluator:
         pass
 
     def evaluate(
