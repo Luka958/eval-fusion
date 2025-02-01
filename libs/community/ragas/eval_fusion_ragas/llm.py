@@ -1,4 +1,4 @@
-from typing import Optional
+from __future__ import annotations
 
 from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
@@ -28,7 +28,7 @@ class RagasProxyLLM(BaseRagasLLM):
         prompt: PromptValue,
         n: int = 1,
         temperature: float = 1e-8,
-        stop: Optional[list[str]] = None,
+        stop: list[str] | None = None,
         callbacks: Callbacks = None,
     ) -> LLMResult:
         prompt = prompt.to_string()
@@ -40,8 +40,8 @@ class RagasProxyLLM(BaseRagasLLM):
         self,
         prompt: PromptValue,
         n: int = 1,
-        temperature: Optional[float] = None,
-        stop: Optional[list[str]] = None,
+        temperature: float | None = None,
+        stop: list[str] | None = None,
         callbacks: Callbacks = None,
     ) -> LLMResult:
         prompt = prompt.to_string()

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from time import perf_counter
 from types import TracebackType
 
@@ -24,7 +26,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         self._llm = RagasProxyLLM(llm_settings)
         self._em = RagasProxyEM(em_settings)
 
-    def __enter__(self) -> 'RagasEvaluator':
+    def __enter__(self) -> RagasEvaluator:
         return self
 
     def evaluate(

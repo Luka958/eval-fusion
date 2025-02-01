@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from eval_fusion_core.base import EvalFusionBaseLLM
 from eval_fusion_core.models import TokenUsage
 from openai import NOT_GIVEN, AsyncOpenAI, OpenAI

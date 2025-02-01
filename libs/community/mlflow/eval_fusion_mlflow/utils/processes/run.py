@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from subprocess import run
 
 from eval_fusion_core.exceptions import EvalFusionException

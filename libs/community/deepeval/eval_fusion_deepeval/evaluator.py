@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 import os
 
 from time import perf_counter
@@ -21,7 +23,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self._llm = DeepEvalProxyLLM(settings)
 
-    def __enter__(self) -> 'DeepEvalEvaluator':
+    def __enter__(self) -> DeepEvalEvaluator:
         os.environ['DEEPEVAL_TELEMETRY_OPT_OUT'] = 'YES'
 
         return self

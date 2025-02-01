@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from abc import ABC, abstractmethod
 
 from eval_fusion_core.models import TokenUsage

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from deepeval.models import DeepEvalBaseEmbeddingModel
 from eval_fusion_core.base import EvalFusionBaseEM
 

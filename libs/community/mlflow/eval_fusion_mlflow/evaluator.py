@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from time import perf_counter
 from types import TracebackType
 
@@ -36,7 +38,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self._llm = MlFlowProxyLLM(settings)
 
-    def __enter__(self) -> 'MlFlowEvaluator':
+    def __enter__(self) -> MlFlowEvaluator:
         self._experiment_id = create_experiment(EXPERIMENT_NAME)
         set_experiment(self._experiment_id)
 

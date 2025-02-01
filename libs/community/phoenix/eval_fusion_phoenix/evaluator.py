@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from time import perf_counter
 from types import TracebackType
 
@@ -19,7 +21,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self._llm = PhoenixProxyLLM(settings=settings)
 
-    def __enter__(self) -> 'PhoenixEvaluator':
+    def __enter__(self) -> PhoenixEvaluator:
         return self
 
     def evaluate(

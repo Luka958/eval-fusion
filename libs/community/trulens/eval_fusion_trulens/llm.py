@@ -1,4 +1,4 @@
-from typing import Optional, Sequence
+from __future__ import annotations
 
 from eval_fusion_core.base import EvalFusionBaseLLM
 from eval_fusion_core.models import TokenUsage
@@ -18,8 +18,8 @@ class TruLensProxyLLM(LLMProvider):
 
     def _create_chat_completion(
         self,
-        prompt: Optional[str] = None,
-        messages: Optional[Sequence[dict]] = None,
+        prompt: str | None = None,
+        messages: list[dict] | None = None,
         **kwargs,
     ) -> str:
         if prompt:

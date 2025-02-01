@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from eval_fusion_core.base import EvalFusionBaseEM
 from eval_fusion_core.models import TokenUsage
 from vertexai.language_models import TextEmbeddingInput, TextEmbeddingModel

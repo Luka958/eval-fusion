@@ -1,4 +1,6 @@
-from typing import Any, Union
+from __future__ import annotations
+
+from typing import Any
 
 from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
@@ -14,7 +16,7 @@ class PhoenixProxyLLM(BaseModel):
     def _model_name(self) -> str:
         return self.__llm.get_name()
 
-    def _generate(self, prompt: Union[str, MultimodalPrompt], **kwargs: Any) -> str:
+    def _generate(self, prompt: str | MultimodalPrompt, **kwargs: Any) -> str:
         if isinstance(prompt, MultimodalPrompt):
             prompt = prompt.to_text_only_prompt()
 

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from uuid import UUID, uuid4
 
 from pydantic import BaseModel, Field, model_validator
@@ -11,7 +13,7 @@ class EvaluationOutputEntry(BaseModel):
     time: float | None
 
     @model_validator(mode='after')
-    def check(cls, model: 'EvaluationOutputEntry') -> 'EvaluationOutputEntry':
+    def check(cls, model: EvaluationOutputEntry) -> EvaluationOutputEntry:
         if model.score is not None:
             if model.error is not None:
                 raise ValueError('If "score" exists, "error" must not exist.')

@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from time import perf_counter
 from types import TracebackType
 
@@ -36,7 +38,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             settings=settings,
         )
 
-    def __enter__(self) -> 'TruLensEvaluator':
+    def __enter__(self) -> TruLensEvaluator:
         self._session = TruSession(
             connector=DefaultDBConnector(database_url='sqlite:///:memory:')
         )

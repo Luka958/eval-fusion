@@ -1,3 +1,5 @@
+from __future__ import annotations
+
 from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionEMSettings
 from ragas.embeddings.base import BaseRagasEmbeddings
