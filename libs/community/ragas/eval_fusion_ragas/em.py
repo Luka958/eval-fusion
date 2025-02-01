@@ -20,4 +20,4 @@ class RagasProxyEM(BaseRagasEmbeddings):
         return await self.__em.a_embed_texts(texts)
 
     def get_token_usage(self) -> TokenUsage:
-        return self.__llm.get_token_usage()
+        return self.__em.get_token_usage()
