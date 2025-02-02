@@ -28,6 +28,8 @@ $subDirs = @(
     "libs\community\phoenix",
     "libs\community\ragas",
     "libs\community\trulens",
+    "libs\vendor\openai",
+    "libs\vendor\vertexai",
     "libs\test"
 )
 

@@ -1,5 +1,7 @@
 from abc import ABC, abstractmethod
 
+from eval_fusion_core.models import TokenUsage
+
 
 class EvalFusionBaseLLM(ABC):
     @abstractmethod
@@ -7,13 +9,17 @@ class EvalFusionBaseLLM(ABC):
         pass
 
     @abstractmethod
-    def generate(self, prompt: str) -> str:
+    def generate(self, prompt: str, use_json: bool) -> str:
         pass
 
     @abstractmethod
-    async def a_generate(self, prompt: str) -> str:
+    async def a_generate(self, prompt: str, use_json: bool) -> str:
         pass
 
     @abstractmethod
-    def generate_from_messages(self, messages: list[dict]) -> str:
+    def generate_from_messages(self, messages: list[dict], use_json: bool) -> str:
+        pass
+
+    @abstractmethod
+    def get_token_usage(self) -> TokenUsage:
         pass

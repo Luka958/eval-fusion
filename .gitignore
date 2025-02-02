@@ -307,3 +307,5 @@ pyrightconfig.json
 
 # custom
 **/google-cloud-credentials.json
+**/default.sqlite
+**/mlruns

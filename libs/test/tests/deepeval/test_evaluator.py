@@ -1,17 +1,20 @@
+import pytest
+
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.utils.loaders import load_evaluation_inputs
 from eval_fusion_deepeval.evaluator import DeepEvalEvaluator
-from eval_fusion_deepeval.llm import DeepEvalProxyLLM
-from eval_fusion_test.utils.nvidia import NvidiaLLM
+from eval_fusion_test.settings import get_openai_settings
 
 
-def test_evaluator():
-    llm = NvidiaLLM('meta/llama-3.1-405b-instruct')
-    proxy_llm = DeepEvalProxyLLM(llm)
-    evaluator = DeepEvalEvaluator(proxy_llm)
+@pytest.mark.parametrize('input_count', [1])
+def test_evaluator(input_count: int):
+    llm_settings, _ = get_openai_settings()
     inputs = load_evaluation_inputs('assets/amnesty_qa.json')
 
-    inputs = inputs[:1]
-    outputs = evaluator.evaluate(inputs, ...)
+    inputs = inputs[:input_count]
+    with DeepEvalEvaluator(llm_settings) as evaluator:
+        outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
 
     for output in outputs:
-        print(output)
+        for output_entry in output.output_entries:
+            print(output_entry, end='\n\n')

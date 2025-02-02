@@ -1,6 +1,13 @@
 # eval-fusion
 
 ## Setup
+
+### Linux
+`chmod +x setup.sh`
+
+`./setup.sh`
+
+### Windows
 `.\setup.ps1`
 
 ## Format manually

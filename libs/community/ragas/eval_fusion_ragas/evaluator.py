@@ -1,58 +1,42 @@
-from eval_fusion_core.base import (
-    EvalFusionBaseEmbeddingModel,
-    EvalFusionBaseEvaluator,
-    EvalFusionBaseLLM,
-)
+from time import perf_counter
+from types import TracebackType
+
+from eval_fusion_core.base import EvalFusionBaseEvaluator
+from eval_fusion_core.enums import MetricTag
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
     EvaluationOutputEntry,
 )
+from eval_fusion_core.models.settings import EvalFusionEMSettings, EvalFusionLLMSettings
 from ragas import SingleTurnSample
-from ragas.metrics import (
-    ContextEntityRecall,
-    ContextPrecision,
-    ContextRecall,
-    Faithfulness,
-    NoiseSensitivity,
-    ResponseRelevancy,
-    SingleTurnMetric,
-)
+from ragas.metrics import ResponseRelevancy
 
-from .embedding_model import RagasProxyEmbeddingModel
+from .em import RagasProxyEM
 from .llm import RagasProxyLLM
+from .metrics import TAG_TO_METRIC_TYPES, RagasMetric
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
     def __init__(
-        self, llm: EvalFusionBaseLLM, embedding_model: EvalFusionBaseEmbeddingModel
+        self, llm_settings: EvalFusionLLMSettings, em_settings: EvalFusionEMSettings
     ):
-        self.llm: RagasProxyLLM = RagasProxyLLM(llm_delegate=llm)
-        self.embedding_model = RagasProxyEmbeddingModel(
-            embedding_model_delegate=embedding_model
-        )
+        self._llm = RagasProxyLLM(llm_settings)
+        self._em = RagasProxyEM(em_settings)
+
+    def __enter__(self) -> 'RagasEvaluator':
+        return self
 
     def evaluate(
-        self, inputs: list[EvaluationInput], metrics: list
+        self,
+        inputs: list[EvaluationInput],
+        metric_types: list[type[RagasMetric]],
     ) -> list[EvaluationOutput]:
-        # TODO organize metrics
-
-        context_precision = ContextPrecision(llm=self.llm)
-        context_recall = ContextRecall(llm=self.llm)
-        context_entity_recall = ContextEntityRecall(llm=self.llm)
-        noise_sensitivity = NoiseSensitivity(llm=self.llm)
-        response_relevancy = ResponseRelevancy(
-            llm=self.llm, embeddings=self.embedding_model
-        )
-        faithfulness = Faithfulness(llm=self.llm)
-
-        metrics: list[SingleTurnMetric] = [
-            context_precision,
-            context_recall,
-            context_entity_recall,
-            noise_sensitivity,
-            response_relevancy,
-            faithfulness,
+        metrics = [
+            metric_type(llm=self._llm, embeddings=self._em)
+            if metric_type == ResponseRelevancy
+            else metric_type(llm=self._llm)
+            for metric_type in metric_types
         ]
 
         single_turn_samples = [
@@ -68,17 +52,63 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        return [
-            EvaluationOutput(
-                input_id=inputs[i].id,
-                output_entries=[
-                    EvaluationOutputEntry(
-                        metric_name=metric.name,
-                        score=metric.single_turn_score(single_turn_sample),
-                        reason=None,
+        outputs: list[EvaluationOutput] = []
+
+        for i, single_turn_sample in enumerate(single_turn_samples):
+            output_entries: list[EvaluationOutputEntry] = []
+
+            for metric in metrics:
+                metric_name = metric.name
+
+                try:
+                    start = perf_counter()
+                    score = metric.single_turn_score(single_turn_sample)
+                    time = perf_counter() - start
+
+                    output_entries.append(
+                        EvaluationOutputEntry(
+                            metric_name=metric_name,
+                            score=score,
+                            reason=None,
+                            error=None,
+                            time=time,
+                        )
                     )
-                    for metric in metrics
-                ],
+
+                except Exception as e:
+                    output_entries.append(
+                        EvaluationOutputEntry(
+                            metric_name=metric_name,
+                            score=None,
+                            reason=None,
+                            error=str(e),
+                            time=None,
+                        )
+                    )
+
+            outputs.append(
+                EvaluationOutput(
+                    input_id=inputs[i].id,
+                    output_entries=output_entries,
+                )
             )
-            for i, single_turn_sample in enumerate(single_turn_samples)
-        ]
+
+        return outputs
+
+    def evaluate_by_tag(
+        self,
+        inputs: list[EvaluationInput],
+        tag: MetricTag,
+    ) -> list[EvaluationOutput]:
+        if tag is not None:
+            metric_types = TAG_TO_METRIC_TYPES[tag]
+
+        return self.evaluate(inputs, metric_types)
+
+    def __exit__(
+        self,
+        type_: type[BaseException] | None,
+        value: BaseException | None,
+        traceback: TracebackType | None,
+    ) -> bool | None:
+        self.token_usage = (self._llm.get_token_usage(), self._em.get_token_usage())

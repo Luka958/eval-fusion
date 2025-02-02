@@ -11,7 +11,7 @@ Measures the factual correctness of the model’s output relative to the ground 
 - Input
     - `inputs` - queries
     - `outputs` - model's outputs
-    - `targets` - ground truths
+    - `predictions` - ground truths
 - Output
     - `score` - a float value
     - `justification` - a textual explanation of the score
@@ -32,7 +32,7 @@ Measures how similar the model’s output is to the ground truth.
 - Input
     - `inputs` - queries
     - `outputs` - model's outputs
-    - `targets` - ground truths
+    - `predictions` - ground truths
 - Output
     - `score` - a float value
     - `justification` - a textual explanation of the score
