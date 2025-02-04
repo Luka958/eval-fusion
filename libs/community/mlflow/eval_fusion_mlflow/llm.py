@@ -12,6 +12,7 @@ from pandas import DataFrame
 class MlFlowProxyLLM(PythonModel):
     def __init__(self, settings: EvalFusionLLMSettings):
         self.settings = settings
+        self.token_usage = TokenUsage()
 
         if os.name == 'nt':
             raise EvalFusionException('MLflow AI Gateway does not support Windows.')
@@ -35,8 +36,9 @@ class MlFlowProxyLLM(PythonModel):
             else model_input
         )
         result = self.__llm.generate(prompt, use_json=False)
+        self.token_usage = self.__llm.get_token_usage()
 
         return [result]
 
     def get_token_usage(self) -> TokenUsage:
-        return self.__llm.get_token_usage()
+        return self.token_usage
