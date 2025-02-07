@@ -10,8 +10,8 @@ Measures the factual correctness of the model’s output relative to the ground 
 
 - Input
     - `inputs` - queries
-    - `outputs` - model's outputs
-    - `predictions` - ground truths
+    - `predictions` - model's outputs
+    - `targets` - ground truths
 - Output
     - `score` - a float value
     - `justification` - a textual explanation of the score
@@ -21,7 +21,7 @@ Measures the relevance of the model’s output to the input, disregarding the co
 
 - Input
     - `inputs` - queries
-    - `outputs` - model's outputs
+    - `predictions` - model's outputs
 - Output
     - `score` - a float value
     - `justification` - a textual explanation of the score
@@ -31,8 +31,8 @@ Measures how similar the model’s output is to the ground truth.
 
 - Input
     - `inputs` - queries
-    - `outputs` - model's outputs
-    - `predictions` - ground truths
+    - `predictions` - model's outputs
+    - `targets` - ground truths
 - Output
     - `score` - a float value
     - `justification` - a textual explanation of the score
@@ -42,7 +42,7 @@ Measures the faithfulness of the model’s output concerning the provided contex
 
 - Input
     - `inputs` - queries
-    - `outputs` - model's outputs
+    - `predictions` - model's outputs
     - `context` - a given context
 - Output
     - `score` - a float value
@@ -53,7 +53,7 @@ Measures the appropriateness and applicability of the model's output with respec
 
 - Input
     - `inputs` - queries
-    - `outputs` - model's outputs
+    - `predictions` - model's outputs
     - `context` - a given context
 - Output
     - `score` - a float value
