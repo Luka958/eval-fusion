@@ -4,6 +4,7 @@
 - add llama-index
 - add RAGChecker
 - add arxiv links if available for each framework
+- add setting for LLM and EM parameters
 - concurrency
 - rework metrics
   - use str Enum for metrics
@@ -15,3 +16,12 @@
   - EvaluationOutput and EvaluationOutputEntry -> TODO
 - issues:
   - waiting because of hitting a rate limit is not subtracted from time
+- add batch API support
+- add popular vendors:
+  - amazon bedrock
+  - anthropic
+  - azure
+  - cohere
+  - mistral
+  - xAI
+  - hugging face
