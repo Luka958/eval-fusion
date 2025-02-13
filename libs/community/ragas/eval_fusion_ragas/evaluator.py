@@ -5,6 +5,7 @@ from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import Feature
+from eval_fusion_core.exceptions import EvalFusionException
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -16,7 +17,7 @@ from ragas.metrics import ResponseRelevancy
 
 from .em import RagasProxyEM
 from .llm import RagasProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES, RagasMetric
+from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, RagasMetric
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
@@ -32,9 +33,17 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[type[RagasMetric]],
+        metrics: list[RagasMetric] | None = None,
+        feature: Feature | None = None,
     ) -> list[EvaluationOutput]:
-        metrics = [
+        if metrics is None and feature is None:
+            raise EvalFusionException('metrics and tag cannot both be None.')
+
+        if feature is not None:
+            metrics = FEATURE_TO_METRICS[feature]
+
+        metric_types = list(map(METRIC_TO_TYPE.get, metrics))
+        metric_instances = [
             metric_type(llm=self._llm, embeddings=self._em)
             if metric_type == ResponseRelevancy
             else metric_type(llm=self._llm)
@@ -59,7 +68,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         for i, single_turn_sample in enumerate(single_turn_samples):
             output_entries: list[EvaluationOutputEntry] = []
 
-            for metric in metrics:
+            for metric in metric_instances:
                 metric_name = metric.name
 
                 try:
