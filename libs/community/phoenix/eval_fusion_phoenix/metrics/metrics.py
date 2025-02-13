@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from eval_fusion_core.base import EvalFusionBaseMetric
 from eval_fusion_core.enums import Feature
 from phoenix.evals import (
     HallucinationEvaluator,
@@ -8,28 +9,39 @@ from phoenix.evals import (
 )
 
 
-PhoenixMetric = HallucinationEvaluator | QAEvaluator | RelevanceEvaluator
+class PhoenixMetric(EvalFusionBaseMetric):
+    HALLUCINATION = 'hallucination'
+    QA = 'qa'
+    RELEVANCE = 'relevance'
 
 
-TAG_TO_METRIC_TYPES: dict[Feature, list[type[PhoenixMetric]]] = {
+PhoenixMetricType = type[HallucinationEvaluator | QAEvaluator | RelevanceEvaluator]
+
+METRIC_TO_TYPE: dict[PhoenixMetric, PhoenixMetricType] = {
+    PhoenixMetric.HALLUCINATION: HallucinationEvaluator,
+    PhoenixMetric.QA: QAEvaluator,
+    PhoenixMetric.RELEVANCE: RelevanceEvaluator,
+}
+
+FEATURE_TO_METRICS = {
     Feature.INPUT: [
-        HallucinationEvaluator,
-        QAEvaluator,
-        RelevanceEvaluator,
+        PhoenixMetric.HALLUCINATION,
+        PhoenixMetric.QA,
+        PhoenixMetric.RELEVANCE,
     ],
     Feature.OUTPUT: [
-        HallucinationEvaluator,
-        QAEvaluator,
+        PhoenixMetric.HALLUCINATION,
+        PhoenixMetric.QA,
     ],
     Feature.GROUND_TRUTH: [],
     Feature.RELEVANT_CHUNKS: [
-        HallucinationEvaluator,
-        QAEvaluator,
-        RelevanceEvaluator,
+        PhoenixMetric.HALLUCINATION,
+        PhoenixMetric.QA,
+        PhoenixMetric.RELEVANCE,
     ],
     Feature.ALL: [
-        HallucinationEvaluator,
-        QAEvaluator,
-        RelevanceEvaluator,
+        PhoenixMetric.HALLUCINATION,
+        PhoenixMetric.QA,
+        PhoenixMetric.RELEVANCE,
     ],
 }

@@ -5,6 +5,7 @@ from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import Feature
+from eval_fusion_core.exceptions import EvalFusionException
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -14,7 +15,7 @@ from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from phoenix.evals.evaluators import Record
 
 from .llm import PhoenixProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES, PhoenixMetric
+from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, PhoenixMetric
 
 
 class PhoenixEvaluator(EvalFusionBaseEvaluator):
@@ -27,8 +28,16 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[type[PhoenixMetric]],
+        metrics: list[PhoenixMetric] | None = None,
+        feature: Feature | None = None,
     ) -> list[EvaluationOutput]:
+        if metrics is None and feature is None:
+            raise EvalFusionException('metrics and tag cannot both be None.')
+
+        if feature is not None:
+            metrics = FEATURE_TO_METRICS[feature]
+
+        metric_types = list(map(METRIC_TO_TYPE.get, metrics))
         evaluators = [metric_type(self._llm) for metric_type in metric_types]
 
         records: list[Record] = [
