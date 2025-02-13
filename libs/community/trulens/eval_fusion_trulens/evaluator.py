@@ -23,10 +23,6 @@ from .constants import APP_ID
 from .llm import TruLensProxyLLM
 from .metrics import (
     FEATURE_TO_METRICS,
-    METRIC_TO_TYPE,
-    ContextRelevance,
-    Groundedness,
-    Relevance,
     TruLensMetric,
 )
 
@@ -84,31 +80,31 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
 
         feedbacks: list[Feedback] = []
 
-        if ContextRelevance in metric_types:
+        if TruLensMetric.CONTEXT_RELEVANCE in metrics:
             feedbacks.append(
                 Feedback(
                     self._llm.context_relevance_with_cot_reasons,
-                    name='context_relevance',
+                    name=TruLensMetric.CONTEXT_RELEVANCE.value,
                 )
                 .on(Select.RecordInput)
                 .on(context_selector)
             )
 
-        if Groundedness in metric_types:
+        if TruLensMetric.GROUNDEDNESS in metric_types:
             feedbacks.append(
                 Feedback(
                     self._llm.groundedness_measure_with_cot_reasons,
-                    name='groundedness',
+                    name=TruLensMetric.GROUNDEDNESS.value,
                 )
                 .on(context_selector.collect())
                 .on(output_selector)
             )
 
-        if Relevance in metric_types:
+        if TruLensMetric.RELEVANCE in metric_types:
             feedbacks.append(
                 Feedback(
                     self._llm.relevance_with_cot_reasons,
-                    name='relevance',
+                    name=TruLensMetric.RELEVANCE.value,
                 ).on_input_output()
             )
 
