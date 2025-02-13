@@ -2,6 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol
 
+from eval_fusion_core.base import EvalFusionBaseMetric
 from eval_fusion_core.enums import Feature
 from mlflow.metrics.genai import (
     EvaluationExample,
@@ -14,7 +15,15 @@ from mlflow.metrics.genai import (
 from mlflow.models.evaluation import EvaluationMetric
 
 
-class _MlFlowMetric(Protocol):
+class MlFlowMetric(EvalFusionBaseMetric):
+    ANSWER_CORRECTNESS = 'answer_correctness'
+    ANSWER_RELEVANCE = 'answer_relevance'
+    ANSWER_SIMILARITY = 'answer_similarity'
+    FAITHFULNESS = 'faithfulness'
+    RELEVANCE = 'relevance'
+
+
+class _MlFlowMetricType(Protocol):
     def __call__(
         self,
         model: str | None = None,
@@ -29,37 +38,45 @@ class _MlFlowMetric(Protocol):
         pass
 
 
-MlFlowMetric = _MlFlowMetric
+MlFlowMetricType = _MlFlowMetricType
+
+METRIC_TO_TYPE: dict[MlFlowMetric, MlFlowMetricType] = {
+    MlFlowMetric.ANSWER_CORRECTNESS: answer_correctness,
+    MlFlowMetric.ANSWER_RELEVANCE: answer_relevance,
+    MlFlowMetric.ANSWER_SIMILARITY: answer_similarity,
+    MlFlowMetric.FAITHFULNESS: faithfulness,
+    MlFlowMetric.RELEVANCE: relevance,
+}
 
 
-TAG_TO_METRIC_TYPES: dict[Feature, list[MlFlowMetric]] = {
+FEATURE_TO_METRICS = {
     Feature.INPUT: [
-        answer_correctness,
-        answer_relevance,
-        answer_similarity,
-        faithfulness,
-        relevance,
+        MlFlowMetric.ANSWER_CORRECTNESS,
+        MlFlowMetric.ANSWER_RELEVANCE,
+        MlFlowMetric.ANSWER_SIMILARITY,
+        MlFlowMetric.FAITHFULNESS,
+        MlFlowMetric.RELEVANCE,
     ],
     Feature.OUTPUT: [
-        answer_correctness,
-        answer_relevance,
-        answer_similarity,
-        faithfulness,
-        relevance,
+        MlFlowMetric.ANSWER_CORRECTNESS,
+        MlFlowMetric.ANSWER_RELEVANCE,
+        MlFlowMetric.ANSWER_SIMILARITY,
+        MlFlowMetric.FAITHFULNESS,
+        MlFlowMetric.RELEVANCE,
     ],
     Feature.GROUND_TRUTH: [
-        answer_correctness,
-        answer_similarity,
+        MlFlowMetric.ANSWER_CORRECTNESS,
+        MlFlowMetric.ANSWER_SIMILARITY,
     ],
     Feature.RELEVANT_CHUNKS: [
-        faithfulness,
-        relevance,
+        MlFlowMetric.FAITHFULNESS,
+        MlFlowMetric.RELEVANCE,
     ],
     Feature.ALL: [
-        answer_correctness,
-        answer_relevance,
-        answer_similarity,
-        faithfulness,
-        relevance,
+        MlFlowMetric.ANSWER_CORRECTNESS,
+        MlFlowMetric.ANSWER_RELEVANCE,
+        MlFlowMetric.ANSWER_SIMILARITY,
+        MlFlowMetric.FAITHFULNESS,
+        MlFlowMetric.RELEVANCE,
     ],
 }

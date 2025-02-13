@@ -29,7 +29,7 @@ from pandas import DataFrame
 
 from .constants import *
 from .llm import MlFlowProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES, MlFlowMetric
+from .metrics import TAG_TO_METRIC_TYPES, MlFlowMetricType
 from .utils.connections import check_health
 from .utils.processes import close_process, open_process, run_process
 
@@ -101,7 +101,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[MlFlowMetric],
+        metric_types: list[MlFlowMetricType],
     ) -> list[EvaluationOutput]:
         metrics = [metric_type(model=MODEL) for metric_type in metric_types]
 
