@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.enums import Feature
 from phoenix.evals import (
     HallucinationEvaluator,
     QAEvaluator,
@@ -11,23 +11,23 @@ from phoenix.evals import (
 PhoenixMetric = HallucinationEvaluator | QAEvaluator | RelevanceEvaluator
 
 
-TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[PhoenixMetric]]] = {
-    MetricTag.INPUT: [
+TAG_TO_METRIC_TYPES: dict[Feature, list[type[PhoenixMetric]]] = {
+    Feature.INPUT: [
         HallucinationEvaluator,
         QAEvaluator,
         RelevanceEvaluator,
     ],
-    MetricTag.OUTPUT: [
+    Feature.OUTPUT: [
         HallucinationEvaluator,
         QAEvaluator,
     ],
-    MetricTag.GROUND_TRUTH: [],
-    MetricTag.RELEVANT_CHUNKS: [
+    Feature.GROUND_TRUTH: [],
+    Feature.RELEVANT_CHUNKS: [
         HallucinationEvaluator,
         QAEvaluator,
         RelevanceEvaluator,
     ],
-    MetricTag.ALL: [
+    Feature.ALL: [
         HallucinationEvaluator,
         QAEvaluator,
         RelevanceEvaluator,

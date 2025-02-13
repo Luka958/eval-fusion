@@ -3,7 +3,7 @@ from __future__ import annotations
 from abc import ABC, abstractmethod
 from types import TracebackType
 
-from eval_fusion_core.enums import EvaluationInputFeature
+from eval_fusion_core.enums import Feature
 from eval_fusion_core.models import EvaluationInput, EvaluationOutput
 
 from .metric import EvalFusionBaseMetric
@@ -17,8 +17,8 @@ class EvalFusionBaseEvaluator(ABC):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metrics: list[EvalFusionBaseMetric] | None = None,
-        feature: EvaluationInputFeature | None = None,
+        metrics: list[EvalFusionBaseMetric] | None,
+        feature: Feature | None,
     ) -> list[EvaluationOutput]:
         pass
 

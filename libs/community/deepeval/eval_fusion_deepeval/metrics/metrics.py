@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from enum import Enum
-
 from deepeval.metrics import (
     AnswerRelevancyMetric,
     ContextualPrecisionMetric,
@@ -10,10 +8,10 @@ from deepeval.metrics import (
     FaithfulnessMetric,
 )
 from eval_fusion_core.base import EvalFusionBaseMetric
-from eval_fusion_core.enums import EvaluationInputFeature
+from eval_fusion_core.enums import Feature
 
 
-class DeepEvalMetric(str, Enum, EvalFusionBaseMetric):
+class DeepEvalMetric(EvalFusionBaseMetric):
     ANSWER_RELEVANCY = 'answer_relevancy'
     CONTEXTUAL_PRECISION = 'contextual_precision'
     CONTEXTUAL_RECALL = 'contextual_recall'
@@ -38,31 +36,31 @@ METRIC_TO_TYPE: dict[DeepEvalMetric, DeepEvalMetricType] = {
 }
 
 FEATURE_TO_METRICS = {
-    EvaluationInputFeature.INPUT: [
+    Feature.INPUT: [
         DeepEvalMetric.ANSWER_RELEVANCY,
         DeepEvalMetric.CONTEXTUAL_PRECISION,
         DeepEvalMetric.CONTEXTUAL_RECALL,
         DeepEvalMetric.CONTEXTUAL_RELEVANCY,
         DeepEvalMetric.FAITHFULNESS,
     ],
-    EvaluationInputFeature.OUTPUT: [
+    Feature.OUTPUT: [
         DeepEvalMetric.ANSWER_RELEVANCY,
         DeepEvalMetric.CONTEXTUAL_PRECISION,
         DeepEvalMetric.CONTEXTUAL_RECALL,
         DeepEvalMetric.CONTEXTUAL_RELEVANCY,
         DeepEvalMetric.FAITHFULNESS,
     ],
-    EvaluationInputFeature.GROUND_TRUTH: [
+    Feature.GROUND_TRUTH: [
         DeepEvalMetric.CONTEXTUAL_PRECISION,
         DeepEvalMetric.CONTEXTUAL_RECALL,
     ],
-    EvaluationInputFeature.RELEVANT_CHUNKS: [
+    Feature.RELEVANT_CHUNKS: [
         DeepEvalMetric.CONTEXTUAL_PRECISION,
         DeepEvalMetric.CONTEXTUAL_RECALL,
         DeepEvalMetric.CONTEXTUAL_RELEVANCY,
         DeepEvalMetric.FAITHFULNESS,
     ],
-    EvaluationInputFeature.ALL: [
+    Feature.ALL: [
         DeepEvalMetric.ANSWER_RELEVANCY,
         DeepEvalMetric.CONTEXTUAL_PRECISION,
         DeepEvalMetric.CONTEXTUAL_RECALL,

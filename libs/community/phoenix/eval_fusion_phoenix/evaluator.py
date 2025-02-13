@@ -4,7 +4,7 @@ from time import perf_counter
 from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
-from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.enums import Feature
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -86,16 +86,6 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
             )
 
         return outputs
-
-    def evaluate_by_tag(
-        self,
-        inputs: list[EvaluationInput],
-        tag: MetricTag,
-    ) -> list[EvaluationOutput]:
-        if tag is not None:
-            metric_types = TAG_TO_METRIC_TYPES[tag]
-
-        return self.evaluate(inputs, metric_types)
 
     def __exit__(
         self,

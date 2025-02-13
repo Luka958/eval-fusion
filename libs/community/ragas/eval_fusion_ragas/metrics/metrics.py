@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.enums import Feature
 from ragas.metrics import (
     ContextEntityRecall,
     ContextPrecision,
@@ -21,32 +21,32 @@ RagasMetric = (
 )
 
 
-TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[RagasMetric]]] = {
-    MetricTag.INPUT: [
+TAG_TO_METRIC_TYPES: dict[Feature, list[type[RagasMetric]]] = {
+    Feature.INPUT: [
         ContextPrecision,
         ContextRecall,
         NoiseSensitivity,
         ResponseRelevancy,
     ],
-    MetricTag.OUTPUT: [
+    Feature.OUTPUT: [
         Faithfulness,
         NoiseSensitivity,
         ResponseRelevancy,
     ],
-    MetricTag.GROUND_TRUTH: [
+    Feature.GROUND_TRUTH: [
         ContextEntityRecall,
         ContextPrecision,
         ContextRecall,
         NoiseSensitivity,
     ],
-    MetricTag.RELEVANT_CHUNKS: [
+    Feature.RELEVANT_CHUNKS: [
         ContextEntityRecall,
         ContextPrecision,
         ContextRecall,
         Faithfulness,
         NoiseSensitivity,
     ],
-    MetricTag.ALL: [
+    Feature.ALL: [
         ContextEntityRecall,
         ContextPrecision,
         ContextRecall,

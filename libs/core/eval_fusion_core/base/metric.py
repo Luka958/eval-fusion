@@ -1,7 +1,12 @@
 from __future__ import annotations
 
-from abc import ABC
+from abc import ABC, ABCMeta
+from enum import Enum, EnumMeta
 
 
-class EvalFusionBaseMetric(ABC):
+class Meta(ABCMeta, EnumMeta):
+    pass
+
+
+class EvalFusionBaseMetric(ABC, Enum, metaclass=Meta):
     pass

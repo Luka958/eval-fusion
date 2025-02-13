@@ -1,4 +1,4 @@
-from .feature import EvaluationInputFeature
+from .feature import Feature
 
 
-__all__ = ['EvaluationInputFeature']
+__all__ = ['Feature']

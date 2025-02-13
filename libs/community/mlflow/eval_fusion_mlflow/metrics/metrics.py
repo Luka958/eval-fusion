@@ -2,7 +2,7 @@ from __future__ import annotations
 
 from typing import Any, Protocol
 
-from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.enums import Feature
 from mlflow.metrics.genai import (
     EvaluationExample,
     answer_correctness,
@@ -32,30 +32,30 @@ class _MlFlowMetric(Protocol):
 MlFlowMetric = _MlFlowMetric
 
 
-TAG_TO_METRIC_TYPES: dict[MetricTag, list[MlFlowMetric]] = {
-    MetricTag.INPUT: [
+TAG_TO_METRIC_TYPES: dict[Feature, list[MlFlowMetric]] = {
+    Feature.INPUT: [
         answer_correctness,
         answer_relevance,
         answer_similarity,
         faithfulness,
         relevance,
     ],
-    MetricTag.OUTPUT: [
+    Feature.OUTPUT: [
         answer_correctness,
         answer_relevance,
         answer_similarity,
         faithfulness,
         relevance,
     ],
-    MetricTag.GROUND_TRUTH: [
+    Feature.GROUND_TRUTH: [
         answer_correctness,
         answer_similarity,
     ],
-    MetricTag.RELEVANT_CHUNKS: [
+    Feature.RELEVANT_CHUNKS: [
         faithfulness,
         relevance,
     ],
-    MetricTag.ALL: [
+    Feature.ALL: [
         answer_correctness,
         answer_relevance,
         answer_similarity,

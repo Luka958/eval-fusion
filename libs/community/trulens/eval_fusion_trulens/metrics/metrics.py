@@ -1,6 +1,6 @@
 from __future__ import annotations
 
-from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.enums import Feature
 
 
 class ContextRelevance:
@@ -18,22 +18,22 @@ class Relevance:
 TruLensMetric = ContextRelevance | Groundedness | Relevance
 
 
-TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[TruLensMetric]]] = {
-    MetricTag.INPUT: [
+TAG_TO_METRIC_TYPES: dict[Feature, list[type[TruLensMetric]]] = {
+    Feature.INPUT: [
         ContextRelevance,
         Relevance,
     ],
-    MetricTag.OUTPUT: [
+    Feature.OUTPUT: [
         ContextRelevance,
         Groundedness,
         Relevance,
     ],
-    MetricTag.GROUND_TRUTH: [],
-    MetricTag.RELEVANT_CHUNKS: [
+    Feature.GROUND_TRUTH: [],
+    Feature.RELEVANT_CHUNKS: [
         ContextRelevance,
         Groundedness,
     ],
-    MetricTag.ALL: [
+    Feature.ALL: [
         ContextRelevance,
         Groundedness,
         Relevance,
