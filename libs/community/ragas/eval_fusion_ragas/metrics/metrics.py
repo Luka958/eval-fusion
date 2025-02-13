@@ -39,7 +39,7 @@ METRIC_TO_TYPE: dict[RagasMetric, RagasMetricType] = {
     RagasMetric.RESPONSE_RELEVANCY: ResponseRelevancy,
 }
 
-FEATURE_TO_METRICS: dict[Feature, RagasMetric] = {
+FEATURE_TO_METRICS = {
     Feature.INPUT: [
         RagasMetric.CONTEXT_PRECISION,
         RagasMetric.CONTEXT_RECALL,

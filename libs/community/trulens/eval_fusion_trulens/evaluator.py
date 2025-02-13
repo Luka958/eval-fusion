@@ -5,6 +5,7 @@ from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import Feature
+from eval_fusion_core.exceptions import EvalFusionException
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -21,7 +22,8 @@ from trulens.core.schema.feedback import FeedbackResultStatus
 from .constants import APP_ID
 from .llm import TruLensProxyLLM
 from .metrics import (
-    TAG_TO_METRIC_TYPES,
+    FEATURE_TO_METRICS,
+    METRIC_TO_TYPE,
     ContextRelevance,
     Groundedness,
     Relevance,
@@ -49,8 +51,17 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[type[TruLensMetric]],
+        metrics: list[TruLensMetric] | None = None,
+        feature: Feature | None = None,
     ) -> list[EvaluationOutput]:
+        if metrics is None and feature is None:
+            raise EvalFusionException('metrics and tag cannot both be None.')
+
+        if feature is not None:
+            metrics = FEATURE_TO_METRICS[feature]
+
+        metric_types = list(map(METRIC_TO_TYPE.get, metrics))
+
         retriever = Select.RecordCalls.retriever
         synthesizer = Select.RecordCalls.synthesizer
 

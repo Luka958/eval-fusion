@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+from eval_fusion_core.base import EvalFusionBaseMetric
 from eval_fusion_core.enums import Feature
 
 
@@ -15,27 +16,40 @@ class Relevance:
     pass
 
 
-TruLensMetric = ContextRelevance | Groundedness | Relevance
+class TruLensMetric(EvalFusionBaseMetric):
+    CONTEXT_RELEVANCE = 'context_relevance'
+    GROUNDEDNESS = 'groundedness'
+    RELEVANCE = 'relevance'
 
 
-TAG_TO_METRIC_TYPES: dict[Feature, list[type[TruLensMetric]]] = {
+TruLensMetricType = type[ContextRelevance | Groundedness | Relevance]
+
+
+METRIC_TO_TYPE: dict[TruLensMetric, TruLensMetricType] = {
+    TruLensMetric.CONTEXT_RELEVANCE: ContextRelevance,
+    TruLensMetric.GROUNDEDNESS: Groundedness,
+    TruLensMetric.RELEVANCE: Relevance,
+}
+
+
+FEATURE_TO_METRICS = {
     Feature.INPUT: [
-        ContextRelevance,
-        Relevance,
+        TruLensMetric.CONTEXT_RELEVANCE,
+        TruLensMetric.RELEVANCE,
     ],
     Feature.OUTPUT: [
-        ContextRelevance,
-        Groundedness,
-        Relevance,
+        TruLensMetric.CONTEXT_RELEVANCE,
+        TruLensMetric.GROUNDEDNESS,
+        TruLensMetric.RELEVANCE,
     ],
     Feature.GROUND_TRUTH: [],
     Feature.RELEVANT_CHUNKS: [
-        ContextRelevance,
-        Groundedness,
+        TruLensMetric.CONTEXT_RELEVANCE,
+        TruLensMetric.GROUNDEDNESS,
     ],
     Feature.ALL: [
-        ContextRelevance,
-        Groundedness,
-        Relevance,
+        TruLensMetric.CONTEXT_RELEVANCE,
+        TruLensMetric.GROUNDEDNESS,
+        TruLensMetric.RELEVANCE,
     ],
 }
