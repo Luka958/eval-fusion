@@ -1,4 +1,4 @@
-from .tag import MetricTag
+from .feature import EvaluationInputFeature
 
 
-__all__ = ['MetricTag']
+__all__ = ['EvaluationInputFeature']

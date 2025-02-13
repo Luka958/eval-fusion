@@ -7,7 +7,7 @@ from types import TracebackType
 
 from deepeval.test_case import LLMTestCase
 from eval_fusion_core.base import EvalFusionBaseEvaluator
-from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.enums import EvaluationInputFeature
 from eval_fusion_core.exceptions import EvalFusionException
 from eval_fusion_core.models import (
     EvaluationInput,
@@ -17,7 +17,7 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 from .llm import DeepEvalProxyLLM
-from .metrics import METRIC_TO_TYPE, TAG_TO_METRICS, DeepEvalMetric
+from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, DeepEvalMetric
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
@@ -33,13 +33,13 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         self,
         inputs: list[EvaluationInput],
         metrics: list[DeepEvalMetric] | None = None,
-        tag: MetricTag | None = None,
+        feature: EvaluationInputFeature | None = None,
     ) -> list[EvaluationOutput]:
-        if metric is None and tag is None:
+        if metric is None and feature is None:
             raise EvalFusionException("metrics and tag can't both be None.")
 
-        if tag is not None:
-            metrics = TAG_TO_METRICS[tag]
+        if feature is not None:
+            metrics = FEATURE_TO_METRICS[feature]
 
         metric_types = list(map(METRIC_TO_TYPE.get, metrics))
         metric_instances = [
