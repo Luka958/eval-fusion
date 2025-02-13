@@ -9,11 +9,11 @@ from deepeval.metrics import (
     ContextualRelevancyMetric,
     FaithfulnessMetric,
 )
-from eval_fusion_core.base import EvalFusionMetric
+from eval_fusion_core.base import EvalFusionBaseMetric
 from eval_fusion_core.enums import EvaluationInputFeature
 
 
-class DeepEvalMetric(str, Enum, EvalFusionMetric):
+class DeepEvalMetric(str, Enum, EvalFusionBaseMetric):
     ANSWER_RELEVANCY = 'answer_relevancy'
     CONTEXTUAL_PRECISION = 'contextual_precision'
     CONTEXTUAL_RECALL = 'contextual_recall'

@@ -1,6 +1,6 @@
 import pytest
 
-from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.enums import EvaluationInputFeature
 from eval_fusion_core.utils.loaders import load_evaluation_inputs
 from eval_fusion_deepeval.evaluator import DeepEvalEvaluator
 from eval_fusion_test.settings import get_openai_settings
@@ -13,7 +13,7 @@ def test_evaluator(input_count: int):
 
     inputs = inputs[:input_count]
     with DeepEvalEvaluator(llm_settings) as evaluator:
-        outputs = evaluator.evaluate_by_tag(inputs, MetricTag.ALL)
+        outputs = evaluator.evaluate(inputs, feature=EvaluationInputFeature.ALL)
 
     for output in outputs:
         for output_entry in output.output_entries:
