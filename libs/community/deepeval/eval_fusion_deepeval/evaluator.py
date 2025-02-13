@@ -8,6 +8,7 @@ from types import TracebackType
 from deepeval.test_case import LLMTestCase
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import MetricTag
+from eval_fusion_core.exceptions import EvalFusionException
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -16,7 +17,7 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 
 from .llm import DeepEvalProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES, DeepEvalMetric
+from .metrics import METRIC_TO_TYPE, TAG_TO_METRICS, DeepEvalMetric
 
 
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
@@ -31,9 +32,17 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[type[DeepEvalMetric]],
+        metrics: list[DeepEvalMetric] | None = None,
+        tag: MetricTag | None = None,
     ) -> list[EvaluationOutput]:
-        metrics = [
+        if metric is None and tag is None:
+            raise EvalFusionException("metrics and tag can't both be None.")
+
+        if tag is not None:
+            metrics = TAG_TO_METRICS[tag]
+
+        metric_types = list(map(METRIC_TO_TYPE.get, metrics))
+        metric_instances = [
             metric_type(
                 threshold=0.5,
                 model=self._llm,
@@ -63,7 +72,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         for i, test_case in enumerate(test_cases):
             output_entries: list[EvaluationOutputEntry] = []
 
-            for metric in metrics:
+            for metric in metric_instances:
                 metric_name = str(metric.__name__)
 
                 try:
@@ -102,16 +111,6 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             )
 
         return outputs
-
-    def evaluate_by_tag(
-        self,
-        inputs: list[EvaluationInput],
-        tag: MetricTag,
-    ) -> list[EvaluationOutput]:
-        if tag is not None:
-            metric_types = TAG_TO_METRIC_TYPES[tag]
-
-        return self.evaluate(inputs, metric_types)
 
     def __exit__(
         self,

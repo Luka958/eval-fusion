@@ -19,13 +19,6 @@ class EvalFusionBaseEvaluator(ABC):
     ) -> list[EvaluationOutput]:
         pass
 
-    def evaluate_by_tag(
-        self,
-        inputs: list[EvaluationInput],
-        tag: MetricTag,
-    ) -> list[EvaluationOutput]:
-        pass
-
     @abstractmethod
     def __exit__(
         self,

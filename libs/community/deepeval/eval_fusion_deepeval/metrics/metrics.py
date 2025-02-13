@@ -1,5 +1,7 @@
 from __future__ import annotations
 
+from enum import Enum
+
 from deepeval.metrics import (
     AnswerRelevancyMetric,
     ContextualPrecisionMetric,
@@ -10,45 +12,60 @@ from deepeval.metrics import (
 from eval_fusion_core.enums import MetricTag
 
 
-DeepEvalMetric = (
+class DeepEvalMetric(str, Enum):
+    ANSWER_RELEVANCY = 'answer_relevancy'
+    CONTEXTUAL_PRECISION = 'contextual_precision'
+    CONTEXTUAL_RECALL = 'contextual_recall'
+    CONTEXTUAL_RELEVANCY = 'contextual_relevancy'
+    FAITHFULNESS = 'faithfulness'
+
+
+DeepEvalMetricType = type[
     AnswerRelevancyMetric
     | ContextualPrecisionMetric
     | ContextualRecallMetric
     | ContextualRelevancyMetric
     | FaithfulnessMetric
-)
+]
 
+METRIC_TO_TYPE: dict[DeepEvalMetric, DeepEvalMetricType] = {
+    DeepEvalMetric.ANSWER_RELEVANCY: AnswerRelevancyMetric,
+    DeepEvalMetric.CONTEXTUAL_PRECISION: ContextualPrecisionMetric,
+    DeepEvalMetric.CONTEXTUAL_RECALL: ContextualRelevancyMetric,
+    DeepEvalMetric.CONTEXTUAL_RELEVANCY: ContextualRelevancyMetric,
+    DeepEvalMetric.FAITHFULNESS: FaithfulnessMetric,
+}
 
-TAG_TO_METRIC_TYPES: dict[MetricTag, list[type[DeepEvalMetric]]] = {
+TAG_TO_METRICS = {
     MetricTag.INPUT: [
-        AnswerRelevancyMetric,
-        ContextualPrecisionMetric,
-        ContextualRecallMetric,
-        ContextualRelevancyMetric,
-        FaithfulnessMetric,
+        DeepEvalMetric.ANSWER_RELEVANCY,
+        DeepEvalMetric.CONTEXTUAL_PRECISION,
+        DeepEvalMetric.CONTEXTUAL_RECALL,
+        DeepEvalMetric.CONTEXTUAL_RELEVANCY,
+        DeepEvalMetric.FAITHFULNESS,
     ],
     MetricTag.OUTPUT: [
-        AnswerRelevancyMetric,
-        ContextualPrecisionMetric,
-        ContextualRecallMetric,
-        ContextualRelevancyMetric,
-        FaithfulnessMetric,
+        DeepEvalMetric.ANSWER_RELEVANCY,
+        DeepEvalMetric.CONTEXTUAL_PRECISION,
+        DeepEvalMetric.CONTEXTUAL_RECALL,
+        DeepEvalMetric.CONTEXTUAL_RELEVANCY,
+        DeepEvalMetric.FAITHFULNESS,
     ],
     MetricTag.GROUND_TRUTH: [
-        ContextualPrecisionMetric,
-        ContextualRecallMetric,
+        DeepEvalMetric.CONTEXTUAL_PRECISION,
+        DeepEvalMetric.CONTEXTUAL_RECALL,
     ],
     MetricTag.RELEVANT_CHUNKS: [
-        ContextualPrecisionMetric,
-        ContextualRecallMetric,
-        ContextualRelevancyMetric,
-        FaithfulnessMetric,
+        DeepEvalMetric.CONTEXTUAL_PRECISION,
+        DeepEvalMetric.CONTEXTUAL_RECALL,
+        DeepEvalMetric.CONTEXTUAL_RELEVANCY,
+        DeepEvalMetric.FAITHFULNESS,
     ],
     MetricTag.ALL: [
-        AnswerRelevancyMetric,
-        ContextualPrecisionMetric,
-        ContextualRecallMetric,
-        ContextualRelevancyMetric,
-        FaithfulnessMetric,
+        DeepEvalMetric.ANSWER_RELEVANCY,
+        DeepEvalMetric.CONTEXTUAL_PRECISION,
+        DeepEvalMetric.CONTEXTUAL_RECALL,
+        DeepEvalMetric.CONTEXTUAL_RELEVANCY,
+        DeepEvalMetric.FAITHFULNESS,
     ],
 }
