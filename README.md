@@ -29,4 +29,5 @@ Run this after each change to `.pre-commit-config.yaml`.
 | arize-phoenix   | 7.3.2     | <3.14, >=3.9                                          |
 | mlflow          | 2.19.0    | >=3.9                                                 |
 | trulens         | 1.2.11    | >=3.8                                                 |
+| ragchecher      | 0.1.9     | <4.0, >=3.9                                           |
 | streamlit       | 1.41.1    | >=3.9, <3.9.7 \|\| >3.9.7, <3.13                      |
