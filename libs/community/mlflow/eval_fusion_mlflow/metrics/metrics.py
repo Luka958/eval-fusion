@@ -23,7 +23,7 @@ class MlFlowMetric(EvalFusionBaseMetric):
     RELEVANCE = 'relevance'
 
 
-class _MlFlowMetricType(Protocol):
+class MlFlowMetricType(Protocol):
     def __call__(
         self,
         model: str | None = None,
@@ -37,8 +37,6 @@ class _MlFlowMetricType(Protocol):
     ) -> EvaluationMetric:
         pass
 
-
-MlFlowMetricType = _MlFlowMetricType
 
 METRIC_TO_TYPE: dict[MlFlowMetric, MlFlowMetricType] = {
     MlFlowMetric.ANSWER_CORRECTNESS: answer_correctness,

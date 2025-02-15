@@ -56,8 +56,6 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if feature is not None:
             metrics = FEATURE_TO_METRICS[feature]
 
-        metric_types = list(map(METRIC_TO_TYPE.get, metrics))
-
         retriever = Select.RecordCalls.retriever
         synthesizer = Select.RecordCalls.synthesizer
 
@@ -90,7 +88,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                 .on(context_selector)
             )
 
-        if TruLensMetric.GROUNDEDNESS in metric_types:
+        if TruLensMetric.GROUNDEDNESS in metrics:
             feedbacks.append(
                 Feedback(
                     self._llm.groundedness_measure_with_cot_reasons,
@@ -100,7 +98,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
                 .on(output_selector)
             )
 
-        if TruLensMetric.RELEVANCE in metric_types:
+        if TruLensMetric.RELEVANCE in metrics:
             feedbacks.append(
                 Feedback(
                     self._llm.relevance_with_cot_reasons,

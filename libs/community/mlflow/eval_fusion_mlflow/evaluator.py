@@ -5,6 +5,7 @@ from types import TracebackType
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import Feature
+from eval_fusion_core.exceptions import EvalFusionException
 from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
@@ -29,7 +30,7 @@ from pandas import DataFrame
 
 from .constants import *
 from .llm import MlFlowProxyLLM
-from .metrics import TAG_TO_METRIC_TYPES, MlFlowMetricType
+from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, MlFlowMetric
 from .utils.connections import check_health
 from .utils.processes import close_process, open_process, run_process
 
@@ -101,9 +102,19 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metric_types: list[MlFlowMetricType],
+        metrics: list[MlFlowMetric] | None,
+        feature: Feature | None,
     ) -> list[EvaluationOutput]:
-        metrics = [metric_type(model=MODEL) for metric_type in metric_types]
+        if metrics is None and feature is None:
+            raise EvalFusionException('metrics and tag cannot both be None.')
+
+        if feature is not None:
+            metrics = FEATURE_TO_METRICS[feature]
+
+        metric_types = list(map(METRIC_TO_TYPE.get, metrics))
+        metric_instances = [
+            metric_type(model=MODEL, max_workers=1) for metric_type in metric_types
+        ]
 
         data_frames = [
             DataFrame(
@@ -127,14 +138,13 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         evaluation_datasets = [x.to_evaluation_dataset() for x in pandas_datasets]
 
         default_evaluator = DefaultEvaluator()
-
         outputs: list[EvaluationOutput] = []
 
         with start_run() as run:
             for i, evaluation_dataset in enumerate(evaluation_datasets):
                 output_entries: list[EvaluationOutputEntry] = []
 
-                for j, metric in enumerate(metrics):
+                for j, metric in enumerate(metric_instances):
                     metric_name = metric_types[j].__name__
 
                     try:
