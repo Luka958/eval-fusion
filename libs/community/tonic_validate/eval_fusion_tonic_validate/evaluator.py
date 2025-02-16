@@ -12,15 +12,14 @@ from eval_fusion_core.models import (
     EvaluationOutputEntry,
 )
 from eval_fusion_core.models.settings import EvalFusionEMSettings, EvalFusionLLMSettings
+from tonic_validate import BenchmarkItem, LLMResponse
 
 from .llm import TonicValidateProxyLLM
-from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, RagasMetric
+from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, TonicValidateMetric
 
 
 class TonicValidateEvaluator(EvalFusionBaseEvaluator):
-    def __init__(
-        self, llm_settings: EvalFusionLLMSettings, em_settings: EvalFusionEMSettings
-    ):
+    def __init__(self, llm_settings: EvalFusionLLMSettings):
         self._llm = TonicValidateProxyLLM(llm_settings)
 
     def __enter__(self) -> TonicValidateEvaluator:
@@ -29,7 +28,7 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metrics: list[RagasMetric] | None = None,
+        metrics: list[TonicValidateMetric] | None = None,
         feature: Feature | None = None,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
@@ -46,17 +45,12 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
             for metric_type in metric_types
         ]
 
-        single_turn_samples = [
-            SingleTurnSample(
-                user_input=x.input,
-                retrieved_contexts=x.relevant_chunks,
-                reference_contexts=None,
-                response=x.output,
-                multi_responses=None,
-                reference=x.ground_truth,
-                rubrics=None,
+        responses = [
+            LLMResponse(
+                llm_answer='Paris',
+                llm_context_list=['Paris is the capital of France.'],
+                benchmark_item=BenchmarkItem(question=..., answer=...),
             )
-            for x in inputs
         ]
 
         outputs: list[EvaluationOutput] = []

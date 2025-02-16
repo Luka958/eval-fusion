@@ -2,74 +2,63 @@ from __future__ import annotations
 
 from eval_fusion_core.base import EvalFusionBaseMetric
 from eval_fusion_core.enums import Feature
-from ragas.metrics import (
-    ContextEntityRecall,
-    ContextPrecision,
-    ContextRecall,
-    Faithfulness,
-    NoiseSensitivity,
-    ResponseRelevancy,
+from tonic_validate.metrics import (
+    AnswerConsistencyMetric,
+    AnswerSimilarityMetric,
+    AugmentationAccuracyMetric,
+    AugmentationPrecisionMetric,
+    RetrievalPrecisionMetric,
 )
 
 
-class RagasMetric(EvalFusionBaseMetric):
-    CONTEXT_ENTITY_RECALL = 'context_entity_recall'
-    CONTEXT_PRECISION = 'context_precision'
-    CONTEXT_RECALL = 'context_recall'
-    FAITHFULNESS = 'faithfulness'
-    NOISE_SENSITIVITY = 'noise_sensitivity'
-    RESPONSE_RELEVANCY = 'response_relevancy'
+class TonicValidateMetric(EvalFusionBaseMetric):
+    ANSWER_CONSISTENCY = 'answer_consistency'
+    ANSWER_SIMILARITY = 'answer_similarity'
+    AUGMENTATION_ACCURACY = 'augmentation_accuracy'
+    AUGMENTATION_PRECISION = 'augmentation_precision'
+    RETRIEVAL_PRECISION = 'retrieval_precision'
 
 
-RagasMetricType = type[
-    ContextEntityRecall
-    | ContextPrecision
-    | ContextRecall
-    | Faithfulness
-    | NoiseSensitivity
-    | ResponseRelevancy
+TonicValidateMetricType = type[
+    AnswerConsistencyMetric
+    | AnswerSimilarityMetric
+    | AugmentationAccuracyMetric
+    | AugmentationPrecisionMetric
+    | RetrievalPrecisionMetric
 ]
 
-METRIC_TO_TYPE: dict[RagasMetric, RagasMetricType] = {
-    RagasMetric.CONTEXT_ENTITY_RECALL: ContextEntityRecall,
-    RagasMetric.CONTEXT_PRECISION: ContextPrecision,
-    RagasMetric.CONTEXT_RECALL: ContextRecall,
-    RagasMetric.FAITHFULNESS: Faithfulness,
-    RagasMetric.NOISE_SENSITIVITY: NoiseSensitivity,
-    RagasMetric.RESPONSE_RELEVANCY: ResponseRelevancy,
+METRIC_TO_TYPE: dict[TonicValidateMetric, TonicValidateMetricType] = {
+    TonicValidateMetric.ANSWER_CONSISTENCY: AnswerConsistencyMetric,
+    TonicValidateMetric.ANSWER_SIMILARITY: AnswerSimilarityMetric,
+    TonicValidateMetric.AUGMENTATION_ACCURACY: AugmentationAccuracyMetric,
+    TonicValidateMetric.AUGMENTATION_PRECISION: AugmentationPrecisionMetric,
+    TonicValidateMetric.RETRIEVAL_PRECISION: RetrievalPrecisionMetric,
 }
 
 FEATURE_TO_METRICS = {
     Feature.INPUT: [
-        RagasMetric.CONTEXT_PRECISION,
-        RagasMetric.CONTEXT_RECALL,
-        RagasMetric.NOISE_SENSITIVITY,
-        RagasMetric.RESPONSE_RELEVANCY,
+        TonicValidateMetric.AUGMENTATION_PRECISION,
+        TonicValidateMetric.ANSWER_SIMILARITY,
+        TonicValidateMetric.RETRIEVAL_PRECISION,
     ],
     Feature.OUTPUT: [
-        RagasMetric.FAITHFULNESS,
-        RagasMetric.NOISE_SENSITIVITY,
-        RagasMetric.RESPONSE_RELEVANCY,
+        TonicValidateMetric.ANSWER_CONSISTENCY,
+        TonicValidateMetric.AUGMENTATION_ACCURACY,
+        TonicValidateMetric.ANSWER_SIMILARITY,
+        TonicValidateMetric.AUGMENTATION_PRECISION,
     ],
-    Feature.GROUND_TRUTH: [
-        RagasMetric.CONTEXT_ENTITY_RECALL,
-        RagasMetric.CONTEXT_PRECISION,
-        RagasMetric.CONTEXT_RECALL,
-        RagasMetric.NOISE_SENSITIVITY,
-    ],
+    Feature.GROUND_TRUTH: [TonicValidateMetric.ANSWER_SIMILARITY],
     Feature.RELEVANT_CHUNKS: [
-        RagasMetric.CONTEXT_ENTITY_RECALL,
-        RagasMetric.CONTEXT_PRECISION,
-        RagasMetric.CONTEXT_RECALL,
-        RagasMetric.FAITHFULNESS,
-        RagasMetric.NOISE_SENSITIVITY,
+        TonicValidateMetric.ANSWER_CONSISTENCY,
+        TonicValidateMetric.AUGMENTATION_ACCURACY,
+        TonicValidateMetric.AUGMENTATION_PRECISION,
+        TonicValidateMetric.RETRIEVAL_PRECISION,
     ],
     Feature.ALL: [
-        RagasMetric.CONTEXT_ENTITY_RECALL,
-        RagasMetric.CONTEXT_PRECISION,
-        RagasMetric.CONTEXT_RECALL,
-        RagasMetric.FAITHFULNESS,
-        RagasMetric.NOISE_SENSITIVITY,
-        RagasMetric.RESPONSE_RELEVANCY,
+        TonicValidateMetric.ANSWER_CONSISTENCY,
+        TonicValidateMetric.ANSWER_SIMILARITY,
+        TonicValidateMetric.AUGMENTATION_ACCURACY,
+        TonicValidateMetric.AUGMENTATION_PRECISION,
+        TonicValidateMetric.RETRIEVAL_PRECISION,
     ],
 }
