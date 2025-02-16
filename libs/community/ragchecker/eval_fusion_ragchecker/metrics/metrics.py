@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-from enum import Enum
-
 from eval_fusion_core.base import EvalFusionBaseMetric
 from eval_fusion_core.enums import Feature
 from ragchecker.metrics import (
@@ -19,7 +17,7 @@ from ragchecker.metrics import (
 )
 
 
-class RagCheckerMetric(Enum):
+class RagCheckerMetric(EvalFusionBaseMetric):
     PRECISION = 'precision'
     RECALL = 'recall'
     F1 = 'f1'
@@ -33,19 +31,7 @@ class RagCheckerMetric(Enum):
     FAITHFULNESS = 'faithfulness'
 
 
-RagCheckerMetricType = type[
-    precision
-    | recall
-    | f1
-    | claim_recall
-    | context_precision
-    | context_utilization
-    | noise_sensitivity_in_relevant
-    | noise_sensitivity_in_irrelevant
-    | hallucination
-    | self_knowledge
-    | faithfulness
-]
+RagCheckerMetricType = str
 
 METRIC_TO_TYPE: dict[RagCheckerMetric, RagCheckerMetricType] = {
     RagCheckerMetric.PRECISION: precision,

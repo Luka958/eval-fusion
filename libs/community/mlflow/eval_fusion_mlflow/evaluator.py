@@ -106,7 +106,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         feature: Feature | None,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
-            raise EvalFusionException('metrics and tag cannot both be None.')
+            raise EvalFusionException('metrics and feature cannot both be None.')
 
         if feature is not None:
             metrics = FEATURE_TO_METRICS[feature]

@@ -6,12 +6,12 @@
 - add arxiv links if available for each framework
 - add setting for LLM and EM parameters
 - concurrency
-- rework metrics
+- rework metrics (done)
   - use str Enum for metrics
   - map Enum values to functions/classes
 - rework setup -> rewrite setup.ps1 and setup.sh to setup.py
 - renaming
-  - MetricTag -> Feature (each EvaluationInput consists of features: input, output, etc.)
+  - MetricTag -> Feature (each EvaluationInput consists of features: input, output, etc.) (done)
   - EvaluationInput -> Sample (each Sample consists of Features - common ML convention)
   - EvaluationOutput and EvaluationOutputEntry -> TODO
 - issues:

@@ -1,7 +1,5 @@
 from __future__ import annotations
 
-import os
-
 from time import perf_counter
 from types import TracebackType
 
@@ -15,6 +13,7 @@ from eval_fusion_core.models import (
 )
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from ragchecker import RAGChecker, RAGResult, RAGResults
+from ragchecker.container import RetrievedDoc
 from ragchecker.metrics import (
     METRIC_GROUP_MAP,
     generator_metrics,
@@ -22,77 +21,90 @@ from ragchecker.metrics import (
     retriever_metrics,
 )
 
-from .llm import DeepEvalProxyLLM
-from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, DeepEvalMetric
+from .llm import RagCheckerProxyLLM
+from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, RagCheckerMetric
 
 
-class DeepEvalEvaluator(EvalFusionBaseEvaluator):
+class RagCheckerEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self._llm = DeepEvalProxyLLM(settings)
+        self._llm = RagCheckerProxyLLM(settings)
 
-    def __enter__(self) -> DeepEvalEvaluator:
-        os.environ['DEEPEVAL_TELEMETRY_OPT_OUT'] = 'YES'
-
+    def __enter__(self) -> RagCheckerEvaluator:
         return self
 
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metrics: list[DeepEvalMetric] | None = None,
+        metrics: list[RagCheckerMetric] | None = None,
         feature: Feature | None = None,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
-            raise EvalFusionException('metrics and tag cannot both be None.')
+            raise EvalFusionException('metrics and feature cannot both be None.')
 
         if feature is not None:
             metrics = FEATURE_TO_METRICS[feature]
 
         metric_types = list(map(METRIC_TO_TYPE.get, metrics))
-        metric_instances = [
-            metric_type(
-                threshold=0.5,
-                model=self._llm,
-                include_reason=True,
-                async_mode=False,
-                strict_mode=False,
-                verbose_mode=False,
+        metric_instances = metric_types
+
+        jagged_rag_results = [
+            RAGResults(
+                results=[
+                    RAGResult(
+                        query_id=str(i),
+                        query=x.input,
+                        gt_answer=x.ground_truth,
+                        response=x.output,
+                        retrieved_context=[
+                            RetrievedDoc(doc_id=str(j), text=y)
+                            for j, y in enumerate(x.relevant_chunks)
+                        ],
+                    )
+                ]
             )
-            for metric_type in metric_types
+            for i, x in enumerate(inputs)
         ]
 
-        ##
         evaluator = RAGChecker(
-            custom_llm_api_func=generate,  # TODO
+            custom_llm_api_func=self._llm.custom_llm_api_func,
             batch_size_extractor=1,
             batch_size_checker=1,
         )
-        metrics = [context_precision]
-
-        items = evaluator.evaluate(rag_results, metrics)
-        print(items)
-        float(items.get(retriever_metrics).get(context_precision))
-        ##
 
         outputs: list[EvaluationOutput] = []
 
-        for i, test_case in enumerate(test_cases):
+        for i, rag_results in enumerate(jagged_rag_results):
             output_entries: list[EvaluationOutputEntry] = []
 
             for metric in metric_instances:
-                metric_name = ...
+                metric_name = metric
 
                 try:
                     start = perf_counter()
-                    score = ...
+                    items = evaluator.evaluate(rag_results, metric_instances)
                     time = perf_counter() - start
 
-                    reason = metric.reason
+                    if metric in METRIC_GROUP_MAP[overall_metrics]:
+                        metric_group = items.get(overall_metrics)
+
+                    elif metric in METRIC_GROUP_MAP[retriever_metrics]:
+                        metric_group = items.get(retriever_metrics)
+
+                    elif metric in METRIC_GROUP_MAP[generator_metrics]:
+                        metric_group = items.get(generator_metrics)
+
+                    else:
+                        raise EvalFusionException(
+                            f'Metric {metric} does not belong to any group.'
+                        )
+
+                    score = float(metric_group.get(metric))
 
                     output_entries.append(
                         EvaluationOutputEntry(
                             metric_name=metric_name,
                             score=score,
-                            reason=reason,
+                            reason=None,
                             error=None,
                             time=time,
                         )
