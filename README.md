@@ -2,13 +2,11 @@
 
 ## Setup
 
-### Linux
-`chmod +x setup.sh`
+### Install dependencies only
+`python3 setup.py`
 
-`./setup.sh`
-
-### Windows
-`.\setup.ps1`
+### Install dependencies and create VSCode workspace
+`python3 setup.py vscode`
 
 ## Format manually
 `ruff check . --fix`
