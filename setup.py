@@ -79,15 +79,15 @@ def main():
     sub_dirs = [
         os.path.join('libs', 'core'),
         os.path.join('libs', 'community', 'deepeval'),
-        # os.path.join('libs', 'community', 'mlflow'),
-        # os.path.join('libs', 'community', 'phoenix'),
-        # os.path.join('libs', 'community', 'ragas'),
-        # os.path.join('libs', 'community', 'trulens'),
-        # os.path.join('libs', 'community', 'ragchecker'),
-        # os.path.join('libs', 'community', 'llama_index'),
-        # os.path.join('libs', 'vendor', 'openai'),
-        # os.path.join('libs', 'vendor', 'vertexai'),
-        # os.path.join('libs', 'test')
+        os.path.join('libs', 'community', 'mlflow'),
+        os.path.join('libs', 'community', 'phoenix'),
+        os.path.join('libs', 'community', 'ragas'),
+        os.path.join('libs', 'community', 'trulens'),
+        os.path.join('libs', 'community', 'ragchecker'),
+        os.path.join('libs', 'community', 'llama_index'),
+        os.path.join('libs', 'vendor', 'openai'),
+        os.path.join('libs', 'vendor', 'vertexai'),
+        os.path.join('libs', 'test'),
     ]
 
     for sub_dir in sub_dirs:
