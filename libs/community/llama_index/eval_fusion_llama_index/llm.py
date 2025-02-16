@@ -12,6 +12,7 @@ from llama_index.core.base.llms.types import (
     CompletionResponse,
     CompletionResponseGen,
     LLMMetadata,
+    MessageRole,
 )
 
 
@@ -24,42 +25,56 @@ class LlamaIndexProxyLLM(BaseLLM):
         pass
 
     def chat(self, messages: Sequence[ChatMessage], **kwargs: Any) -> ChatResponse:
-        pass
+        messages = [{message.role: message.content} for message in messages]
+        result = self.__llm.generate_from_messages(messages, use_json=False)
+
+        return ChatResponse(
+            message=ChatMessage(role=MessageRole.ASSISTANT, content=result)
+        )
 
     def complete(
         self, prompt: str, formatted: bool = False, **kwargs: Any
     ) -> CompletionResponse:
-        pass
+        result = self.__llm.generate(prompt, use_json=False)
+
+        return CompletionResponse(text=result)
 
     def stream_chat(
         self, messages: Sequence[ChatMessage], **kwargs: Any
     ) -> ChatResponseGen:
-        pass
+        raise NotImplementedError()
 
     def stream_complete(
         self, prompt: str, formatted: bool = False, **kwargs: Any
     ) -> CompletionResponseGen:
-        pass
+        raise NotImplementedError()
 
     async def achat(
         self, messages: Sequence[ChatMessage], **kwargs: Any
     ) -> ChatResponse:
-        pass
+        messages = [{message.role: message.content} for message in messages]
+        result = await self.__llm.a_generate_from_messages(messages, use_json=False)
+
+        return ChatResponse(
+            message=ChatMessage(role=MessageRole.ASSISTANT, content=result)
+        )
 
     async def acomplete(
         self, prompt: str, formatted: bool = False, **kwargs: Any
     ) -> CompletionResponse:
-        pass
+        result = await self.__llm.a_generate(prompt, use_json=False)
+
+        return CompletionResponse(text=result)
 
     async def astream_chat(
         self, messages: Sequence[ChatMessage], **kwargs: Any
     ) -> AsyncGenerator[ChatResponse, None]:
-        pass
+        raise NotImplementedError()
 
     async def astream_complete(
         self, prompt: str, formatted: bool = False, **kwargs: Any
     ) -> AsyncGenerator[CompletionResponse, None]:
-        pass
+        raise NotImplementedError()
 
     def get_token_usage(self) -> TokenUsage:
         return self.__llm.get_token_usage()

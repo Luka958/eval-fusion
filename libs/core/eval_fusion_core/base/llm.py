@@ -23,5 +23,11 @@ class EvalFusionBaseLLM(ABC):
         pass
 
     @abstractmethod
+    async def a_generate_from_messages(
+        self, messages: list[dict], use_json: bool
+    ) -> str:
+        pass
+
+    @abstractmethod
     def get_token_usage(self) -> TokenUsage:
         pass
