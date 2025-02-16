@@ -11,8 +11,8 @@ from eval_fusion_core.models import (
     EvaluationOutput,
     EvaluationOutputEntry,
 )
-from eval_fusion_core.models.settings import EvalFusionEMSettings, EvalFusionLLMSettings
-from tonic_validate import BenchmarkItem, LLMResponse
+from eval_fusion_core.models.settings import EvalFusionLLMSettings
+from tonic_validate import BenchmarkItem, LLMResponse, ValidateScorer
 
 from .llm import TonicValidateProxyLLM
 from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, TonicValidateMetric
@@ -38,32 +38,33 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
             metrics = FEATURE_TO_METRICS[feature]
 
         metric_types = list(map(METRIC_TO_TYPE.get, metrics))
-        metric_instances = [
-            metric_type(llm=self._llm, embeddings=self._em)
-            if metric_type == ResponseRelevancy
-            else metric_type(llm=self._llm)
-            for metric_type in metric_types
+        metric_instances = [metric_type() for metric_type in metric_types]
+
+        llm_responses = [
+            LLMResponse(
+                llm_answer=x.output,
+                llm_context_list=x.relevant_chunks,
+                benchmark_item=BenchmarkItem(question=x.input, answer=x.ground_truth),
+            )
+            for x in inputs
         ]
 
-        responses = [
-            LLMResponse(
-                llm_answer='Paris',
-                llm_context_list=['Paris is the capital of France.'],
-                benchmark_item=BenchmarkItem(question=..., answer=...),
-            )
-        ]
+        scorer = ValidateScorer(metric_instances, model_evaluator=...)  # TODO pass llm
 
         outputs: list[EvaluationOutput] = []
 
-        for i, single_turn_sample in enumerate(single_turn_samples):
+        for i, llm_response in enumerate(llm_responses):
             output_entries: list[EvaluationOutputEntry] = []
 
             for metric in metric_instances:
-                metric_name = metric.name
+                metric_name = ...
 
                 try:
                     start = perf_counter()
-                    score = metric.single_turn_score(single_turn_sample)
+                    run = scorer.score_responses(
+                        responses=[llm_response], parallelism=1
+                    )
+                    score = ...  # TODO
                     time = perf_counter() - start
 
                     output_entries.append(
