@@ -59,5 +59,19 @@ class OpenAILLM(EvalFusionBaseLLM):
 
         return completion.choices[0].message.content
 
+    async def a_generate_from_messages(
+        self, messages: list[dict], use_json: bool = True
+    ) -> str:
+        completion = await self._async_client.chat.completions.create(
+            model=self._model_name,
+            messages=messages,
+            response_format={'type': 'json_object'} if use_json else NOT_GIVEN,
+        )
+        self.token_usage.add(
+            completion.usage.prompt_tokens, completion.usage.completion_tokens
+        )
+
+        return completion.choices[0].message.content
+
     def get_token_usage(self) -> TokenUsage:
         return self.token_usage

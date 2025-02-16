@@ -10,10 +10,10 @@ class LlamaIndexProxyEM(BaseEmbedding):
         self.__em = settings.base_type(*settings.args, **settings.kwargs)
 
     def _get_query_embedding(self, query: str) -> Embedding:
-        pass
+        return self.__em.embed_text(query)
 
     async def _aget_query_embedding(self, query: str) -> Embedding:
-        pass
+        return await self.__em.a_embed_text(query)
 
     def _get_text_embedding(self, text: str) -> Embedding:
         return self._get_query_embedding(text)
