@@ -39,7 +39,6 @@ def install_dependencies(dir: str, is_root: bool):
 def init_vscode_settings(dir: str):
     cmd = ['poetry', 'env', 'info', '--path']
     env_path = subprocess.check_output(cmd, cwd=dir, encoding='utf-8').strip()
-    print(f'Environment path: {env_path}')
 
     vscode_dir = os.path.join(dir, '.vscode')
     os.makedirs(vscode_dir, exist_ok=True)
@@ -60,7 +59,7 @@ def init_vscode_workspace(root_dir: str, sub_dirs: list[str]):
         'folders': folders,
         'settings': {'files.exclude': {'**/.vscode': True}},
     }
-    workspace_file = os.path.join(root_dir, 'eval-fusion.code-workspace.json')
+    workspace_file = os.path.join(root_dir, 'eval-fusion.code-workspace')
 
     with open(workspace_file, 'w', encoding='utf-8') as f:
         json.dump(workspace_content, f, indent=4)
