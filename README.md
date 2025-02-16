@@ -29,4 +29,5 @@ Run this after each change to `.pre-commit-config.yaml`.
 | trulens         | 1.2.11    | >=3.8                                                 |
 | ragchecker      | 0.1.9     | <4.0, >=3.9                                           |
 | llama-index     | 0.12.17   | <4.0, >=3.9                                           |
+| tonic-validate  | 2.0.0     | >=3.8.1                                               |
 | streamlit       | 1.41.1    | >=3.9, <3.9.7 \|\| >3.9.7, <3.13                      |

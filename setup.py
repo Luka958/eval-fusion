@@ -85,6 +85,7 @@ def main():
         os.path.join('libs', 'community', 'trulens'),
         os.path.join('libs', 'community', 'ragchecker'),
         os.path.join('libs', 'community', 'llama_index'),
+        os.path.join('libs', 'community', 'tonic_validate'),
         os.path.join('libs', 'vendor', 'openai'),
         os.path.join('libs', 'vendor', 'vertexai'),
         os.path.join('libs', 'test'),
