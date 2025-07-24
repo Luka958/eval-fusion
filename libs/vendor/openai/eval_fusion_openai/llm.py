@@ -4,6 +4,8 @@ from eval_fusion_core.base import EvalFusionBaseLLM
 from eval_fusion_core.models import TokenUsage
 from openai import NOT_GIVEN, AsyncOpenAI, OpenAI
 
+from .retry import with_backoff
+
 
 class OpenAILLM(EvalFusionBaseLLM):
     def __init__(self, model_name: str, base_url: str = None, api_key: str = None):
@@ -21,6 +23,7 @@ class OpenAILLM(EvalFusionBaseLLM):
     def get_name(self) -> str:
         return self._model_name
 
+    @with_backoff()
     def generate(self, prompt: str, use_json: bool = True) -> str:
         completion = self._client.chat.completions.create(
             model=self._model_name,
@@ -33,6 +36,7 @@ class OpenAILLM(EvalFusionBaseLLM):
 
         return completion.choices[0].message.content
 
+    @with_backoff()
     async def a_generate(self, prompt: str, use_json: bool = True) -> str:
         completion = await self._async_client.chat.completions.create(
             model=self._model_name,
@@ -45,6 +49,7 @@ class OpenAILLM(EvalFusionBaseLLM):
 
         return completion.choices[0].message.content
 
+    @with_backoff()
     def generate_from_messages(
         self, messages: list[dict], use_json: bool = True
     ) -> str:
@@ -59,6 +64,7 @@ class OpenAILLM(EvalFusionBaseLLM):
 
         return completion.choices[0].message.content
 
+    @with_backoff()
     async def a_generate_from_messages(
         self, messages: list[dict], use_json: bool = True
     ) -> str:
