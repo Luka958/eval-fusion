@@ -1,0 +1,48 @@
+{
+    "folders": [
+        {
+            "path": "."
+        },
+        {
+            "path": "libs/core"
+        },
+        {
+            "path": "libs/community/deepeval"
+        },
+        {
+            "path": "libs/community/ragas"
+        },
+        {
+            "path": "libs/community/trulens"
+        },
+        {
+            "path": "libs/community/phoenix"
+        },
+        {
+            "path": "libs/community/mlflow"
+        },
+        {
+            "path": "libs/community/ragchecker"
+        },
+        {
+            "path": "libs/community/llama_index"
+        },
+        {
+            "path": "libs/community/tonic_validate"
+        },
+        {
+            "path": "libs/test"
+        },
+        {
+            "path": "libs/vendor/openai"
+        },
+        {
+            "path": "libs/vendor/vertexai"
+        }
+    ],
+    "settings": {
+        "files.exclude": {
+            "**/.vscode": false
+        }
+    }
+}
