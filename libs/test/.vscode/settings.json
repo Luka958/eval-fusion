@@ -1,3 +1,15 @@
 {
-    "python.analysis.extraPaths": ["../../core"]
+    "python.analysis.extraPaths": [
+        "../core", 
+        "../community/deepeval", 
+        "../community/ragas",
+        "../community/trulens",
+        "../community/phoenix",
+        "../community/mlflow",
+        "../community/ragchecker",
+        "../community/llama_index",
+        "../community/tonic_validate",
+        "../vendor/openai", 
+        "../vendor/vertexai"
+    ]
 }

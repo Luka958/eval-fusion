@@ -14,7 +14,17 @@ class EvalFusionBaseEvaluator(ABC):
     def __enter__(self) -> EvalFusionBaseEvaluator:
         pass
 
+    @abstractmethod
     def evaluate(
+        self,
+        inputs: list[EvaluationInput],
+        metrics: list[EvalFusionBaseMetric] | None,
+        feature: Feature | None,
+    ) -> list[EvaluationOutput]:
+        pass
+
+    @abstractmethod
+    async def a_evaluate(
         self,
         inputs: list[EvaluationInput],
         metrics: list[EvalFusionBaseMetric] | None,

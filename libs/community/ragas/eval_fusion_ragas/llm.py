@@ -49,5 +49,8 @@ class RagasProxyLLM(BaseRagasLLM):
 
         return LLMResult(generations=[[Generation(text=result)]])
 
+    def is_finished(self, response: LLMResult) -> bool:
+        return True
+
     def get_token_usage(self) -> TokenUsage:
         return self.__llm.get_token_usage()
