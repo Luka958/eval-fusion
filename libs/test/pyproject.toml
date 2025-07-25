@@ -8,7 +8,7 @@ packages = [{ include = "eval_fusion_test" }]
 
 [tool.poetry.dependencies]
 python = ">=3.9,<3.9.7 || >3.9.7,<3.13"
-eval-fusion-core = { path = "../core", develop = true }
+eval-fusion-core = {path = "../core", develop = true }
 eval-fusion-deepeval = { path = "../community/deepeval", develop = true }
 eval-fusion-ragas = { path = "../community/ragas", develop = true }
 eval-fusion-trulens = { path = "../community/trulens", develop = true }

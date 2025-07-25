@@ -29,14 +29,14 @@ from .metrics import (
 )
 
 
-class EvaluationTask(NamedTuple):
+class RagasEvaluationTask(NamedTuple):
     sample_id: int
     sample: SingleTurnSample
     metric_id: int
     metric: RagasMetricUnion
 
 
-class EvaluationTaskResult(NamedTuple):
+class RagasEvaluationTaskResult(NamedTuple):
     score: float | None
     error: str | None
     time: float
@@ -161,11 +161,11 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        metric_type_to_tasks: dict[RagasMetricType, list[EvaluationTask]] = {}
+        metric_type_to_tasks: dict[RagasMetricType, list[RagasEvaluationTask]] = {}
 
         for i, sample in enumerate(single_turn_samples):
             for j, metric in enumerate(metric_instances):
-                task = EvaluationTask(
+                task = RagasEvaluationTask(
                     sample_id=i, sample=sample, metric_id=j, metric=metric
                 )
                 metric_type_to_tasks.setdefault(type(metric), []).append(task)
@@ -198,19 +198,19 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
 
     async def _score_sample(
         self,
-        task: EvaluationTask,
-    ) -> EvaluationTaskResult:
+        task: RagasEvaluationTask,
+    ) -> RagasEvaluationTaskResult:
         try:
             start = perf_counter()
-            score = task.metric.single_turn_score(task.sample)
+            score = await task.metric.single_turn_ascore(task.sample)
             time = perf_counter() - start
 
-            return EvaluationTaskResult(score=score, error=None, time=time)
+            return RagasEvaluationTaskResult(score=score, error=None, time=time)
 
         except Exception as e:
             time = perf_counter() - start
 
-            return EvaluationTaskResult(score=None, error=str(e), time=time)
+            return RagasEvaluationTaskResult(score=None, error=str(e), time=time)
 
     def __exit__(
         self,
