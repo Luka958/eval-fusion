@@ -30,6 +30,15 @@ RagasMetricType = type[
     | ResponseRelevancy
 ]
 
+RagasMetricUnion = (
+    ContextEntityRecall
+    | ContextPrecision
+    | ContextRecall
+    | Faithfulness
+    | NoiseSensitivity
+    | ResponseRelevancy
+)
+
 METRIC_TO_TYPE: dict[RagasMetric, RagasMetricType] = {
     RagasMetric.CONTEXT_ENTITY_RECALL: ContextEntityRecall,
     RagasMetric.CONTEXT_PRECISION: ContextPrecision,

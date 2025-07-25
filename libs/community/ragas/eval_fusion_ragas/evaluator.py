@@ -4,6 +4,7 @@ import asyncio
 
 from time import perf_counter
 from types import TracebackType
+from typing import NamedTuple
 
 from eval_fusion_core.base import EvalFusionBaseEvaluator
 from eval_fusion_core.enums import Feature
@@ -19,7 +20,26 @@ from ragas.metrics import ResponseRelevancy
 
 from .em import RagasProxyEM
 from .llm import RagasProxyLLM
-from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, RagasMetric
+from .metrics import (
+    FEATURE_TO_METRICS,
+    METRIC_TO_TYPE,
+    RagasMetric,
+    RagasMetricType,
+    RagasMetricUnion,
+)
+
+
+class EvaluationTask(NamedTuple):
+    sample_id: int
+    sample: SingleTurnSample
+    metric_id: int
+    metric: RagasMetricUnion
+
+
+class EvaluationTaskResult(NamedTuple):
+    score: float | None
+    error: str | None
+    time: float
 
 
 class RagasEvaluator(EvalFusionBaseEvaluator):
@@ -120,16 +140,13 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         if feature is not None:
             metrics = FEATURE_TO_METRICS[feature]
 
-        metric_instances = []
-
-        for metric in metrics:
-            metric_type = METRIC_TO_TYPE[metric]
-            metric_instance = (
-                metric_type(llm=self._llm, embeddings=self._em)
-                if metric_type is ResponseRelevancy
-                else metric_type(llm=self._llm)
-            )
-            metric_instances.append(metric_instance)
+        metric_types = list(map(METRIC_TO_TYPE.get, metrics))
+        metric_instances = [
+            metric_type(llm=self._llm, embeddings=self._em)
+            if metric_type == ResponseRelevancy
+            else metric_type(llm=self._llm)
+            for metric_type in metric_types
+        ]
 
         single_turn_samples = [
             SingleTurnSample(
@@ -144,60 +161,56 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        # group (input_idx, metric_idx, metric, sample) by metric class
-        metric_type_to_tasks: dict[
-            type, list[tuple[int, int, RagasMetric, SingleTurnSample]]
-        ] = {}
+        metric_type_to_tasks: dict[RagasMetricType, list[EvaluationTask]] = {}
 
         for i, sample in enumerate(single_turn_samples):
             for j, metric in enumerate(metric_instances):
-                metric_type_to_tasks.setdefault(type(metric), []).append(
-                    (i, j, metric, sample)
+                task = EvaluationTask(
+                    sample_id=i, sample=sample, metric_id=j, metric=metric
                 )
+                metric_type_to_tasks.setdefault(type(metric), []).append(task)
 
-        results: dict[tuple[int, int], EvaluationOutputEntry] = {}
+        ids_to_entry: dict[tuple[int, int], EvaluationOutputEntry] = {}
 
         for _, tasks in metric_type_to_tasks.items():
-            coros = [
-                self._score_sample(metric, sample) for (_, _, metric, sample) in tasks
-            ]
+            coros = [self._score_sample(task) for task in tasks]
             batch = await asyncio.gather(*coros)
 
-            for (i, j, metric, _), (score, reason, error, elapsed) in zip(tasks, batch):
-                results[(i, j)] = EvaluationOutputEntry(
+            for task, result in zip(tasks, batch):
+                i, _, j, metric = task
+                score, error, time = result
+                ids_to_entry[(i, j)] = EvaluationOutputEntry(
                     metric_name=metric.name,
                     score=score,
-                    reason=reason,
+                    reason=None,
                     error=error,
-                    time=elapsed,
+                    time=time,
                 )
 
-        # sort outputs in original order
+        # sort outputs
         outputs: list[EvaluationOutput] = []
 
         for i, x in enumerate(inputs):
-            entries = [results[(i, j)] for j in range(len(metric_instances))]
+            entries = [ids_to_entry[(i, j)] for j in range(len(metric_instances))]
             outputs.append(EvaluationOutput(input_id=x.id, output_entries=entries))
 
         return outputs
 
     async def _score_sample(
         self,
-        metric: RagasMetric,
-        sample: SingleTurnSample,
-    ) -> tuple[float | None, str | None, str | None, float | None]:
-        """
-        Helper to run a single metric.single_turn_score(sample),
-        timing it and catching any exception.
-        Returns (score, reason, error, elapsed_time).
-        """
+        task: EvaluationTask,
+    ) -> EvaluationTaskResult:
         try:
             start = perf_counter()
-            score = metric.single_turn_score(sample)
-            elapsed = perf_counter() - start
-            return score, None, None, elapsed
+            score = task.metric.single_turn_score(task.sample)
+            time = perf_counter() - start
+
+            return EvaluationTaskResult(score=score, error=None, time=time)
+
         except Exception as e:
-            return None, None, str(e), None
+            time = perf_counter() - start
+
+            return EvaluationTaskResult(score=None, error=str(e), time=time)
 
     def __exit__(
         self,
