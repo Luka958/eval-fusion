@@ -166,14 +166,17 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         for i, sample in enumerate(single_turn_samples):
             for j, metric in enumerate(metric_instances):
                 task = RagasEvaluationTask(
-                    sample_id=i, sample=sample, metric_id=j, metric=metric
+                    sample_id=i,
+                    sample=sample,
+                    metric_id=j,
+                    metric=metric,
                 )
                 metric_type_to_tasks.setdefault(type(metric), []).append(task)
 
         ids_to_entry: dict[tuple[int, int], EvaluationOutputEntry] = {}
 
         for _, tasks in metric_type_to_tasks.items():
-            coros = [self._score_sample(task) for task in tasks]
+            coros = [self._run_task(task) for task in tasks]
             batch = await asyncio.gather(*coros)
 
             for task, result in zip(tasks, batch):
@@ -187,7 +190,6 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
                     time=time,
                 )
 
-        # sort outputs
         outputs: list[EvaluationOutput] = []
 
         for i, x in enumerate(inputs):
@@ -196,7 +198,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
 
         return outputs
 
-    async def _score_sample(
+    async def _run_task(
         self,
         task: RagasEvaluationTask,
     ) -> RagasEvaluationTaskResult:

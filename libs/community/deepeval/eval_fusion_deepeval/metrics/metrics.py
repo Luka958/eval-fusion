@@ -27,6 +27,14 @@ DeepEvalMetricType = type[
     | FaithfulnessMetric
 ]
 
+DeepEvalMetricUnion = (
+    AnswerRelevancyMetric
+    | ContextualPrecisionMetric
+    | ContextualRecallMetric
+    | ContextualRelevancyMetric
+    | FaithfulnessMetric
+)
+
 METRIC_TO_TYPE: dict[DeepEvalMetric, DeepEvalMetricType] = {
     DeepEvalMetric.ANSWER_RELEVANCY: AnswerRelevancyMetric,
     DeepEvalMetric.CONTEXTUAL_PRECISION: ContextualPrecisionMetric,
