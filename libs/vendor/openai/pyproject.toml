@@ -1,17 +1,22 @@
-[tool.poetry]
+[project]
 name = "eval-fusion-openai"
 version = "0.1.0"
 description = ""
-authors = ["Luka958 <lp53523@fer.hr>"]
 readme = "README.md"
+requires-python = ">=3.9,<3.13"
+authors = [
+  { name = "Luka958", email = "lp53523@fer.hr" },
+]
 
-[tool.poetry.dependencies]
-python = ">=3.9,<3.13"
-eval-fusion-core = { path = "../../core", develop = true }
-openai = "^1.97.1"
-python-decouple = "^3.8"
-backoff = "^2.2.1"
+dependencies = [
+  "eval-fusion-core",
+  "openai>=1.97.1,<2.0.0",
+  "python-decouple>=3.8,<4.0.0",
+  "backoff>=2.2.1,<3.0.0",
+]
 
+[tool.uv.sources]
+eval-fusion-core = { path = "../../core", editable = true }
 
 [build-system]
 requires = ["poetry-core"]

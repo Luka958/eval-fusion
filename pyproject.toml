@@ -1,17 +1,22 @@
-[tool.poetry]
-name = "eval_fusion"
-version = "0.1.0"
-description = ""
-authors = ["Luka958 <lp53523@fer.hr>"]
-readme = "README.md"
+[project]                                  
+name = "eval_fusion"                      
+version = "0.1.0"                         
+description = ""                          
+readme = "README.md"                      
+authors = [
+  { name = "Luka958", email = "lp53523@fer.hr" },
+]  
+requires-python = ">=3.9,<3.13"           
 
-[tool.poetry.dependencies]
-python = ">=3.9,<3.13"
-pyyaml = "^6.0.2"
+dependencies = [
+    "pyyaml>=6.0.2,<7.0.0",
+]
 
-[tool.poetry.group.dev.dependencies]
-ruff = "^0.8.4"
-pre-commit = "^4.0.1"
+[dependency-groups]
+dev = [
+    "ruff>=0.8.4,<1.0.0",
+    "pre-commit>=4.0.1,<5.0.0",
+]
 
 [tool.ruff]
 line-length = 88
@@ -32,7 +37,6 @@ quote-style = "single"
 indent-style = "space"
 skip-magic-trailing-comma = false
 line-ending = "auto"
-
 
 [build-system]
 requires = ["poetry-core"]

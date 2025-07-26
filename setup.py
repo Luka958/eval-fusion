@@ -14,36 +14,31 @@ def install_dependencies(dir: str, is_root: bool):
         )
         sys.exit(1)
 
-    if os.name == 'nt':
-        if is_root:
-            cmd = ['poetry', 'install', '--no-root', '--no-update']
-        else:
-            cmd = ['poetry', 'install', '--no-update']
-    else:
-        if is_root:
-            cmd = ['poetry', 'install', '--no-root']
-        else:
-            cmd = ['poetry', 'install']
+    cmd = ['uv', 'sync']
 
-    target = 'root' if is_root else dir
-    print(f'Installing dependencies in {target}...')
+    if is_root:
+        cmd += ['--only-dev', '--no-install-project']
+
+    print(f'Installing dependencies in {"root" if is_root else dir}...')
 
     try:
         subprocess.run(cmd, cwd=dir, check=True)
 
     except subprocess.CalledProcessError:
-        print(f'Error: Poetry install failed in {dir}.', file=sys.stderr)
+        print(f'Error: uv sync failed in {dir}.', file=sys.stderr)
         sys.exit(1)
 
 
 def init_vscode_settings(dir: str):
-    cmd = ['poetry', 'env', 'info', '--path']
-    env_path = subprocess.check_output(cmd, cwd=dir, encoding='utf-8').strip()
-
+    venv_dir = os.path.join(dir, '.venv')
+    if os.name == 'nt':
+        python_path = os.path.join(venv_dir, 'Scripts', 'python.exe')
+    else:
+        python_path = os.path.join(venv_dir, 'bin', 'python')
     vscode_dir = os.path.join(dir, '.vscode')
     os.makedirs(vscode_dir, exist_ok=True)
     settings_path = os.path.join(vscode_dir, 'settings.json')
-    data = {'python.defaultInterpreterPath': env_path}
+    data = {'python.defaultInterpreterPath': python_path}
 
     with open(settings_path, 'w', encoding='utf-8') as f:
         json.dump(data, f, indent=4)
@@ -92,18 +87,18 @@ def main():
     ]
 
     for sub_dir in sub_dirs:
-        dir = os.path.join(root_dir, sub_dir)
-        if not os.path.isdir(dir):
-            print(f'Error: Directory {dir} does not exist!', file=sys.stderr)
+        dir_path = os.path.join(root_dir, sub_dir)
+        if not os.path.isdir(dir_path):
+            print(f'Error: Directory {dir_path} does not exist!', file=sys.stderr)
             sys.exit(1)
 
-        install_dependencies(dir, is_root=False)
+        install_dependencies(dir_path, is_root=False)
 
         if vscode:
-            init_vscode_settings(dir)
+            init_vscode_settings(dir_path)
 
     os.chdir(root_dir)
-    print('Poetry dependencies installation completed.')
+    print('UV dependencies installation completed.')
 
     if vscode:
         init_vscode_workspace(root_dir, sub_dirs)
