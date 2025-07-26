@@ -16,6 +16,7 @@ dependencies = [
   "eval-fusion-phoenix",
   "eval-fusion-mlflow",
   "eval-fusion-llama-index",
+  "eval-fusion-tonic-validate",
   "eval-fusion-openai",
   "eval-fusion-vertexai",
   "python-decouple>=3.8,<4.0.0",
@@ -34,6 +35,7 @@ eval-fusion-trulens = { path = "../community/trulens", editable = true }
 eval-fusion-phoenix = { path = "../community/phoenix", editable = true }
 eval-fusion-mlflow = { path = "../community/mlflow", editable = true }
 eval-fusion-llama-index = { path = "../community/llama_index", editable = true }
+eval-fusion-tonic-validate = { path = "../community/tonic_validate", editable = true }
 eval-fusion-openai = { path = "../vendor/openai", editable = true }
 eval-fusion-vertexai = { path = "../vendor/vertexai", editable = true }
 

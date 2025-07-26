@@ -14,13 +14,15 @@ from eval_fusion_core.models import (
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from tonic_validate import BenchmarkItem, LLMResponse, ValidateScorer
 
-from .llm import TonicValidateProxyLLM
 from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, TonicValidateMetric
 
 
 class TonicValidateEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, llm_settings: EvalFusionLLMSettings):
-        self._llm = TonicValidateProxyLLM(llm_settings)
+        self._llm = llm_settings.kwargs.get('model_name')
+
+        if self._llm is None:
+            raise ValueError()
 
     def __enter__(self) -> TonicValidateEvaluator:
         return self
@@ -39,6 +41,10 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
 
         metric_types = list(map(METRIC_TO_TYPE.get, metrics))
         metric_instances = [metric_type() for metric_type in metric_types]
+        scorers = [
+            ValidateScorer([metric_instance], model_evaluator=self._llm)
+            for metric_instance in metric_instances
+        ]
 
         llm_responses = [
             LLMResponse(
@@ -49,22 +55,20 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        scorer = ValidateScorer(metric_instances, model_evaluator=...)  # TODO pass llm
-
         outputs: list[EvaluationOutput] = []
 
         for i, llm_response in enumerate(llm_responses):
             output_entries: list[EvaluationOutputEntry] = []
 
-            for metric in metric_instances:
-                metric_name = ...
+            for scorer in scorers:
+                metric_name = scorer.metrics[0].name
 
                 try:
                     start = perf_counter()
                     run = scorer.score_responses(
                         responses=[llm_response], parallelism=1
                     )
-                    score = ...  # TODO
+                    score = run.overall_scores[metric_name]
                     time = perf_counter() - start
 
                     output_entries.append(
@@ -99,10 +103,19 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
 
         return outputs
 
+    async def a_evaluate(
+        self,
+        inputs: list[EvaluationInput],
+        metrics: list[TonicValidateMetric] | None = None,
+        feature: Feature | None = None,
+    ) -> list[EvaluationOutput]:
+        pass
+
     def __exit__(
         self,
         type_: type[BaseException] | None,
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
-        self.token_usage = (self._llm.get_token_usage(), self._em.get_token_usage())
+        # self.token_usage = (self._llm.get_token_usage(), self._em.get_token_usage())
+        self.token_usage = None
