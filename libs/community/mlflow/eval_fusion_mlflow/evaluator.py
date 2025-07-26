@@ -200,6 +200,14 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
         return outputs
 
+    async def a_evaluate(
+        self,
+        inputs: list[EvaluationInput],
+        metrics: list[MlFlowMetric] | None,
+        feature: Feature | None,
+    ) -> list[EvaluationOutput]:
+        raise NotImplementedError('mlflow does not support async')
+
     def __exit__(
         self,
         type_: type[BaseException] | None,

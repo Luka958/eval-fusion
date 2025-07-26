@@ -8,7 +8,7 @@ readme = "README.md"
 [tool.poetry.dependencies]
 python = ">=3.9,<3.13,!=3.9.7"
 eval-fusion-core = { path = "../../core", develop = true }
-trulens = "^1.2.11"
+trulens = "^2.1.1"
 
 
 [build-system]

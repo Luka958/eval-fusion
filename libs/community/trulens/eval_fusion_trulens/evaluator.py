@@ -174,6 +174,14 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
 
         return outputs
 
+    async def a_evaluate(
+        self,
+        inputs: list[EvaluationInput],
+        metrics: list[TruLensMetric] | None = None,
+        feature: Feature | None = None,
+    ) -> list[EvaluationOutput]:
+        raise NotImplementedError()
+
     def __exit__(
         self,
         type_: type[BaseException] | None,
