@@ -111,13 +111,15 @@ class RagCheckerEvaluator(EvalFusionBaseEvaluator):
                     )
 
                 except Exception as e:
+                    time = perf_counter() - start
+
                     output_entries.append(
                         EvaluationOutputEntry(
                             metric_name=metric_name,
                             score=None,
                             reason=None,
                             error=str(e),
-                            time=None,
+                            time=time,
                         )
                     )
 

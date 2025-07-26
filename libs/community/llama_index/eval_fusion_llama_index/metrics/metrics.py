@@ -49,9 +49,27 @@ METRIC_TO_TYPE: dict[LlamaIndexMetric, LlamaIndexMetricType] = {
 }
 
 FEATURE_TO_METRICS = {
-    Feature.INPUT: [...],
-    Feature.OUTPUT: [...],
-    Feature.GROUND_TRUTH: [...],
-    Feature.RELEVANT_CHUNKS: [...],
-    Feature.ALL: [...],
+    Feature.INPUT: [
+        LlamaIndexMetric.ANSWER_RELEVANCY,
+        LlamaIndexMetric.CONTEXT_RELEVANCY,
+        LlamaIndexMetric.CORRECTNESS,
+        LlamaIndexMetric.RELEVANCY,
+    ],
+    Feature.OUTPUT: [
+        LlamaIndexMetric.ANSWER_RELEVANCY,
+        LlamaIndexMetric.CORRECTNESS,
+        LlamaIndexMetric.RELEVANCY,
+        LlamaIndexMetric.FAITHFULNESS,
+        LlamaIndexMetric.SEMANTIC_SIMILARITY,
+    ],
+    Feature.GROUND_TRUTH: [
+        LlamaIndexMetric.CORRECTNESS,
+        LlamaIndexMetric.SEMANTIC_SIMILARITY,
+    ],
+    Feature.RELEVANT_CHUNKS: [
+        LlamaIndexMetric.CONTEXT_RELEVANCY,
+        LlamaIndexMetric.RELEVANCY,
+        LlamaIndexMetric.FAITHFULNESS,
+    ],
+    Feature.ALL: [],
 }

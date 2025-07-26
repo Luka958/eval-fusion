@@ -4,7 +4,6 @@ from typing import Any, AsyncGenerator, Sequence
 
 from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
-from llama_index.core.base.llms.base import BaseLLM
 from llama_index.core.base.llms.types import (
     ChatMessage,
     ChatResponse,
@@ -15,14 +14,19 @@ from llama_index.core.base.llms.types import (
     MessageRole,
 )
 
+# NOTE: evaluation requires LLM instead of BaseLLM
+# from llama_index.core.base.llms.base import BaseLLM
+from llama_index.core.llms.llm import LLM
 
-class LlamaIndexProxyLLM(BaseLLM):
+
+class LlamaIndexProxyLLM(LLM):
     def __init__(self, settings: EvalFusionLLMSettings):
+        super().__init__()
         self.__llm = settings.base_type(*settings.args, **settings.kwargs)
 
     @property
     def metadata(self) -> LLMMetadata:
-        pass
+        return LLMMetadata(model_name=self.__llm.get_name())
 
     def chat(self, messages: Sequence[ChatMessage], **kwargs: Any) -> ChatResponse:
         messages = [{message.role: message.content} for message in messages]

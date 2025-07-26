@@ -105,13 +105,15 @@ class LlamaIndexEvaluator(EvalFusionBaseEvaluator):
                     )
 
                 except Exception as e:
+                    time = perf_counter() - start
+
                     output_entries.append(
                         EvaluationOutputEntry(
                             metric_name=metric_name,
                             score=None,
                             reason=None,
                             error=str(e),
-                            time=None,
+                            time=time,
                         )
                     )
 
@@ -166,13 +168,13 @@ class LlamaIndexEvaluator(EvalFusionBaseEvaluator):
 
             for task, result in zip(tasks, batch):
                 i, _, j, evaluator = task
-                score, error, time = result
+                score, reason, error, time = result
                 ids_to_entry[(i, j)] = EvaluationOutputEntry(
                     metric_name=evaluator.__class__.__name__.lower().removesuffix(
                         'evaluator'
                     ),
                     score=score,
-                    reason=None,
+                    reason=reason,
                     error=error,
                     time=time,
                 )
