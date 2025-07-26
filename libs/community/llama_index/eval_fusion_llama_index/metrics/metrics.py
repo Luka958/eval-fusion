@@ -30,6 +30,15 @@ LlamaIndexMetricType = type[
     | SemanticSimilarityEvaluator
 ]
 
+LlamaIndexMetricUnion = (
+    AnswerRelevancyEvaluator
+    | ContextRelevancyEvaluator
+    | CorrectnessEvaluator
+    | RelevancyEvaluator
+    | FaithfulnessEvaluator
+    | SemanticSimilarityEvaluator
+)
+
 METRIC_TO_TYPE: dict[LlamaIndexMetric, LlamaIndexMetricType] = {
     LlamaIndexMetric.ANSWER_RELEVANCY: AnswerRelevancyEvaluator,
     LlamaIndexMetric.CONTEXT_RELEVANCY: ContextRelevancyEvaluator,

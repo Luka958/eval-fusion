@@ -3,6 +3,7 @@ from .metrics import (
     METRIC_TO_TYPE,
     LlamaIndexMetric,
     LlamaIndexMetricType,
+    LlamaIndexMetricUnion,
 )
 
 
