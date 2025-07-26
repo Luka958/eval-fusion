@@ -17,6 +17,8 @@ class PhoenixMetric(EvalFusionBaseMetric):
 
 PhoenixMetricType = type[HallucinationEvaluator | QAEvaluator | RelevanceEvaluator]
 
+PhoenixMetricUnion = HallucinationEvaluator | QAEvaluator | RelevanceEvaluator
+
 METRIC_TO_TYPE: dict[PhoenixMetric, PhoenixMetricType] = {
     PhoenixMetric.HALLUCINATION: HallucinationEvaluator,
     PhoenixMetric.QA: QAEvaluator,

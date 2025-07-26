@@ -3,6 +3,7 @@ from .metrics import (
     METRIC_TO_TYPE,
     PhoenixMetric,
     PhoenixMetricType,
+    PhoenixMetricUnion,
 )
 
 
@@ -11,4 +12,5 @@ __all__ = [
     'METRIC_TO_TYPE',
     'PhoenixMetric',
     'PhoenixMetricType',
+    'PhoenixMetricUnion',
 ]

@@ -221,14 +221,20 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             time = perf_counter() - start
 
             return DeepEvalEvaluationTaskResult(
-                score=score, reason=task.metric.reason, error=None, time=time
+                score=score,
+                reason=task.metric.reason,
+                error=None,
+                time=time,
             )
 
         except Exception as e:
             time = perf_counter() - start
 
             return DeepEvalEvaluationTaskResult(
-                score=None, reason=None, error=str(e), time=time
+                score=None,
+                reason=None,
+                error=str(e),
+                time=time,
             )
 
     def __exit__(
