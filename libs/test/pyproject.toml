@@ -3,7 +3,7 @@ name = "eval-fusion-test"
 version = "0.1.0"
 description = ""
 readme = "README.md"
-requires-python = ">=3.9,<3.13,!=3.9.7"
+requires-python = ">=3.10,<3.13"
 authors = [
   { name = "Luka958", email = "lp53523@fer.hr" },
 ]
@@ -17,6 +17,7 @@ dependencies = [
   "eval-fusion-mlflow",
   "eval-fusion-llama-index",
   "eval-fusion-tonic-validate",
+  "eval-fusion-ragchecker",
   "eval-fusion-openai",
   "eval-fusion-vertexai",
   "python-decouple>=3.8,<4.0.0",
@@ -36,6 +37,7 @@ eval-fusion-phoenix = { path = "../community/phoenix", editable = true }
 eval-fusion-mlflow = { path = "../community/mlflow", editable = true }
 eval-fusion-llama-index = { path = "../community/llama_index", editable = true }
 eval-fusion-tonic-validate = { path = "../community/tonic_validate", editable = true }
+eval-fusion-ragchecker = { path = "../community/ragchecker", editable = true }
 eval-fusion-openai = { path = "../vendor/openai", editable = true }
 eval-fusion-vertexai = { path = "../vendor/vertexai", editable = true }
 

@@ -11,6 +11,7 @@ authors = [
 dependencies = [
   "eval-fusion-core",
   "ragchecker>=0.1.9,<0.2.0",
+  "transformers==4.49.0",
 ]
 
 [tool.uv.sources]
