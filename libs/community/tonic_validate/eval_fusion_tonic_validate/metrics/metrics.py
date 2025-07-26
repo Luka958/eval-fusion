@@ -19,13 +19,15 @@ class TonicValidateMetric(EvalFusionBaseMetric):
     RETRIEVAL_PRECISION = 'retrieval_precision'
 
 
-TonicValidateMetricType = type[
+TonicValidateMetricUnion = (
     AnswerConsistencyMetric
     | AnswerSimilarityMetric
     | AugmentationAccuracyMetric
     | AugmentationPrecisionMetric
     | RetrievalPrecisionMetric
-]
+)
+TonicValidateMetricType = type[TonicValidateMetricUnion]
+
 
 METRIC_TO_TYPE: dict[TonicValidateMetric, TonicValidateMetricType] = {
     TonicValidateMetric.ANSWER_CONSISTENCY: AnswerConsistencyMetric,
