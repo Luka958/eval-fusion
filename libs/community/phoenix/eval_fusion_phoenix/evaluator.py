@@ -145,7 +145,6 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
             for x in inputs
         ]
 
-        # --------
         metric_type_to_tasks: dict[PhoenixMetricType, list[PhoenixEvaluationTask]] = {}
 
         for i, record in enumerate(records):
