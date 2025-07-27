@@ -1,5 +1,8 @@
 from __future__ import annotations
 
+import json
+import os
+
 from time import perf_counter
 from types import TracebackType
 
@@ -15,6 +18,8 @@ from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from mlflow import (
     create_experiment,
     delete_experiment,
+    get_experiment_by_name,
+    get_tracking_uri,
     register_model,
     set_experiment,
     start_run,
@@ -29,19 +34,41 @@ from mlflow.types import ColSpec, DataType, ParamSchema, ParamSpec, Schema
 from pandas import DataFrame
 
 from .constants import *
-from .llm import MlFlowProxyLLM
 from .metrics import FEATURE_TO_METRICS, METRIC_TO_TYPE, MlFlowMetric
 from .utils.connections import check_health
 from .utils.processes import close_process, open_process, run_process
 
 
+LLM_PATH = os.path.join(os.path.dirname(__file__), 'llm.py')
+SETTINGS_PATH = 'mlflow.json'
+
+
 class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
-        self._llm = MlFlowProxyLLM(settings)
+        cls = settings.base_type
+        fqn = f'{cls.__module__}.{cls.__qualname__}'
+        settings.base_type = fqn
+
+        safe_settings = settings.model_copy()
+        self._api_key = safe_settings.kwargs.pop('api_key', None)
+
+        with open(SETTINGS_PATH, 'w') as file:
+            json.dump(safe_settings.model_dump(), file)
 
     def __enter__(self) -> MlFlowEvaluator:
-        self._experiment_id = create_experiment(EXPERIMENT_NAME)
-        set_experiment(self._experiment_id)
+        self._client = MlflowClient()
+
+        experiment = get_experiment_by_name(EXPERIMENT_NAME)
+        if experiment:
+            if experiment.lifecycle_stage == 'deleted':
+                self._client.restore_experiment(experiment.experiment_id)
+
+            self._experiment_id = experiment.experiment_id
+
+        else:
+            self._experiment_id = create_experiment(EXPERIMENT_NAME)
+
+        set_experiment(experiment_id=self._experiment_id)
 
         signature = ModelSignature(
             inputs=Schema([ColSpec(type=DataType.string, required=True)]),
@@ -58,7 +85,12 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
         with start_run():
             model_info = log_model(
-                artifact_path=ARTIFACT_PATH, python_model=self._llm, signature=signature
+                artifacts={ARTIFACT_KEY_SETTINGS: SETTINGS_PATH},
+                model_config={'api_key': self._api_key}
+                if self._api_key is not None
+                else None,
+                python_model=LLM_PATH,
+                signature=signature,
             )
 
         model_version = register_model(model_uri=model_info.model_uri, name=MODEL_NAME)
@@ -81,8 +113,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         self._deployments_process = open_process(
             [
                 'mlflow',
-                'deployments',
-                'start-server',
+                'gateway',
+                'start',
                 '--config-path',
                 DEPLOYMENTS_CONFIG_PATH,
                 '--host',
@@ -102,8 +134,8 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
     def evaluate(
         self,
         inputs: list[EvaluationInput],
-        metrics: list[MlFlowMetric] | None,
-        feature: Feature | None,
+        metrics: list[MlFlowMetric] | None = None,
+        feature: Feature | None = None,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -214,14 +246,23 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
-        self.token_usage = self._llm.get_token_usage()
+        # self.token_usage = self._llm.get_token_usage()    # TODO
 
         close_process(self._models_process.pid)
         close_process(self._deployments_process.pid)
 
         delete_experiment(self._experiment_id)
 
-        client = MlflowClient()
-        client.delete_registered_model(MODEL_NAME)
+        self._client.delete_registered_model(MODEL_NAME)
 
-        run_process(['mlflow', 'gc', '--experiment-ids', self._experiment_id])
+        tracking_uri = get_tracking_uri()
+        run_process(
+            [
+                'mlflow',
+                'gc',
+                '--experiment-ids',
+                self._experiment_id,
+                '--tracking-uri',
+                tracking_uri,
+            ]
+        )

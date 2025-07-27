@@ -5,4 +5,4 @@ endpoints:
       provider: mlflow-model-serving
       name: custom_llm
       config:
-        model_server_url: http://127.0.0.1:5000
+        model_server_url: http://127.0.0.1:5030

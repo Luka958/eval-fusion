@@ -1,5 +1,5 @@
 from .constants import (
-    ARTIFACT_PATH,
+    ARTIFACT_KEY_SETTINGS,
     DEPLOYMENTS_CONFIG_PATH,
     DEPLOYMENTS_HOST,
     DEPLOYMENTS_PORT,
@@ -14,10 +14,10 @@ from .constants import (
 
 
 __all__ = [
+    'ARTIFACT_KEY_SETTINGS',
     'EXPERIMENT_NAME',
     'MODEL_NAME',
     'ENDPOINT_NAME',
-    'ARTIFACT_PATH',
     'MODELS_HOST',
     'MODELS_PORT',
     'MODELS_ENV_MANAGER',

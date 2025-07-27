@@ -182,7 +182,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         metrics: list[TruLensMetric] | None = None,
         feature: Feature | None = None,
     ) -> list[EvaluationOutput]:
-        raise NotImplementedError()
+        raise NotImplementedError('trulens does not support async')
 
     def __exit__(
         self,

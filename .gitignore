@@ -309,3 +309,4 @@ pyrightconfig.json
 **/google-cloud-credentials.json
 **/default.sqlite
 **/mlruns
+**/mlflow.json

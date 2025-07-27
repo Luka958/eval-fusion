@@ -1,22 +1,19 @@
-from time import sleep
+import backoff
 
 from eval_fusion_core.exceptions import EvalFusionException
 from requests import get
 from requests.exceptions import ConnectionError
 
 
+@backoff.on_exception(backoff.constant, ConnectionError, max_tries=5, interval=5)
+def _check_health(host: str, port: int):
+    response = get(f'http://{host}:{port}/health')
+    response.raise_for_status()
+
+
 def check_health(host: str, port: int):
     try:
-        for _ in range(5):
-            try:
-                models_serve_response = get(f'http://{host}:{port}/health')
-                assert (
-                    models_serve_response.status_code == 200,
-                    f'Health check failed with status code {str(models_serve_response.status_code)}!',
-                )
+        _check_health(host, port)
 
-            except ConnectionError:
-                sleep(2)
-
-    except (ConnectionError, AssertionError) as e:
+    except ConnectionError as e:
         raise EvalFusionException(str(e))
