@@ -11,6 +11,7 @@ authors = [
 dependencies = [
   "backoff>=2.2.1",
   "eval-fusion-core",
+  "httpx>=0.28.1",
   "mlflow[genai]>=3.1.4,<4.0.0",
   "watchfiles>=1.0.4,<2.0.0",
 ]

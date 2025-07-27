@@ -13,8 +13,13 @@ MODELS_ENV_MANAGER = 'local'
 
 DEPLOYMENTS_HOST = '127.0.0.1'
 DEPLOYMENTS_PORT = 5031
-
-
 DEPLOYMENTS_CONFIG_PATH = os.path.abspath(
-    os.path.join(os.path.dirname(__file__), os.pardir, 'config.yaml')
+    os.path.join(
+        os.path.dirname(__file__),
+        os.pardir,
+        'config.yaml',
+    )
 )
+
+LLM_PATH = os.path.join(os.path.dirname(__file__), os.pardir, 'llm.py')
+LLM_SETTINGS_PATH = 'mlflow.json'

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import asyncio
 
+from functools import partial
 from time import perf_counter
 from types import TracebackType
 from typing import NamedTuple
@@ -231,12 +232,12 @@ class RagCheckerEvaluator(EvalFusionBaseEvaluator):
         try:
             start = perf_counter()
             loop = asyncio.get_event_loop()
-            items = await loop.run_in_executor(
-                None,
+            func = partial(
                 self._rag_checker.evaluate,
                 task.rag_results,
                 [task.metric],
             )
+            items = await loop.run_in_executor(None, func)
             time = perf_counter() - start
 
             metric = task.metric
