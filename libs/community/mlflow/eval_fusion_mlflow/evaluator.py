@@ -103,7 +103,10 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         with start_run():
             model_info = log_model(
                 artifacts={ARTIFACT_KEY_SETTINGS: LLM_SETTINGS_PATH},
-                model_config={'api_key': self._api_key}
+                model_config={
+                    'api_key': self._api_key,
+                    'experiment_id': self._experiment_id,
+                }
                 if self._api_key is not None
                 else None,
                 python_model=LLM_PATH,
@@ -344,8 +347,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
             loop = asyncio.get_event_loop()
 
-            # define a sync helper that re‑establishes the MLflow run in this thread
-            def _eval_in_thread():
+            def _evaluate():
                 with start_run(run_id=task.run_id, nested=True):
                     return self._default_evaluator.evaluate(
                         run_id=task.run_id,
@@ -355,8 +357,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
                         evaluator_config={},
                     )
 
-            # run it in the executor
-            result = await loop.run_in_executor(None, _eval_in_thread)
+            result = await loop.run_in_executor(None, _evaluate)
             time = perf_counter() - start
 
             metrics_table = result.tables['genai_custom_metrics']
@@ -380,6 +381,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
 
         except Exception as e:
             time = perf_counter() - start
+
             return MlFlowEvaluationTaskResult(
                 score=None,
                 reason=None,
@@ -393,13 +395,30 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         value: BaseException | None,
         traceback: TracebackType | None,
     ) -> bool | None:
-        # self.token_usage = self._llm.get_token_usage()    # TODO
+        runs = self._client.search_runs(
+            experiment_ids=[self._experiment_id],
+            filter_string="tags.purpose = 'token-usage'",
+            order_by=['attributes.start_time DESC'],
+            max_results=1,
+        )
+
+        if len(runs) != 1:
+            raise ValueError()
+
+        run_id = runs[0].info.run_id
+
+        input_tokens_metrics = self._client.get_metric_history(run_id, 'input_tokens')
+        input_tokens = int(input_tokens_metrics[-1].value)
+        output_tokens_metrics = self._client.get_metric_history(run_id, 'output_tokens')
+        output_tokens = int(output_tokens_metrics[-1].value)
+        self.token_usage = input_tokens, output_tokens
+
+        self._client.delete_run(run_id)
 
         close_process(self._models_process.pid)
         close_process(self._deployments_process.pid)
 
         delete_experiment(self._experiment_id)
-
         self._client.delete_registered_model(MODEL_NAME)
 
         tracking_uri = get_tracking_uri()

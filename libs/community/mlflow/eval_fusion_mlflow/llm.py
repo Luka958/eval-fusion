@@ -3,8 +3,8 @@ import json
 import os
 
 from eval_fusion_core.exceptions import EvalFusionException
-from eval_fusion_core.models import TokenUsage
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
+from mlflow import log_metric, set_tag, start_run
 from mlflow.models import set_model
 from mlflow.pyfunc import PythonModel, PythonModelContext
 from pandas import DataFrame
@@ -13,9 +13,6 @@ from eval_fusion_mlflow.constants import ARTIFACT_KEY_SETTINGS
 
 
 class MlFlowProxyLLM(PythonModel):
-    def __init__(self):
-        self.token_usage = TokenUsage()
-
     def load_context(self, context: PythonModelContext):
         if os.name == 'nt':
             raise EvalFusionException('MLflow AI Gateway does not support Windows.')
@@ -34,6 +31,8 @@ class MlFlowProxyLLM(PythonModel):
         if api_key:
             settings_dict['kwargs']['api_key'] = api_key
 
+        self._experiment_id = context.model_config.get('experiment_id')
+
         self.settings = EvalFusionLLMSettings(**settings_dict)
         self.__llm = self.settings.base_type(
             *self.settings.args, **self.settings.kwargs
@@ -46,12 +45,16 @@ class MlFlowProxyLLM(PythonModel):
             else model_input
         )
         result = self.__llm.generate(prompt, use_json=False)
-        self.token_usage = self.__llm.get_token_usage()
+        token_usage = self.__llm.get_token_usage()
+
+        with start_run(
+            experiment_id=self._experiment_id, run_name='token-usage'
+        ) as run:
+            set_tag('purpose', 'token-usage')
+            log_metric('input_tokens', token_usage.input)
+            log_metric('output_tokens', token_usage.output)
 
         return [result]
-
-    def get_token_usage(self):
-        return self.token_usage
 
 
 set_model(MlFlowProxyLLM())
