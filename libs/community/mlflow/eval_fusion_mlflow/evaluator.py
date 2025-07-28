@@ -3,7 +3,6 @@ from __future__ import annotations
 import asyncio
 import json
 
-from functools import partial
 from time import perf_counter
 from types import TracebackType
 from typing import NamedTuple
@@ -15,6 +14,7 @@ from eval_fusion_core.models import (
     EvaluationInput,
     EvaluationOutput,
     EvaluationOutputEntry,
+    TokenUsage,
 )
 from eval_fusion_core.models.settings import EvalFusionLLMSettings
 from mlflow import (
@@ -156,6 +156,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[MlFlowMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -260,6 +261,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[MlFlowMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -411,7 +413,7 @@ class MlFlowEvaluator(EvalFusionBaseEvaluator):
         input_tokens = int(input_tokens_metrics[-1].value)
         output_tokens_metrics = self._client.get_metric_history(run_id, 'output_tokens')
         output_tokens = int(output_tokens_metrics[-1].value)
-        self.token_usage = input_tokens, output_tokens
+        self.token_usage = TokenUsage(input=input_tokens, output=output_tokens)
 
         self._client.delete_run(run_id)
 

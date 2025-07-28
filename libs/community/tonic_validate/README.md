@@ -40,7 +40,9 @@ Whether all of the retrieved context is included in the LLM answer.
 $$
 R = \{\text{relevant contexts to query}\},\quad
 U = \{\text{contexts in }R\text{ that appear in response}\}.
+$$
 
+$$
 \text{Augmentation Precision}
 =
 \begin{cases}

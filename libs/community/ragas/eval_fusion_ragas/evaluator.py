@@ -57,6 +57,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[RagasMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -135,6 +136,7 @@ class RagasEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[RagasMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')

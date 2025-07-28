@@ -53,6 +53,7 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[TonicValidateMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -129,6 +130,7 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[TonicValidateMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')

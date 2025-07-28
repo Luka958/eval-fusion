@@ -45,6 +45,7 @@ class DeepEvalEvaluationTaskResult(NamedTuple):
 class DeepEvalEvaluator(EvalFusionBaseEvaluator):
     def __init__(self, settings: EvalFusionLLMSettings):
         self._llm = DeepEvalProxyLLM(settings)
+        self.token_usage = None
 
     def __enter__(self) -> DeepEvalEvaluator:
         os.environ['DEEPEVAL_TELEMETRY_OPT_OUT'] = 'YES'
@@ -56,6 +57,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[DeepEvalMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -68,7 +70,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             metric_type(
                 threshold=0.5,
                 model=self._llm,
-                include_reason=True,
+                include_reason=include_reason,
                 async_mode=False,
                 strict_mode=False,
                 verbose_mode=False,
@@ -141,6 +143,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[DeepEvalMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -153,7 +156,7 @@ class DeepEvalEvaluator(EvalFusionBaseEvaluator):
             metric_type(
                 threshold=0.5,
                 model=self._llm,
-                include_reason=True,
+                include_reason=include_reason,
                 async_mode=False,
                 strict_mode=False,
                 verbose_mode=False,

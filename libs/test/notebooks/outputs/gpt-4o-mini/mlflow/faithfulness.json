@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "0f6ce686-7aad-488d-ab16-5e05ec024410",
+            "input_id": "87382d88-baa2-4020-b590-19c62caa782a",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "The output discusses the severe consequences of criminalizing abortion for marginalized individuals, which is not directly supported by the provided context that focuses on the political landscape and repression in Nicaragua. While there are general themes of marginalization and restriction, specific claims in the output about health risks, economic burdens, and reproductive injustices cannot be directly derived from the context. Thus, some claims are consistent, but the majority is inconsistent or missing, resulting in a score of 2.",
+                    "error": null,
+                    "time": 29.147832292001112
+                }
+            ]
+        },
+        {
+            "id": "e15e7b88-fd3d-4992-b27a-1ffc1b186ef2",
+            "input_id": "e931bc30-78e7-4803-8071-133a653ce78e",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": null,
+                    "reason": null,
+                    "error": "single positional indexer is out-of-bounds",
+                    "time": 24.125032208001358
+                }
+            ]
+        },
+        {
+            "id": "8687939a-d7bb-43fb-82cc-a4128f78c8b6",
+            "input_id": "301de6e5-b707-4646-a026-c7de182e55fb",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "The output discusses the consequences of criminalizing abortion for marginalized individuals but does not draw from the provided context, which focuses specifically on the decline of independent civil society organizations in Nicaragua. Some claims about health risks and economic burdens may be inferred, but they are not supported by the context, leading to a score of 2, as most output is inconsistent or unsupported.",
+                    "error": null,
+                    "time": 27.277524750010343
+                }
+            ]
+        },
+        {
+            "id": "64b693a8-1a9e-4858-a1b3-314949ca07ae",
+            "input_id": "7afb8591-a9d1-4610-aac8-ab477e25a200",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "The output discusses the consequences of criminalizing abortion for marginalized individuals, but these specific claims about health risks, economic burden, and reproductive justice are not supported or mentioned in the provided context about Nicaragua's civil society organizations and political repression. Although some general themes about marginalized individuals exist in both the output and context, the majority of the output lacks direct support from the context, leading to a faithfulness score of 2.",
+                    "error": null,
+                    "time": 36.63342279200151
+                }
+            ]
+        },
+        {
+            "id": "c7fc6aa9-a051-45fe-be40-e548e7d5e277",
+            "input_id": "b5e44935-a0c4-4b94-9db7-031be8d05329",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "While the output presents several valid points about the consequences of criminalizing abortion, these points are not supported by the provided context, which focuses on the decline of independent civil society organizations and repression in Nicaragua. Therefore, the majority of the output is inconsistent with the context, justifying a score of 2.",
+                    "error": null,
+                    "time": 25.386075624992372
+                }
+            ]
+        },
+        {
+            "id": "af5032fb-263c-4843-ae70-42aebdbeee7e",
+            "input_id": "f4bd4bcf-f298-4c96-a2a3-067aa0a0fba0",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "While the output discusses the consequences of criminalizing abortion and mentions how it affects marginalized individuals, these specific claims are not supported by the provided context, which primarily focuses on the situation of civil society organizations in Nicaragua and the repression faced by them. Therefore, there are inconsistencies and missing information, leading to a faithfulness score of 2.",
+                    "error": null,
+                    "time": 26.601747125008842
+                }
+            ]
+        },
+        {
+            "id": "06cbf9d6-3890-424b-b832-77f85f05adbe",
+            "input_id": "d85a5ada-12ec-4335-a4a2-6c7b2be5af11",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": null,
+                    "reason": null,
+                    "error": "single positional indexer is out-of-bounds",
+                    "time": 24.97025762499834
+                }
+            ]
+        },
+        {
+            "id": "2e965ebf-3e6c-4807-b53d-be797586b98c",
+            "input_id": "30f713ad-b383-40ee-98a8-54c44cac08f2",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": null,
+                    "reason": null,
+                    "error": "single positional indexer is out-of-bounds",
+                    "time": 26.573355000000447
+                }
+            ]
+        },
+        {
+            "id": "8b8e7330-5bf8-4d9d-a734-b3be2b601a96",
+            "input_id": "457034e7-f688-42a3-8503-0b748bc5b23c",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "The output discusses the consequences of criminalizing abortion for marginalized individuals, but the provided context focuses on the political landscape and restrictions on civil society in Nicaragua. While there may be tangential relevance, the majority of the output is inconsistent with the context, leading to a score of 2.",
+                    "error": null,
+                    "time": 35.32946875000198
+                }
+            ]
+        },
+        {
+            "id": "b25149bc-377e-4128-86c9-93927f138aea",
+            "input_id": "b18ff2b0-80f4-4c08-a845-28f406e45206",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "While the output correctly mentions labor abuses and the kafala system, which are relevant issues in Qatar, it overlooks significant improvements in labor rights reform mentioned in the context. The output fails to reconcile these improved conditions with the abuses listed, indicating that most claims are inconsistent with or missing from the provided context, leading to a score of 2.",
+                    "error": null,
+                    "time": 37.16948133299593
+                }
+            ]
+        },
+        {
+            "id": "afd5fa2e-3ba0-419e-a688-96fd6882458a",
+            "input_id": "33df3985-e7ef-45bc-a446-47b92cb712c1",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output claims that \"The government of Qatar started repealing restrictions on migrant workers in 2017,\" which is directly supported by the context discussing Qatar's efforts and changes made to labor laws. All claims in the output can be inferred from the provided context, demonstrating high faithfulness.",
+                    "error": null,
+                    "time": 33.230796333999024
+                }
+            ]
+        },
+        {
+            "id": "2ff285a0-6482-4691-851b-6e6e99c73a5f",
+            "input_id": "a551288e-2091-4646-b69e-7491b5b0ce2c",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output accurately summarizes the decline of independent civil society organizations in Nicaragua by referring to repressive government policies, harassment, funding issues, legal restrictions, and polarization, all of which are corroborated by the provided context. Therefore, all the claims in the output are directly supported by the context, resulting in a faithfulness score of 5.",
+                    "error": null,
+                    "time": 32.6178363749932
+                }
+            ]
+        },
+        {
+            "id": "8f6c9e6a-9ffe-43ad-8c07-b75b4f295717",
+            "input_id": "2c2edadb-17a1-4fed-be60-82e54cfac6aa",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output thoroughly details several factors contributing to the decline of independent civil society organizations in Nicaragua, all of which are directly supported by the provided context. Each claim made in the output aligns with and can be derived from the contextual information provided.",
+                    "error": null,
+                    "time": 32.0071105829993
+                }
+            ]
+        },
+        {
+            "id": "972453f7-bafd-4eb7-acb1-9414abd205da",
+            "input_id": "0d278609-b70c-4c98-9f08-ef7977c2b100",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "All claims in the output regarding the decline of independent civil society organizations in Nicaragua can be directly inferred from the provided context, which discusses government's repressive policies, harassment, lack of funding, and legal restrictions. Thus, there is high consistency and support for the claims made in the output.",
+                    "error": null,
+                    "time": 31.341999208001653
+                }
+            ]
+        },
+        {
+            "id": "afd8d9fd-5c4c-4a52-85cf-81cf128bcdcd",
+            "input_id": "a8daa74c-ec9c-4983-a9b7-b0ae90e8d90d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "All the claims in the output regarding the decline of independent civil society organizations in Nicaragua, including repressive government policies, harassment, lack of funding, and legal restrictions, are directly supported by the provided context. Thus, the output demonstrates high faithfulness to the context.",
+                    "error": null,
+                    "time": 35.88109741600056
+                }
+            ]
+        },
+        {
+            "id": "0021fc97-2cf4-4c6d-b589-7e1870815512",
+            "input_id": "43942201-44c6-43f0-88b8-abad78fb6240",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output claims regarding the decline of independent civil society organizations in Nicaragua are fully supported by the provided context, which discusses repressive government policies, harassment, funding issues, and legal restrictions faced by these organizations. All key points in the output can be derived from the context, demonstrating high faithfulness.",
+                    "error": null,
+                    "time": 34.60301091700967
+                }
+            ]
+        },
+        {
+            "id": "bd7c6043-f5aa-4c48-9240-7109043a9d1f",
+            "input_id": "e37da9af-0028-4435-a543-4c3a1b9daaa5",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": null,
+                    "reason": null,
+                    "error": "single positional indexer is out-of-bounds",
+                    "time": 28.266198375000386
+                }
+            ]
+        },
+        {
+            "id": "d145255c-f184-4493-af3e-6d9bc171f847",
+            "input_id": "30b5ec3a-5b27-4677-8b8c-bbec7f0d03c8",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": null,
+                    "reason": null,
+                    "error": "single positional indexer is out-of-bounds",
+                    "time": 28.90932883300411
+                }
+            ]
+        },
+        {
+            "id": "03840b6f-634a-4bf4-8a7f-b0cefb609074",
+            "input_id": "0cb46216-a4e0-4039-a628-cf4a44eb8d07",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": null,
+                    "reason": null,
+                    "error": "single positional indexer is out-of-bounds",
+                    "time": 30.15466616699996
+                }
+            ]
+        },
+        {
+            "id": "acdc197c-cba4-442a-8593-2531149551b4",
+            "input_id": "444f129d-3201-4343-bc20-0637e47eeb1f",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": null,
+                    "reason": null,
+                    "error": "single positional indexer is out-of-bounds",
+                    "time": 30.73551274999045
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 469959,
+        "output": 18443
+    }
+}

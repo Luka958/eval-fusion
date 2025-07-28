@@ -20,6 +20,7 @@ class EvalFusionBaseEvaluator(ABC):
         inputs: list[EvaluationInput],
         metrics: list[EvalFusionBaseMetric] | None,
         feature: Feature | None,
+        include_reason: bool,
     ) -> list[EvaluationOutput]:
         pass
 
@@ -29,6 +30,7 @@ class EvalFusionBaseEvaluator(ABC):
         inputs: list[EvaluationInput],
         metrics: list[EvalFusionBaseMetric] | None,
         feature: Feature | None,
+        include_reason: bool,
     ) -> list[EvaluationOutput]:
         pass
 

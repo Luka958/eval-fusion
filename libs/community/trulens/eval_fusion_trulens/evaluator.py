@@ -49,6 +49,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[TruLensMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -81,7 +82,9 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if TruLensMetric.CONTEXT_RELEVANCE in metrics:
             feedbacks.append(
                 Feedback(
-                    self._llm.context_relevance_with_cot_reasons,
+                    self._llm.context_relevance_with_cot_reasons
+                    if include_reason
+                    else self._llm.context_relevance,
                     name=TruLensMetric.CONTEXT_RELEVANCE.value,
                 )
                 .on(Select.RecordInput)
@@ -91,6 +94,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if TruLensMetric.GROUNDEDNESS in metrics:
             feedbacks.append(
                 Feedback(
+                    # TODO does not have
                     self._llm.groundedness_measure_with_cot_reasons,
                     name=TruLensMetric.GROUNDEDNESS.value,
                 )
@@ -101,7 +105,9 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if TruLensMetric.RELEVANCE in metrics:
             feedbacks.append(
                 Feedback(
-                    self._llm.relevance_with_cot_reasons,
+                    self._llm.relevance_with_cot_reasons
+                    if include_reason
+                    else self._llm.relevance,
                     name=TruLensMetric.RELEVANCE.value,
                 ).on_input_output()
             )
@@ -181,6 +187,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[TruLensMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         raise NotImplementedError('trulens does not support async')
 

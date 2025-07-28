@@ -32,6 +32,7 @@ class PhoenixEvaluationTask(NamedTuple):
     record: Record
     evaluator_id: int
     evaluator: PhoenixMetricUnion
+    include_reason: bool
 
 
 class PhoenixEvaluationTaskResult(NamedTuple):
@@ -53,6 +54,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[PhoenixMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -85,7 +87,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
                 try:
                     start = perf_counter()
                     _, score, reason = evaluator.evaluate(
-                        record, provide_explanation=True
+                        record, provide_explanation=include_reason
                     )
                     time = perf_counter() - start
 
@@ -126,6 +128,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
         inputs: list[EvaluationInput],
         metrics: list[PhoenixMetric] | None = None,
         feature: Feature | None = None,
+        include_reason: bool = False,
     ) -> list[EvaluationOutput]:
         if metrics is None and feature is None:
             raise EvalFusionException('metrics and feature cannot both be None.')
@@ -154,6 +157,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
                     record=record,
                     evaluator_id=j,
                     evaluator=evaluator,
+                    include_reason=include_reason,
                 )
                 metric_type_to_tasks.setdefault(type(evaluator), []).append(task)
 
@@ -192,7 +196,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
         try:
             start = perf_counter()
             _, score, reason = await task.evaluator.aevaluate(
-                task.record, provide_explanation=True
+                task.record, provide_explanation=task.include_reason
             )
             time = perf_counter() - start
 

@@ -111,25 +111,25 @@ $$
      {|\{\text{all claims in output}\}|}
 $$
 
-### Noise Sensitivity (Relevant)
+### Noise Sensitivity In Relevant
 - Input
     - `output`
     - `relevant_chunks`
 
 $$
-\text{Noise Sensitivity (Relevant)}
+\text{Noise Sensitivity In Relevant}
 =
 \frac{|\{\text{incorrect claims in output coming from relevant chunks}\}|}
      {|\{\text{all claims in output}\}|}
 $$
 
-### Noise Sensitivity (Irrelevant)
+### Noise Sensitivity in Irrelevant
 - Input
     - `output`
     - `relevant_chunks`
 
 $$
-\text{Noise Sensitivity (Irrelevant)}
+\text{Noise Sensitivity In Irrelevant}
 =
 \frac{|\{\text{incorrect claims in output coming from irrelevant chunks}\}|}
      {|\{\text{all claims in output}\}|}
