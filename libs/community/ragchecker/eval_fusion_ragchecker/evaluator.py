@@ -121,11 +121,12 @@ class RagCheckerEvaluator(EvalFusionBaseEvaluator):
                         )
 
                     score = float(metric_group.get(metric))
+                    normalized_score = score / 100
 
                     output_entries.append(
                         EvaluationOutputEntry(
                             metric_name=metric_name,
-                            score=score,
+                            score=normalized_score,
                             reason=None,
                             error=None,
                             time=time,
@@ -259,8 +260,11 @@ class RagCheckerEvaluator(EvalFusionBaseEvaluator):
                 )
 
             score = float(metric_group.get(metric))
+            normalized_score = score / 100
 
-            return RagCheckerEvaluationTaskResult(score=score, error=None, time=time)
+            return RagCheckerEvaluationTaskResult(
+                score=normalized_score, error=None, time=time
+            )
 
         except Exception as e:
             time = perf_counter() - start

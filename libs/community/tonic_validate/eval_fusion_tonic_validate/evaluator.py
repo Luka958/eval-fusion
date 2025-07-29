@@ -90,8 +90,11 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
                     run = scorer.score_responses(
                         responses=[llm_response], parallelism=1
                     )
-                    score = run.overall_scores[metric_name]
                     time = perf_counter() - start
+
+                    score = run.overall_scores[metric_name]
+                    if metric_name == TonicValidateMetric.ANSWER_SIMILARITY.value:
+                        score /= 5
 
                     output_entries.append(
                         EvaluationOutputEntry(
@@ -203,8 +206,11 @@ class TonicValidateEvaluator(EvalFusionBaseEvaluator):
             run = await task.scorer.a_score_responses(
                 responses=[task.llm_response], parallelism=1
             )
-            score = run.overall_scores[metric_name]
             time = perf_counter() - start
+
+            score = run.overall_scores[metric_name]
+            if metric_name == TonicValidateMetric.ANSWER_SIMILARITY.value:
+                score /= 5
 
             return TonicValidateEvaluationTaskResult(score=score, error=None, time=time)
 
