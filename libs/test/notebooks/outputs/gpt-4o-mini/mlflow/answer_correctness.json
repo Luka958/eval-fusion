@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "ddc44d90-4d1a-4e9b-9aaa-066112dc12e1",
+            "input_id": "4845340b-29c7-4c80-aab2-88641603cb18",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The model's output provides a comprehensive and accurate analysis of the global implications of the USA Supreme Court ruling on abortion, aligning closely with the provided targets. It addresses key aspects such as influence on other countries, strengthening global reproductive rights movements, and implications for international aid and health, without any significant inaccuracies or omissions.",
+                    "error": null,
+                    "time": 4.273415042000124
+                }
+            ]
+        },
+        {
+            "id": "302dd73c-411d-450e-a1ee-e7f1f990253a",
+            "input_id": "56591ea3-b9f9-4b96-b4d7-66b277ae16c1",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output accurately identifies the main contributors to GHG emissions according to the Carbon Majors database, providing specific company names and their respective contributions in terms of CO2 equivalent emissions. It aligns well with the targets provided, demonstrating a high degree of accuracy and semantic similarity, and thus receives the highest score.",
+                    "error": null,
+                    "time": 3.3118475829978706
+                }
+            ]
+        },
+        {
+            "id": "7eab0232-02d1-4e6f-afd5-22feb3697b25",
+            "input_id": "a89803b8-115c-4d82-bf5a-4f22e2a86cce",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.25,
+                    "reason": "The model’s output provides a long list of companies, some of which are not included in the provided targets. While it mentions certain companies that are among the largest GHG emitters, it also includes several that do not fit the criteria of being \"private\" or listed as the largest according to the Carbon Majors database. This results in significant discrepancies with the provided targets, leading to a score of 2 for partially correct information but substantial inaccuracies.",
+                    "error": null,
+                    "time": 5.345458874988253
+                }
+            ]
+        },
+        {
+            "id": "3473cdbf-526f-41fe-84a6-ea7e19406ded",
+            "input_id": "d92e6ed9-e60d-4a52-bcc8-a386324a57bd",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and provides a high degree of accuracy and semantic similarity to the targets. It accurately captures the essence of the actions Amnesty International urged its supporters to take in response to the killings of the Ogoni 9, including writing letters and calling for investigations, aligning perfectly with the provided targets.",
+                    "error": null,
+                    "time": 4.056045582998195
+                }
+            ]
+        },
+        {
+            "id": "a0d82272-b4f5-436e-9f1f-3c65a4ae880d",
+            "input_id": "634f52a1-9a17-4e8b-9877-100f654bf0eb",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.5,
+                    "reason": "The output addresses several recommendations made by Amnesty International, showing some accuracy and relevance to the input question. However, it largely omits the specific recommendations mentioned in the additional information, particularly regarding child and young human rights defenders, which constitutes a significant oversight. Thus, while there is some correctness, the model's response lacks completeness.",
+                    "error": null,
+                    "time": 3.888589292007964
+                }
+            ]
+        },
+        {
+            "id": "d38c3469-9e70-4c6f-9a6e-57aac30745e4",
+            "input_id": "59f44d0f-0dbd-496b-a9f7-bee7dbda7221",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and demonstrates a high degree of accuracy and semantic similarity to the provided targets. It accurately identifies the target audience as children and young adults, closely aligning with the provided targets.",
+                    "error": null,
+                    "time": 2.976857542002108
+                }
+            ]
+        },
+        {
+            "id": "1a77e44c-d318-4544-a91d-d65b180ca7d2",
+            "input_id": "b078fbea-9351-4b41-890f-66358a6b4c32",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and demonstrates a high degree of accuracy and semantic similarity to the targets. It accurately identifies the right to truth as the guarantee for access to comprehensive information about past human rights violations, matching the details provided in the targets.",
+                    "error": null,
+                    "time": 3.6216404589940794
+                }
+            ]
+        },
+        {
+            "id": "8c9e52b5-ea3b-4585-9603-0902402446f0",
+            "input_id": "4f1e7769-2a99-4c53-af5f-addf257576dd",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The model's output accurately conveys that everyone has the right to be informed about human rights violations, which aligns perfectly with the provided targets. It includes the importance of this right for victims, society, and the role of various entities in promoting transparency, effectively covering all aspects mentioned in the targets. Therefore, the model's answer correctness score is 5.",
+                    "error": null,
+                    "time": 4.600632000001497
+                }
+            ]
+        },
+        {
+            "id": "4d33f7da-2d7e-4e04-9cab-7014b329f3af",
+            "input_id": "078dc283-5911-4a83-abdd-984b13c58a96",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.0,
+                    "reason": "The output from the model is completely incorrect as it discusses organized groups and cultural heritage items, which are unrelated to the target detail about individuals' statements contradicting the official position of Russian authorities. There is no semantic similarity or factual correctness to the provided targets, resulting in a score of 1.",
+                    "error": null,
+                    "time": 3.612045166999451
+                }
+            ]
+        },
+        {
+            "id": "f6850775-04f9-4585-ae60-71855d29d33e",
+            "input_id": "1524266c-e969-4473-823c-a9410078add3",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and demonstrates a high degree of accuracy and semantic similarity to the provided targets. It accurately describes how the prosecution considers statements contrary to the official position as 'false' under Article 207.3, aligning closely with the target information.",
+                    "error": null,
+                    "time": 4.59640979199321
+                }
+            ]
+        },
+        {
+            "id": "dc519810-4bff-4894-95b8-239f9a5344b8",
+            "input_id": "e6e78eda-9e70-4c42-9999-ef513235008c",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output provided by the model accurately addresses the question regarding the factors contributing to the decline of independent civil society organizations in Nicaragua. It covers all essential elements mentioned in the targets, including repressive government policies, harassment, lack of funding, legal restrictions, and the polarization of the political climate, thereby demonstrating a high degree of accuracy and semantic similarity.",
+                    "error": null,
+                    "time": 3.713348083998426
+                }
+            ]
+        },
+        {
+            "id": "0896ba4d-6856-401b-ad78-ac06a8a1a354",
+            "input_id": "7c131567-7c82-4ee5-8266-d09cc2f1d131",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output provided by the model is correct and aligns closely with the targets. It outlines the specific conditions required for wetlands to be designated as Ramsar sites, accurately reflecting the criteria mentioned in the provided targets. Therefore, the model's answer_correctness score is 5.",
+                    "error": null,
+                    "time": 4.113291042012861
+                }
+            ]
+        },
+        {
+            "id": "be8ba693-f7f9-4286-a246-c8f228c9c454",
+            "input_id": "16125ca6-9cd1-409a-8c61-4b00c08506ed",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.0,
+                    "reason": "The output is completely incorrect as it states that COP15 was held in Kunming, China in 2022, while the provided target states it was held in Montreal, Canada. This contradiction means the model's output does not align with the key facts, warranting a score of 1.",
+                    "error": null,
+                    "time": 4.127878207989852
+                }
+            ]
+        },
+        {
+            "id": "dd989ab9-cf22-4145-8af5-f8320ec4435c",
+            "input_id": "bbd5ef5e-d6f5-4588-8a10-c4ad5f4b56ac",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and demonstrates a high degree of accuracy and semantic similarity to the targets. It accurately captures the essence of the 30x30 agreement, including its aim to conserve 30% of the planet's land and oceans by 2030 and its relevance to biodiversity and climate change.",
+                    "error": null,
+                    "time": 4.230675665996387
+                }
+            ]
+        },
+        {
+            "id": "be046966-d312-477d-9810-3e6e26d6096e",
+            "input_id": "fe3bdee9-895c-4e41-ad1d-6fb722111a70",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The model's output correctly identifies that the failure to recognize Indigenous Peoples' lands and territories was attributed to the governments of several countries, specifically naming Canada, Australia, New Zealand, and the United States as major contributors. This aligns closely with the provided target statement, demonstrating a high degree of accuracy and semantic similarity.",
+                    "error": null,
+                    "time": 3.5660785420041066
+                }
+            ]
+        },
+        {
+            "id": "79575197-badd-465d-9878-63cb7f2a0069",
+            "input_id": "de3ab3c8-5b1a-4e21-8c67-f2685b7a24e5",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output accurately addresses the consequences of criminalizing abortion for marginalized individuals and is closely aligned with the provided targets. It discusses various aspects such as health risks, economic burdens, limited reproductive choices, and increased inequality, all of which are consistent with the information in the targets. This high degree of accuracy and semantic similarity justifies a score of 5.",
+                    "error": null,
+                    "time": 4.237885584007017
+                }
+            ]
+        },
+        {
+            "id": "b541d74f-df85-46f1-aa1d-8655cf714dc0",
+            "input_id": "ac693d81-3460-417e-8355-ead38850d467",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output correctly outlines the responsibilities social media companies should have regarding the dissemination of accurate sexual and reproductive health information, aligning closely with the provided targets. It includes relevant points such as promoting accurate information, fact-checking, transparency, collaboration with experts, user education, and addressing misinformation, thereby demonstrating a high degree of accuracy and semantic similarity to the targets.",
+                    "error": null,
+                    "time": 4.320432541993796
+                }
+            ]
+        },
+        {
+            "id": "c4d2ab13-65c2-40b1-8ced-e18c37f34653",
+            "input_id": "abc43d45-a07b-49ed-82d1-3bbc19bb62ae",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output accurately addresses the role of social media companies in protecting users' rights online, covering various dimensions such as content moderation, privacy protection, algorithmic transparency, and collaboration with external stakeholders. It aligns closely with the provided targets, demonstrating high semantic similarity and factual correctness, warranting a score of 5.",
+                    "error": null,
+                    "time": 4.025120624995907
+                }
+            ]
+        },
+        {
+            "id": "a61ca4ed-7a9e-49dc-9432-ff19450979af",
+            "input_id": "800910c3-c10f-446d-9f95-a308951bea28",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output provided by the model is correct and aligns closely with the provided targets. It accurately documents various labor abuses in Qatar related to the kafala system and details the abuses mentioned in the targets. There are no significant inaccuracies or omissions, demonstrating a high degree of accuracy and semantic similarity.",
+                    "error": null,
+                    "time": 4.161414916001377
+                }
+            ]
+        },
+        {
+            "id": "8828bf1e-ed38-4b80-a6c5-f6b2a78d69d6",
+            "input_id": "ff141759-3f04-42cf-8d24-c96a8e837b9d",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.25,
+                    "reason": "The output indicates that the government of Qatar started repealing restrictions in 2017, which is factually inaccurate according to the provided targets stating the repeal occurred between 2018 and 2020. While the model's response shows some semantic relevance to the subject, the significant factual discrepancy lowers the score.",
+                    "error": null,
+                    "time": 4.140443625001353
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 50912,
+        "output": 2746
+    }
+}

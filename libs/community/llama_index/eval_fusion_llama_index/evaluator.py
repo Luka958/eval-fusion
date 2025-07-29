@@ -89,6 +89,7 @@ class LlamaIndexEvaluator(EvalFusionBaseEvaluator):
                         query=input.input,
                         response=input.output,
                         contexts=input.relevant_chunks,
+                        reference=input.ground_truth,
                     )
                     time = perf_counter() - start
 
@@ -199,6 +200,7 @@ class LlamaIndexEvaluator(EvalFusionBaseEvaluator):
                 query=task.input.input,
                 response=task.input.output,
                 contexts=task.input.relevant_chunks,
+                reference=task.input.ground_truth,
             )
             time = perf_counter() - start
 
@@ -210,6 +212,7 @@ class LlamaIndexEvaluator(EvalFusionBaseEvaluator):
             )
 
         except Exception as e:
+            raise e
             time = perf_counter() - start
 
             return LlamaIndexEvaluationTaskResult(

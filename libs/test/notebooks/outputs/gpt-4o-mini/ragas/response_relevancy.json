@@ -1,0 +1,274 @@
+{
+    "outputs": [
+        {
+            "id": "ca36f7cf-5d23-420d-8608-a5c42e2b29df",
+            "input_id": "de4f5c1c-dfe6-4111-8a10-951b3cd7385b",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9999992520134833,
+                    "reason": null,
+                    "error": null,
+                    "time": 23.507388416997856
+                }
+            ]
+        },
+        {
+            "id": "fbb0b7e0-418c-4089-9b18-707222e3d5af",
+            "input_id": "3c6468df-2aa5-41e1-82c5-813a2f8042b8",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.8927133745217529,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.821588999999221
+                }
+            ]
+        },
+        {
+            "id": "0295f108-d64e-4252-b3bc-719c2b464e39",
+            "input_id": "1a725b38-fc06-4feb-9dc1-cc7f46424260",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 12.947736625006655
+                }
+            ]
+        },
+        {
+            "id": "e1ef49ee-4091-4309-8abd-cdfd18f7534e",
+            "input_id": "7e44b33d-b0cf-4999-9340-ce02c1c04259",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9641839405731606,
+                    "reason": null,
+                    "error": null,
+                    "time": 25.90600654199079
+                }
+            ]
+        },
+        {
+            "id": "4ca61ff4-071a-4cd7-b246-8f74b3400b7d",
+            "input_id": "402aade9-b16e-4151-9548-7660ff6ee37a",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9763492248709902,
+                    "reason": null,
+                    "error": null,
+                    "time": 20.563015457999427
+                }
+            ]
+        },
+        {
+            "id": "e0ec01d7-9ec5-43d9-bf9f-66ec6a05a7f5",
+            "input_id": "a05834fb-58cc-405d-85a4-4d3a191dfd93",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 10.72748295799829
+                }
+            ]
+        },
+        {
+            "id": "da3a4994-5b13-40d8-982e-e3bfc8c2d7dd",
+            "input_id": "572145c7-a923-40ff-b3ec-8c36415bcbee",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9164074474700022,
+                    "reason": null,
+                    "error": null,
+                    "time": 6.150747709005373
+                }
+            ]
+        },
+        {
+            "id": "177b6008-bc75-4f72-82ed-79f863f87ef7",
+            "input_id": "0bea0a6a-2b82-4596-8990-17ee9f46853e",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.7227884956127658,
+                    "reason": null,
+                    "error": null,
+                    "time": 15.107423958004802
+                }
+            ]
+        },
+        {
+            "id": "f31250b5-dc11-4b94-84ae-40c2d8d848ef",
+            "input_id": "4672fa38-db9a-47d2-aef1-0c72fdf6fb32",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.6317104628189053,
+                    "reason": null,
+                    "error": null,
+                    "time": 5.126155749996542
+                }
+            ]
+        },
+        {
+            "id": "1ef45ddd-d0cc-440d-9b2f-0a62c3af345f",
+            "input_id": "ab95b357-5b32-40dd-ad09-ea179ec86319",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.7648329740916706,
+                    "reason": null,
+                    "error": null,
+                    "time": 19.124412582998048
+                }
+            ]
+        },
+        {
+            "id": "9bafee46-1f14-4dd4-9e0c-da0179d8bec3",
+            "input_id": "149749c5-9ade-436d-9356-a12f2692d77e",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9950444408593208,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.1538483330077725
+                }
+            ]
+        },
+        {
+            "id": "e9186dc5-9786-4087-9869-3d67a622b6d9",
+            "input_id": "ba143fea-fe00-4ad2-be86-3a34e4adf2b5",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9393222475741464,
+                    "reason": null,
+                    "error": null,
+                    "time": 21.570349083005567
+                }
+            ]
+        },
+        {
+            "id": "da4cbc93-e560-4c9a-af8e-92fe75a46f4a",
+            "input_id": "a8db90a6-03a2-4846-91be-e039cac9c65c",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9999991338463313,
+                    "reason": null,
+                    "error": null,
+                    "time": 7.397491915995488
+                }
+            ]
+        },
+        {
+            "id": "1a4a3ebc-6903-4985-a264-30548bff9782",
+            "input_id": "3e0668b9-4584-47f3-be8d-73ccac71a8a1",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.8885656792298845,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.164302791003138
+                }
+            ]
+        },
+        {
+            "id": "510a3019-7fd8-49fd-9eee-67d8645b40b6",
+            "input_id": "78d3671b-48de-4ea1-81d5-35dcec9d5849",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.7188451663059348,
+                    "reason": null,
+                    "error": null,
+                    "time": 13.993375000005472
+                }
+            ]
+        },
+        {
+            "id": "aee7c496-cf3a-4b66-92b3-41741eec52c6",
+            "input_id": "b4f74fd9-8315-4f29-a893-b9168d79a698",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.449656458004029
+                }
+            ]
+        },
+        {
+            "id": "5a05cfb0-8dea-468d-bfe0-40a96bef997d",
+            "input_id": "822d237e-b8b1-4d09-bc3a-d9ef64bfad2d",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9455856270349704,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.568415959001868
+                }
+            ]
+        },
+        {
+            "id": "36c2e40f-a503-4bc3-bc88-1edaab63cd2b",
+            "input_id": "0b8ed910-75e3-4d85-9caf-eafbbbd5f454",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.8991331520592528,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.323677499996847
+                }
+            ]
+        },
+        {
+            "id": "18779f12-bf9d-4a3c-b8e0-10051353c07e",
+            "input_id": "8df7a11a-86d4-456c-bb5c-fd1b1898a558",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.957985945888462,
+                    "reason": null,
+                    "error": null,
+                    "time": 17.609239625002374
+                }
+            ]
+        },
+        {
+            "id": "b11f66e9-3da0-49bd-814c-a0b4332ec2c0",
+            "input_id": "503ab235-7d87-4b03-8bcf-eb78af556cab",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevancy",
+                    "score": 0.9999998929105902,
+                    "reason": null,
+                    "error": null,
+                    "time": 22.588680207991274
+                }
+            ]
+        }
+    ],
+    "token_usage": [
+        {
+            "input": 34992,
+            "output": 1959
+        },
+        {
+            "input": 1327,
+            "output": 0
+        }
+    ]
+}

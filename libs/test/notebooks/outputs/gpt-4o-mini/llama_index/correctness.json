@@ -1,0 +1,274 @@
+{
+    "outputs": [
+        {
+            "id": "3a2ce2c9-f931-4be7-9905-a21adb07a0c8",
+            "input_id": "9cbb88bc-7f7f-4487-b9d6-bf7bc403b436",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer provides a comprehensive and relevant analysis of the global implications of the USA Supreme Court ruling on abortion, addressing various aspects such as influence on other countries, global reproductive rights movements, anti-abortion movements, international aid policies, human rights standards, and health implications. It covers the topic thoroughly and is accurate in its representation of potential outcomes.",
+                    "error": null,
+                    "time": 2.277080041996669
+                }
+            ]
+        },
+        {
+            "id": "da6d2638-a915-4276-bc05-951812541e12",
+            "input_id": "5d814491-2020-4979-ba38-f4fa81c2acfa",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer provides a detailed and accurate list of the main fossil fuel companies contributing to GHG emissions according to the Carbon Majors database, presenting quantitative data on their contributions. However, it could be rated higher with a complete conclusion rather than an incomplete sentence at the end.",
+                    "error": null,
+                    "time": 1.7196953749953536
+                }
+            ]
+        },
+        {
+            "id": "bf905888-c88e-4b16-8d9b-5b2cafcf5c39",
+            "input_id": "45d19a75-d93c-4aef-86c3-af8c4ae24214",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 3.0,
+                    "reason": "The generated answer lists several private companies identified as GHG emitters, which is relevant to the user's query. However, it inaccurately includes companies that are not private (such as BP and Royal Dutch Shell), and it does not provide a clear ranking or sourcing from the Carbon Majors database. While it is informative, the inclusion of incorrect entities and lack of specificity leads to a lower score.",
+                    "error": null,
+                    "time": 2.2325764580018586
+                }
+            ]
+        },
+        {
+            "id": "82e9b17f-64c6-4235-8faf-7fea4a91560e",
+            "input_id": "68b306cb-9742-4a0b-9d3b-20d9e7ba1d72",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant to the user query and correctly outlines the actions Amnesty International urged its supporters to take in response to the killings of the Ogoni 9, including writing letters for an independent investigation and addressing human rights issues.",
+                    "error": null,
+                    "time": 1.465719874991919
+                }
+            ]
+        },
+        {
+            "id": "34ee5538-3300-48c3-930d-4c797857d12c",
+            "input_id": "c79082d9-35ed-4789-a9f3-fec2fc05d28b",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant, as it directly addresses the user query regarding the recommendations made by Amnesty International to the Special Rapporteur on Human Rights Defenders. Additionally, the details provided in the answer are thorough and accurate, showcasing a comprehensive understanding of the recommendations.",
+                    "error": null,
+                    "time": 1.7182152079913067
+                }
+            ]
+        },
+        {
+            "id": "656add1b-2dfb-4f13-a12b-9eb57a65d420",
+            "input_id": "ca7e96f8-e0be-4fe5-9b4d-6bbedaab7b23",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 3.0,
+                    "reason": "The generated answer is relevant to the user query as it addresses the target audience of the books on child rights. However, it lacks specificity and completeness, as it does not mention other potential audiences like educators or parents, which could also be relevant. Therefore, it indicates some understanding but isn't fully comprehensive or accurate.",
+                    "error": null,
+                    "time": 1.721022957994137
+                }
+            ]
+        },
+        {
+            "id": "95bd0562-ec50-43d6-a239-51a3cd80b0b4",
+            "input_id": "ab3ca9da-6445-40d5-80be-92e8589e5b59",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is directly relevant to the user query and accurately identifies the right to truth as the mechanism that guarantees access to comprehensive information about past human rights violations. It covers all aspects mentioned in the query without any mistakes.",
+                    "error": null,
+                    "time": 1.409681916993577
+                }
+            ]
+        },
+        {
+            "id": "f6790791-e7ef-4c34-9bf7-10d80fb533a6",
+            "input_id": "12bcc481-290a-41db-9694-fd9777dbf2fb",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer directly addresses the user query and provides a comprehensive and detailed explanation of the right to be informed about human rights violations. It correctly references international human rights instruments and emphasizes the rights of victims, society, journalists, and organizations, making the answer relevant and fully correct. The thoroughness and clarity of the response further justify a high score.",
+                    "error": null,
+                    "time": 1.9358304999914253
+                }
+            ]
+        },
+        {
+            "id": "1c0e3250-df98-41e4-b282-78d355573deb",
+            "input_id": "f8ef6637-1934-4783-9b04-3fb61b1faff0",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer is relevant and accurately describes the conditions under which individuals can be found guilty under Article 207.3 of the Russian Criminal Code, specifically mentioning participation in an organized group and repeated acts of smuggling cultural heritage items. However, it could benefit from additional specificity regarding the nature of the crime or legal context to attain a higher score.",
+                    "error": null,
+                    "time": 1.7654184580023866
+                }
+            ]
+        },
+        {
+            "id": "86941883-699a-49c8-a5f3-2a2b2b57f959",
+            "input_id": "99264e32-0b79-47da-985e-e63f4ec38f2a",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer is relevant and correctly explains the circumstances under which statements are deemed 'false' under Article 207.3, addressing the intent behind making such statements. However, it could be more concise and specific regarding the application of the law.",
+                    "error": null,
+                    "time": 1.4103495830058819
+                }
+            ]
+        },
+        {
+            "id": "7eb4cc28-84b0-4367-af19-d58b4af2d047",
+            "input_id": "9cf0e4a8-1c3c-49ff-aebd-a3f2cfd73bd6",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer thoroughly addresses the user query by clearly enumerating the various factors contributing to the decline of independent civil society organizations in Nicaragua. It provides detailed and accurate explanations for each factor, demonstrating a comprehensive understanding of the complex political situation in the country. The answer is relevant, well-structured, and effectively captures the nuances required to explain the decline, making it fully correct.",
+                    "error": null,
+                    "time": 2.016975040998659
+                }
+            ]
+        },
+        {
+            "id": "24994c0d-8112-4dc2-bb1a-5f14ba22ab5e",
+            "input_id": "93e90c85-c2cc-4504-b02b-169b58dabfb6",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer thoroughly addresses the user's query by outlining the specific conditions that designate wetlands as Ramsar sites, providing a comprehensive and accurate description of each condition.",
+                    "error": null,
+                    "time": 1.3079888750071405
+                }
+            ]
+        },
+        {
+            "id": "2993c3c4-8eba-4572-9ec1-4d6467165878",
+            "input_id": "2879ce01-1e0a-4404-9471-24af00402d19",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is both relevant and fully correct, accurately stating that COP15 was held in Kunming, China in 2022.",
+                    "error": null,
+                    "time": 1.406415500008734
+                }
+            ]
+        },
+        {
+            "id": "d4e12225-043f-4143-b65e-5fb52cee8853",
+            "input_id": "b2c8ebbf-2012-4ace-a840-4e5ca56b5393",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant to the user query and accurately explains the purpose of the 30x30 agreement, addressing key elements such as conservation goals, and its significance in tackling biodiversity and climate change issues, making it complete and correct.",
+                    "error": null,
+                    "time": 1.4712156250025146
+                }
+            ]
+        },
+        {
+            "id": "693a37f1-64c5-478a-8c19-f57c303112e3",
+            "input_id": "96f1461a-39a7-4db9-b515-a43c35e561a9",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer is relevant and provides detailed information regarding the failure to recognize Indigenous Peoples' lands at COP15, including specific countries responsible for this oversight. However, the answer inaccurately describes COP15 as taking place in 2009, while it actually refers to COP15 in 2021. This error, while significant, does not detract from the overall relevance of the answer to the user query.",
+                    "error": null,
+                    "time": 1.928915666998364
+                }
+            ]
+        },
+        {
+            "id": "98c457c2-ca37-4f7c-8b37-277c3d0ddd42",
+            "input_id": "9361a450-da82-499a-8e95-6804ca6954f5",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer thoroughly addresses the consequences of criminalizing abortion for marginalized individuals by covering multiple relevant aspects such as health risks, economic burdens, reproductive choices, increased inequality, pregnancy criminalization, mental health impacts, and reproductive injustice. The response is comprehensive, clear, and directly relevant to the user's query, providing a high-quality and well-structured analysis.",
+                    "error": null,
+                    "time": 1.9985573750018375
+                }
+            ]
+        },
+        {
+            "id": "c52bf963-11bb-4f67-a1fd-1f1d5b800a92",
+            "input_id": "fba1d01c-09fa-4f19-a4a6-15008090dd56",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant to the user query, thoroughly addressing the responsibilities of social media companies regarding accurate sexual and reproductive health information. It covers multiple aspects, including promoting accuracy, fact-checking, transparency, collaboration with experts, user education, reporting misinformation, accessibility, and continuous improvement, which are all critical points in this context. Therefore, it exhibits both relevance and correctness comprehensively.",
+                    "error": null,
+                    "time": 1.9385245840094285
+                }
+            ]
+        },
+        {
+            "id": "3444cfca-46de-477e-82fe-25369710027d",
+            "input_id": "abd4a0b0-a56a-49eb-b07c-a981c28ddedd",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant to the user query, providing a comprehensive overview of the role of social media companies in protecting users' rights online without bias to language or political views. It covers essential points like content moderation, privacy, algorithmic transparency, accessibility, combating disinformation, transparency, and collaboration, all of which directly address the user’s inquiry. The answer is well-structured and articulates the complexities of the topic effectively.",
+                    "error": null,
+                    "time": 2.235132457994041
+                }
+            ]
+        },
+        {
+            "id": "ddc45d1a-471b-4d98-bdc5-d06eb2f71722",
+            "input_id": "cdad67c9-30b5-4fed-8697-c8ceb3493f7e",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant and directly addresses the user's query by detailing specific labor abuses documented by Amnesty International in Qatar. It clearly explains how these abuses are interconnected with the kafala system, outlining several pertinent examples such as exploitative working conditions and withholding of wages. The answer is thorough, well-organized, and accurately reflects the relationship between labor abuses and the kafala system, warranting the highest score.",
+                    "error": null,
+                    "time": 2.318105625003227
+                }
+            ]
+        },
+        {
+            "id": "162c72b1-7d16-418c-9f69-680686491899",
+            "input_id": "d4d3c75d-1c41-47fd-a0d7-97b7c381690d",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer is relevant to the user query and provides a specific year when the government of Qatar began repealing restrictions on migrant workers. However, without a reference answer for comparison, it's difficult to confirm the accuracy of the date provided. Nonetheless, the answer remains useful and directly addresses the query.",
+                    "error": null,
+                    "time": 1.748756749992026
+                }
+            ]
+        }
+    ],
+    "token_usage": [
+        {
+            "input": 10412,
+            "output": 1314
+        },
+        {
+            "input": 0,
+            "output": 0
+        }
+    ]
+}

@@ -1,0 +1,274 @@
+{
+    "outputs": [
+        {
+            "id": "55a142f4-3a0f-4a3d-8379-7a6533cf4cc0",
+            "input_id": "444fedea-7c28-41ed-af98-6d85f0dc1505",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8641675749506397,
+                    "reason": "Similarity score: 0.8641675749506397",
+                    "error": null,
+                    "time": 2.2717418749962235
+                }
+            ]
+        },
+        {
+            "id": "5b0e7e28-30fb-4443-9e11-16c49b7aa576",
+            "input_id": "0bb5b2ed-e55b-4021-80fb-8aa6de3d5abf",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8714669915585427,
+                    "reason": "Similarity score: 0.8714669915585427",
+                    "error": null,
+                    "time": 0.9268195420008851
+                }
+            ]
+        },
+        {
+            "id": "da640592-ed23-4753-818e-22f19e52e5f9",
+            "input_id": "5835c5a1-f0a2-4b54-a994-2067c7d6397b",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8870130691405124,
+                    "reason": "Similarity score: 0.8870130691405124",
+                    "error": null,
+                    "time": 1.3582145409891382
+                }
+            ]
+        },
+        {
+            "id": "b69b70c0-b8e4-44d8-836f-28eb4caad2ab",
+            "input_id": "cac2b4e7-61f7-4f5e-a68a-dd5feeaffb5d",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.727494795457886,
+                    "reason": "Similarity score: 0.727494795457886",
+                    "error": null,
+                    "time": 0.861272292007925
+                }
+            ]
+        },
+        {
+            "id": "01b8bac9-f5fd-4947-935d-fe7555addc91",
+            "input_id": "49e68c1b-ee4b-40b7-82f4-69a72ae2d540",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.7784765589353716,
+                    "reason": "Similarity score: 0.7784765589353716",
+                    "error": null,
+                    "time": 1.1708442919916706
+                }
+            ]
+        },
+        {
+            "id": "6851f178-da8c-48c4-89b5-190226f2f44b",
+            "input_id": "4f9e2c41-8080-4d9f-b168-2ab7d0946599",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.9697357741115653,
+                    "reason": "Similarity score: 0.9697357741115653",
+                    "error": null,
+                    "time": 1.0696733329968993
+                }
+            ]
+        },
+        {
+            "id": "d37ebf10-4829-4635-a60c-957773cfbe8f",
+            "input_id": "1d8072fb-069f-4ad4-ac31-532e5dc34ad5",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.9797768997693844,
+                    "reason": "Similarity score: 0.9797768997693844",
+                    "error": null,
+                    "time": 1.0490584579965798
+                }
+            ]
+        },
+        {
+            "id": "d65304ca-1d9a-4bff-b2a6-8a2fe092574c",
+            "input_id": "79b82824-90cd-4aaa-9e84-7eae099fa99a",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8571432924342727,
+                    "reason": "Similarity score: 0.8571432924342727",
+                    "error": null,
+                    "time": 1.0752501670067431
+                }
+            ]
+        },
+        {
+            "id": "0da00faa-3d29-45ee-b392-d8fee8a8ffa5",
+            "input_id": "12724074-d19a-4e7e-b4a1-d00c2e08c220",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.6448922582344839,
+                    "reason": "Similarity score: 0.6448922582344839",
+                    "error": null,
+                    "time": 1.0673951659991872
+                }
+            ]
+        },
+        {
+            "id": "6eed6e88-16d1-4318-b1dc-a0390ae04589",
+            "input_id": "7f054d12-1ad0-4aff-adaa-dfaf2af37a0e",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8305965878254008,
+                    "reason": "Similarity score: 0.8305965878254008",
+                    "error": null,
+                    "time": 0.9995619999972405
+                }
+            ]
+        },
+        {
+            "id": "4c77e1e4-a377-4ecf-a74b-7d2e5bc7350f",
+            "input_id": "28422e00-fa79-4cdb-b98c-c84b1efaeda4",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8761418956428119,
+                    "reason": "Similarity score: 0.8761418956428119",
+                    "error": null,
+                    "time": 0.7339297500002431
+                }
+            ]
+        },
+        {
+            "id": "2f22ddec-6fbc-4bdb-aef6-7a501a7c4a35",
+            "input_id": "92bffb42-260a-47d3-aa51-cc0c6863d274",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8500945067605844,
+                    "reason": "Similarity score: 0.8500945067605844",
+                    "error": null,
+                    "time": 1.041735292004887
+                }
+            ]
+        },
+        {
+            "id": "42a9c002-ceac-4449-aae4-bf83164ab9cf",
+            "input_id": "c4d9df33-656d-4dc0-ae75-53a2c22f6722",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.7853616058791949,
+                    "reason": "Similarity score: 0.7853616058791949",
+                    "error": null,
+                    "time": 1.3256688749970635
+                }
+            ]
+        },
+        {
+            "id": "82498a9d-c640-4d3a-ae14-4e6b8ad0dd61",
+            "input_id": "d6b695a8-007c-471e-bfe8-f84c21983c61",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.9238952840303756,
+                    "reason": "Similarity score: 0.9238952840303756",
+                    "error": null,
+                    "time": 1.050149834001786
+                }
+            ]
+        },
+        {
+            "id": "00a2f9f7-3129-41c9-9fa6-b896aa18c1e9",
+            "input_id": "82e5cb4c-e2c5-4288-a3d3-afe879efc6e4",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.7336000973279528,
+                    "reason": "Similarity score: 0.7336000973279528",
+                    "error": null,
+                    "time": 1.1038945420004893
+                }
+            ]
+        },
+        {
+            "id": "88112f2e-d537-4bdf-a77c-a513e94d3e2f",
+            "input_id": "a5d33eff-1b73-4503-9e8a-105939c7f796",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8943544218055824,
+                    "reason": "Similarity score: 0.8943544218055824",
+                    "error": null,
+                    "time": 1.1203974169911817
+                }
+            ]
+        },
+        {
+            "id": "c37133c1-3ff5-4bad-ad59-91d36bd14267",
+            "input_id": "c27a6857-3292-4b91-8a21-21d976367077",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8071345958364329,
+                    "reason": "Similarity score: 0.8071345958364329",
+                    "error": null,
+                    "time": 1.1279839999915566
+                }
+            ]
+        },
+        {
+            "id": "627527bc-d0a8-40b3-b583-b0c9b0513281",
+            "input_id": "ed4dc675-7f2e-4cce-8865-0a01bbca91d1",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8790780555160115,
+                    "reason": "Similarity score: 0.8790780555160115",
+                    "error": null,
+                    "time": 0.7969670000020415
+                }
+            ]
+        },
+        {
+            "id": "ecb0660e-442c-4084-bee2-7c7243fb1adf",
+            "input_id": "d1cb65ad-ab1b-4a8e-bcdc-3ae09c810192",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.8978881792390547,
+                    "reason": "Similarity score: 0.8978881792390547",
+                    "error": null,
+                    "time": 0.839599624989205
+                }
+            ]
+        },
+        {
+            "id": "d6749dc7-0a12-41fe-9695-c2bf8a92e57b",
+            "input_id": "d3774a76-bdb5-4903-a764-fc0694fad223",
+            "output_entries": [
+                {
+                    "metric_name": "semanticsimilarity",
+                    "score": 0.9530590744483757,
+                    "reason": "Similarity score: 0.9530590744483757",
+                    "error": null,
+                    "time": 0.9929924999887589
+                }
+            ]
+        }
+    ],
+    "token_usage": [
+        {
+            "input": 0,
+            "output": 0
+        },
+        {
+            "input": 5976,
+            "output": 0
+        }
+    ]
+}

@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "2d439413-318e-44e0-8b48-1884aa590658",
+            "input_id": "25f2546c-d752-4f5d-b458-5ef121b31918",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.581411083010607
+                }
+            ]
+        },
+        {
+            "id": "862b9111-3bcc-4596-9b9c-b89208e288ad",
+            "input_id": "02bc12cf-d1b6-472b-8458-4c0fc24c18e4",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.835940167002263
+                }
+            ]
+        },
+        {
+            "id": "97237394-b1db-4153-a2cd-1cf4d5310a4c",
+            "input_id": "2a3a87b0-3586-46b3-ab97-d4f519ecc36c",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 66.7,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.899127625001711
+                }
+            ]
+        },
+        {
+            "id": "55ef4d03-9cde-4c20-bcd8-08358dd337f3",
+            "input_id": "0e53121f-e19e-4f0d-a73f-103600493533",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 66.7,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.9007876249961555
+                }
+            ]
+        },
+        {
+            "id": "221dd455-7e26-45f9-acbb-b36a933d3530",
+            "input_id": "c6391188-18a5-43ad-b173-839cb1c0ca33",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.395124917005887
+                }
+            ]
+        },
+        {
+            "id": "c02671bf-a0ca-450c-8eb5-368586d40c68",
+            "input_id": "db21b385-b17f-4b52-9228-5eda1c125f6e",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.6692815419955878
+                }
+            ]
+        },
+        {
+            "id": "915f01e5-a358-4224-8c0a-f4b855bcb4c6",
+            "input_id": "c6b4e5fb-efc4-428d-bcfc-8de6f2ba86d9",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.588483750005253
+                }
+            ]
+        },
+        {
+            "id": "0b733ce0-eece-4da9-879e-3e159522d374",
+            "input_id": "a125e7c4-3986-409f-a5e8-5be3980f2a0c",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.247268292005174
+                }
+            ]
+        },
+        {
+            "id": "6040c248-daf6-4df5-82e8-527558498a99",
+            "input_id": "0d763a74-1354-422a-a05d-1bc555078b7d",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 2.955915583996102
+                }
+            ]
+        },
+        {
+            "id": "8691ccef-ff85-493f-ac06-8d8044fc7185",
+            "input_id": "9dd891de-8b3e-4739-beb2-c1e6272244a2",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.312272709008539
+                }
+            ]
+        },
+        {
+            "id": "f99e1c5a-0b2a-4797-b66d-992ac354bbd2",
+            "input_id": "0e08ecc6-fc40-45aa-b394-fd46ab5eb4e0",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 66.7,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.20051920801052
+                }
+            ]
+        },
+        {
+            "id": "d13ac2cd-70a2-4af3-b0bd-8fa0ba6eefdb",
+            "input_id": "052a942c-49f0-4c7c-bced-098669d8f0b2",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.294962333005969
+                }
+            ]
+        },
+        {
+            "id": "4772a3da-dd9b-40c2-beb3-22e6c433a2c2",
+            "input_id": "f4f645b0-fa4a-4b1c-8e57-b0076ef04d22",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.372146833993611
+                }
+            ]
+        },
+        {
+            "id": "f4e73e68-84b6-4de2-b875-87022d8c0a81",
+            "input_id": "8c93cec3-da8a-40af-9de4-6d8f24e833a4",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.345373791002203
+                }
+            ]
+        },
+        {
+            "id": "fce2752c-2fb8-482f-a082-4db5045e5b70",
+            "input_id": "035bc380-b44b-4c20-b162-85d82f052466",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.4462894999887794
+                }
+            ]
+        },
+        {
+            "id": "b76d1ad5-355f-4cb1-809a-95a71efa03a6",
+            "input_id": "001df74d-7281-4287-ab9e-a1b1915251d6",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.64709674999176
+                }
+            ]
+        },
+        {
+            "id": "78d4b44e-819f-48f6-825d-c7480cb4d574",
+            "input_id": "4f00f462-8e78-4a6d-905d-b97c9a4a60d0",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 7.51741512499575
+                }
+            ]
+        },
+        {
+            "id": "b43852b9-fa16-4ee1-b15a-c95a8c50c756",
+            "input_id": "a3b57aef-53c4-4aee-ac25-9093b39119ea",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.455033583013574
+                }
+            ]
+        },
+        {
+            "id": "7603d2c3-cb12-4887-87c4-94aaea4d87df",
+            "input_id": "5f964a0e-c162-4fca-a24c-f6cdccfd9eb5",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 100.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 12.9304696249892
+                }
+            ]
+        },
+        {
+            "id": "97e63661-928b-41a8-998d-37946e90bfa0",
+            "input_id": "e0833a47-f8de-4f6e-85a1-20a56a093dfc",
+            "output_entries": [
+                {
+                    "metric_name": "context_precision",
+                    "score": 33.3,
+                    "reason": null,
+                    "error": null,
+                    "time": 6.333026833002805
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 56366,
+        "output": 3733
+    }
+}

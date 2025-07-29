@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "80faa5c9-bc5c-43f0-90e9-b248a4c40df4",
+            "input_id": "ada7a21c-a489-44f0-b7d4-691bcf4b1883",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output provides a thorough overview of the potential global implications of the USA Supreme Court ruling on abortion, addressing aspects such as international influence, reproductive rights movements, and health implications. While it aligns closely with the provided targets, it lacks specific details regarding the impact on maternal health and international policies mentioned in the targets, which prevents it from achieving a perfect score.",
+                    "error": null,
+                    "time": 3.789734915990266
+                }
+            ]
+        },
+        {
+            "id": "5a06fea7-cdc6-453d-b1c8-01e9c8992006",
+            "input_id": "0c903fcf-508e-4992-bca1-8007e26008c4",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output provides a detailed account of the main contributors to greenhouse gas emissions, aligning significantly with the targets by mentioning specific companies and their respective contributions. While it lacks some contextual information regarding the broader impacts on vulnerable populations mentioned in the target, the major themes and details are present, leading to substantial semantic similarity.",
+                    "error": null,
+                    "time": 2.974978584010387
+                }
+            ]
+        },
+        {
+            "id": "a49ab519-32ce-4a1e-ab84-55d97762b828",
+            "input_id": "9790c6f7-6b16-4690-956c-8cbadbf012f5",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output provides a comprehensive list of the largest GHG emitters in the Americas, closely aligning with the target that specifically mentions ExxonMobil, Chevron, and Peabody. While the output includes additional companies, it demonstrates substantial semantic similarity by accurately reflecting the nature of the request, thus earning a score of 4.",
+                    "error": null,
+                    "time": 3.089291541997227
+                }
+            ]
+        },
+        {
+            "id": "6065df21-8bbb-44d6-95ae-055a949c46ee",
+            "input_id": "901621db-59b9-4912-a9b3-598b5f637d62",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output closely aligns with the provided targets, as it emphasizes Amnesty International's calls for action regarding the Ogoni 9 and the protection of human rights in the Niger Delta, capturing substantial thematic elements. While there are some slight differences in phrasing and details, the overall message is well represented, warranting a high score.",
+                    "error": null,
+                    "time": 4.7030628329957835
+                }
+            ]
+        },
+        {
+            "id": "c3d6a938-e40a-42a9-8730-e4cf268a7ef1",
+            "input_id": "fbf695de-683e-4be1-b69b-929f8f77ac83",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.25,
+                    "reason": "The output provided by the model lists various recommendations made by Amnesty International, but it does not directly address the specific focus on child and young human rights defenders mentioned in the targets. While there are elements of relevance regarding the protection and support of human rights defenders, the lack of direct alignment on key aspects results in only partial semantic similarity.",
+                    "error": null,
+                    "time": 3.543910041000345
+                }
+            ]
+        },
+        {
+            "id": "b4384bc9-a3cf-468b-96c5-b3ab1de4f9eb",
+            "input_id": "34da2324-9521-4e53-8f5f-bd861c399896",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output closely aligns with the provided target, addressing the primary audience and context effectively. While it uses slightly different wording (\"young people\" instead of \"young adults\"), the overall message is substantially similar, covering the essence of the target.",
+                    "error": null,
+                    "time": 3.2229234160040505
+                }
+            ]
+        },
+        {
+            "id": "0bd2e957-834b-4844-988b-b354e4dba831",
+            "input_id": "65b337a8-3d82-4fa4-91ad-c8618dc635d0",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": "The provided output closely aligns with the target, capturing all significant aspects of the right to truth, including access to information about human rights violations, identities of perpetrators, and circumstances surrounding the violations. The phrasing is also very similar, making the semantic similarity complete.",
+                    "error": null,
+                    "time": 2.913398499993491
+                }
+            ]
+        },
+        {
+            "id": "7a911a7d-5da5-43e1-8088-ee851cbc3323",
+            "input_id": "a747fc35-9daa-459e-b1a8-de4562a386d0",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": "The output closely aligns with the provided targets by comprehensively covering the right to be informed about human rights violations, including the identities of perpetrators and the fate of victims. It reflects all significant aspects of the targets, demonstrating a high degree of semantic similarity.",
+                    "error": null,
+                    "time": 2.82324520801194
+                }
+            ]
+        },
+        {
+            "id": "036f1577-2184-4217-9195-42079e05b337",
+            "input_id": "117086d4-bca3-450d-8601-2e4a40be0102",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.25,
+                    "reason": "The output discusses the conditions under which individuals can be found guilty under Article 207.3 of the Russian Criminal Code, which is partially aligned with the target. However, the target specifically mentions statements being contrary to the official position of the Russian authorities, a crucial detail that the output does not address. Therefore, the output demonstrates some partial semantic similarity but lacks complete alignment with the target.",
+                    "error": null,
+                    "time": 3.6248689589992864
+                }
+            ]
+        },
+        {
+            "id": "cb902523-dfd5-4b44-a14c-8a8413fecc8b",
+            "input_id": "b8810591-c38e-4bbf-9c3b-80485f684f50",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output closely aligns with the target, as it accurately describes the legal implications of statements contrary to the official position under Article 207.3 of the Russian Criminal Code, capturing the essence of how the prosecution views such statements. Although it may not contain every detail from the target, the substantial semantic similarity justifies a score of 4.",
+                    "error": null,
+                    "time": 3.72692833399924
+                }
+            ]
+        },
+        {
+            "id": "bb9b007e-cffb-4f10-9074-e0790f1e6a64",
+            "input_id": "f60b02f9-bbba-4c88-bf95-dfeba8804e6a",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output closely aligns with the targets, addressing multiple key factors such as repressive government policies, harassment, lack of funding, legal restrictions, and polarization. While it encompasses most aspects, there are some specifics in the target that are not fully detailed in the response, preventing a perfect score.",
+                    "error": null,
+                    "time": 3.3137139579921495
+                }
+            ]
+        },
+        {
+            "id": "ca867d1c-0005-40ca-b7b7-4e3ade2a91b9",
+            "input_id": "9d17ecc1-3328-4878-bc52-653b3fb314b4",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": "The output closely aligns with the provided targets, detailing multiple specific conditions that designate wetlands as Ramsar sites, which directly reflect the criterion outlined in the targets. It captures all significant aspects and contextualizes the information effectively, demonstrating complete semantic similarity.",
+                    "error": null,
+                    "time": 2.4867701249895617
+                }
+            ]
+        },
+        {
+            "id": "d9ecfb11-d0a5-44f9-9fb3-9ded8c00dfce",
+            "input_id": "69b868b8-5f8f-4a94-8c52-f1a5fae5d6e4",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.0,
+                    "reason": "The output states that COP15 was held in Kunming, China in 2022, which is incorrect compared to the target stating it was held in Montreal, Canada in 2022. There is little to no semantic similarity between the two statements as they convey different locations for the same event.",
+                    "error": null,
+                    "time": 2.7154600830108393
+                }
+            ]
+        },
+        {
+            "id": "870498e4-4e36-4e97-bf57-9277dfcd4b9f",
+            "input_id": "5ba9a18d-347b-48f4-a7a9-111340d22bd5",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": "The output closely aligns with the provided targets, capturing the essence and objectives of the 30x30 agreement, including the focus on biodiversity conservation and the specific goal of protecting 30% of the planet's land and oceans by 2030. It covers all significant aspects, demonstrating complete semantic similarity.",
+                    "error": null,
+                    "time": 3.3985415419883793
+                }
+            ]
+        },
+        {
+            "id": "3d03a11e-3e49-42f7-9881-43dab9cad6f1",
+            "input_id": "79a2c45f-6588-4c9a-be5d-aa90ba3d937b",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output captures the key aspect of the targets regarding the lack of recognition of Indigenous Peoples' lands at COP15, detailing the involvement of specific countries. Although it does not explicitly state \"a distinct category of protected area,\" it provides substantial context and addresses the critical issues raised in the targets. Thus, it demonstrates significant semantic similarity.",
+                    "error": null,
+                    "time": 3.4942977919999976
+                }
+            ]
+        },
+        {
+            "id": "de5e1d3a-7d22-4275-bf7d-262151c664cc",
+            "input_id": "792bfd08-ec1b-419d-8fcb-e973560535a4",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output closely aligns with the provided targets, addressing several significant consequences of criminalizing abortion for marginalized individuals, such as health risks, economic burdens, and limited reproductive choices. While it may not capture every detail from the targets, it demonstrates substantial semantic similarity by highlighting key themes and implications consistent with the target content.",
+                    "error": null,
+                    "time": 8.229391624990967
+                }
+            ]
+        },
+        {
+            "id": "5c1fb07f-a407-423d-a4d2-df0639675453",
+            "input_id": "1f40718f-374c-48ba-827d-21ef180a9be3",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns well with the targets by addressing social media companies' responsibilities in promoting accurate sexual and reproductive health information, which reflects an understanding of the need for human oversight and engagement in due diligence. While it covers comprehensive aspects of ensuring accurate information, it does not explicitly mention investing in human oversight or human rights due diligence as stated in the targets, which prevents it from achieving a perfect score.",
+                    "error": null,
+                    "time": 3.692602084003738
+                }
+            ]
+        },
+        {
+            "id": "3da6e074-76b2-4e60-a4a3-bcc5b91ca413",
+            "input_id": "dbe71199-6651-4b5e-b6c8-42afb1ce0247",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns with the provided targets by discussing crucial roles of social media companies in protecting users' rights, including content moderation, privacy protection, and algorithmic transparency. While it covers many significant aspects, it lacks specific mention of human oversight and user education as outlined in the targets, which prevents it from achieving a perfect score.",
+                    "error": null,
+                    "time": 4.079846458000247
+                }
+            ]
+        },
+        {
+            "id": "14531b34-74e0-4aa6-b6c6-69b49947287e",
+            "input_id": "8b5b7768-e625-46b0-bd38-a6abbf464876",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output closely aligns with the target, discussing specific labor abuses documented by Amnesty International, such as exploitative working conditions and passport confiscation, which are all relevant to the kafala system. While it may not mention every detail from the target, it covers the main points and demonstrates substantial semantic similarity.",
+                    "error": null,
+                    "time": 3.096955708009773
+                }
+            ]
+        },
+        {
+            "id": "ca648af6-80ec-4c26-9ece-f244b893e7eb",
+            "input_id": "f3f64d9c-d57f-46b1-84eb-f7c276741867",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.5,
+                    "reason": "The output mentions the government of Qatar repealing restrictions on migrant workers, which aligns with part of the target. However, it has a discrepancy in the time period as it states 2017 instead of the specified time frame of 2018 to 2020, indicating moderate semantic similarity.",
+                    "error": null,
+                    "time": 2.7561552499973914
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 43438,
+        "output": 2789
+    }
+}

@@ -94,7 +94,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
         if TruLensMetric.GROUNDEDNESS in metrics:
             feedbacks.append(
                 Feedback(
-                    # TODO does not have
+                    # TODO does not have a version without cot
                     self._llm.groundedness_measure_with_cot_reasons,
                     name=TruLensMetric.GROUNDEDNESS.value,
                 )
@@ -116,6 +116,7 @@ class TruLensEvaluator(EvalFusionBaseEvaluator):
             app=VirtualApp(),
             app_id=APP_ID,
             feedbacks=feedbacks,
+            connector=self._session.connector,
         )
 
         outputs: list[EvaluationOutput] = []

@@ -168,7 +168,7 @@ class PhoenixEvaluator(EvalFusionBaseEvaluator):
             batch = await asyncio.gather(*coros)
 
             for task, result in zip(tasks, batch):
-                i, _, j, evaluator = task
+                i, _, j, evaluator, _ = task
                 score, reason, error, time = result
                 metric_name = evaluator.__class__.__name__.lower().removesuffix(
                     'evaluator'

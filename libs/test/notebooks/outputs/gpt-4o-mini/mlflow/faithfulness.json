@@ -1,268 +1,268 @@
 {
     "outputs": [
         {
-            "id": "0f6ce686-7aad-488d-ab16-5e05ec024410",
-            "input_id": "87382d88-baa2-4020-b590-19c62caa782a",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": 0.25,
-                    "reason": "The output discusses the severe consequences of criminalizing abortion for marginalized individuals, which is not directly supported by the provided context that focuses on the political landscape and repression in Nicaragua. While there are general themes of marginalization and restriction, specific claims in the output about health risks, economic burdens, and reproductive injustices cannot be directly derived from the context. Thus, some claims are consistent, but the majority is inconsistent or missing, resulting in a score of 2.",
-                    "error": null,
-                    "time": 29.147832292001112
-                }
-            ]
-        },
-        {
-            "id": "e15e7b88-fd3d-4992-b27a-1ffc1b186ef2",
-            "input_id": "e931bc30-78e7-4803-8071-133a653ce78e",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": null,
-                    "reason": null,
-                    "error": "single positional indexer is out-of-bounds",
-                    "time": 24.125032208001358
-                }
-            ]
-        },
-        {
-            "id": "8687939a-d7bb-43fb-82cc-a4128f78c8b6",
-            "input_id": "301de6e5-b707-4646-a026-c7de182e55fb",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": 0.25,
-                    "reason": "The output discusses the consequences of criminalizing abortion for marginalized individuals but does not draw from the provided context, which focuses specifically on the decline of independent civil society organizations in Nicaragua. Some claims about health risks and economic burdens may be inferred, but they are not supported by the context, leading to a score of 2, as most output is inconsistent or unsupported.",
-                    "error": null,
-                    "time": 27.277524750010343
-                }
-            ]
-        },
-        {
-            "id": "64b693a8-1a9e-4858-a1b3-314949ca07ae",
-            "input_id": "7afb8591-a9d1-4610-aac8-ab477e25a200",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": 0.25,
-                    "reason": "The output discusses the consequences of criminalizing abortion for marginalized individuals, but these specific claims about health risks, economic burden, and reproductive justice are not supported or mentioned in the provided context about Nicaragua's civil society organizations and political repression. Although some general themes about marginalized individuals exist in both the output and context, the majority of the output lacks direct support from the context, leading to a faithfulness score of 2.",
-                    "error": null,
-                    "time": 36.63342279200151
-                }
-            ]
-        },
-        {
-            "id": "c7fc6aa9-a051-45fe-be40-e548e7d5e277",
-            "input_id": "b5e44935-a0c4-4b94-9db7-031be8d05329",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": 0.25,
-                    "reason": "While the output presents several valid points about the consequences of criminalizing abortion, these points are not supported by the provided context, which focuses on the decline of independent civil society organizations and repression in Nicaragua. Therefore, the majority of the output is inconsistent with the context, justifying a score of 2.",
-                    "error": null,
-                    "time": 25.386075624992372
-                }
-            ]
-        },
-        {
-            "id": "af5032fb-263c-4843-ae70-42aebdbeee7e",
-            "input_id": "f4bd4bcf-f298-4c96-a2a3-067aa0a0fba0",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": 0.25,
-                    "reason": "While the output discusses the consequences of criminalizing abortion and mentions how it affects marginalized individuals, these specific claims are not supported by the provided context, which primarily focuses on the situation of civil society organizations in Nicaragua and the repression faced by them. Therefore, there are inconsistencies and missing information, leading to a faithfulness score of 2.",
-                    "error": null,
-                    "time": 26.601747125008842
-                }
-            ]
-        },
-        {
-            "id": "06cbf9d6-3890-424b-b832-77f85f05adbe",
-            "input_id": "d85a5ada-12ec-4335-a4a2-6c7b2be5af11",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": null,
-                    "reason": null,
-                    "error": "single positional indexer is out-of-bounds",
-                    "time": 24.97025762499834
-                }
-            ]
-        },
-        {
-            "id": "2e965ebf-3e6c-4807-b53d-be797586b98c",
-            "input_id": "30f713ad-b383-40ee-98a8-54c44cac08f2",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": null,
-                    "reason": null,
-                    "error": "single positional indexer is out-of-bounds",
-                    "time": 26.573355000000447
-                }
-            ]
-        },
-        {
-            "id": "8b8e7330-5bf8-4d9d-a734-b3be2b601a96",
-            "input_id": "457034e7-f688-42a3-8503-0b748bc5b23c",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": 0.25,
-                    "reason": "The output discusses the consequences of criminalizing abortion for marginalized individuals, but the provided context focuses on the political landscape and restrictions on civil society in Nicaragua. While there may be tangential relevance, the majority of the output is inconsistent with the context, leading to a score of 2.",
-                    "error": null,
-                    "time": 35.32946875000198
-                }
-            ]
-        },
-        {
-            "id": "b25149bc-377e-4128-86c9-93927f138aea",
-            "input_id": "b18ff2b0-80f4-4c08-a845-28f406e45206",
-            "output_entries": [
-                {
-                    "metric_name": "faithfulness",
-                    "score": 0.25,
-                    "reason": "While the output correctly mentions labor abuses and the kafala system, which are relevant issues in Qatar, it overlooks significant improvements in labor rights reform mentioned in the context. The output fails to reconcile these improved conditions with the abuses listed, indicating that most claims are inconsistent with or missing from the provided context, leading to a score of 2.",
-                    "error": null,
-                    "time": 37.16948133299593
-                }
-            ]
-        },
-        {
-            "id": "afd5fa2e-3ba0-419e-a688-96fd6882458a",
-            "input_id": "33df3985-e7ef-45bc-a446-47b92cb712c1",
+            "id": "4f1bfdeb-373f-442a-9315-806100ace7ac",
+            "input_id": "98a26441-5100-417c-a588-cc40e5d2d237",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
                     "score": 1.0,
-                    "reason": "The output claims that \"The government of Qatar started repealing restrictions on migrant workers in 2017,\" which is directly supported by the context discussing Qatar's efforts and changes made to labor laws. All claims in the output can be inferred from the provided context, demonstrating high faithfulness.",
+                    "reason": "The output's claims regarding the global implications of the USA Supreme Court ruling on abortion are all directly supported by the provided context, which discusses the effects of the ruling on reproductive rights worldwide, the influence on policies in other countries, and the response of global movements. Therefore, the faithfulness score is 5 as all claims in the output are well-founded in the context.",
                     "error": null,
-                    "time": 33.230796333999024
+                    "time": 5.642148665996501
                 }
             ]
         },
         {
-            "id": "2ff285a0-6482-4691-851b-6e6e99c73a5f",
-            "input_id": "a551288e-2091-4646-b69e-7491b5b0ce2c",
+            "id": "43acc45c-5b5a-47b8-94a1-7e73e7ee2c0e",
+            "input_id": "a6b8f71c-b591-4d81-aab0-33accd086af8",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
                     "score": 1.0,
-                    "reason": "The output accurately summarizes the decline of independent civil society organizations in Nicaragua by referring to repressive government policies, harassment, funding issues, legal restrictions, and polarization, all of which are corroborated by the provided context. Therefore, all the claims in the output are directly supported by the context, resulting in a faithfulness score of 5.",
+                    "reason": "The output provides a comprehensive list of major contributors to GHG emissions, and each claim can be directly inferred from the provided context about the Carbon Majors database and the role of fossil fuel companies. All claims in the output align with the context, demonstrating high faithfulness.",
                     "error": null,
-                    "time": 32.6178363749932
+                    "time": 4.955212166998535
                 }
             ]
         },
         {
-            "id": "8f6c9e6a-9ffe-43ad-8c07-b75b4f295717",
-            "input_id": "2c2edadb-17a1-4fed-be60-82e54cfac6aa",
+            "id": "e006e511-d502-4b02-89fd-d3c02a2c5402",
+            "input_id": "57f5becc-bb7b-4144-8e0f-3f76609e6911",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most of the claims in the output about the largest GHG emitters in the Americas align with the context provided, which discusses private companies' contributions to greenhouse gas emissions and identifies specific companies like ExxonMobil and Chevron. However, some additional details and specific rankings in the output are not explicitly mentioned in the context, which slightly detracts from full consistency.",
+                    "error": null,
+                    "time": 5.2782793330115965
+                }
+            ]
+        },
+        {
+            "id": "ded9bfa7-4484-4967-8a7e-47aa67577018",
+            "input_id": "e218957f-0560-4e08-a863-dde54e85e93f",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output accurately reflects many claims from the context, such as Amnesty International urging action regarding the Ogoni 9 and calling for investigations and justice. Most of the output claims can be derived from the provided context, with very little extraneous information and no contradictory statements, leading to a high faithfulness score of 4.",
+                    "error": null,
+                    "time": 5.107009540995932
+                }
+            ]
+        },
+        {
+            "id": "4f718b59-d437-48c7-8f50-b6dc2566a937",
+            "input_id": "444c9b5c-01de-45c0-8c80-255529ef3607",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
                     "score": 1.0,
-                    "reason": "The output thoroughly details several factors contributing to the decline of independent civil society organizations in Nicaragua, all of which are directly supported by the provided context. Each claim made in the output aligns with and can be derived from the contextual information provided.",
+                    "reason": "The output accurately reflects the recommendations made by Amnesty International as outlined in the provided context. All claims in the output can be directly inferred from the context, demonstrating high faithfulness to the information provided.",
                     "error": null,
-                    "time": 32.0071105829993
+                    "time": 3.6482820420060307
                 }
             ]
         },
         {
-            "id": "972453f7-bafd-4eb7-acb1-9414abd205da",
-            "input_id": "0d278609-b70c-4c98-9f08-ef7977c2b100",
+            "id": "df773519-ae51-4f20-9843-b28ac79c188b",
+            "input_id": "d34b65e1-a48a-46f7-a0d2-49f6b4c47bc3",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output correctly identifies that the target audience includes \"children and young adults\" which aligns with the context, and it captures the essence of the books' purpose. However, it overlooks mentioning parents, teachers, and caregivers who also play a crucial role as target audiences, which is a significant point from the context. Therefore, while most claims are supported, some relevant information is missing, leading to a score of 4.",
+                    "error": null,
+                    "time": 5.10357816699252
+                }
+            ]
+        },
+        {
+            "id": "88f46534-4791-446a-ac21-7ad72cc0e94f",
+            "input_id": "e1aa0bce-928f-4674-a5ff-f1eb95d2e36b",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
                     "score": 1.0,
-                    "reason": "All claims in the output regarding the decline of independent civil society organizations in Nicaragua can be directly inferred from the provided context, which discusses government's repressive policies, harassment, lack of funding, and legal restrictions. Thus, there is high consistency and support for the claims made in the output.",
+                    "reason": "The output \"The right that guarantees access to comprehensive information about past human rights violations, including the identities of the perpetrators and the fate of the victims, as well as the circumstances surrounding the violations, is the right to truth.\" is fully supported by the context provided, which discusses the right to truth and the conditions surrounding past human rights violations. Therefore, the faithfulness score is 5.",
                     "error": null,
-                    "time": 31.341999208001653
+                    "time": 4.612410292000277
                 }
             ]
         },
         {
-            "id": "afd8d9fd-5c4c-4a52-85cf-81cf128bcdcd",
-            "input_id": "a8daa74c-ec9c-4983-a9b7-b0ae90e8d90d",
+            "id": "a47fe314-0fcc-4386-bf0f-5de6e1ec7a0b",
+            "input_id": "19b0134e-ca6d-42cc-9ca8-b73329b03398",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
                     "score": 1.0,
-                    "reason": "All the claims in the output regarding the decline of independent civil society organizations in Nicaragua, including repressive government policies, harassment, lack of funding, and legal restrictions, are directly supported by the provided context. Thus, the output demonstrates high faithfulness to the context.",
+                    "reason": "The output is entirely consistent with the provided context, detailing the right to be informed about human rights violations and the roles of victims and society, which are all supported by the context provided about the importance of transparency in human rights.",
                     "error": null,
-                    "time": 35.88109741600056
+                    "time": 4.785453958000289
                 }
             ]
         },
         {
-            "id": "0021fc97-2cf4-4c6d-b589-7e1870815512",
-            "input_id": "43942201-44c6-43f0-88b8-abad78fb6240",
+            "id": "f84b0b1e-e693-44d5-823b-4801ece4de0b",
+            "input_id": "2f7c10a7-c4ce-42a1-9e48-a915d7909e31",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "The output incorrectly claims participation in an organized group or repeated acts of smuggling of cultural heritage items under Article 207.3, which primarily pertains to firearms and explosives, as detailed in the context. While there are some elements of legality related to severe penalties for violations, the majority of the claims are inconsistent or unsupported, leading to a faithfulness score of 2.",
+                    "error": null,
+                    "time": 5.508388458998525
+                }
+            ]
+        },
+        {
+            "id": "dd95b992-5cd4-4f1c-9789-ea96350419b6",
+            "input_id": "e07e67f4-8c71-43aa-b9f1-c2ba6f3997da",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
                     "score": 1.0,
-                    "reason": "The output claims regarding the decline of independent civil society organizations in Nicaragua are fully supported by the provided context, which discusses repressive government policies, harassment, funding issues, and legal restrictions faced by these organizations. All key points in the output can be derived from the context, demonstrating high faithfulness.",
+                    "reason": "The output accurately reflects the context regarding Article 207.3 of the Russian Criminal Code and its implications for statements contrary to the official position. Every claim made in the output can be directly supported by the provided context, demonstrating full faithfulness.",
                     "error": null,
-                    "time": 34.60301091700967
+                    "time": 4.832145459004096
                 }
             ]
         },
         {
-            "id": "bd7c6043-f5aa-4c48-9240-7109043a9d1f",
-            "input_id": "e37da9af-0028-4435-a543-4c3a1b9daaa5",
+            "id": "e517454f-ecd7-467e-82d2-7c212a3e1478",
+            "input_id": "496501f1-86b3-4c6c-ad2d-7b42b11b61ad",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
-                    "score": null,
-                    "reason": null,
-                    "error": "single positional indexer is out-of-bounds",
-                    "time": 28.266198375000386
+                    "score": 1.0,
+                    "reason": "The output provides a comprehensive and coherent summary of the decline of civil society organizations in Nicaragua, directly supported by the context provided. Each point made in the output about repressive government policies, harassment, lack of funding, legal restrictions, and polarization is consistent with the context and reflects the stated challenges effectively, demonstrating high faithfulness to the provided information.",
+                    "error": null,
+                    "time": 5.457202458012034
                 }
             ]
         },
         {
-            "id": "d145255c-f184-4493-af3e-6d9bc171f847",
-            "input_id": "30b5ec3a-5b27-4677-8b8c-bbec7f0d03c8",
+            "id": "f3c6db48-c9c6-436f-ad4d-2686fddfd7a7",
+            "input_id": "0ea60749-92c0-4b50-9c63-c7adb8869fc1",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
-                    "score": null,
-                    "reason": null,
-                    "error": "single positional indexer is out-of-bounds",
-                    "time": 28.90932883300411
+                    "score": 1.0,
+                    "reason": "The output provides a comprehensive list of conditions for wetlands to be designated as Ramsar sites, all of which are directly supported by the context that outlines the criteria established by the Ramsar Convention. Every claim in the output can be derived from the provided context, demonstrating high faithfulness.",
+                    "error": null,
+                    "time": 4.297724832998938
                 }
             ]
         },
         {
-            "id": "03840b6f-634a-4bf4-8a7f-b0cefb609074",
-            "input_id": "0cb46216-a4e0-4039-a628-cf4a44eb8d07",
+            "id": "de6f2489-87c8-486e-9d0b-5f54ce865215",
+            "input_id": "4a55d3f8-a8c0-4a05-bc57-61f353793ecc",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
-                    "score": null,
-                    "reason": null,
-                    "error": "single positional indexer is out-of-bounds",
-                    "time": 30.15466616699996
+                    "score": 1.0,
+                    "reason": "The output states \"COP15 was held in Kunming, China in 2022,\" which is directly supported by the context provided. The context includes explicit information confirming this statement, indicating high faithfulness to the source material. Therefore, all claims in the output are factually consistent with the provided context.",
+                    "error": null,
+                    "time": 4.322915416996693
                 }
             ]
         },
         {
-            "id": "acdc197c-cba4-442a-8593-2531149551b4",
-            "input_id": "444f129d-3201-4343-bc20-0637e47eeb1f",
+            "id": "f083fadf-059b-435c-b2fc-40653ce4d0ec",
+            "input_id": "602e7226-4321-4371-8e18-a507234254cb",
             "output_entries": [
                 {
                     "metric_name": "faithfulness",
-                    "score": null,
-                    "reason": null,
-                    "error": "single positional indexer is out-of-bounds",
-                    "time": 30.73551274999045
+                    "score": 1.0,
+                    "reason": "The output accurately presents the goals and purposes of the 30x30 agreement, which are all supported by the detailed context provided. Every claim about the conservation goals, biodiversity crisis, and the role of sustainable management is directly derived from the context, demonstrating high faithfulness.",
+                    "error": null,
+                    "time": 4.68387162500585
+                }
+            ]
+        },
+        {
+            "id": "cee14f66-83c9-435d-9ffc-c740f73e0252",
+            "input_id": "d8ec2a46-4ac9-4d20-8fa2-3ae659bb9b8b",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most of the claims in the output can be inferred from the provided context, such as the failure to recognize Indigenous Peoples' lands and the criticism of certain countries. However, the output does contain some nuanced interpretations and elaborations that are not explicitly stated in the context. Thus, while the majority aligns well, there is some additional context not directly supported, leading to a score of 4.",
+                    "error": null,
+                    "time": 4.538830125005916
+                }
+            ]
+        },
+        {
+            "id": "5a911d12-e509-476c-8503-d523d2837569",
+            "input_id": "bdff3d0f-ba56-462a-bad6-49d70dff0a07",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output accurately reflects and details the consequences of abortion criminalization on marginalized individuals as outlined in the context. All claims regarding health risks, economic burdens, limited reproductive choices, increased inequality, criminalization of pregnancy, mental health impacts, and reproductive injustice are directly supported by the provided context, demonstrating high faithfulness.",
+                    "error": null,
+                    "time": 5.277497000002768
+                }
+            ]
+        },
+        {
+            "id": "cc90e406-8a08-4311-8f93-3956bf623d8f",
+            "input_id": "d0151a70-29fc-406e-b1ef-b22ffcb30458",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "All claims in the output regarding the responsibilities of social media companies to promote accurate sexual and reproductive health information and combat misinformation can be directly inferred from the provided context. Therefore, the output demonstrates high faithfulness to the provided context.",
+                    "error": null,
+                    "time": 4.790560416004155
+                }
+            ]
+        },
+        {
+            "id": "cd30084f-c6e5-4e24-8c7d-790648bf5c6c",
+            "input_id": "f9b61670-8a55-460b-81b4-e3167f72b39d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output accurately reflects the claims made in the provided context regarding the responsibilities of social media companies in protecting users' rights, content moderation, privacy, algorithmic transparency, and fighting disinformation. All elements of the output can be directly traced back to the context, demonstrating high faithfulness.",
+                    "error": null,
+                    "time": 3.14594445801049
+                }
+            ]
+        },
+        {
+            "id": "ec4e6a11-969f-4139-a4ea-9e548bc23925",
+            "input_id": "e4ef7000-b1f0-44dc-b2d1-155c005a7458",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output thoroughly details labor abuses linked to the kafala system as documented by Amnesty International, which is fully supported by the provided context. Every claim in the output—such as exploitative working conditions, wage withholding, passport confiscation, and inadequate living conditions—can be directly inferred from the context, demonstrating a high level of faithfulness.",
+                    "error": null,
+                    "time": 6.0021107500069775
+                }
+            ]
+        },
+        {
+            "id": "9d54fab7-a388-498d-a234-2f0b8a311b43",
+            "input_id": "ed246b1f-41eb-425b-8ab4-835c347df176",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output states that \"The government of Qatar started repealing restrictions on migrant workers in 2017,\" which is supported by the context discussing the government's decision to gradually repeal restrictions and implement reforms. Most details from the context concerning labor reforms are consistent with this claim, ensuring high faithfulness, although some details are not directly included in the output.",
+                    "error": null,
+                    "time": 4.468196165995323
                 }
             ]
         }
     ],
     "token_usage": {
-        "input": 469959,
-        "output": 18443
+        "input": 60260,
+        "output": 2782
     }
 }

@@ -7,6 +7,7 @@ from llama_index.core.base.embeddings.base import BaseEmbedding, Embedding
 
 class LlamaIndexProxyEM(BaseEmbedding):
     def __init__(self, settings: EvalFusionEMSettings):
+        super().__init__()
         self.__em = settings.base_type(*settings.args, **settings.kwargs)
 
     def _get_query_embedding(self, query: str) -> Embedding:

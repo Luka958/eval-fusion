@@ -55,9 +55,9 @@ Run this after each change to `.pre-commit-config.yaml`.
 | Faithfulness            | Yes | No        | Yes   | Yes              | Yes    | No            |
 | Relevance               | Yes | No        | Yes   | Yes              | Yes    | No            |
 | **Phoenix Arize AI**    |     |           |       |                  |        |               |
-| Retrieval Relevance     | Yes | No        | Yes   | Yes              | No     | No            |
+| Relevance               | Yes | No        | Yes   | Yes              | No     | No            |
 | Hallucination           | Yes | No        | Yes   | Yes              | Yes    | No            |
-| Q&A on Retrieved Data   | Yes | No        | Yes   | Yes              | Yes    | No            |
+| Q&A                     | Yes | No        | Yes   | Yes              | Yes    | No            |
 | **TruLens**             |     |           |       |                  |        |               |
 | Answer Relevance        | Yes | No        | Yes   | No               | Yes    | No            |
 | Groundedness            | Yes | No        | No    | Yes              | Yes    | No            |
