@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "9761fa87-4bd5-4495-afc4-5803d263db30",
+            "input_id": "47ee0851-27a0-4656-8cdf-27e5a90ac5bc",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns with the provided targets in most aspects and has substantial semantic similarity. It addresses the global implications of the USA Supreme Court ruling on abortion, including its influence on other countries, reproductive rights movements, anti-abortion movements, international aid and policies, human rights standards, and global health implications. Although some specific details from the targets, such as maternal health support and legislative impacts in African countries, are missing, the overall alignment is substantial.",
+                    "error": null,
+                    "time": 4.159312250005314
+                }
+            ]
+        },
+        {
+            "id": "d9aacd16-efe3-438a-9dca-955f38a559f1",
+            "input_id": "a7309df3-141d-44d0-944a-a36c27d4277e",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.25,
+                    "reason": "The provided output has partial semantic similarity to the target. Both discuss major contributors to global GHG emissions according to the Carbon Majors database, focusing on fossil fuel companies. However, the output provides a detailed list of specific companies and their emission contributions, whereas the target emphasizes the broader impact, state-owned vs. private companies, and socio-economic effects. The output lacks these significant contextual details present in the target, resulting in only partial similarity.",
+                    "error": null,
+                    "time": 5.409853958000895
+                }
+            ]
+        },
+        {
+            "id": "3e94090f-34a3-4edd-9aff-64e11cdbb482",
+            "input_id": "7d568b49-20de-45e0-a59c-e8b2cde75f48",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.5,
+                    "reason": "The output presents a list of companies relevant to the topic and overlaps with some of the companies mentioned in the target (ExxonMobil, Chevron, Peabody). However, it includes additional firms not mentioned in the target and lacks detailed alignment with the target's concise answer. This output displays moderate semantic similarity as it partially covers the essential companies but diverges in scope and detail.",
+                    "error": null,
+                    "time": 3.1582856250024633
+                }
+            ]
+        },
+        {
+            "id": "12f34df5-76ff-4668-9a3f-8139945bc2b8",
+            "input_id": "681b75fa-94c0-4550-b759-6fe41f1e64b5",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.5,
+                    "reason": "The output has moderate semantic similarity to the provided target. It shares the core aspect of urging supporters to write letters to Nigerian authorities, but there are differences in the details. The output mentions an independent investigation and human rights abuses, while the target emphasizes sending appeals for defenders' freedom and letters of outrage. The main action is similar, but the specific emphasis and context differ.",
+                    "error": null,
+                    "time": 3.528008375011268
+                }
+            ]
+        },
+        {
+            "id": "a0ccfa23-7794-4b27-8a5f-04ae80b79fec",
+            "input_id": "1b950cb2-5cc1-4595-b9fe-d38f45f318c1",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.0,
+                    "reason": "The provided output has little to no semantic similarity to the provided targets. While the output discusses general recommendations for human rights defenders, it does not address any of the specific points in the target relating to embedding a focus on child and young HRDs, raising awareness, incorporating age disaggregated data, and creating safe spaces for engagement.",
+                    "error": null,
+                    "time": 2.778514207995613
+                }
+            ]
+        },
+        {
+            "id": "cac677b8-b72a-4ce5-bed8-07bc44cbf208",
+            "input_id": "f27bc9c2-652b-40a9-abd7-ab88a19a7501",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": "The provided output closely aligns with the target in all significant aspects. Both the output and the target indicate that the target audience of the books is children and young individuals (referred to as \"young adults\" in the output and \"young people\" in the target), showing a high degree of semantic similarity.",
+                    "error": null,
+                    "time": 3.231567583992728
+                }
+            ]
+        },
+        {
+            "id": "f6382fec-e06d-4051-9e6c-668042b81705",
+            "input_id": "abc4fc48-8484-4e75-9f9b-a8b1e3f756d9",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": "The output closely aligns with the targets in all significant aspects. Both the output and the target convey the same meaning, identifying the right to truth and detailing its function in guaranteeing access to comprehensive information about past human rights violations, including identities of perpetrators, fate of victims, and surrounding circumstances. The only difference is in phrasing—\"right to truth\" versus \"right to know the truth\"—which does not affect semantic similarity. Thus, the output has complete semantic similarity to the target.",
+                    "error": null,
+                    "time": 4.00237745900813
+                }
+            ]
+        },
+        {
+            "id": "15b8ac21-7c10-4456-9f64-10d90a178291",
+            "input_id": "7a887b8b-be65-4d30-bb29-02267d14c791",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": "The output closely aligns with the target in all significant aspects. It expands on each point from the target, specifying the rights of victims and their families, the broader societal implications, and the roles of journalists and human rights defenders. It comprehensively covers the semantic content of the target.",
+                    "error": null,
+                    "time": 3.462132250002469
+                }
+            ]
+        },
+        {
+            "id": "12ec102c-8512-46ba-a9e1-56974d9aa3ed",
+            "input_id": "9098598f-a2c6-4845-b27b-8b0e4cd16e83",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.0,
+                    "reason": "The output has little to no semantic similarity to the provided target. The output is about smuggling cultural heritage items, while the target pertains to statements contrary to the Russian authorities' official position under Article 207.3. These topics are unrelated, and thus there is minimal semantic alignment.",
+                    "error": null,
+                    "time": 2.6694006249890663
+                }
+            ]
+        },
+        {
+            "id": "f4e6d5db-0048-4908-8690-451865581853",
+            "input_id": "01c232f9-a05f-46f2-aa37-f9e480ac45bb",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns closely with the target by describing that statements contrary to the official position are considered 'false' under Article 207.3 if they aim to discredit the state or its authorities. It captures the essence of the target, but adds slight variations like stating the potential harm to public interest and credibility undermining, which are not explicitly in the target. Therefore, it demonstrates substantial semantic similarity.",
+                    "error": null,
+                    "time": 3.6751668750075623
+                }
+            ]
+        },
+        {
+            "id": "0e75bc42-a4ee-43fb-96cb-4711d2c2e49b",
+            "input_id": "c01d4778-add3-4f85-997a-6781fcd3c438",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns with the provided targets in most aspects and has substantial semantic similarity. It discusses several factors contributing to the decline of independent civil society organizations in Nicaragua, such as repressive government policies, harassment, legal restrictions, and lack of funding, which overlap with the target's mention of arrests, restrictive laws, repression, and criminalization. However, it lacks specific mention of social media restrictions and expropriation, which prevents it from achieving a perfect score.",
+                    "error": null,
+                    "time": 4.159903291001683
+                }
+            ]
+        },
+        {
+            "id": "21b6823c-a5d9-4cbd-b764-9f3fb930f0d4",
+            "input_id": "98c27310-a530-4eb8-b737-ef070bfe1a8f",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.25,
+                    "reason": "The output provides specific conditions for designating wetlands as Ramsar sites, detailing criteria like international importance, significance for species, biodiversity, etc. However, the target is broader and focuses on the overarching criteria established under the Convention on Wetlands for international importance. The output contains detailed sub-conditions that only partially overlap with the general criteria mentioned in the target, displaying partial semantic similarity.",
+                    "error": null,
+                    "time": 3.2641410829965025
+                }
+            ]
+        },
+        {
+            "id": "bc58c702-c3c8-45be-95b4-e3cd81e34f26",
+            "input_id": "8924ed8f-0407-47ca-a51c-0c596faffc46",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.0,
+                    "reason": "The output and target differ significantly in a fundamental aspect: the location of COP15. The output states Kunming, China, while the target states Montreal, Canada. This discrepancy indicates little to no semantic similarity between the two.",
+                    "error": null,
+                    "time": 2.4019915829994716
+                }
+            ]
+        },
+        {
+            "id": "c0aaff81-2afa-4aaf-9410-9cd459e012d2",
+            "input_id": "406b3487-8264-4db3-a368-d49d7eb94410",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns with the provided target in most aspects and has substantial semantic similarity. Both discuss the 30x30 agreement's goal to conserve 30% of the planet's land and oceans by 2030 for biodiversity conservation. The output adds context by highlighting additional objectives like addressing climate change, restoring ecosystems, and promoting sustainable management, which are implied in the target's purpose of designating protected areas. The essence and main objective remain consistent, demonstrating substantial semantic similarity despite some differences in detail.",
+                    "error": null,
+                    "time": 4.509896792005748
+                }
+            ]
+        },
+        {
+            "id": "028437b7-df26-4600-8a3f-4bb1e44eff21",
+            "input_id": "26133c90-fabc-4002-b50c-8b4d8de0aa88",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.5,
+                    "reason": "The output has moderate semantic similarity to the target. It identifies the failure to recognize Indigenous Peoples' lands at COP15 and the involvement of certain countries, providing context that aligns partially with the target's message. However, it includes additional details, such as criticism of countries and their reluctance, which are not present in the target, and thus does not align fully with it.",
+                    "error": null,
+                    "time": 4.048237249997328
+                }
+            ]
+        },
+        {
+            "id": "cdc7de26-f90f-4546-8131-4fbfa3c06217",
+            "input_id": "831aa497-2a54-4860-8859-e0c9b2088e4e",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns with the provided targets in most aspects, such as highlighting the increased health risks, economic burden, and limited reproductive choices for marginalized individuals due to abortion criminalization. It also covers the impact on mental health and the overall reproductive injustice faced by these groups, which are significant aspects mentioned in the targets. However, the output lacks emphasis on the specifics about increased stigma, lack of information, and certain geographic specifics like Nigeria, which prevents it from scoring a 5.",
+                    "error": null,
+                    "time": 3.7568246250011725
+                }
+            ]
+        },
+        {
+            "id": "2c336ee1-17fa-4efb-826d-be89a56b9e16",
+            "input_id": "f8ba8dbc-9f42-4775-bcef-8babcef68fb8",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.25,
+                    "reason": "The output is partially similar to the target. It covers some aspects like ensuring access to accurate sexual and reproductive health information and engaging with experts, which overlaps with the general idea of the target. However, it lacks specific elements like human oversight and human rights due diligence as mentioned in the target, resulting in only partial semantic similarity.",
+                    "error": null,
+                    "time": 3.5434308749972843
+                }
+            ]
+        },
+        {
+            "id": "11222eec-3505-4306-a677-7769543b708b",
+            "input_id": "d6f75054-35a3-4ba5-80e5-af29d92a7ca1",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.25,
+                    "reason": "The output displays partial semantic similarity to the targets. It addresses the role of social media companies in protecting users' rights online but diverges significantly in specifics. The focus on content moderation, privacy and data protection, and disinformation overlaps with the targets, yet lacks mention of key elements like human oversight and user education on security and privacy features. Thus, it shows only partial alignment with the targets.",
+                    "error": null,
+                    "time": 3.2866799159965012
+                }
+            ]
+        },
+        {
+            "id": "e59d1ac9-dbc7-4679-b5fc-f6efb44316d2",
+            "input_id": "75bff6d7-963d-42eb-aa42-a723779972c0",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.75,
+                    "reason": "The output aligns with the provided targets in most aspects and has substantial semantic similarity. It describes several labor abuses documented in Qatar related to the kafala system, such as withheld wages, passport confiscation, and inadequate living conditions, which are also mentioned in the target. The output explains the restrictive nature of the kafala system and its role in enabling labor abuses, similar to the explanation in the target regarding restrictions on freedom of movement and employer control. However, some specific details from the target, like non-compete clauses and falsely reporting employees as absconding, are missing from the output.",
+                    "error": null,
+                    "time": 3.5665111249982147
+                }
+            ]
+        },
+        {
+            "id": "8db4ef58-e2cd-46fe-9575-6bbf8bcfe9dc",
+            "input_id": "0a47c9e8-5506-43c2-bdb3-187b80476cc0",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.5,
+                    "reason": "The output has moderate semantic similarity to the target. Both the output and the target mention the government of Qatar repealing restrictions on migrant workers, which captures the core information. However, the target specifies a time range (2018-2020), while the output does not include this detail, leading to a moderate rather than substantial alignment.",
+                    "error": null,
+                    "time": 3.096306708001066
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 43438,
+        "output": 3341
+    }
+}

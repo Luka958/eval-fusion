@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "883a3ac0-8df4-4e45-8a38-fc94152f1b25",
+            "input_id": "d9fef579-33f7-4090-8f94-547a873f195b",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.615,
+                    "reason": null,
+                    "error": null,
+                    "time": 12.293268915993394
+                }
+            ]
+        },
+        {
+            "id": "81847937-160a-4b12-825c-909f1275ff75",
+            "input_id": "3d29a99b-5afa-40c1-985d-81f222f1cd51",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.125,
+                    "reason": null,
+                    "error": null,
+                    "time": 17.941528750001453
+                }
+            ]
+        },
+        {
+            "id": "0d1d13ae-7502-4b75-92ae-9c047fdcd599",
+            "input_id": "3d8ee462-b8eb-4762-80fc-f8c879a6494d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.32,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.393121749992133
+                }
+            ]
+        },
+        {
+            "id": "3c616dce-3b02-432a-9f95-2c71ac262615",
+            "input_id": "f78295c6-3cab-4895-84d4-8736f81f2818",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.4,
+                    "reason": null,
+                    "error": null,
+                    "time": 5.877021124993917
+                }
+            ]
+        },
+        {
+            "id": "e9731257-59b5-443e-ba90-0ab10fd58445",
+            "input_id": "5f7dc169-7782-4879-835c-50852df0c601",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.273,
+                    "reason": null,
+                    "error": null,
+                    "time": 10.337292083000648
+                }
+            ]
+        },
+        {
+            "id": "f4ddfa2b-0527-4f30-94e5-337fa8899a1a",
+            "input_id": "c95c1c81-0d56-418a-812f-364cc06f3bc7",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.7122420000087004
+                }
+            ]
+        },
+        {
+            "id": "22ce36be-960a-42be-af8d-67495c8d83f3",
+            "input_id": "53bf1f6e-4cbc-4a23-bd7b-cb3781709f21",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.592762792002759
+                }
+            ]
+        },
+        {
+            "id": "0894553c-cb1c-4195-9e08-6286242cac17",
+            "input_id": "2df80d98-cb21-4447-87ad-5075b77fda1c",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.4,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.12955412500014
+                }
+            ]
+        },
+        {
+            "id": "c6e761c6-eb1e-4a83-8343-3e9ceabb620e",
+            "input_id": "b6fe7fb1-429b-4aa4-b6d1-69bfcac6232b",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.33299999999999996,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.150662000000011
+                }
+            ]
+        },
+        {
+            "id": "4433beb1-79e9-4034-85bd-1b60c3bc66c8",
+            "input_id": "326fa653-5c9a-44c7-ab53-678412ced890",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.556,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.909396500006551
+                }
+            ]
+        },
+        {
+            "id": "d8e95d61-6702-4e0a-954d-17ba3a8dac2a",
+            "input_id": "f0a57030-9f96-410b-959a-ccacca883d67",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.545,
+                    "reason": null,
+                    "error": null,
+                    "time": 27.468476916998043
+                }
+            ]
+        },
+        {
+            "id": "78791b12-11be-4222-b287-d8bf14d72fe9",
+            "input_id": "b1a7159a-b854-4cc7-aaaf-bc4c8b6b7d23",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.4,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.052644124996732
+                }
+            ]
+        },
+        {
+            "id": "43cce876-672b-4cca-bbb5-87e0856a2e37",
+            "input_id": "ada17158-8b58-4c18-a471-789536912ee4",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.9307588750089053
+                }
+            ]
+        },
+        {
+            "id": "54203c89-9241-4333-b336-7396edffc4a6",
+            "input_id": "4cd6e058-5c05-4b95-8201-ca51934cfc71",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": null,
+                    "error": null,
+                    "time": 7.823036959001911
+                }
+            ]
+        },
+        {
+            "id": "c03ffd53-143c-4fe6-959b-76d8719b821b",
+            "input_id": "82784fb9-76a7-4721-a512-49dd9a21bcf0",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.3,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.036455416993704
+                }
+            ]
+        },
+        {
+            "id": "d8cec412-4fcc-4dd3-9378-af07d3f9852c",
+            "input_id": "4277c006-5779-4536-a979-4cec5e4b7f28",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.833,
+                    "reason": null,
+                    "error": null,
+                    "time": 15.13835750000726
+                }
+            ]
+        },
+        {
+            "id": "d46fb5bb-abdc-468e-8a00-a87cba5cd120",
+            "input_id": "c949e89f-2841-4c5a-9e6f-48bcba5bb1a0",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.474,
+                    "reason": null,
+                    "error": null,
+                    "time": 23.509894416012685
+                }
+            ]
+        },
+        {
+            "id": "7f1f92e3-072f-4e38-9a3e-979351adcc64",
+            "input_id": "7e74c012-5337-45c6-8bec-1261ecc7ecc9",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.5,
+                    "reason": null,
+                    "error": null,
+                    "time": 18.495999416991253
+                }
+            ]
+        },
+        {
+            "id": "18a2e8d1-7f5d-4273-af87-728463113cfb",
+            "input_id": "30fd33d0-dcca-4f1f-926c-f710b1b0c31d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.542,
+                    "reason": null,
+                    "error": null,
+                    "time": 25.984853250003653
+                }
+            ]
+        },
+        {
+            "id": "ba779271-d7f3-491b-829c-5e0c2ea60e6e",
+            "input_id": "47560a87-90b6-4ee5-a486-2fee43e7cd65",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.5,
+                    "reason": null,
+                    "error": null,
+                    "time": 6.417348167000455
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 93682,
+        "output": 6497
+    }
+}

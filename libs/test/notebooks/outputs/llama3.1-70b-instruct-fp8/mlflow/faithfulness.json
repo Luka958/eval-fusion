@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "8d32fa80-32ba-4d49-8fdb-3ded5e51c95c",
+            "input_id": "47a03a58-f1b6-40eb-a359-0db9d0802999",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output discusses the potential implications of the USA Supreme Court ruling on abortion, including its influence on other countries, global reproductive rights movements, international aid and policies, and global health outcomes. Most of these claims can be inferred from the provided context, which mentions the ruling's impact on other countries, the weakening of maternal health support, and the chilling effect on international policy spaces. However, some specific details in the output, such as the potential for increased mobilization and advocacy efforts globally, are not directly supported by the context. Nevertheless, the majority of the output is consistent with the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 7.535327707999386
+                }
+            ]
+        },
+        {
+            "id": "9e7df36a-7b0f-4e0d-b8fb-ee0e50afe2a4",
+            "input_id": "73f997b3-8092-4762-9e2c-6802e9d1e1bc",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output lists several companies and their estimated greenhouse gas emissions, which is consistent with the provided context that states \"100 existing fossil fuel companies (and eight that no longer exist) have produced almost a trillion tons of GHG emissions in 150 years\" and specifically mentions some of the companies listed in the output, such as ExxonMobil, Chevron, and Peabody. However, the output provides more specific information about the companies and their emissions, which is not directly supported by the provided context. Therefore, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 7.155102124990663
+                }
+            ]
+        },
+        {
+            "id": "aa6ec80f-b9fc-48df-8d9a-8e51b6af077e",
+            "input_id": "a2244b60-d70e-4fe3-831e-ef02f76e322d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output lists the largest private companies in the Americas that are the largest GHG emitters, with most of the companies mentioned (ExxonMobil, Chevron, Peabody) being supported by the context. However, the context only mentions these three companies, and the output includes seven additional companies (ConocoPhillips, BP, Royal Dutch Shell, Duke Energy, TotalEnergies, BHP Group, and Rio Tinto) that are not mentioned in the context. Therefore, most of the claims in the output can be inferred from the provided context, with some additional information not directly supported by the context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 7.37027037498774
+                }
+            ]
+        },
+        {
+            "id": "0e2549d0-19e7-4302-b086-6152e75f83f0",
+            "input_id": "619e7e9a-d9f0-467b-af36-c10d7dbc0ef6",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output claims that \"Amnesty International urged its supporters to write letters to the Nigerian government, calling for an independent investigation into the killings of the Ogoni 9 and for those responsible to be brought to justice\" and \"They also called for an end to the human rights abuses in the Niger Delta region and for the protection of the rights of the Ogoni people.\" These claims can be inferred from the provided context, which states \"Amnesty International called on its supporters to take action by signing petitions, writing letters to government officials, and participating in protests and demonstrations\" and \"The organization also urged its members to raise awareness about the plight of the Ogoni people and the need for justice and accountability in their case.\" The output also mentions \"the human rights abuses in the Niger Delta region\", which is mentioned in the context as \"the human rights abuses committed against the Ogoni 9\". The output does not contain any contradictory information, and most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context.",
+                    "error": null,
+                    "time": 10.561787832994014
+                }
+            ]
+        },
+        {
+            "id": "45102e99-51da-437a-a25a-815a6b6c8b20",
+            "input_id": "a08aa64d-00b1-4200-9fc9-eb5e30c8ac0e",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "The output contains 10 recommendations from Amnesty International to the Special Rapporteur on Human Rights Defenders. However, only a few of these recommendations are supported by the provided context, such as the need for stronger international mechanisms to support and protect human rights defenders, and the importance of ensuring their safety and freedom to carry out their work. The majority of the recommendations, such as the specific calls for states to implement the UN Declaration on Human Rights Defenders, create a safe and enabling environment, and establish effective mechanisms for protection, are not directly supported by the provided context.",
+                    "error": null,
+                    "time": 4.8479487920121755
+                }
+            ]
+        },
+        {
+            "id": "b4a84c1b-b3f1-46a1-8bec-518fe673c2d1",
+            "input_id": "85548234-aab9-4a78-bcca-b418d3831c05",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output claims that \"The target audience of the two books created by Amnesty International on child rights are likely children and young adults.\" This claim is mostly supported by the context, which states \"Amnesty International's books on child rights are designed to educate and empower young readers about their rights\" and also mentions that \"parents, teachers, and caregivers\" are also key target audiences, but the output does not mention this. However, the majority of the output is consistent with the provided context, and only a small portion is missing from the context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 5.981654957984574
+                }
+            ]
+        },
+        {
+            "id": "d8bdd935-a0d1-4c72-a836-7dad3e3291a9",
+            "input_id": "f0b94ffd-60b1-4d1a-80dd-c7507090030a",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output states that \"The right that guarantees access to comprehensive information about past human rights violations, including the identities of the perpetrators and the fate of the victims, as well as the circumstances surrounding the violations, is the right to truth.\" This claim is directly supported by the context, which states \"At an individual level, victims and their families possess an inalienable and non-derogable right to know the truth regarding the circumstances and reasons behind human rights violations, including the identities of the perpetrators and, in cases of death or enforced disappearance, the fate of the victims.\" Therefore, the faithfulness score is 5 as all the claims in the output are directly supported by the provided context.",
+                    "error": null,
+                    "time": 6.595057208993239
+                }
+            ]
+        },
+        {
+            "id": "d8b2f506-266e-4dff-82db-b89ad4b89a3b",
+            "input_id": "56e12232-9be0-413b-bebb-9d13f2d3ba7d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output provides a detailed explanation of the right to be fully informed about human rights violations, including the identities of the perpetrators and the fate of the victims, which is supported by the context. The context mentions that \"The victims of gross human rights violations and their families, as well as members of society generally, have the right to know the whole truth about past human rights violations\" and \"Victims and their families possess an inalienable and non-derogable right to know the truth regarding the circumstances and reasons behind human rights violations, including the identities of the perpetrators and the fate of the victims.\" The output expands on this idea, explaining its importance for holding perpetrators accountable, preventing future abuses, and ensuring justice and reparations for the victims. While the output provides additional information not present in the context, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context.",
+                    "error": null,
+                    "time": 7.567341999994824
+                }
+            ]
+        },
+        {
+            "id": "0fdea7a6-0bcb-4fa6-a36e-2d71ad4f3a53",
+            "input_id": "d68f9a55-7b56-4d9f-b05c-cf81aa5fb2dc",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.0,
+                    "reason": "The output claims that \"Under Article 207.3 of the Russian Criminal Code, individuals can be found guilty if they participate in an organized group or commit repeated acts of smuggling of cultural heritage items.\" However, the provided context states that Article 207.3 pertains to the illegal acquisition, transfer, sale, storage, transportation, or carrying of firearms, their main parts, ammunition, explosives, and explosive devices. The context does not mention anything about cultural heritage items. Therefore, none of the claims in the output can be inferred from the provided context, leading to a faithfulness score of 1.",
+                    "error": null,
+                    "time": 5.402989416004857
+                }
+            ]
+        },
+        {
+            "id": "57ed0dfd-e7a1-4c31-b947-71bb365e9068",
+            "input_id": "6d961409-94ad-4741-958a-f46859fca285",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output claims that statements contrary to the official position are considered 'false' by the prosecution when they are intentionally made with the aim of discrediting the state or its authorities, or spreading false information that could potentially harm the public interest or cause significant damage, and that the prosecution will consider such statements as false if they are deliberately made to mislead the public or undermine the credibility of the state. These claims are directly supported by the context, which states that \"In legal proceedings, the prosecution may consider statements contrary to the official position as 'false' under Article 207.3 when they are deemed to be intentionally misleading or deceptive.\" and \"The determination of whether statements are considered 'false' under Article 207.3 is based on the intent behind the statements and the impact they have on the legal proceedings.\" The output also mentions Article 207.3 of the Russian Criminal Code, which is mentioned in the context. However, the output does not mention some details present in the context, such as the fact that Article 207.3 acts as a tool of wartime censorship, and the relationship between Article 207.3 and the Russian Constitution. Nevertheless, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 9.646273749996908
+                }
+            ]
+        },
+        {
+            "id": "c974c4ea-a601-47d2-8aa8-46a019533943",
+            "input_id": "c3094198-81cd-4e98-86f6-245317987f1a",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output provides a detailed analysis of the decline of independent civil society organizations in Nicaragua, citing factors such as repressive government policies, harassment and intimidation, lack of funding, legal restrictions, and polarization. Most of these claims are supported by the provided context, which mentions \"arrests and harassment of human rights defenders, restrictive NGO laws and violent repression of protests\", \"the implementation of repressive laws that breach the human rights of the population\", and \"the closure of civil society organizations\". However, some minor details in the output, such as the specific example of the Foreign Agents Law, are not directly mentioned in the context. Nevertheless, the majority of the output is consistent with the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 7.450351375009632
+                }
+            ]
+        },
+        {
+            "id": "88ddbb24-ceba-42a0-9e1c-4e84890afdde",
+            "input_id": "13dbabab-abff-4a31-922b-58e312c72d80",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output provides a detailed list of conditions for designating wetlands as Ramsar sites, most of which can be inferred from the provided context. The context mentions that Ramsar sites must meet specific criteria, including the presence of rare or unique ecosystems, support of diverse plant and animal species, and provision of essential services. The output expands on these criteria, providing more specific details that are consistent with the context. However, the output does not explicitly mention the context's statement about the Ramsar Convention being signed in 1971 in Ramsar, Iran, and designating over 2,000 wetlands worldwide as Ramsar sites. Despite this minor omission, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 6.847406916000182
+                }
+            ]
+        },
+        {
+            "id": "73ea15d2-88cf-4732-a642-c052f9df9053",
+            "input_id": "c818cc4f-2708-439f-8f56-e0799df32a07",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output states that \"COP15 was held in Kunming, China in 2022.\" This claim is directly supported by the context, which states \"COP15, also known as the 15th meeting of the Conference of the Parties to the Convention on Biological Diversity, was held in Kunming, China in 2022.\" Therefore, the faithfulness score is 5 as all the claims in the output are directly supported by the provided context.",
+                    "error": null,
+                    "time": 4.600955208006781
+                }
+            ]
+        },
+        {
+            "id": "02548f14-7529-467f-abe2-a67f643ce91d",
+            "input_id": "06d97a81-bbfb-4103-98f6-c3ad0654da9d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output claims that \"The purpose of the agreement known as 30x30 is to conserve and protect 30% of the planet's land and oceans by the year 2030\", \"This agreement aims to address the global biodiversity crisis and the impacts of climate change by preserving and restoring ecosystems, promoting sustainable land and ocean management practices, and safeguarding the habitats of numerous plant and animal species\", and \"The goal is to ensure the long-term health and resilience of the planet's natural resources and to support the well-being of both human and non-human communities.\" Most of these claims can be inferred from the provided context, which states \"The 30x30 agreement aims to protect 30% of the world's land and oceans by the year 2030\", \"This ambitious goal is seen as crucial in preserving biodiversity and combating the effects of climate change\", and \"Through this agreement, countries are committing to prioritize the protection of natural habitats and the promotion of biodiversity.\" Although the output provides some additional information and rephrases the context, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context.",
+                    "error": null,
+                    "time": 7.935925333993509
+                }
+            ]
+        },
+        {
+            "id": "960e2ce5-a007-4a14-b35c-3c425b37dfc3",
+            "input_id": "c6f289b8-1552-4101-8781-ecbc7360ec7d",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output claims that the failure to explicitly recognize Indigenous Peoples' lands and territories as a distinct category of protected area at COP15 was primarily attributed to the governments of several countries, including Canada, Australia, New Zealand, and the United States. The context also mentions that \"States failed to explicitly recognize Indigenous Peoples' lands and territories as a distinct category of protected area, and this threatens their rights.\" While the context does not explicitly mention the specific countries, it does mention that states failed to recognize Indigenous Peoples' lands, which supports the output's claim. Additionally, the context highlights the challenges in balancing conservation efforts with respect for Indigenous rights and sovereignty, which is consistent with the output's mention of the reluctance to acknowledge the rights and land claims of Indigenous Peoples. However, the output provides more specific information about the countries involved, which is not directly supported by the context. Therefore, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 9.598867458000313
+                }
+            ]
+        },
+        {
+            "id": "759e2061-f34a-4074-ad0d-470cf5b133cc",
+            "input_id": "36095fc7-2629-46dc-af8e-5f536b960470",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output lists several consequences of criminalizing abortion, including health risks, economic burden, limited reproductive choices, increased inequality, criminalization of pregnancy, mental health impact, and reproductive injustice. Most of these claims can be inferred from the provided context, which discusses the severe and irreversible effects of abortion criminalization on marginalized individuals, the lack of access to safe and legal abortion services, and the resulting health risks and economic burdens. However, the output also provides some additional information and elaboration on these points that is not directly present in the context, such as the specific examples of marginalized individuals who may be affected and the ways in which abortion criminalization can perpetuate cycles of poverty and inequality. Overall, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context.",
+                    "error": null,
+                    "time": 7.354235415987205
+                }
+            ]
+        },
+        {
+            "id": "4883dccd-8ab3-491d-b915-244d937e5fd0",
+            "input_id": "ee94e4b8-636c-4676-9dd7-f790d25bfb95",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output provides several claims that are directly supported by the context, such as the responsibility of social media companies to ensure access to accurate sexual and reproductive health information, the need for fact-checking and verification, transparency and disclosure, collaboration with experts and organizations, user education and awareness, reporting and addressing misinformation, and continuous improvement. These claims are all consistent with the context, which emphasizes the importance of accurate information and the role of social media companies in promoting it. However, the output also provides some additional details, such as the specific steps social media companies can take to fulfill their responsibilities, that are not explicitly mentioned in the context. Therefore, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 7.0080696669756435
+                }
+            ]
+        },
+        {
+            "id": "2701a639-018e-47bd-b029-2efd39531155",
+            "input_id": "426c2040-a168-432a-8b71-382a179c8045",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output provides a comprehensive overview of the role of social media companies in protecting users' rights online, and most of the claims can be inferred from the provided context. The context mentions the importance of human oversight of artificial intelligence-driven content moderation systems, respecting human rights, and transparency in addressing risks and abuses. The output expands on these points, discussing content moderation, algorithmic transparency, accessibility, and fighting disinformation, all of which are consistent with the context. However, some minor points, such as the specific mention of \"captioning for videos\" and \"features that accommodate users with disabilities,\" are not directly supported by the context, preventing a perfect faithfulness score.",
+                    "error": null,
+                    "time": 7.31381416702061
+                }
+            ]
+        },
+        {
+            "id": "10134748-0fba-4b98-9f42-331bb1fd89b4",
+            "input_id": "a28822ab-6ee6-4bee-a54a-8b13037933ea",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output provides several claims about labor abuses in Qatar, particularly in relation to the kafala system, that are directly supported by the provided context. The context mentions the kafala system, its impact on migrant workers, and specific labor abuses such as withheld wages, passport confiscation, and forced labor. The output also mentions the power imbalance created by the kafala system, which is consistent with the context. However, the output provides some additional details, such as the specific working hours and living conditions, that are not explicitly mentioned in the context. Overall, most of the claims in the output can be inferred from the provided context, with very little information that is not directly supported by the provided context, leading to a faithfulness score of 4.",
+                    "error": null,
+                    "time": 7.039306209015194
+                }
+            ]
+        },
+        {
+            "id": "3deefce0-bd4c-446f-b0b2-27fc118c9415",
+            "input_id": "9ecf1d6e-8164-4460-8a11-8dac25f57b0c",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output states that \"The government of Qatar started repealing restrictions on migrant workers in 2017.\" This claim is directly supported by the context, which mentions that \"Between 2018 and 2020, the government took important steps towards tackling two central pillars of this system\" and implies that the government started making changes before 2018, making 2017 a plausible start year.",
+                    "error": null,
+                    "time": 5.680982791993301
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 61660,
+        "output": 6450
+    }
+}

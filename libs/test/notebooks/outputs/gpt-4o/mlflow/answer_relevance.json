@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "b9b46d2c-dada-410c-b0d5-9b96b0a9f7a6",
+            "input_id": "146e1582-915e-43bd-a3e1-3bcef3c2e93e",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output addresses the input question comprehensively by discussing various global implications of the USA Supreme Court ruling on abortion. It covers multiple aspects such as its influence on other countries' laws and movements, effects on international aid and policies, implications for human rights standards, and potential global health outcomes. Each point is relevant to the input question, making the answer highly applicable and appropriate.",
+                    "error": null,
+                    "time": 3.860847250005463
+                }
+            ]
+        },
+        {
+            "id": "a2bb94ad-9adf-4de5-afb6-84eafb930889",
+            "input_id": "b51d1f73-62cb-4ad1-bb45-4365bb5b6a37",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly addresses the input question by providing detailed information on the main contributors to GHG emissions according to the Carbon Majors database. It specifies the companies involved, their respective roles, and the estimated quantities of GHGs they have contributed. This directly and comprehensively responds to the question without any irrelevant or extraneous information, warranting a full score.",
+                    "error": null,
+                    "time": 5.040181207994465
+                }
+            ]
+        },
+        {
+            "id": "41f0288d-1a4b-4871-b8e3-2438fb96237c",
+            "input_id": "2093fb8a-b274-47d6-8f55-f8bafacc1f41",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly addresses the input question by listing the largest private companies in the Americas that are significant GHG emitters according to the Carbon Majors database. The response is clear, relevant, and contains additional contextual information about the companies' operations, which is meaningful to the question asked. Therefore, it merits a full score.",
+                    "error": null,
+                    "time": 4.2195320000028005
+                }
+            ]
+        },
+        {
+            "id": "768bf3b6-f7c0-40fb-b09f-6f42d6d73d4c",
+            "input_id": "1188a4d8-6ac1-45ea-93ac-83990d4a78d5",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly addresses the input question by detailing the actions Amnesty International urged, such as writing letters to the Nigerian government, calling for an independent investigation, seeking justice for the Ogoni 9, ending human rights abuses in the Niger Delta, and protecting the Ogoni people's rights. All parts of the output are meaningful and relevant to the question, fulfilling the requirement for a score of 5.",
+                    "error": null,
+                    "time": 3.57025145800435
+                }
+            ]
+        },
+        {
+            "id": "cf6c6a61-95a8-4e1e-b65b-b3a91a81bfcd",
+            "input_id": "707fcf6d-a028-41d8-bfd9-bbc633336931",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly addresses the input question by providing detailed recommendations made by Amnesty International to the Special Rapporteur on Human Rights Defenders. Each point is relevant and elaborates on the specific actions being urged, making it a comprehensive and complete answer.",
+                    "error": null,
+                    "time": 3.0417086249944987
+                }
+            ]
+        },
+        {
+            "id": "cc81152c-7bee-461f-82fa-7ea3775567d4",
+            "input_id": "b6ee8a61-914c-4e04-92f2-43b41b26a0d0",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 0.75,
+                    "reason": "The output identifies \"children and young adults\" as the target audience of the books on child rights created by Amnesty International, which directly answers the input question. However, the response could be more informative by providing additional context or confirming the source, leading to a slightly lower score than perfect.",
+                    "error": null,
+                    "time": 3.6502836250001565
+                }
+            ]
+        },
+        {
+            "id": "20645e8f-5c7e-4d85-82d9-f1058f139098",
+            "input_id": "c51313cb-98c8-458b-8f64-d54fa43c31ff",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly answers the input question by identifying the right as the \"right to truth\" and reiterates all key details from the input regarding access to information about past human rights violations, including the identities of perpetrators, the fate of victims, and the circumstances. This comprehensive and precise response is fully relevant to the question, warranting a full score.",
+                    "error": null,
+                    "time": 2.9341433749941643
+                }
+            ]
+        },
+        {
+            "id": "9c445b06-59f7-48c9-84db-c040fcff91f8",
+            "input_id": "9ae39d09-3f56-4262-8491-31838a3ab7e9",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output addresses all aspects of the input question by explaining who has the right to be informed about human rights violations, including victims, families, society, journalists, and others. It further elaborates on the legal basis for this right and the role of different actors, making the response comprehensive and fully relevant to the input query.",
+                    "error": null,
+                    "time": 3.4258357499929843
+                }
+            ]
+        },
+        {
+            "id": "483abcfe-72ab-4395-9559-61775484ea55",
+            "input_id": "f0117a01-f152-48ba-ba66-c832d66ef7aa",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 0.0,
+                    "reason": "The output is entirely irrelevant to the input. Article 207.3 of the Russian Criminal Code deals with the dissemination of false information about the activity of the USSR during the Great Patriotic War, not smuggling of cultural heritage items. The output fails to address the question about when individuals can be found guilty under Article 207.3, thus warranting the lowest score for answer relevance.",
+                    "error": null,
+                    "time": 3.438303499991889
+                }
+            ]
+        },
+        {
+            "id": "3741d48b-2bb1-4037-a332-a96ef46ad2a5",
+            "input_id": "34eb54dd-2aa4-403e-a105-2d753cb86799",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output fully addresses the input question by clearly explaining under what circumstances the prosecution considers statements contrary to the official position as 'false' under Article 207.3. It provides specific criteria such as the intent to discredit the state or spread potentially harmful false information, which directly answers the query. All parts of the output are relevant and directly related to the question, warranting a full score.",
+                    "error": null,
+                    "time": 4.565132041010656
+                }
+            ]
+        },
+        {
+            "id": "8f13e413-af28-4dd3-9a80-77e039708d42",
+            "input_id": "b5b106db-43d2-40a7-88e4-9f19e327d140",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly addresses the input question by thoroughly explaining the various factors contributing to the decline of independent civil society organizations in Nicaragua. It discusses repressive government policies, harassment, lack of funding, legal restrictions, and polarization, all of which are relevant to the question. The response is detailed and comprehensive, covering all aspects of the inquiry, making it highly relevant and deserving of a full score.",
+                    "error": null,
+                    "time": 4.4231690839951625
+                }
+            ]
+        },
+        {
+            "id": "d8092ad5-9c1a-4316-8812-136f708644a3",
+            "input_id": "f99ab613-c57b-43cc-a462-19992368fef2",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly addresses the input question by listing the conditions that designate wetlands as Ramsar sites. It provides a comprehensive and detailed explanation of the criteria used for this designation, making all parts of the output highly relevant and meaningful to the question. Therefore, it deserves a full score for answer relevance.",
+                    "error": null,
+                    "time": 6.1434877080027945
+                }
+            ]
+        },
+        {
+            "id": "13963b8d-321e-4860-b044-86a9ef9dc469",
+            "input_id": "1a30fb92-a4df-4798-8607-09f56a8d86e7",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 0.75,
+                    "reason": "The output correctly identifies Kunming, China as the location where COP15 was held; however, it does not mention that COP15 took place in two phases, the second of which was held in Montreal, Canada in December 2022. While it covers the 2021 part of the event, it misses the relevance to the precise timeframe in 2022 as per the question, thus slightly missing completeness.",
+                    "error": null,
+                    "time": 8.642223875009222
+                }
+            ]
+        },
+        {
+            "id": "cd13bd10-6aa8-43af-9211-9d2a5797120a",
+            "input_id": "722144ef-0dd9-43f7-a23e-03a88ffda9ad",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output fully addresses the input question by clearly explaining the purpose of the 30x30 agreement. It accurately describes the aim of conserving 30% of the planet’s land and oceans by 2030 and further elaborates on its goals related to biodiversity, climate change, and ecosystem restoration. All parts of the output are relevant and meaningful to the question, thus earning a full score.",
+                    "error": null,
+                    "time": 5.595176999995601
+                }
+            ]
+        },
+        {
+            "id": "b87b0f5f-20d7-42e1-816d-5f896ef65daa",
+            "input_id": "acabc1cc-d149-4f63-8fb1-07c075baacae",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 0.0,
+                    "reason": "The output incorrectly identifies COP15 as the United Nations Climate Change Conference held in 2009, which is unrelated to the question about Indigenous Peoples' lands recognition. The actual COP15 relevant to the input is the UN Biodiversity Conference held in 2022. Additionally, the output does not specifically answer who failed to recognize Indigenous lands at COP15. Therefore, the answer is completely irrelevant to the input question.",
+                    "error": null,
+                    "time": 4.837508250013343
+                }
+            ]
+        },
+        {
+            "id": "bf030562-c891-4df8-a7e1-c3a59fb8e84d",
+            "input_id": "57f26e1b-3daa-4bd6-85ce-49fec68ac774",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output thoroughly addresses the question about the consequences of criminalizing abortion for marginalized individuals. It provides a comprehensive list of consequences, including health risks, economic burden, limited reproductive choices, increased inequality, and more, all of which are directly relevant to the input question. The output is detailed and fully relevant, covering various aspects of the issue as it pertains to marginalized communities.",
+                    "error": null,
+                    "time": 3.20608566699957
+                }
+            ]
+        },
+        {
+            "id": "e6787ea6-9cfb-4881-a00d-d9b187698925",
+            "input_id": "c4e90874-45ee-4825-96d7-03f68b60e44a",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output comprehensively addresses the question by listing and explaining several responsibilities social media companies should have regarding ensuring access to accurate sexual and reproductive health information. Each responsibility outlined is relevant and expands on different aspects of the topic, making the answer thorough and directly applicable to the input question.",
+                    "error": null,
+                    "time": 8.362367916997755
+                }
+            ]
+        },
+        {
+            "id": "2743c659-8fe3-4a15-97cb-1a1e1be36463",
+            "input_id": "8087e51c-cfa5-46a1-941c-d9daaecaa102",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output addresses all aspects of the input question comprehensively. It elaborates on the critical roles that social media companies play in protecting users' rights online, considering language and political views. It covers content moderation, privacy and data protection, algorithmic transparency, accessibility, fighting disinformation, transparency, accountability, and collaboration with stakeholders. Each point is relevant and directly relates to the input question, thereby fulfilling the criteria for the highest relevance score.",
+                    "error": null,
+                    "time": 6.147049457998946
+                }
+            ]
+        },
+        {
+            "id": "c69af75b-21df-47ef-87d9-070dbaff6241",
+            "input_id": "1953a68e-6f83-4e7d-bc53-9ca17367a31b",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output addresses all aspects of the question by detailing specific labor abuses documented by Amnesty International in Qatar and explaining how these abuses relate to the kafala system. Each point made in the output directly ties the labor abuses to the limitations and exploitative nature of the kafala system, making the response comprehensive and highly relevant to the input question.",
+                    "error": null,
+                    "time": 4.28442404200905
+                }
+            ]
+        },
+        {
+            "id": "f3b8cd45-0a27-48b4-af76-3ddec97941ef",
+            "input_id": "9e802bd2-353d-46ac-8d56-39db69563aac",
+            "output_entries": [
+                {
+                    "metric_name": "answer_relevance",
+                    "score": 1.0,
+                    "reason": "The output directly addresses the input question by stating that the government of Qatar started repealing restrictions on migrant workers in 2017. This response is concise and fully relevant to the question, providing a clear answer without any extraneous information, thus earning the highest score for answer relevance.",
+                    "error": null,
+                    "time": 4.248787791002542
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 35644,
+        "output": 3130
+    }
+}

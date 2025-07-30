@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "977161ea-09db-4a84-ad18-f9ad53d8b9bd",
+            "input_id": "b7729f8c-bb86-440d-a2a9-07787588552c",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 0.8666666666666667,
+                    "reason": null,
+                    "error": null,
+                    "time": 18.10807924999972
+                }
+            ]
+        },
+        {
+            "id": "7b837167-c649-493e-bdce-89c3353a2c9d",
+            "input_id": "47f78ba7-8c29-4041-a706-236e31ea0c83",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 17.551918249984737
+                }
+            ]
+        },
+        {
+            "id": "cf80c8fd-e9f8-4aa7-8bf8-a34557357091",
+            "input_id": "89bf5893-71a9-42b2-910d-d543624ad90b",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 15.912446583999554
+                }
+            ]
+        },
+        {
+            "id": "d40c99dd-2643-4453-a2bd-76e6723218b3",
+            "input_id": "3cabee86-d77d-497f-aa87-0c872ca8bcb2",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.129746416991111
+                }
+            ]
+        },
+        {
+            "id": "13e3ca42-f7c6-4fd7-8051-b51c0aa432eb",
+            "input_id": "fee1a065-1ca3-4a76-b6ed-e5d354b78150",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 14.17597970800125
+                }
+            ]
+        },
+        {
+            "id": "e5dc69af-f51f-40c5-9414-8e8df3356f5d",
+            "input_id": "0a785349-8e36-486e-ac26-774d5a62a254",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.772298791998765
+                }
+            ]
+        },
+        {
+            "id": "ddd39ff9-a944-4277-9de2-f89c478d9090",
+            "input_id": "14932e5d-2143-4ac2-888d-f0d9e0941a23",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.382129165984225
+                }
+            ]
+        },
+        {
+            "id": "c9623074-dedd-4fd1-95ab-247ace9b39a2",
+            "input_id": "5a293d1e-acda-4de0-ae0f-35f6a37920fd",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 13.02207287499914
+                }
+            ]
+        },
+        {
+            "id": "1bad291e-9fe5-480c-be19-3b8ad4f9c1f4",
+            "input_id": "32e69430-cdc8-480f-bc18-94a4ca6a84a5",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 0.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.556195542012574
+                }
+            ]
+        },
+        {
+            "id": "4f39e11c-c4ba-4075-b8c7-84cb36457a60",
+            "input_id": "338c0d68-e8de-4a2f-89fc-148f913790f6",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 10.491929750016425
+                }
+            ]
+        },
+        {
+            "id": "acbe98d6-2c99-4894-8735-ceb657776574",
+            "input_id": "ae9a1c3e-aacd-42d3-a32e-3e5f7e0e97c8",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 14.400448707980104
+                }
+            ]
+        },
+        {
+            "id": "985082af-4eae-40ca-b790-e838767689e9",
+            "input_id": "ab16913c-b44a-4328-93a9-c068b0cd87e5",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 0.9090909090909091,
+                    "reason": null,
+                    "error": null,
+                    "time": 13.793274333002046
+                }
+            ]
+        },
+        {
+            "id": "ede6aa15-f5be-4dd5-acc0-28a3ed5c1bc2",
+            "input_id": "dcf10dcd-2d10-479d-ae80-30f32b0707a0",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 6.595884791982826
+                }
+            ]
+        },
+        {
+            "id": "e762e6ec-0c89-46fc-96fe-9e4d91ea0196",
+            "input_id": "6a4fcd0a-ffe5-4bb3-9917-5abab33f656a",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 0.6666666666666666,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.8627366249857
+                }
+            ]
+        },
+        {
+            "id": "4813d0d4-db3a-4bfe-8f5c-7fd14ab136fe",
+            "input_id": "4308b67a-6952-42da-801e-a77b599476ec",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 0.8,
+                    "reason": null,
+                    "error": null,
+                    "time": 10.209502541983966
+                }
+            ]
+        },
+        {
+            "id": "ed9ef7b4-5b91-4334-b3f7-26bf9ef71076",
+            "input_id": "95ecf17d-02e6-4289-a0ad-2f9da7e0b734",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 0.875,
+                    "reason": null,
+                    "error": null,
+                    "time": 19.192089999996824
+                }
+            ]
+        },
+        {
+            "id": "a7c194e9-1885-46b6-84c6-fa3f9bbbf3e4",
+            "input_id": "1b841279-37b4-43d7-a64d-4681ed06968f",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 14.82876387500437
+                }
+            ]
+        },
+        {
+            "id": "e50794e2-c44e-4a91-b399-541f3f5d771c",
+            "input_id": "26bec9a1-0fd0-4458-9775-b30c1c11158f",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.936225959012518
+                }
+            ]
+        },
+        {
+            "id": "2562a1a5-61d4-4f9f-b922-89c81f2c211f",
+            "input_id": "1cdab247-65e3-45b8-b623-c85ab516780d",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 14.316274167009396
+                }
+            ]
+        },
+        {
+            "id": "74454bf0-00e1-476f-8cd4-85dedfb0d08d",
+            "input_id": "22614adc-a09c-49bc-a3d3-f2c77c95b60f",
+            "output_entries": [
+                {
+                    "metric_name": "Faithfulness",
+                    "score": 0.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.433336999994935
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 42909,
+        "output": 12891
+    }
+}

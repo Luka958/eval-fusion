@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "4e5eb77c-9128-4768-a97d-1be21be50f40",
+            "input_id": "5d26052f-b48d-457c-8a60-580381c0feb5",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.369592208007816
+                }
+            ]
+        },
+        {
+            "id": "9d8b8ee3-750f-4962-a57b-93e36e5c8f8b",
+            "input_id": "86026d74-79ad-4847-94bb-b166fae86de3",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.026865125008044
+                }
+            ]
+        },
+        {
+            "id": "699fadd6-8c05-4f49-bf3d-14063fc60a4a",
+            "input_id": "bb97d01e-b766-4dce-b6fe-4c538bf3be15",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 0.9166666666666666,
+                    "reason": null,
+                    "error": null,
+                    "time": 7.224467417006963
+                }
+            ]
+        },
+        {
+            "id": "f4ba82b6-ceda-42de-94b0-de5142f5038a",
+            "input_id": "0c8459e7-fd2d-4d1d-8c08-26ed953234a6",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 2.841864000001806
+                }
+            ]
+        },
+        {
+            "id": "1da11f31-6489-41eb-b0f5-b75bbc0fdbd5",
+            "input_id": "f9893f84-73ed-4ef5-af03-581a5e259043",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.589820042005158
+                }
+            ]
+        },
+        {
+            "id": "5896aa43-a07c-41c5-96dd-72db83db622d",
+            "input_id": "b132322b-44ab-4e7e-98cb-0b68fee0c834",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 2.2804369590012357
+                }
+            ]
+        },
+        {
+            "id": "36d7c2cd-a46d-4e83-8cb6-dcb39ea9fc42",
+            "input_id": "7ce461c1-a767-46d2-9fe7-6895adbed69f",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.1874906250013737
+                }
+            ]
+        },
+        {
+            "id": "e9ad7205-7bcf-45ce-bbab-84b549db5aa4",
+            "input_id": "6c6db2c3-e999-4097-bb61-7d9394f601dc",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.949712916000863
+                }
+            ]
+        },
+        {
+            "id": "79e19334-71d4-4874-acfd-495acda17c27",
+            "input_id": "0bbb7729-7409-4c1f-98da-2f2d8f14c236",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 0.6666666666666666,
+                    "reason": null,
+                    "error": null,
+                    "time": 2.3570074169983855
+                }
+            ]
+        },
+        {
+            "id": "aed5bc49-950e-43e4-b56d-f82ff51e7163",
+            "input_id": "ff13a9ec-050e-4094-ac91-4e5f7a7dcc55",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.684822750001331
+                }
+            ]
+        },
+        {
+            "id": "24687945-93fd-4a9f-bba3-4c2cbdefcfdf",
+            "input_id": "c4eeaad6-b46b-4c19-8253-48520c7b525b",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.351289375001215
+                }
+            ]
+        },
+        {
+            "id": "0d84f5ed-bd16-4c7e-a2db-787bcf516636",
+            "input_id": "89e7b7cc-1703-4100-90ba-8869bb0e0a3b",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 5.509243250009604
+                }
+            ]
+        },
+        {
+            "id": "cf3d810d-5224-4f8c-8acb-ea7cba5401ae",
+            "input_id": "289cecff-41cb-4dc3-bb67-a106a54ba3b8",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 2.2266708749957616
+                }
+            ]
+        },
+        {
+            "id": "bc29149c-7cf5-47f2-ac3c-f366076c6460",
+            "input_id": "941cccb4-771e-477d-a059-c849be74f05f",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.1414882090030005
+                }
+            ]
+        },
+        {
+            "id": "a96a6d58-e4a9-427c-816b-9d44450eaa36",
+            "input_id": "ad1b4b18-a17f-4014-9e4c-8aaceb08fe33",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 0.6666666666666666,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.6476051670033485
+                }
+            ]
+        },
+        {
+            "id": "04663d8a-366c-41ba-a809-71440663bfd2",
+            "input_id": "7cdf88e1-2a2d-4b4a-a2f0-2448bc42f37a",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 13.531685958994785
+                }
+            ]
+        },
+        {
+            "id": "d6209279-46d0-4c78-8076-d26640a920b1",
+            "input_id": "f2d37f73-3525-4014-a873-ed8b0f808b0b",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.309149875000003
+                }
+            ]
+        },
+        {
+            "id": "3f9e433b-c704-42f3-b46b-87e8d9e27b7a",
+            "input_id": "f7d7ca39-148f-4720-bd72-bf02b07b7bf9",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 13.459813875000691
+                }
+            ]
+        },
+        {
+            "id": "74ced55d-4719-415c-8587-17c2017ba0f6",
+            "input_id": "83a0d8f1-1b26-4b50-817f-077adc149558",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.30350733299565
+                }
+            ]
+        },
+        {
+            "id": "881e2cc2-a5b7-492c-95dd-c3fcf8ba9147",
+            "input_id": "e2ab678a-a5f6-42ae-aae9-ea5b899fe40c",
+            "output_entries": [
+                {
+                    "metric_name": "Answer Relevancy",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 1.4044873749953695
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 24647,
+        "output": 8697
+    }
+}

@@ -1,0 +1,265 @@
+{
+    "outputs": [
+        {
+            "id": "f7589538-016a-4b9a-ba16-7a87f8857a27",
+            "input_id": "bd4938e8-50ac-4767-a126-29f6cac4be54",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.8,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.085866000008537
+                }
+            ]
+        },
+        {
+            "id": "3a108e8e-e5bc-4478-9298-310a7f5f0053",
+            "input_id": "fb052653-fccb-4c9c-8c44-af86df26c3c8",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 14.36261441699753
+                }
+            ]
+        },
+        {
+            "id": "53564084-58d0-443c-8cc7-3b88c95f9eb6",
+            "input_id": "1da6552c-3444-458a-b66b-d2c8075f92e0",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 5.144345250009792
+                }
+            ]
+        },
+        {
+            "id": "96c6b715-4f2f-403b-b497-b5dd376c16b9",
+            "input_id": "755faa2d-efe4-4680-9958-9336aedb53db",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 13.439240208012052
+                }
+            ]
+        },
+        {
+            "id": "a3a92c54-c29b-4a24-ad5c-a32f80270639",
+            "input_id": "8f62beb0-15ed-4875-9183-ca2fa1723de6",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 4.291106874996331
+                }
+            ]
+        },
+        {
+            "id": "2bf49560-1289-48b7-91ef-409ce2485a26",
+            "input_id": "8c90f3be-d1c4-4fe6-913d-b3aa6a2f9bdf",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 6.781962916997145
+                }
+            ]
+        },
+        {
+            "id": "580d8aaa-4807-4db3-913e-59cdf5efea6a",
+            "input_id": "f78867e5-9073-4c72-adaf-aef13d157730",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.711630124991643
+                }
+            ]
+        },
+        {
+            "id": "e71335b3-06dc-49a5-863a-05b8c00f04e1",
+            "input_id": "1c6a5c29-0029-4d5c-ac37-495c3fe73d50",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.8,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.439639374992112
+                }
+            ]
+        },
+        {
+            "id": "59bf056f-40f9-48d5-9e0d-0e805416c310",
+            "input_id": "9d0f9c8b-940d-4796-bbb2-59bf43f03ccb",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.801359500008402
+                }
+            ]
+        },
+        {
+            "id": "78b03951-fc2c-43c6-a54f-3021d200f7b8",
+            "input_id": "d9a94bc0-6f01-47f4-8621-4b2b3479c90e",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 15.176016792000155
+                }
+            ]
+        },
+        {
+            "id": "3bc640fd-7f6c-4574-a37c-5d5e3ca012fa",
+            "input_id": "98b40b48-0d1e-43df-a2d6-7bfb49dbd096",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 3.5021275420003803
+                }
+            ]
+        },
+        {
+            "id": "06e8b21e-cb89-4926-87be-df15b5b0c8e6",
+            "input_id": "685e6a34-3729-4831-8a94-454a9e12ba81",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 10.235684875005973
+                }
+            ]
+        },
+        {
+            "id": "dfcadb90-82e9-490d-99a6-ac135cab9c0c",
+            "input_id": "c4762777-b172-4d4b-9014-fd6630789348",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 12.611104959010845
+                }
+            ]
+        },
+        {
+            "id": "d23b7a02-9c50-40f3-9429-93b3030c2a53",
+            "input_id": "e7be4ea1-2b35-4db5-ad8e-e4a1129af751",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 1.6566541659994982
+                }
+            ]
+        },
+        {
+            "id": "713dfa98-32ac-4f22-a02b-49ef9639aa4e",
+            "input_id": "93be68ce-0d9f-4f4b-b138-08336f1e1a17",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 15.886030708992621
+                }
+            ]
+        },
+        {
+            "id": "48d3a109-7248-42d3-8685-283ab9d9a539",
+            "input_id": "00c3a2a4-ca6b-4ca3-b6b9-44fbe6fb6184",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 5.956835666991537
+                }
+            ]
+        },
+        {
+            "id": "bc8f8a47-a9fa-438f-bdf5-ba31939e4465",
+            "input_id": "8ee13c36-c7c1-4f69-b0ea-e1ef9fb9a8c3",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.511081667005783
+                }
+            ]
+        },
+        {
+            "id": "cc4a388b-e522-4e17-94c0-488d5d317454",
+            "input_id": "3685720d-6c8a-4466-90a9-0df028875b38",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 7.696468584006652
+                }
+            ]
+        },
+        {
+            "id": "95f2ef2f-ff59-432b-ab81-e5c7675cca22",
+            "input_id": "fa0d4f2b-d006-4536-a8ca-47705cef401c",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 1.0,
+                    "reason": null,
+                    "error": null,
+                    "time": 17.521937500001513
+                }
+            ]
+        },
+        {
+            "id": "93764dce-bfe4-4bcd-887e-962ac0401673",
+            "input_id": "86cc249f-4815-43aa-9f90-9ef9959b5e99",
+            "output_entries": [
+                {
+                    "metric_name": "answer_similarity",
+                    "score": 0.8,
+                    "reason": null,
+                    "error": null,
+                    "time": 2.4706065420032246
+                }
+            ]
+        }
+    ],
+    "token_usage": null
+}

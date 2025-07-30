@@ -1,0 +1,274 @@
+{
+    "outputs": [
+        {
+            "id": "0091ddcc-ed0a-420c-9971-df35f1b615eb",
+            "input_id": "ad072d6d-51a4-4470-bf33-6ea2437c0c51",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 3.5,
+                    "reason": "The generated answer is relevant to the user query and outlines several potential global implications of the USA Supreme Court ruling on abortion. It covers influence on other countries, impact on movements, international aid, policies, and human rights. However, it incorrectly suggests a \"favorable ruling\" in strengthening reproductive rights movements, which does not match the context of the Supreme Court's decision that is generally seen as restrictive. It lacks specificity about particular outcomes and does not address the increased rates of maternal death and poverty, as mentioned in the reference answer. Thus, the generated answer is relevant, but not fully correct or comprehensive.",
+                    "error": null,
+                    "time": 2.5993021250033053
+                }
+            ]
+        },
+        {
+            "id": "35d70256-edbb-4353-99e2-bd7b4c8e1264",
+            "input_id": "0540b028-baf0-4475-99e8-d6ff320799d9",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer is relevant and provides specific details about the main contributors to GHG emissions according to the Carbon Majors database, mentioning specific companies and their contributions in gigatons of CO2 equivalent. However, it lacks the broader context found in the reference answer, which discusses the impact on vulnerable populations and the inequities related to climate change, which prevents a perfect score.",
+                    "error": null,
+                    "time": 1.4492988749989308
+                }
+            ]
+        },
+        {
+            "id": "9691ed6c-c4bc-45a4-b162-f5cc8b2ad2d1",
+            "input_id": "c6b44559-d33e-41ae-aef8-6029b1441bf3",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.5,
+                    "reason": "The generated answer is highly relevant and mostly correct, mentioning several key companies listed in the Carbon Majors database. However, it includes companies like BP and Royal Dutch Shell, which, although accurate for significant operations in the Americas, are headquartered outside the region. This adds extra information that might not precisely align with the user's direct query focused on strictly \"private companies in the Americas.\" The list is well-structured and comprehensive, allowing for a higher score despite minor deviations in interpretation.",
+                    "error": null,
+                    "time": 2.021177999995416
+                }
+            ]
+        },
+        {
+            "id": "91a84180-3391-4896-a71d-d96f805e9586",
+            "input_id": "ca98deeb-8071-4e1b-8885-fb86da273d54",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer is relevant and mostly correct as it captures the essence of Amnesty International's call for action against the killing of the Ogoni 9. However, it does not specifically mention the appeal for the defenders' freedom or the later call for letters of outrage, which were key components of the reference answer.",
+                    "error": null,
+                    "time": 1.4614004580071196
+                }
+            ]
+        },
+        {
+            "id": "b9fc3518-085f-4ac7-9af5-2ec132f682d0",
+            "input_id": "59128f67-b236-4c0f-9d22-0c49edeef40f",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 2.0,
+                    "reason": "The generated answer provides a detailed list of recommendations, but these do not align with those made by Amnesty International as indicated in the reference answer. The generated answer is relevant as it relates to recommendations for the protection of human rights defenders, but it contains inaccuracies regarding the specific recommendations made to the Special Rapporteur.",
+                    "error": null,
+                    "time": 1.4758413329982432
+                }
+            ]
+        },
+        {
+            "id": "299981bc-a174-4b0c-b4cb-d4bb6c0620b6",
+            "input_id": "450bd522-b3a4-4869-9cbb-2c6b032d1749",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.5,
+                    "reason": "The generated answer is relevant and largely correct, identifying children and young adults as the target audience. It uses the word \"likely,\" which introduces a slight lack of certainty compared to the reference answer, but it is still appropriate given the context.",
+                    "error": null,
+                    "time": 1.351591999991797
+                }
+            ]
+        },
+        {
+            "id": "b6136df9-2ad8-464e-8037-225bcd5793d9",
+            "input_id": "11c6fd43-ed46-4287-9379-a8c796c6def6",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is relevant and correct, as it accurately identifies the right as the \"right to truth,\" which aligns well with the reference answer's \"right to know the truth.\" Both essentially describe the same right, ensuring comprehensive information access about past human rights violations.",
+                    "error": null,
+                    "time": 1.4258567499928176
+                }
+            ]
+        },
+        {
+            "id": "7eaec2b9-086d-4bc0-a9e3-27e65df006f5",
+            "input_id": "4fdf8bc7-6c52-45fb-8a12-9d05021f7fa3",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.0,
+                    "reason": "The generated answer is relevant and mostly correct, covering essential points such as the rights of victims, their families, and society to be informed about human rights violations. It expands significantly on the reference answer by adding context about the roles of journalists, human rights defenders, and civil society, which enhances the comprehension of the topic. However, while it is informative and correct, this extensive elaboration makes it a bit less concise compared to the reference answer.",
+                    "error": null,
+                    "time": 1.852450249993126
+                }
+            ]
+        },
+        {
+            "id": "feefdcc6-16f1-4300-87be-b51931b57281",
+            "input_id": "4520aa7e-5c53-4ab4-9fa1-fef03b4c1b82",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 1.0,
+                    "reason": "The generated answer is not relevant to the user query. It incorrectly discusses smuggling of cultural heritage items, which is unrelated to responsibility under Article 207.3 of the Russian Criminal Code. Article 207.3 concerns the dissemination of false information about the activities of the Russian military.",
+                    "error": null,
+                    "time": 1.4269873749872204
+                }
+            ]
+        },
+        {
+            "id": "417b8736-2941-4c59-bf2b-276df9471d3a",
+            "input_id": "3cd641f2-2597-4fab-a67b-de0af6cd12fc",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 3.0,
+                    "reason": "The generated answer provides additional context about the intentionality and potential consequences of false statements, which is informative but not explicitly mentioned in the user query or the reference answer. The reference answer, however, directly addresses what is considered 'false' under Article 207.3 in terms of opposition to the official position. The generated answer, while relevant and partially correct, introduces elements that are not clearly specified in the reference, leading to potential inaccuracies.",
+                    "error": null,
+                    "time": 1.7916721670044353
+                }
+            ]
+        },
+        {
+            "id": "c7521fea-1b0d-441e-836f-771c8c13183c",
+            "input_id": "e0937e94-8be5-41ee-af20-7607ac264f91",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant and accurate in addressing the query about the decline of independent civil society organizations in Nicaragua. It covers a comprehensive range of factors such as repressive government policies, harassment, legal restrictions, and lack of funding, which align well with the elements mentioned in the reference answer. Additionally, the generated answer provides clear examples and explanations, demonstrating a sound understanding of the issues involved and thoroughly supporting its points. Overall, it offers a holistic and well-structured evaluation of the situation in Nicaragua, meriting a top score.",
+                    "error": null,
+                    "time": 2.386293542003841
+                }
+            ]
+        },
+        {
+            "id": "655a321b-b219-427b-91a4-fea9b7deac7a",
+            "input_id": "69d7e210-d74c-4b0e-8625-6c4942c6594e",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is relevant and fully correct. It provides a detailed explanation of conditions for designating wetlands as Ramsar sites, expanding upon the criteria of international importance and addressing the ecological, biological, and cultural aspects associated with it. This aligns well with the information and intention conveyed in the reference answer.",
+                    "error": null,
+                    "time": 1.4630455410078866
+                }
+            ]
+        },
+        {
+            "id": "5b03c0c6-12e6-406f-92f8-46dd930a0fe5",
+            "input_id": "f16e337c-74ba-4480-b66f-61d891bb6b0a",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 1.0,
+                    "reason": "The generated answer is incorrect because COP15 was held in Montreal, Canada, not in Kunming, China.",
+                    "error": null,
+                    "time": 0.9256534160085721
+                }
+            ]
+        },
+        {
+            "id": "83524ff1-f6b7-4753-918b-95be3c323777",
+            "input_id": "e21cda79-1216-4840-a8fa-be163a599fc7",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is fully relevant and correct, providing an accurate and detailed explanation of the 30x30 agreement. It expands on the reference answer by including reasons for the agreement, such as addressing the biodiversity crisis and impacts of climate change, and mentioning the goal of sustaining ecosystems and habitats.",
+                    "error": null,
+                    "time": 1.382871209003497
+                }
+            ]
+        },
+        {
+            "id": "84ddae3b-c842-43b2-827d-0f34ae68cd3b",
+            "input_id": "43484f7b-6ebf-4de5-bb87-3a1a3245387e",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 2.0,
+                    "reason": "The generated answer provides some relevant information regarding countries like Canada, Australia, New Zealand, and the United States not recognizing Indigenous lands at an unspecified conference. However, it incorrectly identifies the event as COP15 that took place in Copenhagen in 2009, which was actually a UN Climate Conference unrelated to the original context of COP15 meant in the user query. The user query's COP15 likely refers to the 2022 Biodiversity Conference. The reference to these specific countries and the focus on a different COP event leads to factual inaccuracies relevant to the user's query.",
+                    "error": null,
+                    "time": 2.5424649589986075
+                }
+            ]
+        },
+        {
+            "id": "f17f153a-e356-465a-b1ca-2063e65c69c3",
+            "input_id": "bfadff3d-35a3-48bd-8874-e526fd8680a6",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer comprehensively addresses the consequences of criminalizing abortion for marginalized individuals, covering various aspects including health risks, economic burdens, limited reproductive choices, increased inequality, potential criminalization of pregnancy, mental health impacts, and reproductive injustice. It provides detailed explanations and examples relevant to the user query, making it both relevant and accurate. It aligns well with the reference answer while offering additional insights, fully meeting the criteria for a high-quality response.",
+                    "error": null,
+                    "time": 1.6926706249942072
+                }
+            ]
+        },
+        {
+            "id": "c06e62a4-9204-4c4a-8076-1a44d7a70316",
+            "input_id": "2bc35958-50f8-4e7b-bd69-6e581c3b5f16",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is comprehensive and relevant, addressing a wide range of responsibilities that social media companies should have in relation to ensuring access to accurate sexual and reproductive health information. It goes beyond the reference answer by detailing specific actions and suggesting practical measures to improve access and accuracy, thus providing a deeper understanding of the topic.",
+                    "error": null,
+                    "time": 1.5980052500090096
+                }
+            ]
+        },
+        {
+            "id": "a33b4500-57fa-4b9b-99b7-28b8ee335cfa",
+            "input_id": "3c2390da-623a-4c33-9f31-3aa88c86ff35",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 4.5,
+                    "reason": "The generated answer is comprehensive and very relevant, aligning well with the user's query about the role of social media companies in protecting users' rights. It expands on the reference answer by detailing additional aspects such as algorithmic transparency and fighting disinformation. It is clear and contains no mistakes, though it could be a bit more concise, which is why it does not receive a full score of 5.",
+                    "error": null,
+                    "time": 2.0051172910025343
+                }
+            ]
+        },
+        {
+            "id": "a174d885-e2a0-4084-a45a-1b57c8a57a4f",
+            "input_id": "4137c6b4-e9ad-4fd6-bd1a-d859edbdbd16",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 5.0,
+                    "reason": "The generated answer is highly relevant and provides a comprehensive and detailed explanation of labor abuses documented by Amnesty International in Qatar. It clearly describes how these abuses are related to the kafala system by explaining the power dynamics and specific practices such as withheld wages, long working hours, confiscation of passports, and poor living conditions. The content aligns well with the user query and the information is accurate, fulfilling the requirements for a top score.",
+                    "error": null,
+                    "time": 1.969736292012385
+                }
+            ]
+        },
+        {
+            "id": "310425fa-322a-476f-8d3a-401d059c2f76",
+            "input_id": "c7b8b5b0-697e-4b24-86d3-79eaa945e761",
+            "output_entries": [
+                {
+                    "metric_name": "correctness",
+                    "score": 2.0,
+                    "reason": "The generated answer is relevant to the user query, but it contains a mistake regarding the timeline of when the government of Qatar started repealing restrictions on migrant workers. The reference answer indicates that these actions took place between 2018 and 2020, while the generated answer incorrectly states 2017.",
+                    "error": null,
+                    "time": 1.53367329199682
+                }
+            ]
+        }
+    ],
+    "token_usage": [
+        {
+            "input": 11566,
+            "output": 1562
+        },
+        {
+            "input": 0,
+            "output": 0
+        }
+    ]
+}

@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "f0ee24ae-d5d1-441c-8d92-28569f7d74ba",
+            "input_id": "3bd69802-0090-45d5-91d1-8cbeea65d632",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.7272727272727273,
+                    "reason": null,
+                    "error": null,
+                    "time": 20.330765791994054
+                }
+            ]
+        },
+        {
+            "id": "c21e2e63-fa62-4e09-83c6-e5a00b36a244",
+            "input_id": "c01a6908-665e-49f7-b915-155724f372fd",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.42857142857142855,
+                    "reason": null,
+                    "error": null,
+                    "time": 20.839975834009238
+                }
+            ]
+        },
+        {
+            "id": "244c99b9-4157-4ce2-98d3-a514043cc5e3",
+            "input_id": "32c457b5-d5ab-4e16-a6f1-19a899c982d5",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.3333333333333333,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.039026500016917
+                }
+            ]
+        },
+        {
+            "id": "c0eb76b4-80b9-446c-a324-e986d41c1509",
+            "input_id": "124ac59e-de63-4b38-8e3c-09f97abf1a5d",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.42857142857142855,
+                    "reason": null,
+                    "error": null,
+                    "time": 12.293663791992003
+                }
+            ]
+        },
+        {
+            "id": "43c04d60-f505-40fe-9b10-cd262f4cfa9a",
+            "input_id": "cb996e6f-7730-4d5a-a27e-aa9ba9289bf5",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.75,
+                    "reason": null,
+                    "error": null,
+                    "time": 9.786333041003672
+                }
+            ]
+        },
+        {
+            "id": "4552fba1-c5a8-408b-af2e-f032925a0450",
+            "input_id": "2923c7ee-bbda-4e8d-b1ce-ca93a82fd1f5",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.5714285714285714,
+                    "reason": null,
+                    "error": null,
+                    "time": 10.39990533402306
+                }
+            ]
+        },
+        {
+            "id": "cd673d13-0a0b-44f3-a0c8-5e5ddcb75516",
+            "input_id": "a59c938f-e712-49e8-9370-045deaad9377",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.625,
+                    "reason": null,
+                    "error": null,
+                    "time": 10.399695792002603
+                }
+            ]
+        },
+        {
+            "id": "28b74270-f294-4489-9edc-552bd2033b37",
+            "input_id": "6a1a6e11-d909-466b-8d7d-96d6d6360a1d",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.6,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.443077999982052
+                }
+            ]
+        },
+        {
+            "id": "d1b09746-66b4-4a88-994d-faf0ba119708",
+            "input_id": "a6f344be-30d7-4de4-86a1-2aa2b42193a9",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.07142857142857142,
+                    "reason": null,
+                    "error": null,
+                    "time": 31.28526674999739
+                }
+            ]
+        },
+        {
+            "id": "10b10274-eec0-4f1b-a044-b56bafd3c735",
+            "input_id": "bf0b4d19-2fc2-4c69-9b2e-375a8e579515",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.16666666666666666,
+                    "reason": null,
+                    "error": null,
+                    "time": 31.899655917019118
+                }
+            ]
+        },
+        {
+            "id": "3341beee-f6ca-41dc-8648-d5120ce6e8ef",
+            "input_id": "669eb834-11ff-4b42-8cf2-a1a013b71765",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.9230769230769231,
+                    "reason": null,
+                    "error": null,
+                    "time": 14.082261500007007
+                }
+            ]
+        },
+        {
+            "id": "4ebdb8d3-491f-40cb-81fe-5d8748b693f2",
+            "input_id": "76a4c88c-d4df-4e2d-aaa3-68ef62a6d31b",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.5,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.350304374995176
+                }
+            ]
+        },
+        {
+            "id": "89d48ffe-8cbf-48ed-9ef5-8d41566e224b",
+            "input_id": "327fa868-eff2-4f29-bed3-3ebfa4a59afc",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.42857142857142855,
+                    "reason": null,
+                    "error": null,
+                    "time": 12.137447874993086
+                }
+            ]
+        },
+        {
+            "id": "7c4167d6-e9fc-479e-b9dd-c3db4a401648",
+            "input_id": "80dc5535-19f8-4ffe-b071-e592103a9afe",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.6363636363636364,
+                    "reason": null,
+                    "error": null,
+                    "time": 14.693334834009875
+                }
+            ]
+        },
+        {
+            "id": "3939288a-4fc1-4ede-ace1-8fc36dac7957",
+            "input_id": "c6803bca-d471-4b54-8b2f-46d14829583c",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": null,
+                    "reason": null,
+                    "error": "Evaluation LLM outputted an invalid JSON. Please use a better evaluation model.",
+                    "time": 3.738805707980646
+                }
+            ]
+        },
+        {
+            "id": "795fb6ce-f55e-45fe-9c82-5309a33d12e2",
+            "input_id": "75b04ae6-8737-473a-a6e9-710b4a69dcfb",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.8571428571428571,
+                    "reason": null,
+                    "error": null,
+                    "time": 16.125600458995905
+                }
+            ]
+        },
+        {
+            "id": "609713a3-4435-44f9-a503-6619b5879856",
+            "input_id": "8f70968a-8f59-4f24-9d4c-3a62a6beb712",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.8888888888888888,
+                    "reason": null,
+                    "error": null,
+                    "time": 8.675296708010137
+                }
+            ]
+        },
+        {
+            "id": "f32c9e03-70e3-4ec1-be98-037ab9e0920d",
+            "input_id": "945b6083-c4d2-4386-9c76-5be5d1794403",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.8,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.320189416001085
+                }
+            ]
+        },
+        {
+            "id": "04e713d9-c7b1-4bd7-a721-9174aecdfb65",
+            "input_id": "5300ae99-3c0b-42a7-a98f-1299dff5dcb1",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.8888888888888888,
+                    "reason": null,
+                    "error": null,
+                    "time": 11.37270362500567
+                }
+            ]
+        },
+        {
+            "id": "d51d0a0b-de96-4981-9cab-4ad4921a98b4",
+            "input_id": "bfdb5750-1f6b-48d5-a2a0-338f89ab3c4a",
+            "output_entries": [
+                {
+                    "metric_name": "Contextual Relevancy",
+                    "score": 0.42857142857142855,
+                    "reason": null,
+                    "error": null,
+                    "time": 12.196915332984645
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 27893,
+        "output": 13052
+    }
+}

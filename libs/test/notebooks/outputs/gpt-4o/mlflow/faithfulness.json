@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "74853ba4-2a90-426e-ac2d-57a25e2a524d",
+            "input_id": "74ba1a38-266d-46a2-9147-8f5dd628e094",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most of the claims in the output can be inferred from the provided context. The impact of the USA Supreme Court ruling on abortion influencing other countries, energizing reproductive rights movements, and affecting global reproductive rights standards is supported by the context's mention of its international repercussions and debates. The context also supports the claims about the chilling effect and the potential global health implications. However, specific claims about donor countries and organizations' funding decisions and the exact extent of reproductive rights movements' strengthening are not directly covered in the context, which reduces the faithfulness from a perfect score.",
+                    "error": null,
+                    "time": 7.289189625007566
+                }
+            ]
+        },
+        {
+            "id": "285470ee-9edb-4e65-95bd-203e86393f99",
+            "input_id": "e60ecb60-2a3c-4d96-b654-3ef05d5f47a0",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "Some claims in the output are consistent with the context, such as fossil fuel companies being major contributors to global GHG emissions. However, the specific emissions figures and company rankings, such as those of Saudi Aramco, Chevron, ExxonMobil, and others, are not supported by the provided context, making the majority of the output unverified. Thus, the score is 2 as while some claims can be inferred, most of the output information is missing from the context.",
+                    "error": null,
+                    "time": 7.711166375011089
+                }
+            ]
+        },
+        {
+            "id": "43a6e624-2646-4eaf-896a-8ba9fa096d0b",
+            "input_id": "ab7a1b97-022e-4afe-8957-cd183bd8eef5",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "The output lists several companies as the \"largest GHG emitters\" in the Americas, including Chevron, ExxonMobil, Peabody, and others, which partially matches the context mentioning \"ExxonMobil, Chevron, and Peabody\" as the private companies with the most emissions. However, the majority of the companies listed in the output, such as ConocoPhillips, BP, Royal Dutch Shell, etc., are not mentioned in the context, nor is there any reference to these companies being significant emitters in the Americas. Therefore, some claims in the output are supported by the context, but the majority are not.",
+                    "error": null,
+                    "time": 6.177485708001768
+                }
+            ]
+        },
+        {
+            "id": "d3ffab3a-b274-4182-9de0-a3bbf2ad7182",
+            "input_id": "10e627bc-c084-49fd-a839-ce2566c6523a",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.5,
+                    "reason": "Half or more of the claims in the output can be inferred from the provided context. The context mentions that Amnesty International urged supporters to deluge Nigerian authorities with appeals and to raise awareness about the plight of the Ogoni people, which aligns with the output claims about urging supporters to call for investigation and human rights protection. However, the output specifically calls for an independent investigation into the killings, which is not directly supported by the context. Similarly, the call for the end of human rights abuses is implicit but not explicitly documented in the context. Thus, a score of 3 reflects the partial alignment.",
+                    "error": null,
+                    "time": 9.726216041002772
+                }
+            ]
+        },
+        {
+            "id": "99a420e4-72d5-4e43-a293-24f767d62023",
+            "input_id": "5bdb43f9-a172-484a-a4d6-454fb0426beb",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "Some of the recommendations in the output, such as calls for accountability and creating safe environments for human rights defenders, can be inferred from the context. However, the context focuses on recommendations specific to child and young human rights defenders, and many points in the output do not appear in the context. Thus, the majority of the output is missing from the provided context.",
+                    "error": null,
+                    "time": 6.337414458001149
+                }
+            ]
+        },
+        {
+            "id": "f521a433-2c53-4f60-ba51-63f04d90b76a",
+            "input_id": "22a96e9e-4171-4b83-998d-9c8cbadcef21",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "The output correctly identifies that the target audience of Amnesty International's books on child rights includes children and young adults, which is supported by the context describing the books as designed to educate and empower young readers. However, it does not mention the additional audiences (parents, teachers, caregivers) explicitly indicated in the context. Thus, most claims in the output are supported by the context, leading to a score of 4.",
+                    "error": null,
+                    "time": 4.587659666998661
+                }
+            ]
+        },
+        {
+            "id": "9f46cbe6-9356-446d-bd81-1297b63216b0",
+            "input_id": "f0f70735-08b4-4630-9578-1c354deb0ab8",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "All claims in the output are directly supported by the provided context. The mention of the right to truth guaranteeing access to comprehensive information about past human rights violations, including the identities of perpetrators and the fate of the victims, aligns with the context's details about victims and their families' right to know these aspects. Therefore, the faithfulness score is 5 as all output claims are consistent with the context.",
+                    "error": null,
+                    "time": 4.549290249997284
+                }
+            ]
+        },
+        {
+            "id": "275545a3-ae16-4b68-a340-0a4cc5633af4",
+            "input_id": "7a217910-767a-4713-91c2-e0b8096806a5",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most of the claims in the output can be inferred from the provided context. The output includes the right to know about human rights violations, the identities of perpetrators, and the victims' fate, which is supported by the context. It mentions various international instruments, the role of journalists, and societal rights to truth, consistent with the context's emphasis on transparency and accountability. However, the output includes additional statements about human rights defenders and government responsibilities, which are not directly covered in the provided context, leading to a score of 4 instead of 5.",
+                    "error": null,
+                    "time": 4.964348875000724
+                }
+            ]
+        },
+        {
+            "id": "503afa75-9a2d-4528-800e-b94d4961d8d7",
+            "input_id": "72695566-93d3-49de-b881-2b6fbb12eeba",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.0,
+                    "reason": "The output claims that Article 207.3 of the Russian Criminal Code pertains to the smuggling of cultural heritage items, which directly contradicts the context stating that the article pertains to illegal activities involving firearms and explosives. None of the claims in the output can be inferred from the provided context, resulting in a faithfulness score of 1.",
+                    "error": null,
+                    "time": 3.790539333000197
+                }
+            ]
+        },
+        {
+            "id": "f18a4441-4a82-46ff-ad89-b290a9251df1",
+            "input_id": "f307d2f1-6991-41a1-bc26-6bf0b4d0e001",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most claims in the output can be inferred from the context. The output states that statements contrary to the official position are considered \"false\" by the prosecution under Article 207.3 if they are intentionally misleading or aimed at discrediting the state, which is consistent with the context. The context also mentions deliberate misleading statements may be classified as \"false.\" However, the output's mention of causing significant damage is not directly supported by the context, leading to a slight discrepancy. Thus, the score is 4.",
+                    "error": null,
+                    "time": 5.336989292001817
+                }
+            ]
+        },
+        {
+            "id": "e0c7e391-db01-489d-928b-b584ba92dd6b",
+            "input_id": "3b51f484-d33c-4ff5-be8d-b75b3529bcd9",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most claims in the output can be inferred from the provided context. The output addresses government repression, harassment, lack of funding due to international reluctance, legal restrictions, and increased polarization, all of which have context support. However, certain details like specific laws or the Foreign Agents Law are not directly mentioned in the context, leading to very little unsupported information. Thus, the faithfulness score is 4.",
+                    "error": null,
+                    "time": 3.1609954589948757
+                }
+            ]
+        },
+        {
+            "id": "7ed7b058-9bcf-4636-a95f-867f33441039",
+            "input_id": "65aaa462-3881-416c-b6c5-bd6aef13f90e",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "Some claims in the output are supported by the context, such as the wetland's importance and the Ramsar Convention's role in the designation of Ramsar sites. However, most claims like specific criteria for selection are not directly mentioned in the context. Thus, the majority of the output is missing from the provided context.",
+                    "error": null,
+                    "time": 3.8337668329913868
+                }
+            ]
+        },
+        {
+            "id": "3bc100bc-545f-4976-b214-a0d1881fc6d7",
+            "input_id": "5a2d602a-a41c-4b29-bd2c-1b9d4d6a0494",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 1.0,
+                    "reason": "The output states \"COP15 was held in Kunming, China in 2022,\" which is directly supported by the provided context that mentions, \"COP15, also known as the 15th meeting of the Conference of the Parties to the Convention on Biological Diversity, was held in Kunming, China in 2022.\" Therefore, all the claims in the output are directly supported by the context, resulting in a faithfulness score of 5.",
+                    "error": null,
+                    "time": 5.0667310419958085
+                }
+            ]
+        },
+        {
+            "id": "815c91af-72e6-4d07-bdde-0c4df877bcf2",
+            "input_id": "0d0252ac-3d66-44bc-93c8-f2a3fda7ac29",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most of the claims in the output are supported by the context, such as the 30x30 agreement aiming to protect 30% of the planet's land and oceans by 2030, addressing biodiversity and climate change, and involving ecosystems and species preservation. However, the output mentions \"safeguarding habitats of numerous plant and animal species,\" which, while inferable from the context's focus on biodiversity, is not explicitly stated in the same way. This results in very little information not directly supported, giving it a score of 4.",
+                    "error": null,
+                    "time": 5.847507041995414
+                }
+            ]
+        },
+        {
+            "id": "45724b74-1652-4f29-973c-e8800daa90c5",
+            "input_id": "ed29b3ad-c940-426d-b063-69850f84a30f",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.25,
+                    "reason": "Some of the claims in the output can be inferred from the provided context, such as the failure to recognize Indigenous Peoples' lands and territories as a distinct category of protected area at COP15 and the general lack of support from states. However, the claims about the specific countries (Canada, Australia, New Zealand, and the United States) being blamed for this failure are not supported by the context. Additionally, the output's implication that these countries directly hindered the agreements is not found in the context, which results in the majority of the output being inconsistent with the provided context.",
+                    "error": null,
+                    "time": 5.987752417000593
+                }
+            ]
+        },
+        {
+            "id": "6471848b-49c3-4c0d-8ff2-b5fcc0d8870b",
+            "input_id": "101df52f-4729-4e34-afec-2151dd0069ed",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.75,
+                    "reason": "Most of the claims in the output are supported by the context provided. The output details various consequences of criminalizing abortion, such as increased health risks, economic burdens, limited reproductive choices, and increased inequality for marginalized individuals, which are mentioned in the context. However, some details, like the mention of the criminalization of pregnancy, are not explicitly covered in the context, though it can be inferred from the discussion of abortion criminalization effects. The overall output aligns well with the context, with very little information not directly supported by it, justifying a score of 4.",
+                    "error": null,
+                    "time": 6.255894083005842
+                }
+            ]
+        },
+        {
+            "id": "adab9392-0a2c-4810-9e6c-b358325d5565",
+            "input_id": "596c4e90-5530-412b-8b67-97cb3f0b1fc6",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.5,
+                    "reason": "Half or more of the claims in the output can be inferred from the provided context. The context emphasizes the responsibility of social media companies to ensure accurate information regarding sexual and reproductive health and to combat misinformation. The output's claims about promoting accurate information, fact-checking and verification, transparency, collaboration with experts, and addressing misinformation are supported by the context. However, specific claims such as user education, accessibility, and continuous improvement are not directly supported by the context, which prevents a higher score.",
+                    "error": null,
+                    "time": 5.744540917003178
+                }
+            ]
+        },
+        {
+            "id": "09f4adfc-bf4a-4354-a154-5700a2926cca",
+            "input_id": "97acbaf1-d1ea-4c55-adaa-f33a9e10088b",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.5,
+                    "reason": "Half or more of the claims in the output can be inferred from the provided context. The output discusses social media companies' responsibilities related to content moderation, privacy, and transparency, which align with the context's mention of companies needing to respect human rights and ensure transparency and accountability. However, some specific aspects such as algorithmic transparency, accessibility, inclusivity, and collaboration with external stakeholders are not directly covered in the context provided.",
+                    "error": null,
+                    "time": 4.913964332998148
+                }
+            ]
+        },
+        {
+            "id": "df4443ae-277e-4446-adf8-c40a809c3760",
+            "input_id": "d457e77e-df79-4991-bf15-bf7bcb856c23",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.5,
+                    "reason": "Half or more of the claims in the output can be inferred from the provided context. The output discusses various labor abuses linked to the kafala system, such as withheld wages, poor living conditions, and restricted worker freedom, which are consistent with the context. However, certain details like the specific claim about \"forced labor and human trafficking\" and the exact manner of passport confiscation are not explicitly mentioned in the context, leading to a faithfulness score of 3.",
+                    "error": null,
+                    "time": 4.2177195840049535
+                }
+            ]
+        },
+        {
+            "id": "b62c7c30-db5e-45ac-936e-1ebd04f6b5e1",
+            "input_id": "1348b2ee-4727-4df2-8952-afb7d3d5591b",
+            "output_entries": [
+                {
+                    "metric_name": "faithfulness",
+                    "score": 0.5,
+                    "reason": "The context mentions that the government of Qatar made reforms between 2018 and 2020, specifically regarding exit permits and no-objection certificates for migrant workers. However, the output claims these actions started in 2017, which is not directly supported by the context. Half or more of the main ideas in the output can be inferred from the context, but the specific starting year is inconsistent, leading to a score of 3.",
+                    "error": null,
+                    "time": 5.132416291002301
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 60260,
+        "output": 4144
+    }
+}

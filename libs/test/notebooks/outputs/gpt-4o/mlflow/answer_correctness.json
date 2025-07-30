@@ -1,0 +1,268 @@
+{
+    "outputs": [
+        {
+            "id": "443cb1ea-d210-4aa0-be34-3078fc513b86",
+            "input_id": "53580ea8-3df5-42a0-830b-46ac74aaeafb",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.75,
+                    "reason": "The output is mostly correct, addressing several potential implications of the USA Supreme Court ruling on abortion with significant semantic similarity to the targets. It covers topics such as influence on other countries, reproductive rights movements, and international policy, aligning well with the targets. However, it omits specific details mentioned in the targets, such as the limited access to abortion in certain states and their associated maternal health statistics, as well as the specific influence in African countries. These omissions prevent a perfect score.",
+                    "error": null,
+                    "time": 9.348414541003876
+                }
+            ]
+        },
+        {
+            "id": "4911d03d-b1c9-4763-9349-f3156668cae4",
+            "input_id": "b60653d4-24cd-4af9-87dc-fadede9e600f",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.75,
+                    "reason": "The output is mostly correct, providing a detailed list of companies identified by the Carbon Majors database as major contributors to GHG emissions, aligning well with the provided targets. It accurately identifies several key companies and details their contribution to emissions, showing strong semantic similarity to the targets. However, it omits additional context about the unequal impact of emissions on vulnerable populations and specific details about state-owned companies in the Americas, which are minor omissions. Thus, the score is appropriately set at 4.",
+                    "error": null,
+                    "time": 6.604113416004111
+                }
+            ]
+        },
+        {
+            "id": "a74aacdb-215c-4067-81d7-254f353253ac",
+            "input_id": "bc639158-22ec-4658-9b23-370c33bbc213",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.5,
+                    "reason": "The output aligns somewhat with the provided targets by listing some of the correct companies, such as Chevron, ExxonMobil, and Peabody. However, there are several discrepancies, including the inclusion of companies not mentioned in the targets like ConocoPhillips, BP, and others, which makes the output partially correct but with some inaccuracies and omissions.",
+                    "error": null,
+                    "time": 4.956167333002668
+                }
+            ]
+        },
+        {
+            "id": "6780d143-c003-4fc5-895d-5394fb6c7e23",
+            "input_id": "bfba1582-7f61-41f5-a2ec-5e091fafc6e5",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.5,
+                    "reason": "The output addresses some aspects of Amnesty International's actions, such as urging supporters to write letters regarding the killings of the Ogoni 9 and addressing human rights abuses. However, there are omissions and minor inaccuracies. The output suggests calling for an independent investigation and protection of the Ogoni people's rights, which aren't mentioned in the targets. Additionally, the specific action of sending appeals for defenders' freedom and letters of outrage is missing. Hence, the answer aligns partially with the targets but is incomplete.",
+                    "error": null,
+                    "time": 4.802872166997986
+                }
+            ]
+        },
+        {
+            "id": "225692c4-5c9c-4e84-9fcb-84c7f5387229",
+            "input_id": "b39e1df4-8b57-426b-b525-e6f6b1a9e91d",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.0,
+                    "reason": "The output is completely incorrect and does not align with the provided targets. The recommendations listed in the output are broad human rights defender principles and not specific to Amnesty International's recommendations to the Special Rapporteur. The provided targets focus on specific aspects such as child and young human rights defenders, age disaggregated data, and creating safe spaces for engagement, none of which are mentioned in the output. Hence, the answer_correctness score is 1.",
+                    "error": null,
+                    "time": 5.624100749992067
+                }
+            ]
+        },
+        {
+            "id": "b0334640-d234-4744-8303-e6254de22b40",
+            "input_id": "0e83ff1e-9d66-4d86-a469-17e6b961353c",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output provided by the model demonstrates a high degree of accuracy and semantic similarity to the target. It correctly identifies the target audience as \"children and young adults,\" which is similar to the target information specifying \"children and young people.\" The terms \"young adults\" and \"young people\" are semantically similar, indicating the model's answer is very close to the target. Hence, the answer_correctness score is 5.",
+                    "error": null,
+                    "time": 5.6819646670046495
+                }
+            ]
+        },
+        {
+            "id": "c93a3452-8327-4046-b361-4c3b00afc96b",
+            "input_id": "bf63a55c-8fcf-4952-ac2d-3e71f0763376",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output provided by the model is correct and demonstrates a high degree of accuracy and semantic similarity to the target. It identifies the \"right to truth\" as the right that guarantees access to comprehensive information about past human rights violations, which aligns well with the target phrase \"the right to know the truth.\" There are no discrepancies or inaccuracies between the output and the target; hence, it receives a score of 5.",
+                    "error": null,
+                    "time": 4.529667541995877
+                }
+            ]
+        },
+        {
+            "id": "9697a3ac-5f45-4bb7-a165-60a5ab9f97d7",
+            "input_id": "67bcba11-6b16-4058-a34c-c9bb460090e4",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and demonstrates a high degree of accuracy and semantic similarity to the targets. It accurately states that both the victims of human rights violations and members of society have the right to be informed about such violations, including details about the perpetrators and victims. It aligns well with the target statement and reinforces these points by referencing relevant human rights instruments and responsibilities of various entities, which further substantiates the claims made. Therefore, the output deserves a score of 5.",
+                    "error": null,
+                    "time": 5.643871416992624
+                }
+            ]
+        },
+        {
+            "id": "5aac90ea-1f10-4a80-af2b-4ed047a2c2ae",
+            "input_id": "0d5786e8-a0bd-41f6-a4bb-3f473f4d33c8",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.0,
+                    "reason": "The output provided by the model is completely incorrect and contradicts the target information. Article 207.3 of the Russian Criminal Code relates to statements contrary to the official position of the Russian authorities, not to participation in organized groups or acts of smuggling cultural heritage items. Therefore, the model's answer is completely different from the provided targets, warranting a score of 1.",
+                    "error": null,
+                    "time": 3.721334999994724
+                }
+            ]
+        },
+        {
+            "id": "fc347e92-ad46-4dbc-8921-7c376c6279d4",
+            "input_id": "9f71a57a-9d89-4c2a-929e-4ca1bd1d5ed9",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.25,
+                    "reason": "The output shows some degree of semantic similarity as it refers to statements contrary to the official position being considered 'false' under Article 207.3. However, it introduces inaccuracies by stating that these statements must be made with the intention to discredit the state, which is not mentioned in the targets. This is a significant discrepancy from the provided targets, where the key criterion is simply the opposition to the official position. Hence, the output has significant inaccuracies compared to the targets.",
+                    "error": null,
+                    "time": 5.177927540993551
+                }
+            ]
+        },
+        {
+            "id": "892f925f-725e-46fc-acd2-320b6c4cc052",
+            "input_id": "0955bedc-480e-45e0-b446-2500ab7eca63",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and demonstrates a high degree of accuracy and semantic similarity to the targets. It includes all the relevant factors, such as repressive government policies, legal restrictions, and harassment faced by civil society organizations in Nicaragua, aligning with the provided list. There are no significant omissions or inaccuracies, warranting a score of 5.",
+                    "error": null,
+                    "time": 4.8488974169886205
+                }
+            ]
+        },
+        {
+            "id": "017a3508-3869-4430-916a-1acd14c525da",
+            "input_id": "5e5f6ebb-821a-4d9f-abc9-e5ec6bf1f0f4",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.5,
+                    "reason": "The output addresses several aspects relating to the conditions for designating Ramsar sites, offering details like international importance, supporting vulnerable species, and providing community services, which align with the targets. However, it includes conditions such as management plans and threats from human activities that are not explicitly mentioned in the targets. Thus, while mostly accurate in parts, there are omissions and a degree of expansion beyond the provided target, leading to a score of 3.",
+                    "error": null,
+                    "time": 4.8429547080013435
+                }
+            ]
+        },
+        {
+            "id": "50d8e811-d6bd-4661-a25d-06574646e9bd",
+            "input_id": "1056504f-fc37-4c94-965c-b040f6607917",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.0,
+                    "reason": "The output is completely incorrect as it states that COP15 was held in Kunming, China in 2022, whereas the provided target says it was held in Montreal, Canada in 2022. This is entirely different from the target and therefore scores a 1 according to the grading rubric.",
+                    "error": null,
+                    "time": 4.165406125001027
+                }
+            ]
+        },
+        {
+            "id": "56bb851b-c13a-42ce-b457-a8ff72097f7f",
+            "input_id": "c37c7add-1b26-4939-8cbd-7e77e198e121",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and demonstrates a high degree of accuracy and semantic similarity to the targets. It correctly identifies the purpose of the 30x30 agreement as conserving and protecting 30% of the planet's land and oceans by 2030 for biodiversity conservation, which aligns with the target information. The output also provides additional context, such as addressing the global biodiversity crisis and promoting sustainable practices, enhancing its completeness. There are no inaccuracies or omissions, justifying a score of 5.",
+                    "error": null,
+                    "time": 5.740848374989582
+                }
+            ]
+        },
+        {
+            "id": "76a6ba54-3618-4c4d-a66e-b90eaada70ce",
+            "input_id": "7e773717-be7f-490f-a921-3e8c86c7618e",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.25,
+                    "reason": "The output demonstrates some degree of semantic similarity by addressing COP15 but inaccurately identifies it as the United Nations Climate Change Conference in 2009 rather than the correct 2022 Convention on Biological Diversity. It incorrectly attributes the failure to recognize Indigenous lands to specific countries rather than \"The States\" mentioned in the target. These inaccuracies represent significant discrepancies from the provided target, hence a score of 2.",
+                    "error": null,
+                    "time": 6.8381536249944475
+                }
+            ]
+        },
+        {
+            "id": "352be6b7-9854-457e-aeae-5cb2edb623cf",
+            "input_id": "bd6aff5a-92b9-4be0-989f-fb5bfa7bd232",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 1.0,
+                    "reason": "The output is correct and comprehensive, demonstrating a high degree of accuracy and semantic similarity to the targets. It addresses multiple aspects of the consequences of criminalizing abortion for marginalized individuals, including health risks, economic burden, limited reproductive choices, increased inequality, criminalization of pregnancy, mental health impact, and reproductive injustice. It aligns well with the provided targets without significant omissions or inaccuracies.",
+                    "error": null,
+                    "time": 4.908526792001794
+                }
+            ]
+        },
+        {
+            "id": "1bbd40eb-0f02-44a1-a80d-1baef984736a",
+            "input_id": "84bccc04-7c41-4f37-ae33-5b0b3beccdb1",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.5,
+                    "reason": "The output addresses several responsibilities that align with the target, such as promoting accurate information, fact-checking, and inclusivity. However, it omits the specific aspects of human oversight in content moderation systems and human rights due diligence, which are highlighted in the target. There are also minor inaccuracies in alignment. Thus, the output scores a 3.",
+                    "error": null,
+                    "time": 5.158782500002417
+                }
+            ]
+        },
+        {
+            "id": "325977c4-e259-45d6-bbde-438e62548cdd",
+            "input_id": "e8e74355-811e-41e8-9d25-8330374b9cbf",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.5,
+                    "reason": "The output addresses several aspects of the role of social media companies in protecting users' rights, including content moderation, privacy and data protection, and combating disinformation. However, it misses specific points mentioned in the target, such as investing in human oversight of content moderation systems, engaging in human rights due diligence, and educating users about security and privacy features. While the output provides additional relevant information, there are omissions regarding particular elements of the target. Therefore, the score is 3.",
+                    "error": null,
+                    "time": 6.503279374999693
+                }
+            ]
+        },
+        {
+            "id": "007c9d81-3699-4a94-a51b-883b960c2a65",
+            "input_id": "28f16767-1244-4aaa-8d64-cd8716e8165d",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.75,
+                    "reason": "The output is mostly correct and aligns well with the provided targets. It accurately describes several labor abuses in Qatar related to the kafala system, such as exploitative working conditions, withheld wages, and inadequate living conditions. However, there are minor omissions or inaccuracies, such as not specifically mentioning the restriction of one day off each month or threats of salary cuts for taking more rest time. Despite these minor omissions, the output demonstrates a high degree of semantic similarity to the targets, justifying a score of 4.",
+                    "error": null,
+                    "time": 5.145189874994685
+                }
+            ]
+        },
+        {
+            "id": "85fb5d8a-430c-498a-9567-01b69982d12e",
+            "input_id": "2460365d-1c9d-4026-81dc-503ed3bc3df0",
+            "output_entries": [
+                {
+                    "metric_name": "answer_correctness",
+                    "score": 0.25,
+                    "reason": "The output demonstrates some degree of semantic similarity as it addresses the topic of repealing restrictions on migrant workers in Qatar. However, the output states the year as 2017, which significantly differs from the target range of 2018 to 2020, indicating factual inaccuracies. Therefore, the model's response contains partially correct information but still holds significant discrepancies with the provided targets, resulting in a score of 2.",
+                    "error": null,
+                    "time": 5.44141345800017
+                }
+            ]
+        }
+    ],
+    "token_usage": {
+        "input": 50912,
+        "output": 3736
+    }
+}

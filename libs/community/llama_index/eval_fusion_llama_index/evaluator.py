@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import asyncio
+import re
 
 from time import perf_counter
 from types import TracebackType
@@ -203,16 +204,32 @@ class LlamaIndexEvaluator(EvalFusionBaseEvaluator):
                 reference=task.input.ground_truth,
             )
             time = perf_counter() - start
+            score = evaluation_result.score
+            reason = evaluation_result.feedback
+
+            # llama-index failed to parse the response
+            # TODO: regex is not robust enough
+            # TODO: added to sync version as well
+
+            # if not score and reason:
+            #     match = re.search(r'Score:\s*(\d+)', reason)
+            #     if not match:
+            #         raise ValueError(f'Failed to parse score from reason:\n{reason}')
+
+            #     score = float(match.group(1))
+
+            # TODO remove
+            if not score and reason:
+                score = 0
 
             return LlamaIndexEvaluationTaskResult(
-                score=evaluation_result.score,
-                reason=evaluation_result.feedback,
+                score=score,
+                reason=reason,
                 error=None,
                 time=time,
             )
 
         except Exception as e:
-            raise e
             time = perf_counter() - start
 
             return LlamaIndexEvaluationTaskResult(
